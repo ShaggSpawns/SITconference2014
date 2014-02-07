@@ -1,0 +1,1276 @@
+********Program opened at [Jan/25/14 06:45:10 PM]********
+********Program opened at [Jan/25/14 06:45:23 PM]********
+********Program opened at [Jan/25/14 07:02:03 PM]********
+********Program opened at [Jan/25/14 07:02:21 PM]********
+********Program opened at [Jan/25/14 07:02:54 PM]********
+********Program opened at [Jan/25/14 07:05:03 PM]********
+********Program opened at [Jan/25/14 07:05:12 PM]********
+********Program opened at [Jan/25/14 07:05:21 PM]********
+********Program opened at [Jan/25/14 07:05:29 PM]********
+********Program opened at [Jan/25/14 07:05:36 PM]********
+********Program opened at [Jan/25/14 07:05:43 PM]********
+********Program opened at [Jan/25/14 07:05:54 PM]********
+********Program opened at [Jan/25/14 07:06:23 PM]********
+********Program opened at [Jan/25/14 07:07:04 PM]********
+********Program opened at [Jan/25/14 07:13:27 PM]********
+********Program opened at [Jan/25/14 07:18:05 PM]********
+********Program opened at [Jan/25/14 07:18:22 PM]********
+********Program opened at [Jan/25/14 07:19:43 PM]********
+********Program opened at [Jan/25/14 07:23:17 PM]********
+********Program opened at [Jan/25/14 07:25:24 PM]********
+********Program opened at [Jan/25/14 07:27:58 PM]********
+********Program opened at [Feb/03/14 03:38:49 PM]********
+********Program opened at [Feb/03/14 07:07:49 PM]********
+********Program opened at [Feb/03/14 07:08:50 PM]********
+********Program opened at [Feb/03/14 07:46:50 PM]********
+********Program opened at [Feb/03/14 07:47:06 PM]********
+********Program opened at [Feb/03/14 07:47:57 PM]********
+********Program opened at [Feb/03/14 07:48:32 PM]********
+********Program opened at [Feb/03/14 07:49:19 PM]********
+********Program opened at [Feb/03/14 07:49:57 PM]********
+********Program opened at [Feb/03/14 07:50:21 PM]********
+********Program opened at [Feb/03/14 07:50:54 PM]********
+********Program opened at [Feb/03/14 07:51:03 PM]********
+********Program opened at [Feb/03/14 07:51:11 PM]********
+********Program opened at [Feb/03/14 07:51:18 PM]********
+********Program opened at [Feb/03/14 07:52:10 PM]********
+********Program opened at [Feb/03/14 07:52:24 PM]********
+********Program opened at [Feb/03/14 07:55:20 PM]********
+********Program opened at [Feb/03/14 07:55:28 PM]********
+********Program opened at [Feb/03/14 07:56:03 PM]********
+********Program opened at [Feb/03/14 07:56:19 PM]********
+********Program opened at [Feb/03/14 08:35:28 PM]********
+[20:35:30 ~StatusBar~ ]: [Disconnected]
+********Program opened at [Feb/03/14 08:35:49 PM]********
+[20:35:50 ~StatusBar~ ]: [Disconnected]
+********Program opened at [Feb/03/14 08:38:26 PM]********
+[20:38:27 ~StatusBar~ ]: [Disconnected]
+********Program opened at [Feb/03/14 08:38:45 PM]********
+[20:38:45 ~StatusBar~ ]: [Disconnected]
+********Program opened at [Feb/03/14 08:40:41 PM]********
+[20:40:42 ~StatusBar~ ]: [Disconnected]
+********Program opened at [Feb/03/14 08:42:44 PM]********
+[20:42:44 ~StatusBar~ ]: null
+********Program opened at [Feb/03/14 08:43:53 PM]********
+[20:43:53 ~StatusBar~ ]: [Disconnected]
+********Program opened at [Feb/03/14 08:44:39 PM]********
+[20:44:40 ~StatusBar~ ]: [Disconnected]
+********Program opened at [Feb/03/14 08:44:57 PM]********
+********Program opened at [Feb/03/14 08:45:37 PM]********
+[20:45:43 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:45:44 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+********Program opened at [Feb/03/14 08:45:57 PM]********
+[20:46:02 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+********Program opened at [Feb/03/14 08:46:16 PM]********
+[20:46:22 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:46:23 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+********Program opened at [Feb/03/14 08:46:55 PM]********
+[20:46:59 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:46:59 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:47:00 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:47:00 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+********Program opened at [Feb/03/14 08:47:17 PM]********
+[20:47:25 ~StatusBar~ ]: Server Disconnected
+********Program opened at [Feb/03/14 08:48:10 PM]********
+[20:48:20 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/03/14 08:48:35 PM]********
+[20:48:40 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:40 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:40 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:40 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:41 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:41 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:41 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:41 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:41 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:41 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:41 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:41 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:41 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:41 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:41 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:41 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:42 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:42 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:42 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:42 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:42 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:42 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:42 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:42 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:42 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:42 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:42 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:42 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[20:48:42 ERROR]: Host IP field can not be empty!
+Entered address ( : )
+[20:48:42 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:48:43 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/03/14 08:51:23 PM]********
+[20:51:26 ERROR]: Host IP field can not be empty!
+[20:51:26 Info]: Entered address ( : )
+[20:51:26 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:26 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:26 ERROR]: Host IP field can not be empty!
+[20:51:26 Info]: Entered address ( : )
+[20:51:26 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:26 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:26 ERROR]: Host IP field can not be empty!
+[20:51:26 Info]: Entered address ( : )
+[20:51:26 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:26 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:26 ERROR]: Host IP field can not be empty!
+[20:51:26 Info]: Entered address ( : )
+[20:51:26 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:26 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:26 ERROR]: Host IP field can not be empty!
+[20:51:26 Info]: Entered address ( : )
+[20:51:26 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:26 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:27 ERROR]: Host IP field can not be empty!
+[20:51:27 Info]: Entered address ( : )
+[20:51:27 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:27 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:27 ERROR]: Host IP field can not be empty!
+[20:51:27 Info]: Entered address ( : )
+[20:51:27 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:27 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:27 ERROR]: Host IP field can not be empty!
+[20:51:27 Info]: Entered address ( : )
+[20:51:27 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:27 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:27 ERROR]: Host IP field can not be empty!
+[20:51:27 Info]: Entered address ( : )
+[20:51:27 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:27 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:27 ERROR]: Host IP field can not be empty!
+[20:51:27 Info]: Entered address ( : )
+[20:51:27 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:27 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:27 ERROR]: Host IP field can not be empty!
+[20:51:27 Info]: Entered address ( : )
+[20:51:27 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:27 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:32 ERROR]: Host IP field can not be empty!
+[20:51:32 Info]: Entered address ( : )
+[20:51:32 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:32 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:32 ERROR]: Host IP field can not be empty!
+[20:51:32 Info]: Entered address ( : )
+[20:51:32 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:32 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:32 ERROR]: Host IP field can not be empty!
+[20:51:32 Info]: Entered address ( : )
+[20:51:32 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:32 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:32 ERROR]: Host IP field can not be empty!
+[20:51:32 Info]: Entered address ( : )
+[20:51:32 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:33 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[20:51:33 ERROR]: Host IP field can not be empty!
+[20:51:33 Info]: Entered address ( : )
+[20:51:33 ~StatusBar~ ]: [ERROR] Host IP field cannot be empty!
+[20:51:33 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+********Program opened at [Feb/05/14 10:14:53 AM]********
+[10:15:14 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[10:15:18 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[10:16:13 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[10:17:16 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[10:17:55 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+********Program opened at [Feb/05/14 10:51:52 AM]********
+[10:52:23 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[10:57:29 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/05/14 10:57:46 AM]********
+[10:57:53 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[10:57:54 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+[10:58:22 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[10:58:37 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/05/14 11:00:34 AM]********
+********Program opened at [Feb/05/14 11:02:56 AM]********
+[11:03:04 ERROR]: NullPointerException panel.TCP.LoginTCP.connectBtn
+********Program opened at [Feb/05/14 11:04:56 AM]********
+[11:07:20 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:12:14 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:14:09 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:14:10 Error]: Host IP field can not be empty!
+[11:14:10 Info]: Entered address ( : )
+[11:14:10 ~StatusBar~ ]: [Error] Host IP field cannot be empty!
+[11:14:10 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:15:41 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:17:01 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:28:54 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:29:31 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[11:29:56 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/05/14 11:44:50 AM]********
+[11:45:24 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/05/14 11:46:09 AM]********
+[11:46:44 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/05/14 12:15:04 PM]********
+[12:15:18 ~StatusBar~ ]: [Disconnected] Server Disconnected
+********Program opened at [Feb/05/14 12:39:00 PM]********
+[12:39:20 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:39:20 Error]: Host IP field can not be empty!
+[12:39:20 Info]: Entered address ( : )
+[12:39:20 ~StatusBar~ ]: [Error] Host IP field cannot be empty!
+[12:39:21 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:39:22 Error]: Host IP field can not be empty!
+[12:39:22 Info]: Entered address ( : )
+[12:39:22 ~StatusBar~ ]: [Error] Host IP field cannot be empty!
+[12:39:22 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:39:26 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:43:24 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:44:40 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:46:25 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:48:50 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:49:53 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[12:51:00 ~StatusBar~ ]: [Disconnected] Server Disconnected
++++++++++++++++ Program opened at [Feb/05/14 06:25:37 PM] +++++++++++++++
+[18:25:41 Info]: Attempting to connect...
+[18:25:41 ~StatusBar~ ]: Attempting to connect...
+[18:25:41 Info]: Connected to: localhost
+[18:25:41 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:25:41 Info]: Streams successfully setup
+[18:25:44 Info]: Sent message: FORWARD
+[18:25:44 Info]: Sent message: FORWARD
+[18:25:44 Info]: Sent message: FORWARD
+[18:25:44 Info]: Sent message: FORWARD
+[18:25:50 Info]: Sent message: REVERSE
+[18:25:50 Info]: Sent message: REVERSE
+[18:25:50 Info]: Sent message: REVERSE
+[18:25:51 Info]: Sent message: LEFT
+[18:25:52 Info]: Sent message: RIGHT
+[18:25:52 Info]: Sent message: RIGHT
+[18:25:53 Info]: Sent message: FORWARD
+[18:25:53 Info]: Sent message: FORWARD
+[18:25:53 Info]: Sent message: FORWARD
+[18:25:53 Info]: Sent message: FORWARD
+[18:25:53 Info]: Sent message: REVERSE
+[18:25:53 Info]: Sent message: REVERSE
+[18:25:53 Info]: Sent message: REVERSE
+[18:25:55 Info]: Sent message: LEFT
+[18:25:55 Info]: Sent message: RIGHT
+[18:25:55 Info]: Sent message: RIGHT
+[18:26:02 Info]: Sent message: FORWARD
+[18:26:02 Info]: Sent message: FORWARD
+[18:26:02 Info]: Sent message: FORWARD
+[18:26:02 Info]: Sent message: FORWARD
+[18:26:05 Info]: Sent message: LEFT
+[18:26:06 Info]: Sent message: FORWARD
+[18:26:06 Info]: Sent message: FORWARD
+[18:26:06 Info]: Sent message: FORWARD
+[18:26:06 Info]: Sent message: FORWARD
+[18:26:07 Info]: Sent message: FORWARD
+[18:26:07 Info]: Sent message: FORWARD
+[18:26:07 Info]: Sent message: FORWARD
+[18:26:07 Info]: Sent message: FORWARD
+[18:26:09 Info]: Sent message: REVERSE
+[18:26:09 Info]: Sent message: REVERSE
+[18:26:09 Info]: Sent message: REVERSE
+[18:26:12 Info]: Sent message: END
+[18:26:12 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[18:26:12 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[18:26:12 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[18:26:12 Info]: Closing sockets and streams...
+[18:26:12 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[18:26:12 Info]: Successfully closed sockets and streams
+[18:26:12 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 06:28:35 PM] +++++++++++++++
+[18:28:38 Info]: Attempting to connect...
+[18:28:38 ~StatusBar~ ]: Attempting to connect...
+[18:28:38 Info]: Connected to: localhost
+[18:28:38 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:28:38 Info]: Streams successfully setup
+[18:28:42 Info]: Sent message: FORWARD
+[18:28:42 Info]: Sent message: FORWARD
+[18:28:42 Info]: Sent message: FORWARD
+[18:28:42 Info]: Sent message: FORWARD
+[18:28:44 Info]: Sent message: LEFT
+[18:28:45 Info]: Sent message: RIGHT
+[18:28:45 Info]: Sent message: RIGHT
++++++++++++++++ Program opened at [Feb/05/14 06:30:29 PM] +++++++++++++++
+[18:30:35 Info]: Attempting to connect...
+[18:30:35 ~StatusBar~ ]: Attempting to connect...
+[18:30:35 Info]: Connected to: localhost
+[18:30:35 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:30:35 Info]: Streams successfully setup
+[18:30:36 Info]: Sent message: FORWARD
+[18:30:36 Info]: Sent message: FORWARD
+[18:30:36 Info]: Sent message: FORWARD
+[18:30:36 Info]: Sent message: FORWARD
++++++++++++++++ Program opened at [Feb/05/14 06:33:38 PM] +++++++++++++++
+[18:33:42 Info]: Attempting to connect...
+[18:33:42 ~StatusBar~ ]: Attempting to connect...
+[18:33:42 Info]: Connected to: localhost
+[18:33:42 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:33:42 Info]: Streams successfully setup
+[18:33:44 Info]: Sent message: LEFT
+[18:33:45 Info]: Sent message: REVERSE
+[18:33:45 Info]: Sent message: REVERSE
+[18:33:45 Info]: Sent message: REVERSE
+[18:33:46 Info]: Sent message: FORWARD
+[18:33:46 Info]: Sent message: FORWARD
+[18:33:46 Info]: Sent message: FORWARD
+[18:33:46 Info]: Sent message: FORWARD
+[18:33:47 Info]: Sent message: FORWARD
+[18:33:47 Info]: Sent message: FORWARD
+[18:33:47 Info]: Sent message: FORWARD
+[18:33:47 Info]: Sent message: FORWARD
+[18:33:47 Info]: Sent message: RIGHT
+[18:33:47 Info]: Sent message: RIGHT
+[18:33:48 Info]: Sent message: LEFT
+[18:33:48 Info]: Sent message: REVERSE
+[18:33:48 Info]: Sent message: REVERSE
+[18:33:48 Info]: Sent message: REVERSE
+[18:33:48 Info]: Sent message: RIGHT
+[18:33:48 Info]: Sent message: RIGHT
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:49 Info]: Sent message: FORWARD
+[18:33:50 Info]: Sent message: FORWARD
+[18:33:50 Info]: Sent message: FORWARD
+[18:33:50 Info]: Sent message: FORWARD
+[18:33:50 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:53 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:54 Info]: Sent message: FORWARD
+[18:33:55 Info]: Sent message: LEFT
+[18:33:55 Info]: Sent message: LEFT
+[18:33:56 Info]: Sent message: LEFT
+[18:33:56 Info]: Sent message: LEFT
+[18:33:56 Info]: Sent message: LEFT
+[18:33:57 Info]: Sent message: LEFT
+[18:33:57 Info]: Sent message: LEFT
+[18:33:58 Info]: Sent message: LEFT
+[18:34:02 Info]: Sent message: END
+[18:34:02 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[18:34:02 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[18:34:02 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[18:34:02 Info]: Closing sockets and streams...
+[18:34:02 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[18:34:02 Info]: Successfully closed sockets and streams
+[18:34:02 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 06:35:44 PM] +++++++++++++++
+[18:35:47 Info]: Attempting to connect...
+[18:35:47 ~StatusBar~ ]: Attempting to connect...
+[18:35:47 Info]: Connected to: localhost
+[18:35:47 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:35:47 Info]: Streams successfully setup
+[18:35:48 Info]: Sent message: FORWARD
+[18:35:48 Info]: Sent message: FORWARD
+[18:35:48 Info]: Sent message: FORWARD
+[18:35:48 Info]: Sent message: FORWARD
+[18:35:48 Info]: Sent message: LEFT
+[18:35:50 Info]: Sent message: END
+[18:35:50 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[18:35:50 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[18:35:50 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[18:35:50 Info]: Closing sockets and streams...
+[18:35:50 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[18:35:50 Info]: Successfully closed sockets and streams
+[18:35:50 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 06:40:46 PM] +++++++++++++++
+[18:40:49 Info]: Attempting to connect...
+[18:40:49 ~StatusBar~ ]: Attempting to connect...
+[18:40:49 Info]: Connected to: localhost
+[18:40:49 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:40:50 Info]: Streams successfully setup
+[18:40:52 Info]: Sent message: RIGHT
+[18:40:52 Info]: Sent message: RIGHT
+[18:40:52 Info]: Sent message: Hello
+[18:40:58 Info]: Sent message: END
+[18:40:58 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[18:40:58 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[18:40:58 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[18:40:58 Info]: Closing sockets and streams...
+[18:40:58 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[18:40:58 Info]: Successfully closed sockets and streams
+[18:40:58 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 06:43:31 PM] +++++++++++++++
+[18:43:35 Info]: Attempting to connect...
+[18:43:35 ~StatusBar~ ]: Attempting to connect...
+[18:43:35 Info]: Connected to: localhost
+[18:43:35 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:43:35 Info]: Streams successfully setup
+[18:43:36 Info]: Sent message: FORWARD
+[18:43:40 Info]: Sent message: LEFT
+[18:43:41 Info]: Sent message: REVERSE
+[18:43:42 Info]: Sent message: RIGHT
+[18:43:42 Info]: Sent message: FORWARD
+[18:43:44 Info]: Sent message: LEFT
+[18:43:45 Info]: Sent message: FORWARD
+[18:43:45 Info]: Sent message: FORWARD
+[18:43:47 Info]: Sent message: FORWARD
+[18:43:47 Info]: Sent message: FORWARD
+[18:43:47 Info]: Sent message: FORWARD
+[18:43:48 Info]: Sent message: FORWARD
+[18:43:48 Info]: Sent message: FORWARD
+[18:43:49 Info]: Sent message: FORWARD
+[18:43:50 Info]: Sent message: REVERSE
+[18:43:50 Info]: Sent message: RIGHT
+[18:43:52 Info]: Sent message: FORWARD
+[18:43:54 Info]: Sent message: LEFT
+[18:43:57 Info]: Sent message: LEFT
++++++++++++++++ Program opened at [Feb/05/14 06:45:38 PM] +++++++++++++++
+[18:45:42 Info]: Attempting to connect...
+[18:45:42 ~StatusBar~ ]: Attempting to connect...
+[18:45:42 Info]: Connected to: localhost
+[18:45:42 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:45:42 Info]: Streams successfully setup
+[18:45:44 Info]: Sent message: FORWARD
+[18:45:45 Info]: Sent message: LEFT
+[18:45:46 Info]: Sent message: STOP
+[18:45:47 Info]: Sent message: STOP
+[18:45:48 Info]: Sent message: RIGHT
+[18:45:49 Info]: Sent message: STOP
+[18:45:51 Info]: Sent message: END
+[18:45:51 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[18:45:51 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[18:45:51 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[18:45:51 Info]: Closing sockets and streams...
+[18:45:51 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[18:45:51 Info]: Successfully closed sockets and streams
+[18:45:51 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 06:51:00 PM] +++++++++++++++
+[18:51:04 Info]: Attempting to connect...
+[18:51:04 ~StatusBar~ ]: Attempting to connect...
+[18:51:04 Info]: Connected to: localhost
+[18:51:04 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:51:04 Info]: Streams successfully setup
++++++++++++++++ Program opened at [Feb/05/14 06:52:34 PM] +++++++++++++++
+[18:52:37 Info]: Attempting to connect...
+[18:52:37 ~StatusBar~ ]: Attempting to connect...
+[18:52:37 Info]: Connected to: localhost
+[18:52:37 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:52:37 Info]: Streams successfully setup
+[18:52:39 Info]: Sent message: FORWARD
+[18:52:43 Info]: Sent message: LEFT
+[18:52:44 Info]: Sent message: REVERSE
+[18:52:45 Info]: Sent message: RIGHT
+[18:52:45 Info]: Sent message: STOP
+[18:52:46 Info]: Sent message: STOP
+[18:52:46 Info]: Sent message: STOP
+[18:52:46 Info]: Sent message: STOP
+[18:52:48 Info]: Sent message: LEFT
+[18:52:54 Info]: Sent message: STOP
+[18:52:55 Info]: Sent message: LEFT
++++++++++++++++ Program opened at [Feb/05/14 06:57:23 PM] +++++++++++++++
+[18:57:26 Info]: Attempting to connect...
+[18:57:26 ~StatusBar~ ]: Attempting to connect...
+[18:57:26 Info]: Connected to: localhost
+[18:57:26 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:57:27 Info]: Sent message: FORWARD
+[18:57:29 Info]: Sent message: LEFT
+[18:57:30 Info]: Sent message: STOP
+[18:57:31 Info]: Sent message: LEFT
+[18:57:31 Info]: Sent message: REVERSE
+[18:57:32 Info]: Sent message: STOP
+[18:57:33 Info]: Sent message: REVERSE
+[18:57:33 Info]: Sent message: STOP
+[18:57:33 Info]: Sent message: STOP
+[18:57:33 Info]: Sent message: STOP
+[18:57:34 Info]: Sent message: LEFT
+[18:57:34 Info]: Sent message: FORWARD
+[18:57:35 Info]: Sent message: STOP
+[18:57:35 Info]: Sent message: FORWARD
+[18:57:36 Info]: Sent message: STOP
+[18:57:36 Info]: Sent message: LEFT
+[18:57:36 Info]: Sent message: STOP
+[18:57:37 Info]: Sent message: RIGHT
+[18:57:37 Info]: Sent message: STOP
+[18:57:38 Info]: Sent message: REVERSE
+[18:57:38 Info]: Sent message: LEFT
+[18:57:39 Info]: Sent message: END
+[18:57:39 ~StatusBar~ ]: [Disconnected] Server Disconnected
++++++++++++++++ Program opened at [Feb/05/14 06:59:16 PM] +++++++++++++++
+[18:59:19 Info]: Attempting to connect...
+[18:59:19 ~StatusBar~ ]: Attempting to connect...
+[18:59:19 Info]: Connected to: localhost
+[18:59:19 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:59:20 Info]: Sent message: STOP
+[18:59:24 Info]: Streams successfully setup
+[18:59:27 Info]: Sent message: LEFT
+[18:59:28 Info]: Sent message: FORWARD
+[18:59:30 Info]: Sent message: RIGHT
+[18:59:32 Info]: Sent message: END
+[18:59:32 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[18:59:32 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[18:59:32 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[18:59:32 Info]: Closing sockets and streams...
+[18:59:32 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[18:59:32 Info]: Successfully closed sockets and streams
+[18:59:32 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
+[18:59:35 Info]: Attempting to connect...
+[18:59:35 ~StatusBar~ ]: Attempting to connect...
+[18:59:35 Info]: Connected to: localhost
+[18:59:35 ~StatusBar~ ]: [Connected] Connected to: localhost
+[18:59:35 Info]: Streams successfully setup
+[18:59:39 Info]: Sent message: REVERSE
+[18:59:39 Info]: Sent message: STOP
+[18:59:40 Info]: Sent message: STOP
+[18:59:41 Info]: Sent message: STOP
+[18:59:41 Info]: Sent message: STOP
+[18:59:41 Info]: Sent message: STOP
+[18:59:42 Info]: Sent message: STOP
+[18:59:42 Info]: Sent message: LEFT
+[18:59:43 Info]: Sent message: FORWARD
+[18:59:43 Info]: Sent message: STOP
+[18:59:45 Info]: Sent message: STOP
+[18:59:45 Info]: Sent message: STOP
+[18:59:45 Info]: Sent message: STOP
+[18:59:46 Info]: Sent message: STOP
+[18:59:46 Info]: Sent message: STOP
+[18:59:47 Info]: Sent message: STOP
+[18:59:48 Info]: Sent message: FORWARD
+[18:59:48 Info]: Sent message: STOP
+[18:59:48 Info]: Sent message: STOP
+[18:59:49 Info]: Sent message: STOP
+[18:59:49 Info]: Sent message: FORWARD
+[18:59:50 Info]: Sent message: STOP
+[18:59:50 Info]: Sent message: STOP
+[18:59:51 Info]: Sent message: STOP
+[18:59:51 Info]: Sent message: LEFT
+[18:59:52 Info]: Sent message: STOP
+[18:59:53 Info]: Sent message: RIGHT
+[18:59:53 Info]: Sent message: REVERSE
+[18:59:54 Info]: Sent message: LEFT
+[18:59:54 Info]: Sent message: STOP
+[18:59:54 Info]: Sent message: STOP
+[18:59:55 Info]: Sent message: STOP
+[18:59:55 Info]: Sent message: STOP
+[18:59:56 Info]: Sent message: STOP
+[18:59:56 Info]: Sent message: STOP
+[18:59:56 Info]: Sent message: STOP
+[18:59:57 Info]: Sent message: STOP
+[18:59:57 Info]: Sent message: LEFT
+[18:59:58 Info]: Sent message: STOP
+[18:59:58 Info]: Sent message: STOP
+[18:59:58 Info]: Sent message: STOP
+[18:59:59 Info]: Sent message: RIGHT
+[18:59:59 Info]: Sent message: STOP
+[18:59:59 Info]: Sent message: STOP
+[19:00:00 Info]: Sent message: STOP
+[19:00:07 Info]: Sent message: END
+[19:00:07 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:00:07 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:00:07 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:00:07 Info]: Closing sockets and streams...
+[19:00:07 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:00:07 Info]: Successfully closed sockets and streams
+[19:00:07 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:28:52 PM] +++++++++++++++
+[19:28:55 Info]: Attempting to connect...
+[19:28:55 ~StatusBar~ ]: Attempting to connect...
+[19:28:55 Info]: Connected to: localhost
+[19:28:55 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:28:55 Info]: Streams successfully setup
+[19:28:56 Info]: Sent message: FORWARD
+[19:28:56 Info]: Sent message: LEFT
+[19:29:02 Info]: Sent message: STOP
+[19:29:03 Info]: Sent message: STOP
+[19:29:06 Info]: Sent message: REVERSE
+[19:29:07 Info]: Sent message: STOP
+[19:29:08 Info]: Sent message: RIGHT
+[19:29:08 Info]: Sent message: STOP
+[19:29:09 Info]: Sent message: STOP
+[19:29:09 Info]: Sent message: STOP
++++++++++++++++ Program opened at [Feb/05/14 07:32:30 PM] +++++++++++++++
+[19:32:34 Info]: Attempting to connect...
+[19:32:34 ~StatusBar~ ]: Attempting to connect...
+[19:32:34 Info]: Connected to: localhost
+[19:32:34 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:32:34 Info]: Streams successfully setup
+[19:32:35 Info]: Sent message: FORWARD
+[19:32:37 Info]: Sent message: LEFT
+[19:33:01 Info]: Sent message: STOP
+[19:33:02 Info]: Sent message: REVERSE
+[19:33:02 Info]: Sent message: RIGHT
+[19:33:02 Info]: Sent message: STOP
+[19:33:03 Info]: Sent message: STOP
+[19:33:03 Info]: Sent message: STOP
+[19:33:04 Info]: Sent message: STOP
+[19:33:06 Info]: Sent message: REVERSE
+[19:33:06 Info]: Sent message: LEFT
+[19:33:06 Info]: Sent message: FORWARD
+[19:33:07 Info]: Sent message: RIGHT
+[19:33:07 Info]: Sent message: STOP
+[19:33:08 Info]: Sent message: STOP
+[19:33:08 Info]: Sent message: STOP
+[19:33:10 Info]: Sent message: END
+[19:33:10 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:33:10 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:33:10 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:33:10 Info]: Closing sockets and streams...
+[19:33:10 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:33:10 Info]: Successfully closed sockets and streams
+[19:33:10 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:33:27 PM] +++++++++++++++
+[19:33:31 Info]: Attempting to connect...
+[19:33:31 ~StatusBar~ ]: Attempting to connect...
+[19:33:31 Info]: Connected to: localhost
+[19:33:31 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:33:31 Info]: Streams successfully setup
+[19:33:31 Info]: Sent message: FORWARD
+[19:33:32 Info]: Sent message: LEFT
+[19:33:34 Info]: Sent message: REVERSE
+[19:33:34 Info]: Sent message: RIGHT
+[19:33:37 Info]: Sent message: STOP
+[19:33:38 Info]: Sent message: STOP
+[19:33:38 Info]: Sent message: STOP
+[19:33:39 Info]: Sent message: STOP
+[19:33:39 Info]: Sent message: RIGHT
+[19:33:39 Info]: Sent message: STOP
+[19:33:40 Info]: Sent message: END
+[19:33:40 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:33:40 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:33:40 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:33:40 Info]: Closing sockets and streams...
+[19:33:40 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:33:40 Info]: Successfully closed sockets and streams
+[19:33:40 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:34:13 PM] +++++++++++++++
+[19:34:16 Info]: Attempting to connect...
+[19:34:16 ~StatusBar~ ]: Attempting to connect...
+[19:34:16 Info]: Connected to: localhost
+[19:34:16 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:34:16 Info]: Streams successfully setup
+[19:34:17 Info]: Sent message: STOP
+[19:34:17 Info]: Sent message: FORWARD
+[19:34:18 Info]: Sent message: STOP
+[19:34:18 Info]: Sent message: FORWARD
+[19:34:18 Info]: Sent message: LEFT
+[19:34:19 Info]: Sent message: STOP
+[19:34:19 Info]: Sent message: FORWARD
+[19:34:19 Info]: Sent message: RIGHT
+[19:34:20 Info]: Sent message: END
+[19:34:20 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:34:20 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:34:20 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:34:20 Info]: Closing sockets and streams...
+[19:34:20 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:34:20 Info]: Successfully closed sockets and streams
+[19:34:20 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:34:49 PM] +++++++++++++++
+[19:34:52 Info]: Attempting to connect...
+[19:34:52 ~StatusBar~ ]: Attempting to connect...
+[19:34:52 Info]: Connected to: localhost
+[19:34:52 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:34:52 Info]: Streams successfully setup
+[19:34:52 Info]: Sent message: STOP
+[19:34:52 Info]: Sent message: FORWARD
+[19:34:53 Info]: Sent message: STOP
+[19:34:53 Info]: Sent message: FORWARD
+[19:34:53 Info]: Sent message: LEFT
+[19:34:54 Info]: Sent message: STOP
+[19:34:54 Info]: Sent message: FORWARD
+[19:34:54 Info]: Sent message: RIGHT
+[19:34:54 Info]: Sent message: STOP
+[19:34:54 Info]: Sent message: FORWARD
+[19:34:54 Info]: Sent message: REVERSE
+[19:34:55 Info]: Sent message: STOP
+[19:34:56 Info]: Sent message: STOP
+[19:34:56 Info]: Sent message: END
+[19:34:56 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:34:56 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:34:56 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:34:56 Info]: Closing sockets and streams...
+[19:34:56 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:34:56 Info]: Successfully closed sockets and streams
+[19:34:56 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:35:36 PM] +++++++++++++++
+[19:35:39 Info]: Attempting to connect...
+[19:35:39 ~StatusBar~ ]: Attempting to connect...
+[19:35:39 Info]: Connected to: localhost
+[19:35:39 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:35:39 Info]: Streams successfully setup
+[19:35:40 Info]: Sent message: FORWARD
+[19:35:41 Info]: Sent message: LEFT
+[19:35:41 Info]: Sent message: STOP
+[19:35:42 Info]: Sent message: STOP
++++++++++++++++ Program opened at [Feb/05/14 07:36:26 PM] +++++++++++++++
+[19:36:29 Info]: Attempting to connect...
+[19:36:29 ~StatusBar~ ]: Attempting to connect...
+[19:36:29 Info]: Connected to: localhost
+[19:36:29 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:36:29 Info]: Streams successfully setup
+[19:36:30 Info]: Sent message: FORWARD
+[19:36:33 Info]: Sent message: LEFT
+[19:36:34 Info]: Sent message: REVERSE
+[19:36:34 Info]: Sent message: RIGHT
+[19:36:35 Info]: Sent message: END
+[19:36:35 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:36:35 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:36:35 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:36:35 Info]: Closing sockets and streams...
+[19:36:35 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:36:35 Info]: Successfully closed sockets and streams
+[19:36:35 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:38:33 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/05/14 07:38:46 PM] +++++++++++++++
+[19:38:49 Info]: Attempting to connect...
+[19:38:49 ~StatusBar~ ]: Attempting to connect...
+[19:38:49 Info]: Connected to: localhost
+[19:38:49 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:38:49 Info]: Streams successfully setup
+[19:38:51 Info]: Sent message: FORWARD
+[19:38:52 Info]: Sent message: LEFT
+[19:38:52 Info]: Sent message: RIGHT
++++++++++++++++ Program opened at [Feb/05/14 07:39:33 PM] +++++++++++++++
+[19:39:36 Info]: Attempting to connect...
+[19:39:36 ~StatusBar~ ]: Attempting to connect...
+[19:39:36 Info]: Connected to: localhost
+[19:39:36 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:39:36 Info]: Streams successfully setup
+[19:39:36 Info]: Sent message: FORWARD
+[19:39:39 Info]: Sent message: LEFT
+[19:39:40 Info]: Sent message: REVERSE
+[19:39:40 Info]: Sent message: RIGHT
+[19:39:41 Info]: Sent message: STOP
+[19:39:41 Info]: Sent message: STOP
+[19:39:41 Info]: Sent message: LEFT
+[19:39:42 Info]: Sent message: STOP
+[19:39:42 Info]: Sent message: END
+[19:39:42 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:39:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:39:42 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:39:42 Info]: Closing sockets and streams...
+[19:39:42 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:39:42 Info]: Successfully closed sockets and streams
+[19:39:42 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:41:16 PM] +++++++++++++++
+[19:41:19 Info]: Attempting to connect...
+[19:41:19 ~StatusBar~ ]: Attempting to connect...
+[19:41:19 Info]: Connected to: localhost
+[19:41:19 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:41:19 Info]: Streams successfully setup
+[19:41:20 Info]: Sent message: FORWARD
+[19:41:23 Info]: Sent message: LEFT
+[19:41:23 Info]: Sent message: REVERSE
+[19:41:23 Info]: Sent message: RIGHT
+[19:41:24 Info]: Sent message: STOP
+[19:41:24 Info]: Sent message: STOP
+[19:41:24 Info]: Sent message: STOP
+[19:41:24 Info]: Sent message: REVERSE
+[19:41:25 Info]: Sent message: STOP
+[19:41:25 Info]: Sent message: STOP
+[19:41:25 Info]: Sent message: RIGHT
+[19:41:26 Info]: Sent message: STOP
+[19:41:26 Info]: Sent message: END
+[19:41:26 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:41:26 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:41:26 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:41:26 Info]: Closing sockets and streams...
+[19:41:26 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:41:26 Info]: Successfully closed sockets and streams
+[19:41:26 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:42:05 PM] +++++++++++++++
+[19:42:08 Info]: Attempting to connect...
+[19:42:08 ~StatusBar~ ]: Attempting to connect...
+[19:42:08 Info]: Connected to: localhost
+[19:42:08 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:42:08 Info]: Streams successfully setup
+[19:42:08 Info]: Sent message: FORWARD
+[19:42:10 Info]: Sent message: LEFT
+[19:42:10 Info]: Sent message: RIGHT
++++++++++++++++ Program opened at [Feb/05/14 07:42:51 PM] +++++++++++++++
+[19:42:54 Info]: Attempting to connect...
+[19:42:54 ~StatusBar~ ]: Attempting to connect...
+[19:42:54 Info]: Connected to: localhost
+[19:42:54 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:42:54 Info]: Streams successfully setup
+[19:42:55 Info]: Sent message: FORWARD
+[19:42:56 Info]: Sent message: LEFT
+[19:42:57 Info]: Sent message: STOP
+[19:42:57 Info]: Sent message: STOP
+[19:42:57 Info]: Sent message: RIGHT
+[19:42:58 Info]: Sent message: FORWARD
+[19:42:58 Info]: Sent message: STOP
++++++++++++++++ Program opened at [Feb/05/14 07:44:26 PM] +++++++++++++++
+[19:44:29 Info]: Attempting to connect...
+[19:44:29 ~StatusBar~ ]: Attempting to connect...
+[19:44:29 Info]: Connected to: localhost
+[19:44:29 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:44:29 Info]: Streams successfully setup
+[19:44:30 Info]: Sent message: FORWARD
+[19:44:30 Info]: Sent message: null is the current
+[19:44:30 Info]: Sent message: Left is the current
+[19:44:30 Info]: Sent message: LEFT
+[19:44:32 Info]: Sent message: END
+[19:44:32 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:44:32 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:44:32 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:44:32 Info]: Sent message: Left is the current
+[19:44:32 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[19:44:32 ~StatusBar~ ]: [Error] Failed to send message
+[19:44:32 Info]: Closing sockets and streams...
+[19:44:32 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:44:32 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[19:44:32 ~StatusBar~ ]: [Error] Failed to close sockets and streams
++++++++++++++++ Program opened at [Feb/05/14 07:46:34 PM] +++++++++++++++
+[19:46:38 Info]: Attempting to connect...
+[19:46:38 ~StatusBar~ ]: Attempting to connect...
+[19:46:38 Info]: Connected to: localhost
+[19:46:38 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:46:38 Info]: Streams successfully setup
+[19:46:41 Info]: Sent message: FORWARD
++++++++++++++++ Program opened at [Feb/05/14 07:48:26 PM] +++++++++++++++
+[19:48:29 Info]: Attempting to connect...
+[19:48:29 ~StatusBar~ ]: Attempting to connect...
+[19:48:29 Info]: Connected to: localhost
+[19:48:29 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:48:29 Info]: Streams successfully setup
+[19:48:30 Info]: Sent message: FORWARD
+[19:48:30 Info]: Sent message: STOP
+[19:48:30 Info]: Sent message: LEFT
+[19:48:37 Info]: Sent message: STOP
+[19:48:37 Info]: Sent message: REVERSE
+[19:48:38 Info]: Sent message: STOP
+[19:48:38 Info]: Sent message: RIGHT
+[19:48:39 Info]: Sent message: STOP
+[19:48:40 Info]: Sent message: FORWARD
+[19:48:41 Info]: Sent message: STOP
+[19:48:41 Info]: Sent message: LEFT
+[19:48:41 Info]: Sent message: STOP
+[19:48:42 Info]: Sent message: REVERSE
+[19:48:42 Info]: Sent message: STOP
+[19:48:43 Info]: Sent message: RIGHT
+[19:48:43 Info]: Sent message: STOP
+[19:48:45 Info]: Sent message: FORWARD
+[19:48:46 Info]: Sent message: STOP
+[19:48:46 Info]: Sent message: LEFT
+[19:48:46 Info]: Sent message: STOP
+[19:48:47 Info]: Sent message: REVERSE
++++++++++++++++ Program opened at [Feb/05/14 07:49:05 PM] +++++++++++++++
+[19:49:09 Info]: Attempting to connect...
+[19:49:09 ~StatusBar~ ]: Attempting to connect...
+[19:49:09 Info]: Connected to: localhost
+[19:49:09 ~StatusBar~ ]: [Connected] Connected to: localhost
+[19:49:09 Info]: Streams successfully setup
+[19:49:09 Info]: Sent message: FORWARD
+[19:49:10 Info]: Sent message: STOP
+[19:49:10 Info]: Sent message: LEFT
+[19:49:10 Info]: Sent message: STOP
+[19:49:10 Info]: Sent message: REVERSE
+[19:49:10 Info]: Sent message: STOP
+[19:49:11 Info]: Sent message: RIGHT
+[19:49:11 Info]: Sent message: STOP
+[19:49:11 Info]: Sent message: FORWARD
+[19:49:11 Info]: Sent message: STOP
+[19:49:11 Info]: Sent message: LEFT
+[19:49:11 Info]: Sent message: STOP
+[19:49:12 Info]: Sent message: REVERSE
+[19:49:12 Info]: Sent message: STOP
+[19:49:12 Info]: Sent message: RIGHT
+[19:49:12 Info]: Sent message: STOP
+[19:49:12 Info]: Sent message: FORWARD
+[19:49:12 Info]: Sent message: STOP
+[19:49:13 Info]: Sent message: LEFT
+[19:49:13 Info]: Sent message: STOP
+[19:49:13 Info]: Sent message: REVERSE
+[19:49:15 Info]: Sent message: STOP
+[19:49:16 Info]: Sent message: LEFT
+[19:49:16 Info]: Sent message: STOP
+[19:49:16 Info]: Sent message: FORWARD
+[19:49:17 Info]: Sent message: STOP
+[19:49:17 Info]: Sent message: RIGHT
+[19:49:17 Info]: Sent message: STOP
+[19:49:17 Info]: Sent message: FORWARD
+[19:49:18 Info]: Sent message: STOP
+[19:49:18 Info]: Sent message: REVERSE
+[19:49:18 Info]: Sent message: STOP
+[19:49:18 Info]: Sent message: LEFT
+[19:49:18 Info]: Sent message: STOP
+[19:49:18 Info]: Sent message: FORWARD
+[19:49:20 Info]: Sent message: STOP
+[19:49:21 Info]: Sent message: END
+[19:49:21 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[19:49:21 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[19:49:21 ~StatusBar~ ]: [Disconnected] Disconnected from: localhost
+[19:49:21 Info]: Closing sockets and streams...
+[19:49:21 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[19:49:21 Info]: Successfully closed sockets and streams
+[19:49:21 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/06/14 03:32:58 PM] +++++++++++++++
+[15:33:18 Info]: Attempting to connect...
+[15:33:18 ~StatusBar~ ]: Attempting to connect...
+[15:33:18 Info]: Connected to: localhost
+[15:33:18 ~StatusBar~ ]: [Connected] Connected to: localhost
+[15:33:18 Error]: Failed to setup TCP streams!
+[15:33:18 ~StatusBar~ ]: [Error] Failed to setup TCP streams!
++++++++++++++++ Program opened at [Feb/06/14 03:34:05 PM] +++++++++++++++
+[15:34:16 Info]: Attempting to connect...
+[15:34:16 ~StatusBar~ ]: Attempting to connect...
+[15:34:16 Info]: Connected to: localhost
+[15:34:16 ~StatusBar~ ]: [Connected] Connected to: localhost
+[15:34:16 Error]: Failed to setup TCP streams!
+[15:34:16 ~StatusBar~ ]: [Error] Failed to setup TCP streams!
+[15:47:11 Info]: Sent message: END
+[15:47:11 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[15:47:13 Info]: Attempting to connect...
+[15:47:13 ~StatusBar~ ]: Attempting to connect...
+[15:47:13 Info]: Connected to: localhost
+[15:47:13 ~StatusBar~ ]: [Connected] Connected to: localhost
+[15:47:13 Error]: Failed to setup TCP streams!
+[15:47:13 ~StatusBar~ ]: [Error] Failed to setup TCP streams!
++++++++++++++++ Program opened at [Feb/06/14 03:50:10 PM] +++++++++++++++
+[15:50:22 Info]: Attempting to connect...
+[15:50:22 ~StatusBar~ ]: Attempting to connect...
+[15:50:22 Info]: Connected to: localhost
+[15:50:22 ~StatusBar~ ]: [Connected] Connected to: localhost
+[15:50:22 Error]: Failed to setup TCP streams!
+[15:50:22 ~StatusBar~ ]: [Error] Failed to setup TCP streams!
+[15:50:37 Info]: Sent message: LEFT
+[15:50:38 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:38 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:38 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:38 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:38 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:38 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:38 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:38 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:39 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:39 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:39 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:39 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:40 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:40 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:40 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:40 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:41 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[15:50:41 ~StatusBar~ ]: [Error] Failed to send message
+[15:50:41 ~StatusBar~ ]: [Disconnected] Server Disconnected
++++++++++++++++ Program opened at [Feb/06/14 03:57:43 PM] +++++++++++++++
+[15:57:51 Info]: Attempting to connect...
+[15:57:51 ~StatusBar~ ]: Attempting to connect...
+[15:57:51 Info]: Connected to: localhost
+[15:57:51 ~StatusBar~ ]: [Connected] Connected to: localhost
+[15:57:54 Info]: Sent message: FORWARD
+[15:57:54 Info]: Sent message: STOP
+[15:57:55 Info]: Sent message: LEFT
+[15:57:56 Info]: Sent message: STOP
+[15:57:56 Info]: Sent message: REVERSE
+[15:57:57 Info]: Sent message: STOP
+[15:57:57 Info]: Sent message: RIGHT
+[15:57:58 Info]: Sent message: STOP
+[15:57:59 Info]: Sent message: END
+[15:57:59 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[15:57:59 Error]: Failed to setup TCP streams!
+[15:57:59 ~StatusBar~ ]: [Error] Failed to setup TCP streams!
+[16:03:27 Info]: Attempting to connect...
+[16:03:27 ~StatusBar~ ]: Attempting to connect...
+[16:03:27 Info]: Connected to: localhost
+[16:03:27 ~StatusBar~ ]: [Connected] Connected to: localhost
+[16:03:27 Error]: Failed to setup TCP streams!
+[16:03:27 ~StatusBar~ ]: [Error] Failed to setup TCP streams!
+[16:05:03 Info]: Sent message: END
+[16:05:03 ~StatusBar~ ]: [Disconnected] Server Disconnected
++++++++++++++++ Program opened at [Feb/06/14 04:09:13 PM] +++++++++++++++
+[16:09:21 Info]: Attempting to connect...
+[16:09:21 ~StatusBar~ ]: Attempting to connect...
+[16:09:21 Info]: Connected to: localhost
+[16:09:21 ~StatusBar~ ]: [Connected] Connected to: localhost
+[16:09:21 Info]: Streams successfully setup
+[16:09:23 Info]: Sent message: FORWARD
+[16:09:24 Info]: Sent message: STOP
+[16:09:24 Info]: Sent message: REVERSE
+[16:09:25 Info]: Sent message: END
+[16:09:25 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[16:09:25 Info]: SERVER: END
+[16:09:25 ~StatusBar~ ]: [Connected] SERVER: END
+[16:09:25 Info]: Sent message: STOP
+[16:09:25 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[16:09:25 ~StatusBar~ ]: [Error] Failed to send message
+[16:09:25 Info]: Closing sockets and streams...
+[16:09:25 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[16:09:25 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[16:09:25 ~StatusBar~ ]: [Error] Failed to close sockets and streams
+[16:10:00 Info]: Attempting to connect...
+[16:10:00 ~StatusBar~ ]: Attempting to connect...
+[16:10:00 Info]: Connected to: localhost
+[16:10:00 ~StatusBar~ ]: [Connected] Connected to: localhost
+[16:10:00 Info]: Streams successfully setup
+[16:10:01 Info]: Sent message: STOP
+[16:10:01 Info]: Sent message: REVERSE
+[16:10:02 Info]: Sent message: STOP
+[16:10:03 Info]: Sent message: LEFT
+[16:10:03 Info]: Sent message: END
+[16:10:03 Info]: SERVER: END
+[16:10:03 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[16:10:03 ~StatusBar~ ]: [Connected] SERVER: END
+[16:10:03 Info]: Sent message: STOP
+[16:10:03 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[16:10:03 ~StatusBar~ ]: [Error] Failed to send message
+[16:10:03 Info]: Closing sockets and streams...
+[16:10:03 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[16:10:03 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[16:10:03 ~StatusBar~ ]: [Error] Failed to close sockets and streams
++++++++++++++++ Program opened at [Feb/06/14 04:11:37 PM] +++++++++++++++
+[16:11:39 Info]: Attempting to connect...
+[16:11:39 ~StatusBar~ ]: Attempting to connect...
+[16:11:39 Info]: Connected to: localhost
+[16:11:39 ~StatusBar~ ]: [Connected] Connected to: localhost
+[16:11:39 Info]: Streams successfully setup
+[16:11:42 Info]: Sent message: END
+[16:11:42 Info]: SERVER: END
+[16:11:42 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[16:11:42 ~StatusBar~ ]: [Connected] SERVER: END
+[16:11:42 Info]: Closing sockets and streams...
+[16:11:42 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[16:11:42 ~StatusBar~ ]: out
+[16:11:42 ~StatusBar~ ]: in
+[16:11:42 Info]: Successfully closed sockets and streams
+[16:11:42 ~StatusBar~ ]: [Disconnected] Successfully closed sockets and streams
+[16:11:46 Error]: Host IP field can not be empty!
+[16:11:46 Info]: Entered address ( : )
+[16:11:46 ~StatusBar~ ]: [Error] Host IP field cannot be empty!
+[16:11:46 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[16:11:46 ~StatusBar~ ]: [Error] Failed to send message
+[16:11:46 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[16:11:47 Error]: Host IP field can not be empty!
+[16:11:47 Info]: Entered address ( : )
+[16:11:47 ~StatusBar~ ]: [Error] Host IP field cannot be empty!
+[16:11:47 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[16:11:47 ~StatusBar~ ]: [Error] Failed to send message
+[16:11:47 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[16:11:49 Info]: Attempting to connect...
+[16:11:49 ~StatusBar~ ]: Attempting to connect...
+[16:11:49 Info]: Connected to: localhost
+[16:11:49 ~StatusBar~ ]: [Connected] Connected to: localhost
+[16:11:49 Info]: Streams successfully setup
+[16:11:51 Info]: Sent message: FORWARD
+[16:11:51 Info]: Sent message: STOP
+[16:11:51 Info]: Sent message: LEFT
+[16:11:52 Info]: Sent message: END
+[16:11:52 Info]: SERVER: END
+[16:11:52 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[16:11:52 ~StatusBar~ ]: [Connected] SERVER: END
+[16:11:52 Info]: Sent message: STOP
+[16:11:52 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[16:11:52 ~StatusBar~ ]: [Error] Failed to send message
+[16:11:52 Info]: Closing sockets and streams...
+[16:11:52 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[16:11:52 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[16:11:52 ~StatusBar~ ]: [Error] Failed to close sockets and streams
++++++++++++++++ Program opened at [Feb/06/14 04:13:08 PM] +++++++++++++++
+[16:13:11 Info]: Attempting to connect...
+[16:13:11 ~StatusBar~ ]: Attempting to connect...
+[16:13:11 Info]: Connected to: localhost
+[16:13:11 ~StatusBar~ ]: [Connected] Connected to: localhost
+[16:13:11 Info]: Streams successfully setup
+[16:13:12 Info]: Sent message: FORWARD
+[16:13:12 Info]: Sent message: STOP
+[16:13:12 Info]: Sent message: LEFT
+[16:13:12 Info]: Sent message: STOP
+[16:13:13 Info]: Sent message: REVERSE
+[16:13:13 Info]: Sent message: END
+[16:13:13 Info]: SERVER: END
+[16:13:13 ~StatusBar~ ]: [Disconnected] Server Disconnected
+[16:13:13 ~StatusBar~ ]: [Connected] SERVER: END
+[16:13:13 Info]: Sent message: STOP
+[16:13:13 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[16:13:13 ~StatusBar~ ]: [Error] Failed to send message
+[16:13:13 Info]: Closing sockets and streams...
+[16:13:13 ~StatusBar~ ]: [Pending] Closing sockets and streams...
+[16:13:13 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[16:13:13 ~StatusBar~ ]: [Error] Failed to close sockets and streams
++++++++++++++++ Program opened at [Feb/06/14 04:15:12 PM] +++++++++++++++
+[16:15:14 Info]: Attempting to connect...
+[16:15:14 Status]: Attempting to connect...
+[16:15:14 Info]: Connected to: localhost
+[16:15:14 Status]: [Connected] Connected to: localhost
+[16:15:14 Info]: Streams successfully setup
+[16:15:15 Info]: Sent message: FORWARD
+[16:15:15 Info]: Sent message: STOP
+[16:15:15 Info]: Sent message: LEFT
+[16:15:16 Info]: Sent message: STOP
+[16:15:17 Info]: Sent message: END
+[16:15:17 Info]: SERVER: END
+[16:15:17 Status]: [Disconnected] Server Disconnected
+[16:15:17 Status]: [Connected] SERVER: END
+[16:15:17 Info]: Closing sockets and streams...
+[16:15:17 Status]: [Pending] Closing sockets and streams...
+[16:15:17 Status]: in
+[16:15:17 Status]: out
+[16:15:17 Info]: Successfully closed sockets and streams
+[16:15:17 Status]: [Disconnected] Successfully closed sockets and streams
+[16:15:30 Info]: Attempting to connect...
+[16:15:30 Status]: Attempting to connect...
+[16:15:30 Info]: Connected to: localhost
+[16:15:30 Status]: [Connected] Connected to: localhost
+[16:15:30 Info]: Streams successfully setup
+[16:15:30 Info]: Sent message: FORWARD
+[16:15:31 Info]: Sent message: STOP
+[16:15:31 Info]: Sent message: LEFT
+[16:15:31 Info]: Sent message: STOP
+[16:15:31 Info]: Sent message: REVERSE
+[16:15:32 Info]: Sent message: STOP
+[16:15:32 Info]: Sent message: RIGHT
+[16:15:33 Info]: Sent message: STOP
+[16:15:33 Info]: Sent message: FORWARD
+[16:15:33 Info]: Sent message: STOP
+[16:15:33 Info]: Sent message: REVERSE
+[16:15:34 Info]: Sent message: STOP
+[16:15:34 Info]: Sent message: LEFT
+[16:15:34 Info]: Sent message: STOP
+[16:15:35 Info]: Sent message: FORWARD
+[16:15:35 Info]: Sent message: STOP
+[16:15:35 Info]: Sent message: REVERSE
+[16:15:35 Info]: Sent message: STOP
+[16:15:35 Info]: Sent message: RIGHT
+[16:15:35 Info]: Sent message: STOP
+[16:15:36 Info]: Sent message: RIGHT
+[16:15:36 Info]: Sent message: STOP
+[16:15:36 Info]: Sent message: REVERSE
+[16:15:37 Info]: Sent message: STOP
+[16:15:37 Info]: Sent message: LEFT
+[16:15:37 Info]: Sent message: STOP
+[16:15:37 Info]: Sent message: FORWARD
+[16:15:38 Info]: Sent message: STOP
+[16:15:38 Info]: Sent message: REVERSE
+[16:15:39 Info]: Sent message: STOP
+[16:15:39 Info]: Sent message: RIGHT
+[16:15:39 Info]: Sent message: STOP
+[16:15:39 Info]: Sent message: FORWARD
+[16:15:40 Info]: Sent message: STOP
+[16:15:40 Info]: Sent message: REVERSE
+[16:15:40 Info]: Sent message: STOP
+[16:15:40 Info]: Sent message: RIGHT
+[16:15:42 Info]: Sent message: STOP
+[16:15:43 Info]: Sent message: END
+[16:15:43 Info]: SERVER: END
+[16:15:43 Status]: [Disconnected] Server Disconnected
+[16:15:43 Status]: [Connected] SERVER: END
+[16:15:43 Info]: Closing sockets and streams...
+[16:15:43 Status]: [Pending] Closing sockets and streams...
+[16:15:43 Status]: in
+[16:15:43 Status]: out
+[16:15:43 Info]: Successfully closed sockets and streams
+[16:15:43 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/06/14 05:44:36 PM] +++++++++++++++
+[17:44:40 Info]: Attempting to connect...
+[17:44:40 Status]: Attempting to connect...
+[17:44:40 Info]: Connected to: localhost
+[17:44:40 Status]: [Connected] Connected to: localhost
+[17:44:40 Error]: Failed to setup TCP streams!
+[17:44:40 Status]: [Error] Failed to setup TCP streams!
++++++++++++++++ Program opened at [Feb/06/14 05:53:45 PM] +++++++++++++++
+[17:53:56 Info]: Attempting to connect...
+[17:53:56 Status]: Attempting to connect...
+[17:53:56 Info]: Connected to: localhost
+[17:53:56 Status]: [Connected] Connected to: localhost
+[17:53:56 Info]: Streams successfully setup
+[17:53:57 Info]: Sent message: FORWARD
+[17:53:58 Info]: Sent message: STOP
+[17:53:58 Info]: Sent message: LEFT
+[17:53:59 Info]: Sent message: STOP
+[17:53:59 Info]: Sent message: REVERSE
+[17:53:59 Info]: Sent message: STOP
+[17:53:59 Info]: Sent message: RIGHT
+[17:54:00 Info]: Sent message: STOP
+[17:54:00 Info]: Sent message: FORWARD
+[17:54:00 Info]: Sent message: STOP
+[17:54:01 Info]: Sent message: END
+[17:54:01 Status]: [Disconnected] Server Disconnected
+[17:54:01 Info]: SERVER: END
+[17:54:01 Status]: [Connected] SERVER: END
+[17:54:01 Info]: Closing sockets and streams...
+[17:54:01 Status]: [Pending] Closing sockets and streams...
+[17:54:01 Status]: in
+[17:54:01 Status]: out
+[17:54:01 Info]: Successfully closed sockets and streams
+[17:54:01 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/06/14 06:01:03 PM] +++++++++++++++
+[18:01:07 Info]: Attempting to connect...
+[18:01:07 Status]: Attempting to connect...
+[18:01:07 Info]: Connected to: localhost
+[18:01:07 Status]: [Connected] Connected to: localhost
+[18:01:11 Info]: Sent message: FORWARD
+[18:01:12 Info]: Sent message: STOP
+[18:01:12 Info]: Sent message: LEFT
+[18:01:12 Info]: Sent message: STOP
+[18:01:12 Info]: Sent message: REVERSE
+[18:01:12 Info]: Sent message: STOP
+[18:01:13 Info]: Sent message: RIGHT
+[18:01:13 Info]: Sent message: STOP
+[18:01:13 Info]: Sent message: FORWARD
+[18:01:13 Info]: Sent message: STOP
+[18:01:13 Info]: Sent message: LEFT
+[18:01:13 Info]: Sent message: STOP
+[18:01:14 Info]: Sent message: REVERSE
+[18:01:14 Info]: Sent message: STOP
+[18:01:14 Info]: Sent message: RIGHT
+[18:01:14 Info]: Sent message: STOP
+[18:01:14 Info]: Sent message: FORWARD
+[18:01:15 Info]: Sent message: STOP
+[18:01:15 Info]: Sent message: RIGHT
+[18:01:15 Info]: Sent message: STOP
+[18:01:15 Info]: Sent message: REVERSE
+[18:01:15 Info]: Sent message: STOP
+[18:01:15 Info]: Sent message: LEFT
+[18:01:16 Info]: Sent message: STOP
+[18:01:16 Info]: Sent message: FORWARD
+[18:01:16 Info]: Sent message: STOP
+[18:01:16 Info]: Sent message: REVERSE
+[18:01:17 Info]: Sent message: STOP
+[18:01:18 Info]: Sent message: END
+[18:01:18 Status]: [Disconnected] Server Disconnected
++++++++++++++++ Program opened at [Feb/06/14 06:21:49 PM] +++++++++++++++
+[18:21:59 Info]: Attempting to connect...
+[18:21:59 Status]: Attempting to connect...
+[18:21:59 Info]: Connected to: localhost
+[18:21:59 Status]: [Connected] Connected to: localhost
+[18:21:59 Info]: Streams successfully setup
+[18:22:01 Info]: Sent message: FORWARD
+[18:22:01 Info]: Sent message: STOP
+[18:22:01 Info]: Sent message: LEFT
+[18:22:02 Info]: Sent message: STOP
+[18:22:02 Info]: Sent message: REVERSE
+[18:22:02 Info]: Sent message: STOP
+[18:22:02 Info]: Sent message: RIGHT
+[18:22:03 Info]: Sent message: END
+[18:22:03 Status]: [Disconnected] Server Disconnected
+[18:22:03 Info]: SERVER: END
+[18:22:03 Status]: [Connected] SERVER: END
+[18:22:03 Info]: Sent message: STOP
+[18:22:04 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[18:22:04 Status]: [Error] Failed to send message
+[18:22:04 Info]: Closing sockets and streams...
+[18:22:04 Status]: [Pending] Closing sockets and streams...
+[18:22:04 Status]: in
+[18:22:04 Status]: out
+[18:22:04 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[18:22:04 Status]: [Error] Failed to close sockets and streams
