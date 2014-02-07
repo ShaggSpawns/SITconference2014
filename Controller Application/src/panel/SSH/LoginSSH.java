@@ -25,10 +25,6 @@ import javax.swing.JToggleButton;
 import controllerApplication.FileLogins;
 import controllerApplication.LoadLogins;
 
-/**
- * Creates the Login SSH panel for the SSH tab
- * @author Jackson Wilson (c) 2014
- */
 public class LoginSSH extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
@@ -44,11 +40,7 @@ public class LoginSSH extends JPanel {
 	public static JButton saveBtn;
 	public static JComboBox<String> loadComboBox;
 	private String address;
-	private int fillLine = 0;
 	
-	/**
-	 * Creates the Login SSH panel for the SSH tab
-	 */
 	public LoginSSH() {
 		setBorder(BorderFactory.createTitledBorder("SSH Login"));
 		setLayout(new GridBagLayout());
@@ -84,7 +76,7 @@ public class LoginSSH extends JPanel {
 		gc.gridy = 3;
 		add(saveBtn, gc);
 		
-		hostIPF = new JTextField("");
+		hostIPF = new JTextField("localhost");
 		hostIPF.setToolTipText("Host IP");
 		gc.anchor = GridBagConstraints.WEST;
 		gc.fill = GridBagConstraints.HORIZONTAL;
@@ -107,14 +99,14 @@ public class LoginSSH extends JPanel {
 		gc.gridx = 3;
 		add(hostPortF, gc);
 		
-		usernameF = new JTextField("");
+		usernameF = new JTextField("jacksonwilson");
 		gc.insets = new Insets(0,0,0,0);
 		gc.ipadx = 170;
 		gc.gridx = 1;
 		gc.gridy = 1;
 		add(usernameF, gc);
 		
-		passwordF = new JPasswordField("");
+		passwordF = new JPasswordField("peace1");
 		passwordF.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				connectBtn.doClick();
@@ -177,7 +169,7 @@ public class LoginSSH extends JPanel {
 				} else {
 					connectedGUIstate(false);
 					LoadLogins.addLogins(false);
-					ConnectionSSH.closeConnection();
+					ConnectionSSH.cleanUp();
 				}
 			}
 		});
@@ -191,17 +183,59 @@ public class LoginSSH extends JPanel {
 		add(connectBtn, gc);
 		
 		final String[] hostSaves = {"---------- Load Save ----------"};
-		loadComboBox = new JComboBox<String>(hostSaves);
+		loadComboBox = new JComboBox<>(hostSaves);
 		LoadLogins.addLogins(false);
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				fillLine = loadComboBox.getSelectedIndex();
+				final int temp = loadComboBox.getSelectedIndex();
 				
-				if (fillLine == 0) {
+				if (temp == 0) {
 					emptyFields();
 				} else {
-					fillFields(fillLine);
+					fillFields(temp);
 				}
+			}
+
+			private void fillFields(final int line) {
+				try {
+					final FileInputStream fs = new FileInputStream(FileLogins.loginSSH.getAbsoluteFile());
+					@SuppressWarnings("resource")
+					final
+					BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+					
+					for (int i = 1; i < line; ++i) {
+						br.readLine();
+					}
+					
+					final String entry = br.readLine();
+					final String[] ar1 = entry.split("@");
+					final String[] ar2 = ar1[1].split(":");
+					
+					final String host = ar2[0];
+					final String port = ar2[1];
+					final String user = ar1[0];
+					
+					hostIPF.setText(host);;
+					hostPortF.setText(port);
+					usernameF.setText(user);
+					passwordF.setText("");
+				} catch (final ArrayIndexOutOfBoundsException e) {
+					System.out.println("ArrayIndexOutOfBoundsException 'fillFields'");
+				} catch (final FileNotFoundException e) {
+					System.out.println("FileNotFoundException 'fillFields'");
+				} catch (final IOException e) {
+					System.out.println("IOException 'fillFields'");
+				} catch (final NullPointerException e) {
+					System.out.println("NullPointerException 'fillFields'");
+					e.printStackTrace();
+				}
+			}
+
+			private void emptyFields() {
+				hostIPF.setText("");;
+				hostPortF.setText("");
+				usernameF.setText("");
+				passwordF.setText("");
 			}
 		});
 		gc.fill = GridBagConstraints.HORIZONTAL;
@@ -213,61 +247,8 @@ public class LoginSSH extends JPanel {
 		add(loadComboBox, gc);
 	}
 	
-	/**
-	 * Auto-fills SSH login fields with the stored entries
-	 * @param line
-	 */
-	private void fillFields(final int line) {
-		try {
-			final FileInputStream fs = new FileInputStream(FileLogins.loginSSH.getAbsoluteFile());
-			@SuppressWarnings("resource")
-			final
-			BufferedReader br = new BufferedReader(new InputStreamReader(fs));
-			
-			for (int i = 1; i < line; ++i) {
-				br.readLine();
-			}
-			
-			final String entry = br.readLine();
-			final String[] ar1 = entry.split("@");
-			final String[] ar2 = ar1[1].split(":");
-			
-			final String host = ar2[0];
-			final String port = ar2[1];
-			final String user = ar1[0];
-			
-			hostIPF.setText(host);;
-			hostPortF.setText(port);
-			usernameF.setText(user);
-			passwordF.setText("");
-		} catch (final ArrayIndexOutOfBoundsException e) {
-			System.out.println("ArrayIndexOutOfBoundsException 'fillFields'");
-		} catch (final FileNotFoundException e) {
-			System.out.println("FileNotFoundException 'fillFields'");
-		} catch (final IOException e) {
-			System.out.println("IOException 'fillFields'");
-		} catch (final NullPointerException e) {
-			System.out.println("NullPointerException 'fillFields'");
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Empties the SSH login fields
-	 */
-	private void emptyFields() {
-		hostIPF.setText("");;
-		hostPortF.setText("");
-		usernameF.setText("");
-		passwordF.setText("");
-	}
-	
-	/**
-	 * Changes the availability of the components on the SSH tab, defined by the state parameter
-	 * @param state
-	 */
-	public static void connectedGUIstate(final boolean state) {
-		if (state == true) {
+	public static void connectedGUIstate(final boolean s) {
+		if (s == true) {
 			hostIPF.setEditable(false);
 			hostIPF.setFocusable(false);
 			hostPortF.setEditable(false);

@@ -15,10 +15,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-/**
- * Creates the SSH console panel for the SSH tab
- * @author Jackson Wilson (c) 2014
- */
 public class ConsoleSSH extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
@@ -28,9 +24,6 @@ public class ConsoleSSH extends JPanel {
 	public static ByteArrayInputStream UserInputStream;
 	public static ByteArrayOutputStream SystemOutputStream;
 	
-	/**
-	 * Initializes the SSH console area for the SSH tab
-	 */
 	public ConsoleSSH() {
 		setBorder(BorderFactory.createTitledBorder("SSH Console"));
 		setLayout(new GridBagLayout());
@@ -59,6 +52,8 @@ public class ConsoleSSH extends JPanel {
 				} finally {
 					consoleInput.setText("");
 				}
+				
+				
 			}
 		});
 		gc.anchor = GridBagConstraints.SOUTH;

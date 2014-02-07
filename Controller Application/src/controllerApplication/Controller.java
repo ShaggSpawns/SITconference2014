@@ -1,50 +1,42 @@
 package controllerApplication;
 
 import java.awt.Dimension;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.swing.JApplet;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
-import messageManager.Log;
 import panel.About.PanelAbout;
 import panel.SSH.PanelSSH;
 import panel.TCP.PanelTCP;
 
 /**
  * Main class that calls to create a frame and runs it on a new thread.
- * @author Jackson Wilson (c) 2014
+ * @author Jackson Wilson
+ * @since 2014
  */
 public class Controller extends JApplet implements Runnable {
-	private static final long serialVersionUID = 1L;
-	private static boolean firstLogMessage = true;
+	private static final long serialVersionUID = 1L; // Version identifier
 	
 	/**
 	 * Initialize JApplet
-	 * Adds:
-	 * -PanelTCP "controlTab"
-	 * -PanelSSH "consoleTab"
-	 * -PanelAbout "aboutTab"
-	 * to the JTabbedPane "tabbedPane"
 	 */
 	public void init() {
-		final JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.setFocusable(false);
+		final JTabbedPane tabbedPane = new JTabbedPane(); // Initializes a new JTabbedPane named tabbedPane
+        tabbedPane.setFocusable(false); // Sets tabbedPane to non-highlight-able
         
-        final PanelTCP controlTab = new PanelTCP();
-        tabbedPane.addTab("Controller", controlTab);
+        final PanelTCP controlTab = new PanelTCP(); // Initializes a new tab from the panel PanelController and names it controlTab
+        tabbedPane.addTab("Controller", controlTab); // Adds controlTab to tabbedPane
          
-        final PanelSSH consoleTab = new PanelSSH();
-        tabbedPane.addTab("SSH / Console", consoleTab);
+        final PanelSSH consoleTab = new PanelSSH(); // Initializes a new tab from the panel PanelConsole and names it consoleTab
+        tabbedPane.addTab("Console", consoleTab); // Adds consoleTab to tabbedPane
         
-        final PanelAbout aboutTab = new PanelAbout();
-        tabbedPane.addTab("About", aboutTab);
+        final PanelAbout extraTab = new PanelAbout(); // Initializes a new tab from the panel PanelExtras and names it extraTab
+        tabbedPane.addTab("Extras", extraTab); // Adds extraTab to tabbedPane
         
-        add(tabbedPane);
+        add(tabbedPane); // Adds tabbedPane to the frame
         
-        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT); // Enables to use scrolling tabs
 	}
 	
 	/**
@@ -72,40 +64,19 @@ public class Controller extends JApplet implements Runnable {
 	 * Runs the application by calling run() in a new thread
 	 * @param args
 	 */
-	public static void main(final String[] args) {
-		(new Thread(new Controller())).start();
-		createOpenLog();
+	public static void main(final String[] args) { // Main
+		(new Thread(new Controller())).start(); // Starts new thread
 	}
 	
 	/**
-	 * Calls to create a new MainFrame and sets the properties of the new frame
+	 * Calls to create a new JFrame from MainFrame and sets the attributes of the new frame
 	 */
 	public void run() {
-		final JFrame frame = new MainFrame("Arduino Motor Program");
-		frame.setMinimumSize(new Dimension(520, 750));
-		frame.setResizable(true);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-	}
-	
-	/**
-	 * Creates a new log to mark the launch of the program 
-	 */
-	private static void createOpenLog() {
-		final Date today = new Date();
-		final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMM/dd/yy hh:mm:ss a");
-
-		final String time = DATE_FORMAT.format(today);
-		
-		new Log("+++++++++++++++ Program opened at [" + time + "] +++++++++++++++");
-	}
-	
-	public static boolean isFirstLogMessage() {
-		return firstLogMessage;
-	}
-
-	public static void setFirstLogMessage(final boolean firstLogMessage) {
-		Controller.firstLogMessage = firstLogMessage;
+		final JFrame frame = new MainFrame("Arduino Motor Program"); // Calls MainFrame with title parameter
+		frame.setMinimumSize(new Dimension(520, 750)); // Sets frame's dimensions
+		frame.setResizable(false); // Disables frame resizing
+		frame.setLocationRelativeTo(null); // Place Frame in Middle of Screen
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Set Default Close
+		frame.setVisible(true); // Set Visible
 	}
 }

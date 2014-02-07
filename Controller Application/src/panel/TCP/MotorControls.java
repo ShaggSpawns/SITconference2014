@@ -14,10 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
-/**
- * Create the MotorContorls panel for the Controller tab
- * @author Jackson Wilson (c) 2014
- */
 public class MotorControls extends JPanel {
 	private static final long serialVersionUID = 1L;
 
@@ -27,12 +23,9 @@ public class MotorControls extends JPanel {
 	private static JToggleButton leftBtn;
 	private static JButton stopBtn;
 	public static JTextField sBar;
-	public static boolean otherBtnToggled = false;
-	private static String currentBtnPressed;
+	private boolean otherBtnToggled = false;
+	private int currentBtn;
 	
-	/**
-	 * Initializes the controls for the Controller tab
-	 */
 	public MotorControls() {
 		setBorder(BorderFactory.createTitledBorder("Motor Controls"));
 		setLayout(new GridBagLayout());
@@ -43,10 +36,17 @@ public class MotorControls extends JPanel {
 		forwardBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
-					buttonToggled("Forward");
+					if (isOtherBtnToggled()) {
+						changeBtnToggled();
+						sendCommand("FORWARD");
+						setOtherBtnToggled(true, 1);
+					} else {
+						setOtherBtnToggled(true, 1);
+						sendCommand("FORWARD");
+					}
 				} else {
-					otherBtnToggled = false;
-					ConnectionTCP.sendMessage("STOP");
+					setOtherBtnToggled(false, 1);
+					stopBtn.doClick();
 				}
 			}
 		});
@@ -54,7 +54,7 @@ public class MotorControls extends JPanel {
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.insets = new Insets(2,0,0,2);
 		gc.ipadx = 55;
-		gc.ipady = 125;
+		gc.ipady = 140;
 		gc.gridwidth = 3;
 		gc.gridx = 0;
 		gc.gridy = 0;
@@ -65,10 +65,17 @@ public class MotorControls extends JPanel {
 		reverseBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
-					buttonToggled("Reverse");
+					if (isOtherBtnToggled()) {
+						changeBtnToggled();
+						sendCommand("REVERSE");
+						setOtherBtnToggled(true, 2);
+					} else {
+						setOtherBtnToggled(true, 2);
+						sendCommand("REVERSE");
+					}
 				} else {
-					otherBtnToggled = false;
-					ConnectionTCP.sendMessage("STOP");
+					setOtherBtnToggled(false, 2);
+					stopBtn.doClick();
 				}
 			}
 		});
@@ -82,10 +89,17 @@ public class MotorControls extends JPanel {
 		rightBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
-					buttonToggled("Right");
+					if (isOtherBtnToggled()) {
+						changeBtnToggled();
+						sendCommand("RIGHT");
+						setOtherBtnToggled(true, 3);
+					} else {
+						setOtherBtnToggled(true, 3);
+						sendCommand("RIGHT");
+					}
 				} else {
-					otherBtnToggled = false;
-					ConnectionTCP.sendMessage("STOP");
+					setOtherBtnToggled(false, 3);
+					stopBtn.doClick();
 				}
 			}
 		});
@@ -100,10 +114,17 @@ public class MotorControls extends JPanel {
 		leftBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
-					buttonToggled("Left");
+					if (isOtherBtnToggled()) {
+						changeBtnToggled();
+						sendCommand("LEFT");
+						setOtherBtnToggled(true, 4);
+					} else {
+						setOtherBtnToggled(true, 4);
+						sendCommand("LEFT");
+					}
 				} else {
-					otherBtnToggled = false;
-					ConnectionTCP.sendMessage("STOP");
+					setOtherBtnToggled(false, 4);
+					stopBtn.doClick();
 				}
 			}
 		});
@@ -115,11 +136,11 @@ public class MotorControls extends JPanel {
 		stopBtn.setFocusable(false);
 		stopBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				if (otherBtnToggled == true) {
-					disableCurrentBtnToggled();
-					otherBtnToggled = false;
+				if (isOtherBtnToggled()) {
+					changeBtnToggled();
+					setOtherBtnToggled(false, 5);
 				} else {
-					ConnectionTCP.sendMessage("STOP");
+					sendCommand("STOP");
 				}
 			}
 		});
@@ -127,15 +148,21 @@ public class MotorControls extends JPanel {
 		gc.gridy = 1;
 		add(stopBtn, gc);
 		
+		sBar = new JTextField(37);
+		sBar.setFocusable(false);
+		statusBarUpdate("Ready", 4);
+		sBar.setEditable(false);
+		gc.gridx = 0;
+		gc.gridy = 3;
+		gc.gridwidth = 3;
+		gc.ipady = 0;
+		add(sBar, gc);
+		
 		controlsEnabled(false);
 	}
 	
-	/**
-	 * Enables / disables the controls, defined by the enabled parameter
-	 * @param enabled
-	 */
-	public static void controlsEnabled(final boolean enabled) {
-		if (enabled == true) {
+	public static void controlsEnabled(final boolean e) {
+		if (e == true) {
 			forwardBtn.setEnabled(true);
 			reverseBtn.setEnabled(true);
 			rightBtn.setEnabled(true);
@@ -150,57 +177,45 @@ public class MotorControls extends JPanel {
 		}
 	}
 	
-	private static String getCurrentBtnPressed() {
-		return currentBtnPressed;
+	private void sendCommand(final String c) {
+		ConnectionTCP.sendMessage(c);
+		ConnectionTCP.TCPmessage(c, 2, true);
 	}
 	
-	/**
-	 * Sets the currently toggled button
-	 * @param isOtherBtnToggled
-	 * @param setCurrentBtnPressed
-	 */
-	public static void setCurrentBtnToggled(final boolean isOtherBtnToggled, final String setCurrentBtnPressed) {
-		otherBtnToggled = isOtherBtnToggled;
-		currentBtnPressed = setCurrentBtnPressed;
+	public static void statusBarUpdate(final String message, final int connectionState) {
+		if (connectionState == 0) {
+			sBar.setText("\n" + "[X] " + message);
+		} else if (connectionState == 1) {
+			sBar.setText("\n" + "[~] " + message);	
+		} else if (connectionState == 2) {
+			sBar.setText("\n" + "[O] " + message);
+		} else if (connectionState == 3) {
+			sBar.setText("\n" + "[#] " + message);
+		} else {
+			sBar.setText(message);
+		}
 	}
 	
-	/**
-	 * Called when a button is toggled to disable the currently toggled button (if their is one), sets the current button toggled, and sends
-	 * the message 'STOP' to the TCP output stream
-	 * @param button
-	 */
-	private void buttonToggled(final String button) {
-		if (otherBtnToggled == true) {
-			disableCurrentBtnToggled();
-			setCurrentBtnToggled(true, button);
-		} else if (otherBtnToggled == false) {
-			setCurrentBtnToggled(true, button);
+	private void changeBtnToggled() {
+		if(currentBtn == 1) {
+			forwardBtn.doClick();
+		} else if (currentBtn == 2) {
+			reverseBtn.doClick();
+		} else if (currentBtn == 3) {
+			rightBtn.doClick();
+		} else if (currentBtn == 4) {
+			leftBtn.doClick();
+		} else {
+			stopBtn.doClick();
 		}
-		ConnectionTCP.sendMessage(button.toUpperCase());
 	}
-	
-	/**
-	 * Changes the currently selected toggled button to a new one
-	 */
-	public static void disableCurrentBtnToggled() {
-		switch (getCurrentBtnPressed()) {
-			case "Forward":
-				forwardBtn.doClick();
-				break;
-			case "Reverse":
-				reverseBtn.doClick();
-				break;
-			case "Right":
-				rightBtn.doClick();
-				break;
-			case "Left":
-				leftBtn.doClick();
-				break;
-		}
-		try {
-			Thread.sleep(200);
-		} catch (final InterruptedException e) {
-			e.printStackTrace();
-		}
+
+	public boolean isOtherBtnToggled() {
+		return otherBtnToggled;
+	}
+
+	public void setOtherBtnToggled(final boolean otherBtnToggled, final int currentBtn) {
+		this.otherBtnToggled = otherBtnToggled;
+		this.currentBtn = currentBtn;
 	}
 }
