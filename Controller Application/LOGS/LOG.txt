@@ -1274,3 +1274,34 @@ Entered address ( : )
 [18:22:04 Status]: out
 [18:22:04 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
 [18:22:04 Status]: [Error] Failed to close sockets and streams
++++++++++++++++ Program opened at [Feb/06/14 07:25:58 PM] +++++++++++++++
+[19:26:30 Info]: Attempting to connect...
+[19:26:30 Status]: Attempting to connect...
+[19:26:30 Info]: Connected to: localhost
+[19:26:30 Status]: [Connected] Connected to: localhost
+[19:26:30 Info]: Streams successfully setup
+[19:26:31 Info]: Sent message: FORWARD
+[19:26:31 Info]: Sent message: STOP
+[19:26:32 Info]: Sent message: LEFT
+[19:26:32 Info]: Sent message: STOP
+[19:26:32 Info]: Sent message: REVERSE
+[19:26:35 Info]: Sent message: STOP
+[19:26:35 Info]: Sent message: RIGHT
+[19:26:36 Info]: Sent message: STOP
+[19:26:36 Info]: Sent message: FORWARD
+[19:26:36 Info]: Sent message: STOP
+[19:26:36 Info]: Sent message: LEFT
+[19:26:37 Info]: Sent message: STOP
+[19:26:37 Info]: Sent message: REVERSE
+[19:26:37 Info]: Sent message: STOP
+[19:26:38 Info]: Sent message: END
+[19:26:38 Status]: [Disconnected] Server Disconnected
+[19:26:38 Info]: SERVER: END
+[19:26:38 Status]: [Connected] SERVER: END
+[19:26:38 Info]: Closing sockets and streams...
+[19:26:38 Status]: [Pending] Closing sockets and streams...
+[19:26:38 Status]: in
+[19:26:38 Status]: out
+[19:26:38 Status]: connect
+[19:26:38 Info]: Successfully closed sockets and streams
+[19:26:38 Status]: [Disconnected] Successfully closed sockets and streams
