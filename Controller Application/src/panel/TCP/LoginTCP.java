@@ -2,6 +2,7 @@ package panel.TCP;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -20,9 +21,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
+import messageManager.MessageLog;
+import messageManager.MessageStatusUpdate;
 import controllerApplication.FileLogins;
 import controllerApplication.LoadLogins;
 
+/**
+ * Creates the TCP Login area on the MotorControls tab
+ * @author Jackson Wilson (c) 2014
+ */
 public class LoginTCP extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
@@ -34,29 +41,33 @@ public class LoginTCP extends JPanel {
 	public static JButton saveBtn;
 	public static JComboBox<String> loadComboBox;
 	private String address;
+	private int fillLine = 0;
 	
+	/**
+	 * Creates the TCP Login area on the MotorControls tab
+	 */
 	public LoginTCP() {
 		setBorder(BorderFactory.createTitledBorder("TCP Login"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 
 		hostIP = new JLabel("Host IP: ");
-		hostIP.setToolTipText("Enter Decive IP Address");
+		hostIP.setToolTipText("Enter Vehical IP Address");
 		gc.anchor = GridBagConstraints.EAST;
 		gc.gridx = 0;
 		gc.gridy = 0;
 		add(hostIP, gc);
 		
 		port = new JLabel("Port: ");
-		port.setToolTipText("Enter Device Port");
+		port.setToolTipText("Enter Vehical Port Number");
 		gc.anchor = GridBagConstraints.EAST;
 		gc.gridx = 0;
 		gc.gridy = 1;
 		add(port, gc);
 		
 		hostField = new JTextField();
+		hostField.setToolTipText("Enter Vehical IP Address");
 		gc.weightx = 0.0;
-		//gc.ipadx = 150;
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		gc.anchor = GridBagConstraints.WEST;
 		gc.gridx = 1;
@@ -64,6 +75,7 @@ public class LoginTCP extends JPanel {
 		add(hostField, gc);
 		
 		portField = new JTextField();
+		portField.setToolTipText("Enter Vehical Port Number");
 		portField.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				connectBtn.doClick();
@@ -74,7 +86,7 @@ public class LoginTCP extends JPanel {
 		add(portField, gc);
 		
 		connectBtn = new JToggleButton("Connect");
-		connectBtn.setToolTipText("Connect/Disconnect to Device");
+		connectBtn.setToolTipText("Connect / Disconnect to Vehical");
 		connectBtn.setFocusable(false);
 		connectBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
@@ -93,20 +105,23 @@ public class LoginTCP extends JPanel {
 								port = intport;
 								(new Thread(new ConnectionTCP(ip, port))).start();
 							} else {
-								System.out.println("Port field can not be empty!");
-								System.out.println("Entered address ( " + address + " )\n");
+								new MessageLog("Error", "Port field can not be empty!");
+								new MessageLog("Info", "Entered address ( " + address + " )");
+								new MessageStatusUpdate("Error", "Port field cannot be empty!");
 								connectBtn.setSelected(true);
 								connectBtn.doClick();
 							}
 						} catch (final NumberFormatException nFE) {
-							displayMessage("Port is not an Integer!", 0);
-							System.out.println("Entered address ( " + address + " )\n");
+							new MessageLog("Error", "Port is not an Integer!");
+							new MessageLog("Info", "Entered address ( " + address + " )");
+							new MessageStatusUpdate("Error", "Port is not an Integer!");
 							connectBtn.setSelected(true);
 							connectBtn.doClick();
 						}
 					} else {
-						System.out.println("Host IP field can not be empty!");
-						System.out.println("Entered address ( " + address + " )\n");
+						new MessageLog("Error", "Host IP field can not be empty!");
+						new MessageLog("Info", "Entered address ( " + address + " )");
+						new MessageStatusUpdate("Error", "Host IP field cannot be empty!");
 						connectBtn.setSelected(true);
 						connectBtn.doClick();
 					}
@@ -114,8 +129,12 @@ public class LoginTCP extends JPanel {
 					try {
 						connectedGUIstate(false);
 						ConnectionTCP.sendMessage("END");
+						new MessageStatusUpdate("Disconnected", "Server Disconnected");
 						LoadLogins.addLogins(true);
+						fillFields(fillLine);
 					} catch (final NullPointerException nullPointerException) {
+						new MessageLog("ERROR", "NullPointerException panel.TCP.LoginTCP.connectBtn");
+						connectedGUIstate(false);
 					}
 				}
 			}
@@ -123,7 +142,6 @@ public class LoginTCP extends JPanel {
 		gc.fill = GridBagConstraints.BOTH;
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.gridheight = 3;
-		//gc.weightx = 1.0;
 		gc.ipadx = 0;
 		gc.gridx = 2;
 		gc.gridy = 0;
@@ -131,7 +149,7 @@ public class LoginTCP extends JPanel {
 		
 		saveBtn = new JButton("Save");
 		saveBtn.setFocusable(false);
-		saveBtn.setToolTipText("Save Current Host Address");
+		saveBtn.setToolTipText("Save Current Vehical Address");
 		saveBtn.setEnabled(false);
 		saveBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -145,65 +163,76 @@ public class LoginTCP extends JPanel {
 		add(saveBtn, gc);
 		
 		final String[] hostSaves = {"----------- Load Save ----------"};
-		loadComboBox = new JComboBox<>(hostSaves);
+		loadComboBox = new JComboBox<String>(hostSaves);
 		LoadLogins.addLogins(true);
+		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				final int temp = loadComboBox.getSelectedIndex();
+				fillLine = loadComboBox.getSelectedIndex();
 				
-				if (temp == 0) {
+				if (fillLine == 0) {
 					emptyFields();
 				} else {
-					fillFields(temp);
+					fillFields(fillLine);
 				}
-			}
-			
-			private void fillFields(final int line) {
-				try {
-					final FileInputStream fs = new FileInputStream(FileLogins.loginTCP.getAbsoluteFile());
-					@SuppressWarnings("resource")
-					final
-					BufferedReader br = new BufferedReader(new InputStreamReader(fs));
-					
-					for (int i = 1; i < line; ++i) {
-						br.readLine();
-					}
-					
-					final String entry = br.readLine();
-					final String[] ar = entry.split(":");
-					
-					final String host = ar[0];
-					final String port = ar[1];
-					
-					hostField.setText(host);
-					portField.setText(port);
-				} catch (final ArrayIndexOutOfBoundsException e) {
-					System.out.println("ArrayIndexOutOfBoundsException 'fillFields'");
-				} catch (final FileNotFoundException e) {
-					System.out.println("FileNotFoundException 'fillFields'");
-				} catch (final IOException e) {
-					System.out.println("IOException 'fillFields'");
-				} catch (final NullPointerException e) {
-					System.out.println("NullPointerException 'fillFields'");
-					e.printStackTrace();
-				}
-			}
-			
-			private void emptyFields() {
-				hostField.setText("");
-				portField.setText("");
 			}
 		});
 		gc.fill = GridBagConstraints.HORIZONTAL;
-		//gc.anchor = GridBagConstraints.NONE;
+		gc.insets = new Insets(0, 0, 0, 0);
 		gc.gridwidth = 1;
 		gc.gridx = 1;
 		gc.gridy = 2;
 		add(loadComboBox, gc);
 	}
 	
-	public static void connectedGUIstate(final boolean s) {
-		if (s == true) {
+	/**
+	 * Auto-fills the login fields with saved entries
+	 * @param line
+	 */
+	private void fillFields(final int line) {
+		try {
+			final FileInputStream fs = new FileInputStream(FileLogins.loginTCP.getAbsoluteFile());
+			@SuppressWarnings("resource")
+			final BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+			
+			for (int i = 1; i < line; ++i) {
+				br.readLine();
+			}
+			
+			final String entry = br.readLine();
+			final String[] ar = entry.split(":");
+			
+			final String host = ar[0];
+			final String port = ar[1];
+			
+			hostField.setText(host);
+			portField.setText(port);
+		} catch (final ArrayIndexOutOfBoundsException e) {
+			new MessageLog("ERROR", "ArrayIndexOutOfBoundsException panel.TCP.LoginTCP.fillFields()");
+		} catch (final FileNotFoundException e) {
+			new MessageLog("ERROR", "FileNotFoundException panel.TCP.LoginTCP.fillFields()");
+		} catch (final IOException e) {
+			new MessageLog("ERROR", "IOException panel.TCP.LoginTCP.fillFields()");
+		} catch (final NullPointerException e) {
+			new MessageLog("ERROR", "NullPointerException panel.TCP.LoginTCP.fillFields()");
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Empties the TCP login fields
+	 */
+	private void emptyFields() {
+		hostField.setText("");
+		portField.setText("");
+	}
+	
+	/**
+	 * Changes the availability of the different components on the Motor Control tab, defined by the state parameter
+	 * @param state
+	 */
+	public static void connectedGUIstate(final boolean state) {
+		if (state == true) {
 			hostField.setEditable(false);
 			hostField.setFocusable(false);
 			portField.setEditable(false);
@@ -220,9 +249,5 @@ public class LoginTCP extends JPanel {
 			loadComboBox.setEnabled(true);
 			connectBtn.setText("Connect");
 		}
-	}
-	
-	private void displayMessage (final String message, final int connectionState) {
-		MotorControls.statusBarUpdate(message, connectionState);
 	}
 }

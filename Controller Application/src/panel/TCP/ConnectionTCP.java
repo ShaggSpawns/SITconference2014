@@ -7,8 +7,13 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import panel.SSH.ConsoleSSH;
+import messageManager.MessageLog;
+import messageManager.MessageStatusUpdate;
 
+/**
+ * Handles the connection and communication with a TCP server.
+ * @author Jackson Wilson (c) 2014
+ */
 public class ConnectionTCP implements Runnable {
 
 	private String message = "";
@@ -18,96 +23,132 @@ public class ConnectionTCP implements Runnable {
 	private static ObjectOutputStream output;
 	private static ObjectInputStream input;
 	
-	public ConnectionTCP(final String ip, final int port) {
-		serverIP = ip;
+	/**
+	 * Handles the connection and communication with a TCP server
+	 * @param hostIP
+	 * @param port
+	 */
+	public ConnectionTCP(final String hostIP, final int port) {
+		serverIP = hostIP;
 		serverPort = port;
 	}
-
+	
+	/**
+	 * Connects to the server, sets up the streams / sockets, handles chatting with server, and closes sockets / streams when finished
+	 */
 	public void run() {
-		try {
-			connectToServer();
-			setupStreams();
-			whileChatting();
-		} catch (final EOFException eofException) {
-			MotorControls.sBar.setText("");
-			TCPmessage(" [~] Client ended connection", 4, true);
-		} catch (final IOException ioException) {
-		} catch (final NullPointerException nullPointerException) {
-		} finally {
-			cleanUp();
-		}
+		connectToServer();
+		setupStreams();
+		whileChatting();
+		cleanUp();
 	}
 	
+	/**
+	 * Connects to a TCP server and displays a confirmation message once connected
+	 */
 	private void connectToServer() {
 		try {
-			MotorControls.sBar.setText("");
-			TCPmessage(" [~] Attempting to connect...", 4, true);
+			new MessageLog("Info", "Attempting to connect...");
+			new MessageStatusUpdate("pending", "Attempting to connect...");
+			
 			connection = new Socket(InetAddress.getByName(serverIP), serverPort);
-			TCPmessage("Connected to: " + connection.getInetAddress().getHostName(), 2, true);
+			new MessageLog("Info", "Connected to: " + connection.getInetAddress().getHostName());
+			new MessageStatusUpdate("Connected", "Connected to: " + connection.getInetAddress().getHostName());
+			
 			LoginTCP.connectedGUIstate(true);
 			MotorControls.controlsEnabled(true);
 		} catch (final IOException ioException) {
-			TCPmessage("Server not found!", 0, true);
+			new MessageLog("Error", "Server not found!");
+			new MessageStatusUpdate("Error", "Server not found!");
 		}
 	}
 	
+	/**
+	 * Sets up the streams for the connection
+	 */
 	private void setupStreams() {
 		try {
 			output = new ObjectOutputStream(connection.getOutputStream());
 			output.flush();
 			input = new ObjectInputStream(connection.getInputStream());
+			new MessageLog("Info", "Streams successfully setup");
 		} catch (final IOException ioException) {
+			new MessageLog("Error", "Failed to setup TCP streams!");
+			new MessageStatusUpdate("Error", "Failed to setup TCP streams!");
+		} catch (final NullPointerException npException) {
+			new MessageLog("Error", "NullPointerException in panel.TCP.ConnectionTCP.setupStreams()");
 		}
 	}
 	
-	private void whileChatting() throws IOException {
+	/**
+	 * Handles the communication with the TCP server
+	 */
+	private void whileChatting() {
+		message = null;
 		do {
 			try {
 				message = (String) input.readObject();
-				TCPmessage(message, 2, true);
+				new MessageLog("Info", message);
+				new MessageStatusUpdate("Connected", message);
 			} catch (final ClassNotFoundException classNotFoundException) {
-				TCPmessage("Unable to read message", 3, false);
+				new MessageLog("Error", "Unable to read incoming message!");
+				new MessageStatusUpdate("Error", "Unable to read incoming message!");
+			} catch (final EOFException eofException) {
+				new MessageLog("Error", "EOFException in panel.TCP.ConnectionTCP.whileChatting()");
+				new MessageStatusUpdate("Disconnected", "Disconnected from: " + connection.getInetAddress().getHostName());
+				break;
+			} catch (final IOException ioExection) {
+				new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.whileChatting()");
+			} catch (final NullPointerException npE) {
+				new MessageLog("Error", "NullPointerException in panel.TCP.ConnctionTCP.whileChatting()");
 			}
 		} while(!message.equals("SERVER: END"));
 	}
 	
+	/**
+	 * Closes the sockets and streams to disconnect with the TCP server
+	 */
 	public final void cleanUp() {
+		LoginTCP.connectedGUIstate(false);
+		LoginTCP.connectBtn.setSelected(false);
+		if (MotorControls.otherBtnToggled == true) {
+			MotorControls.disableCurrentBtnToggled();
+			MotorControls.otherBtnToggled = false;
+			ConnectionTCP.sendMessage("STOP");
+		}
 		try {
-			TCPmessage("Closing sockets...", 1, true);
-			output.close();
+			new MessageLog("Info", "Closing sockets and streams...");
+			new MessageStatusUpdate("Pending", "Closing sockets and streams...");
+			new MessageStatusUpdate("Info", "in");
 			input.close();
+			new MessageStatusUpdate("Info", "out");
+			output.flush();
+			output.close();
+			new MessageStatusUpdate("Info", "connect");
 			connection.close();
-			MotorControls.controlsEnabled(false);
-			TCPmessage("Successfully closed sockets.", 0, false);
-			TCPmessage("Connection closed", 0, true);
+			new MessageLog("Info", "Successfully closed sockets and streams");
+			new MessageStatusUpdate("Disconnected", "Successfully closed sockets and streams");
 		} catch (final IOException ioException) {
+			new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.cleanUp()");
+			new MessageStatusUpdate("Error", "Failed to close sockets and streams");
 		} catch (final NullPointerException nullPointerException) {
-			LoginTCP.connectBtn.setSelected(false);
+			new MessageLog("Error", "NullPointerException in panel.TCP.ConnectionTCP:2");
+			new MessageStatusUpdate("Error", "No sockets and streams to disconnect from");
 		}
 	}
 	
+	/**
+	 * Sends a message to the output stream
+	 * @param message
+	 */
 	public static void sendMessage(final String message) {
 		try {
-			if ((message.equals("END"))) {
-				output.writeObject("END");
-				output.flush();
-			} else {
 				output.writeObject(message);
 				output.flush();
-				TCPmessage(message, 2, false);
-			}
+				new MessageLog("Info", "Sent message: " + message);
 		} catch (final IOException ioException) {
-		}
-	}
-	
-	public static void TCPmessage(final String message, final int connectionState, final boolean toStatusBar) {
-		if (toStatusBar == true) {
-			MotorControls.statusBarUpdate(message, connectionState);
-			//System.out.println(" --StatusBAR-- (" + connectionState + ") " + message);
-			//PanelConsole.consoleArea.append(" --StatusBAR-- (" + connectionState + ") " + message + "\n");
-		} else {
-			//System.out.println(message);
-			ConsoleSSH.consoleArea.append(message + "\n");
+			new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.sendMessage()");
+			new MessageStatusUpdate("Error", "Failed to send message");
 		}
 	}
 }

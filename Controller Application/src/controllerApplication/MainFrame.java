@@ -16,49 +16,49 @@ import panel.TCP.PanelTCP;
  */
 public class MainFrame extends JFrame {
 	
-	private static final long serialVersionUID = 1L; // Version identifier
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * A constructor that builds a frame with a title.
 	 * @param title
 	 */
 	public MainFrame(final String title) {
-		super(title); // Gets title from parameter
+		super(title);
 		
-	        final JTabbedPane tabbedPane = new JTabbedPane(); // Initializes a new JTabbedPane named tabbedPane
-	        tabbedPane.setFocusable(false); // Sets tabbedPane to non-highlight-able
+	        final JTabbedPane tabbedPane = new JTabbedPane();
+	        tabbedPane.setFocusable(false);
 	        
-	        final PanelTCP controlTab = new PanelTCP(); // Initializes a new tab from the panel PanelController and names it controlTab
-	        tabbedPane.addTab("Controller", controlTab); // Adds controlTab to tabbedPane
+	        final PanelTCP controlTab = new PanelTCP();
+	        tabbedPane.addTab("Controller", controlTab);
 	         
-	        final PanelSSH consoleTab = new PanelSSH(); // Initializes a new tab from the panel PanelConsole and names it consoleTab
-	        tabbedPane.addTab("Console", consoleTab); // Adds consoleTab to tabbedPane
+	        final PanelSSH consoleTab = new PanelSSH();
+	        tabbedPane.addTab("SSH", consoleTab);
 	        
-	        final PanelAbout extraTab = new PanelAbout(); // Initializes a new tab from the panel PanelExtras and names it extraTab
-	        tabbedPane.addTab("About", extraTab); // Adds extraTab to tabbedPane
+	        final PanelAbout aboutTab = new PanelAbout();
+	        tabbedPane.addTab("About / Info", aboutTab);
 	        
-	        add(tabbedPane); // Adds tabbedPane to the frame
+	        add(tabbedPane);
 	        
-	        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT); // Enables to use scrolling tabs
+	        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 	}
 	
 	/**
 	 * Runs the application by calling run() in a new thread
 	 * @param args
 	 */
-	public static void main(final String[] args) { // Main
-		(new Thread(new Controller())).start(); // Starts new thread
+	public static void main(final String[] args) {
+		(new Thread(new Controller())).start();
 	}
 	
 	/**
 	 * Calls to create a new JFrame from MainFrame and sets the attributes of the new frame
 	 */
 	public void run() {
-		final JFrame frame = new MainFrame("Arduino Motor Program"); // Calls MainFrame with title parameter
-		frame.setMinimumSize(new Dimension(400, 525)); // Sets frame's dimensions
-		frame.setResizable(false); // Disables frame resizing
-		frame.setLocationRelativeTo(null); // Place Frame in Middle of Screen
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Set Default Close
-		frame.setVisible(true); // Set Visible
+		final JFrame frame = new MainFrame("Arduino Motor Program");
+		frame.setMinimumSize(new Dimension(400, 525));
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
 	}
 }

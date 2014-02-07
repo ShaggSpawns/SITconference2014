@@ -8,9 +8,17 @@ import java.util.ArrayList;
 import panel.SSH.LoginSSH;
 import panel.TCP.LoginTCP;
 
+/**
+ * Manages the saving and loading of logins of TCP and SSH.
+ * @author Jackson Wilson (c) 2014
+ */
 public class LoadLogins {
 	static boolean isTCP;
 	
+	/**
+	 * Reloads the appropriate JComboBox with an updated list of the logins for that JComboBox by removing all existing entries and replaces them with the ones in the login.txt file.
+	 * @param istcp
+	 */
 	public static void addLogins(final boolean istcp) {
 		isTCP = istcp;
 		String[] lines;
@@ -29,14 +37,18 @@ public class LoadLogins {
 		for (final String str: lines) {
 			if (isTCP == true) {
 				LoginTCP.loadComboBox.addItem(str);
-			} else if (isTCP == true) {
+			} else if (isTCP == false) {
 				LoginSSH.loadComboBox.addItem(str);
 			}
 		}
 	}
 	
-	private static String [] readFile() {
-		final ArrayList<String> arr = new ArrayList<>();
+	/**
+	 * Reads the file and returns the contents of the file into a String.
+	 * @return
+	 */
+	private static String[] readFile() {
+		final ArrayList<String> arr = new ArrayList<String>();
 		
 		try {
 			if (isTCP == true) {
