@@ -24,9 +24,10 @@ public class TCPComm extends JFrame {
 		firstPort = portRangeStart;
 		lastPort = portRangeEnd;
 		backlog = serverBacklog;
+		startRunning();
 	}
 	
-	public static void startRunning() {
+	private static void startRunning() {
 		while(true) {
 			try {
 				initializeServer();
@@ -112,8 +113,11 @@ public class TCPComm extends JFrame {
 			output.close();
 			input.close();
 			connection.close();
+			Thread.sleep(200);
 		}catch(final IOException ioException){
 			ioException.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 	

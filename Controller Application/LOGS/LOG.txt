@@ -1305,3 +1305,29 @@ Entered address ( : )
 [19:26:38 Status]: connect
 [19:26:38 Info]: Successfully closed sockets and streams
 [19:26:38 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/08/14 04:08:08 PM] +++++++++++++++
+[16:08:15 Info]: Attempting to connect...
+[16:08:15 Status]: Attempting to connect...
+[16:08:15 Info]: Connected to: localhost
+[16:08:15 Status]: [Connected] Connected to: localhost
+[16:08:15 Info]: Streams successfully setup
+[16:08:41 Info]: Sent message: FORWARD
+[16:08:41 Info]: Sent message: STOP
+[16:08:42 Info]: Sent message: LEFT
+[16:08:42 Info]: Sent message: STOP
+[16:08:42 Info]: Sent message: REVERSE
+[16:08:43 Info]: Sent message: STOP
+[16:08:43 Info]: Sent message: RIGHT
+[16:08:43 Info]: Sent message: END
+[16:08:43 Status]: [Disconnected] Server Disconnected
+[16:08:43 Info]: SERVER: END
+[16:08:43 Status]: [Connected] SERVER: END
+[16:08:44 Info]: Sent message: STOP
+[16:08:44 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[16:08:44 Status]: [Error] Failed to send message
+[16:08:44 Info]: Closing sockets and streams...
+[16:08:44 Status]: [Pending] Closing sockets and streams...
+[16:08:44 Status]: in
+[16:08:44 Status]: out
+[16:08:44 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[16:08:44 Status]: [Error] Failed to close sockets and streams
