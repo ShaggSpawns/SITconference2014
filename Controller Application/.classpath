@@ -3,10 +3,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/jsch-0.1.50.jar"/>
-	<classpathentry kind="lib" path="lib/RXTXcomm.jar">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Motor Controller/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
