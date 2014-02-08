@@ -1,4 +1,4 @@
-package comm2;
+package javaTCPserver;
 
 public class MainComm {
 	public static void main(final String[] args) {

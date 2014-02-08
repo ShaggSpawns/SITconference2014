@@ -1,4 +1,4 @@
-package comm2;
+package javaTCPserver;
 
 import java.io.EOFException;
 import java.io.IOException;

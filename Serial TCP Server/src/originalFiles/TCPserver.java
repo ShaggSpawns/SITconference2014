@@ -1,4 +1,4 @@
-package tcpServer;
+package originalFiles;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -137,27 +137,3 @@ public class TCPserver extends JFrame {
 		server.startRunning();
 	}
 }
-
-
-/*switch(inMessage) {
-	case "FORWARD":
-		NewComm.writeData("F");
-		break;
-	case "REVERSE":
-		NewComm.writeData("B");
-		break;
-	case "RIGHT":
-		NewComm.writeData("R");
-		break;
-	case "LEFT":
-		NewComm.writeData("L");
-		break;
-	case "STOP":
-		NewComm.writeData("S");
-		break;
-	case "END":
-		break;
-	default:
-		System.out.println("Invalid message: " + inMessage);
-		break;
-}*/

@@ -1,4 +1,4 @@
-package comm2;
+package javaTCPserver;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;

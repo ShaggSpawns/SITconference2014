@@ -1,4 +1,4 @@
-package serialComm;
+package originalFiles;
 
 import gnu.io.CommPortIdentifier;
 
