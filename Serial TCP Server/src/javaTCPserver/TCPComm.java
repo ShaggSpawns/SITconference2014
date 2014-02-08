@@ -106,7 +106,9 @@ public class TCPComm extends JFrame {
 		displayMessage("Closing connection...");
 		sendMessage("END");
 		try {
-			JsscComm.close();
+			if (JsscComm.serialPort.isOpened() == true) {
+				JsscComm.close();
+			}
 			output.close();
 			input.close();
 			connection.close();
