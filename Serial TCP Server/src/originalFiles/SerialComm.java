@@ -1,4 +1,4 @@
-package originalFiles;
+package javaTCPserver;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
@@ -12,7 +12,12 @@ import java.io.OutputStream;
 import java.util.Enumeration;
 
 public class SerialComm implements SerialPortEventListener {
-	private SerialPort serialPort;
+	private static SerialPort serialPort;
+	private BufferedReader serialInput;
+	public static OutputStream serialOutput;
+	private final int TIME_OUT;
+	private final int DATA_RATE;
+	private static boolean serialIsConnected = false;
 	
 	private final String PORT_NAMES[] = {
 			"/dev/tty.usbserial-A9007UX1",
@@ -20,19 +25,19 @@ public class SerialComm implements SerialPortEventListener {
 			"COM3",
 	};
 	
-	private BufferedReader input;
-	public static OutputStream output;
-	private final int TIME_OUT = 2000;
-	private final int DATA_RATE = 9600;
-	
-	public void initialize() {
+	SerialComm(final int timeOut, final int dataRate) {
+		TIME_OUT = timeOut;
+		DATA_RATE = dataRate;
+	}
+
+	public void startSerialComm() {
 		CommPortIdentifier portId = null;
 		final Enumeration<?> portEnum = CommPortIdentifier.getPortIdentifiers();
 		
 		while (portEnum.hasMoreElements()) {
 			final CommPortIdentifier currPortId = ((CommPortIdentifier) portEnum.nextElement());
 			for (final String portName : PORT_NAMES) {
-				if (currPortId.getName().equals(portName)) {
+				if (currPortId.getName().equals(portName)); {
 					portId = currPortId;
 					break;
 				}
@@ -40,7 +45,8 @@ public class SerialComm implements SerialPortEventListener {
 		}
 		
 		if (portId == null) {
-			System.out.println("Could not find COM port");
+			displayMessage("Unable to find COM port.");
+			setSerialIsConnected(false);
 			return;
 		}
 		
@@ -52,40 +58,55 @@ public class SerialComm implements SerialPortEventListener {
 					SerialPort.STOPBITS_1,
 					SerialPort.PARITY_NONE);
 			
-			input = new BufferedReader(new InputStreamReader(serialPort.getInputStream()));
-			output = serialPort.getOutputStream();
-			
+			serialInput = new BufferedReader(new InputStreamReader(serialPort.getInputStream()));
+			serialOutput = serialPort.getOutputStream();
+			setSerialIsConnected(true);
 			serialPort.addEventListener(this);
 			serialPort.notifyOnDataAvailable(true);
 		} catch (final Exception e) {
-			System.err.println(e.toString());
+			displayMessage(e.toString());
+			setSerialIsConnected(false);
 		}
 	}
 	
-	public synchronized void close() {
+	public synchronized static void close() {
+		setSerialIsConnected(false);
 		if (serialPort != null) {
 			serialPort.removeEventListener();
 			serialPort.close();
 		}
 	}
 	
-	public static synchronized void writeData(final String data) {
-        try {
-            output.write(data.getBytes());
-        } catch (final IOException ioE) {
-            System.out.println("Insufficient connection with port.");
-            System.out.println("Closing Program. Restart to Reconnect.");
-        }
+	public synchronized static void writeData(final String data) {
+		try {
+			serialOutput.write(data.getBytes());
+		} catch (final IOException ioE) {
+			displayMessage(ioE.toString());
+		}
 	}
-	
-	public synchronized void serialEvent(final SerialPortEvent oEvent) {
+
+	@Override
+	public void serialEvent(final SerialPortEvent oEvent) {
 		if (oEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
 			try {
-				final String inputLine = input.readLine();
-				System.out.println("ARDUINO: " + inputLine);
-			} catch (final IOException ieException) {
-				System.err.println(ieException.toString());
+				final String inputMessage = serialInput.readLine();
+				displayMessage("ARDUINO: " + inputMessage);
+			} catch (final IOException ioE) {
+				displayMessage(ioE.toString());
 			}
 		}
+	}
+	
+	private static void displayMessage(final String message) {
+		TCPComm.displayMessage(message);
+	}
+
+	public static boolean isSerialIsConnected() {
+		return serialIsConnected;
+	}
+
+	public static void setSerialIsConnected(final boolean serialIsConnected) {
+		SerialComm.serialIsConnected = serialIsConnected;
+		TCPComm.sendMessage("Serial was unable to be established.");
 	}
 }
