@@ -8,6 +8,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.text.DefaultCaret;
 
 /**
@@ -29,11 +30,15 @@ public class InfoConsole extends JPanel {
 		final GridBagConstraints gc = new GridBagConstraints();
 		
 		consoleArea = new JTextArea(11, 38);
-		consoleArea.setEditable(false);
+		consoleArea.setEditable(true);
 		DefaultCaret caret = (DefaultCaret)consoleArea.getCaret();
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 	    gc.anchor = GridBagConstraints.CENTER;
 		gc.insets = new Insets(2,1,2,2);
-	    add(new JScrollPane(consoleArea), gc);
+		gc.ipadx = 9;
+		JScrollPane scrollPane = new JScrollPane(consoleArea);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+	    add(scrollPane, gc);
 	}
 }

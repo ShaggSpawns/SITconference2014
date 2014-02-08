@@ -101,10 +101,18 @@ public class Controller extends JApplet implements Runnable {
 		new Log("+++++++++++++++ Program opened at [" + time + "] +++++++++++++++");
 	}
 	
+	/**
+	 * Returns if a log will be the first message displayed.
+	 * @return
+	 */
 	public static boolean isFirstLogMessage() {
 		return firstLogMessage;
 	}
-
+	
+	/**
+	 * Sets if a log will be the first message displayed.
+	 * @param firstLogMessage
+	 */
 	public static void setFirstLogMessage(final boolean firstLogMessage) {
 		Controller.firstLogMessage = firstLogMessage;
 	}

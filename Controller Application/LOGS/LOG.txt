@@ -1331,3 +1331,64 @@ Entered address ( : )
 [16:08:44 Status]: out
 [16:08:44 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
 [16:08:44 Status]: [Error] Failed to close sockets and streams
++++++++++++++++ Program opened at [Feb/08/14 04:12:43 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:13:40 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:13:55 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:14:05 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:14:15 PM] +++++++++++++++
+[16:14:31 Info]: Attempting to connect...
+[16:14:31 Status]: Attempting to connect...
+[16:14:31 Info]: Connected to: localhost
+[16:14:31 Status]: [Connected] Connected to: localhost
+[16:14:31 Info]: Streams successfully setup
+[16:14:37 Info]: Sent message: STOP
+[16:14:37 Info]: Sent message: REVERSE
+[16:14:37 Info]: Sent message: STOP
+[16:14:37 Info]: Sent message: LEFT
+[16:14:38 Info]: Sent message: STOP
+[16:14:38 Info]: Sent message: FORWARD
+[16:14:38 Info]: Sent message: STOP
+[16:14:38 Info]: Sent message: REVERSE
+[16:14:38 Info]: Sent message: STOP
+[16:14:38 Info]: Sent message: RIGHT
+[16:14:38 Info]: Sent message: STOP
+[16:14:39 Info]: Sent message: FORWARD
+[16:14:39 Info]: Sent message: STOP
+[16:14:39 Info]: Sent message: LEFT
+[16:14:39 Info]: Sent message: STOP
+[16:14:39 Info]: Sent message: REVERSE
+[16:14:39 Info]: Sent message: STOP
+[16:14:40 Info]: Sent message: FORWARD
+[16:14:40 Info]: Sent message: STOP
+[16:14:40 Info]: Sent message: REVERSE
+[16:14:40 Info]: Sent message: STOP
+[16:14:40 Info]: Sent message: LEFT
+[16:14:41 Info]: Sent message: STOP
+[16:14:55 Info]: Sent message: END
+[16:14:55 Status]: [Disconnected] Server Disconnected
+[16:14:55 Info]: SERVER: END
+[16:14:55 Status]: [Connected] SERVER: END
+[16:14:55 Info]: Closing sockets and streams...
+[16:14:55 Status]: [Pending] Closing sockets and streams...
+[16:14:55 Status]: in
+[16:14:55 Status]: out
+[16:14:55 Status]: connect
+[16:14:55 Info]: Successfully closed sockets and streams
+[16:14:55 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/08/14 04:16:15 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:16:40 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:16:47 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:24:31 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:27:18 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:27:30 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:27:52 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:28:07 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:28:22 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:29:50 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:30:43 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:31:18 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:31:33 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:31:50 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:32:07 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:32:21 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/08/14 04:32:59 PM] +++++++++++++++
