@@ -78,7 +78,7 @@ public class JsscComm implements SerialPortEventListener {
 		if (event.isRXCHAR()) {
 			try {
 				final byte[] inputMessage = serialPort.readBytes();
-				displayMessage("ARDUINO: " + inputMessage.toString());
+				displayMessage(inputMessage.toString());
 			} catch (final SerialPortException e) {
 				displayMessage(e.toString());
 			}

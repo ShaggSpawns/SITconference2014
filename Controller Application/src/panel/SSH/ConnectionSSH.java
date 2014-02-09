@@ -1,9 +1,13 @@
 package panel.SSH;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import ssh.SSH.MyUserInfo;
 
@@ -12,160 +16,106 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UserInfo;
-
-/**
- * Handles the SSH connection of the application
- * @author Jackson Wilson (c) 2014
- */
+ 
 public class ConnectionSSH implements Runnable {
-
-	private final int serverPort;
-	private final String serverIP;
-	private final String serverUsername;
-	private final String serverPassword;
-	private UserInfo userInfo;
 	private static Session session;
 	private static Channel channel;
-	private InputStream inStream;
-	//private OutputStream outStream;
+	private static InputStream input;
+	private final String HOST;
+	private final int PORT;
+	private final String USERNAME;
+	private final String PASSWORD;
 	
-	/**
-	 * Handles the SSH connection of the application
-	 * @param ip
-	 * @param port
-	 * @param username
-	 * @param password
-	 */
-	public ConnectionSSH(final String ip, final int port, final String username, final char[] password) {
-		serverIP = ip;
-		serverPort = port;
-		serverUsername = username;
-		serverPassword = new String(password);
+	public ConnectionSSH(final String host, final int port, final String username, final char[] password) {
+		HOST = host;
+		PORT = port;
+		USERNAME = username;
+		PASSWORD = new String(password);
 	}
-	
-	/**
-	 * Sets up the streams / channel for the SSH, handles the communication with SSH, and closes the connection once finished
-	 */
+
+
+	@Override
 	public void run() {
-		setupSession();
-		setUserInfo();
-		setupChannel();
-		whileConnected();
-		closeConnection();
-	}
-	
-	/**
-	 * Sets up the session with SSH
-	 */
-	private void setupSession() {
 		final JSch jsch = new JSch();
-		
 		try {
-			session = jsch.getSession(serverUsername, serverIP, serverPort);
-			session.setPassword(serverPassword);
-			//jsch.setKnownHosts("~/.ssh/known_hosts");
-		    //jsch.addIdentity("~/.ssh/id_rsa");
-		    session.setUserInfo(userInfo);
-			session.connect(30000);
-			LoginSSH.connectedGUIstate(true);
-		} catch (final JSchException e) {
-			e.printStackTrace();
-			LoginSSH.connectedGUIstate(false);
-		}
-	}
-	
-	/**
-	 * Sets up the SSH channel
-	 */
-	private void setupChannel() {
-		try {
-			channel = session.openChannel("shell");
-			//channel.setInputStream(ConsoleSSH.UserInputStream, false);
-	 		//channel.setOutputStream(ConsoleSSH.SystemOutputStream, false);
-			try {
-				channel.setInputStream(channel.getInputStream());
-				channel.setOutputStream(channel.getOutputStream());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	 		channel.connect(3*1000);
+			jsch.setKnownHosts("~/.ssh/known_hosts");
 		} catch (final JSchException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	/**
-	 * Initializes the user info (gets permission to use it)
-	 */
-	private void setUserInfo() {
-		userInfo = new MyUserInfo() {
-			
-			public void showMessage(final String message) { 
-				JOptionPane.showMessageDialog(null, message);
-			}
-			
-			public boolean promptYesNo(final String message) {
-				final Object[] options = { "yes", "no" };
-				
-				final int foo = JOptionPane.showOptionDialog(null, message, "Warning", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
-				 
-				return foo == 0;
-			}
-		};
-	}
-	
-	/**
-	 * Handles the communication over SSH
-	 */
-	private void whileConnected() {
+		
 		try {
-			inStream = channel.getInputStream();
-		} catch (final IOException e) {
-			e.printStackTrace();
-		}
-		
-		final byte[] tmp = new byte[1024];
-		
-		while (true) {
-			try {
-				while (inStream.available() > 0 ) {
-					final int i = inStream.read(tmp, 0, 1024);
-					if (i < 0) break;
-					System.out.print(new String(tmp, 0, i));
+			session = jsch.getSession(USERNAME, HOST, PORT);
+			session.setPassword(PASSWORD);
+			final UserInfo userInfo = new MyUserInfo() {
+				public void showMessage(final String message) {
+					JOptionPane.showMessageDialog(null, message);
 				}
-			} catch (final IOException e) {
-				e.printStackTrace();
-			}
-			
-			if (channel.isClosed()) {
-				System.out.println("exit-status: "+channel.getExitStatus());
-				break;
-			}
+				
+				public boolean promptYesNo(final String message) {
+					final Object[] options = { "yes", "no" };
+					final int foo=JOptionPane.showOptionDialog(null,
+							message, "Warning",
+							JOptionPane.DEFAULT_OPTION,
+							JOptionPane.WARNING_MESSAGE,
+							null, options, options[0]);
+					return foo == 0;
+				}
+			};
+			session.setUserInfo(userInfo);
+			session.connect();
+			channel = session.openChannel("shell");
+			channel.setInputStream(input);
+			OutputStream output = new OutputStream() {
+				@Override
+				public void write(int b) throws IOException {
+					updateTextArea(String.valueOf((char) b));
+				}
+				@Override
+				public void write(byte[] b, int off, int len) throws IOException {
+					updateTextArea(new String(b, off, len));
+				}
+				@Override
+				public void write(byte[] b) throws IOException {
+					write(b, 0, b.length);
+				}
+			};
+			channel.setOutputStream(output);
+			channel.connect();
+			LoginSSH.saveBtn.setEnabled(true);
+		} catch (final JSchException e) {
+			e.printStackTrace();
 		}
 	}
 	
-	/**
-	 * Sends a message through SSH.
-	 * @param message
-	 */
+	private void updateTextArea(final String text) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				ConsoleSSH.consoleArea.append(text);
+			}
+		});
+	}
+	
 	public static void sendMessage(String message) {
 		try {
-			channel.sendSignal(message);
-		} catch (Exception e) {
+			input = new ByteArrayInputStream(message.getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
+		}
+		/*try {
+			channel.sendSignal(message);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}*/
+		System.out.println(message);
+		
+		if (message.equals("exit")) {
+			closeSSH();
 		}
 	}
 	
-	/**
-	 * Closes the SSH session / channel
-	 */
-	public static void closeConnection() {
-		try {
-			Thread.sleep(1000);
-		}catch (final Exception ee) {
-			ee.printStackTrace();
-		}
-	      channel.disconnect();
-	      session.disconnect();
+	public static void closeSSH() {
+		LoginSSH.connectedGUIstate(false);
+		channel.disconnect();
+		session.disconnect();
 	}
 }

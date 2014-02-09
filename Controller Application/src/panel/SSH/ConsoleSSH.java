@@ -49,7 +49,7 @@ public class ConsoleSSH extends JPanel {
 		consoleInput.setEnabled(true);
 		consoleInput.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				ConnectionSSH3.sendMessage(consoleInput.getText());
+				ConnectionSSH.sendMessage(consoleInput.getText());
 				consoleInput.setText("");
 			}
 		});

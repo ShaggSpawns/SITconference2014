@@ -144,7 +144,7 @@ public class LoginSSH extends JPanel {
 								port = intport;
 									if (!(username.equals(""))) {
 										if (!(password.equals(""))){
-											new Thread(new ConnectionSSH3(ip, port, username, password)).start();
+											new Thread(new ConnectionSSH(ip, port, username, password)).start();
 										} else {
 											System.out.println("Password can not be empty!");
 											System.out.println("Entered address ( " + address + " )\n");
@@ -178,7 +178,7 @@ public class LoginSSH extends JPanel {
 				} else {
 					connectedGUIstate(false);
 					LoadLogins.addLogins(false);
-					ConnectionSSH3.closeSSH();
+					ConnectionSSH.closeSSH();
 				}
 			}
 		});
