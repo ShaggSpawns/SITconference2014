@@ -3,8 +3,6 @@ package panel.SSH;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
@@ -44,15 +42,18 @@ public class ConsoleSSH extends JPanel {
 	    gc.gridy = 1;
 	    gc.weighty = 0.0;
 	    add(new JScrollPane(consoleArea), gc);
-		
+	    
 		consoleInput = new JTextField(38);
 		consoleInput.setEnabled(true);
-		consoleInput.addActionListener(new ActionListener() {
+		final TextFieldInputStream streamer = new TextFieldInputStream(consoleInput);
+		consoleInput.addActionListener(streamer);
+		System.setIn(streamer);
+		/*consoleInput.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				ConnectionSSH.sendMessage(consoleInput.getText());
 				consoleInput.setText("");
 			}
-		});
+		});*/
 		gc.anchor = GridBagConstraints.SOUTH;
 	    gc.ipady = 0;
 	    gc.gridx = 0;

@@ -1,12 +1,11 @@
 package panel.SSH;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 
 import javax.swing.SwingUtilities;
+
+import messageManager.MessageLog;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
@@ -16,7 +15,6 @@ import com.jcraft.jsch.Session;
 public class ConnectionSSH implements Runnable {
 	private static Session session;
 	private static Channel channel;
-	private static InputStream input;
 	private final String HOST;
 	private final int PORT;
 	private final String USERNAME;
@@ -32,39 +30,45 @@ public class ConnectionSSH implements Runnable {
 
 	@Override
 	public void run() {
+		ConsoleSSH.consoleArea.setText("");
 		final JSch jsch = new JSch();
 		try {
 			jsch.setKnownHosts("~/.ssh/known_hosts");
+			new MessageLog("Info", "SSH: loaded known_hosts");
 		} catch (final JSchException e) {
 			e.printStackTrace();
+			new MessageLog("Error", "SSH: failed to load known_hosts");
 		}
 		
 		try {
 			session = jsch.getSession(USERNAME, HOST, PORT);
 			session.setPassword(PASSWORD);
 			session.connect();
+			new MessageLog("Info", "SSH: session connected");
 			channel = session.openChannel("shell");
-			channel.setInputStream(input);
-			OutputStream output = new OutputStream() {
+			channel.setInputStream(System.in);
+			final OutputStream output = new OutputStream() {
 				@Override
-				public void write(int b) throws IOException {
+				public void write(final int b) throws IOException {
 					updateTextArea(String.valueOf((char) b));
 				}
 				@Override
-				public void write(byte[] b, int off, int len) throws IOException {
+				public void write(final byte[] b, final int off, final int len) throws IOException {
 					updateTextArea(new String(b, off, len));
 				}
 				@Override
-				public void write(byte[] b) throws IOException {
+				public void write(final byte[] b) throws IOException {
 					write(b, 0, b.length);
 				}
 			};
 			channel.setOutputStream(output);
 			channel.connect();
+			new MessageLog("Info", "SSH: channel connected");
 			LoginSSH.connectedGUIstate("Connected");
 		} catch (final JSchException e) {
 			LoginSSH.connectedGUIstate("Disconnected");
 			e.printStackTrace();
+			new MessageLog("Error", "SSH: failed to set up SSH connection");
 		}
 	}
 	
@@ -76,12 +80,7 @@ public class ConnectionSSH implements Runnable {
 		});
 	}
 	
-	public static void sendMessage(String message) {
-		try {
-			input = new ByteArrayInputStream(message.getBytes("UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+	public static void sendMessage(final String message) {
 		/*try {
 			channel.sendSignal(message);
 		} catch (Exception e1) {
@@ -100,14 +99,17 @@ public class ConnectionSSH implements Runnable {
 			try {
 				channel.getOutputStream().close();
 				channel.getInputStream().close();
-			} catch (IOException e) {
+				new MessageLog("Info", "SSH: channel streams were successfully closed");
+			} catch (final IOException e) {
 				e.printStackTrace();
+				new MessageLog("Error", "SSH: failed to close channel streams");
 			}
 			channel.disconnect();
+			new MessageLog("Info", "SSH: channel successfully closed");
 		}
 		if (session.isConnected()) {
 			session.disconnect();
+			new MessageLog("Info", "SSH: session successfully closed");
 		}
-		
 	}
 }
