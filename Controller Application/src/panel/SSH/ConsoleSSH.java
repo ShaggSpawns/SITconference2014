@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.UnsupportedEncodingException;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -24,7 +23,6 @@ public class ConsoleSSH extends JPanel {
 	
 	public static JTextArea consoleArea;
 	public static JTextField consoleInput;
-	private static String userInputText;
 	public static ByteArrayInputStream UserInputStream;
 	public static ByteArrayOutputStream SystemOutputStream;
 	
@@ -51,14 +49,8 @@ public class ConsoleSSH extends JPanel {
 		consoleInput.setEnabled(true);
 		consoleInput.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				try {
-					userInputText = consoleInput.getText();
-					UserInputStream = new ByteArrayInputStream(userInputText.getBytes("UTF-8"));
-				} catch (final UnsupportedEncodingException e1) {
-					e1.printStackTrace();
-				} finally {
-					consoleInput.setText("");
-				}
+				ConnectionSSH.sendMessage(consoleInput.getText());
+				consoleInput.setText("");
 			}
 		});
 		gc.anchor = GridBagConstraints.SOUTH;

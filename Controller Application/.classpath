@@ -2,6 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/jsch-0.1.50.jar"/>
+	<classpathentry kind="lib" path="lib/jsch/jsch-0.1.50.jar"/>
+	<classpathentry kind="lib" path="lib/sshj/sshj-0.8.1.jar" sourcepath="lib/sshj/sshj-0.8.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/Controller%20Application/lib/sshj/sshj-0.8.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

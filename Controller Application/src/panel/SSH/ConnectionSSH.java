@@ -2,6 +2,7 @@ package panel.SSH;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import javax.swing.JOptionPane;
 
@@ -23,11 +24,11 @@ public class ConnectionSSH implements Runnable {
 	private final String serverIP;
 	private final String serverUsername;
 	private final String serverPassword;
-	
 	private UserInfo ui;
 	private static Session session;
 	private static Channel channel;
 	private InputStream inStream;
+	private OutputStream outStream;
 	
 	/**
 	 * Handles the SSH connection of the application
@@ -83,7 +84,7 @@ public class ConnectionSSH implements Runnable {
 		try {
 			session = jsch.getSession(serverUsername, serverIP, serverPort);
 			session.setPassword(serverPassword);
-			//jsch.setKnownHosts("~/.ssh/known_hosts");
+			jsch.setKnownHosts("~/.ssh/known_hosts");
 		    //jsch.addIdentity("~/.ssh/id_rsa");
 		    session.setUserInfo(ui);
 			session.connect(30000);
@@ -102,7 +103,8 @@ public class ConnectionSSH implements Runnable {
 			channel = session.openChannel("shell");
 			//channel.setInputStream(ConsoleSSH.UserInputStream, false);
 	 		//channel.setOutputStream(ConsoleSSH.SystemOutputStream, false);
-			channel.setInputStream(System.in);
+			channel.setInputStream(inStream);
+			channel.setOutputStream(outStream);
 	 		channel.connect(3*1000);
 		} catch (final JSchException e) {
 			e.printStackTrace();
@@ -136,6 +138,18 @@ public class ConnectionSSH implements Runnable {
 				System.out.println("exit-status: "+channel.getExitStatus());
 				break;
 			}
+		}
+	}
+	
+	/**
+	 * Sends a message through SSH.
+	 * @param message
+	 */
+	public static void sendMessage(String message) {
+		try {
+			channel.sendSignal(message);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
