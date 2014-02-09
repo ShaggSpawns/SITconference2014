@@ -2,7 +2,6 @@ package panel.SSH;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 
 import javax.swing.JOptionPane;
 
@@ -24,11 +23,11 @@ public class ConnectionSSH implements Runnable {
 	private final String serverIP;
 	private final String serverUsername;
 	private final String serverPassword;
-	private UserInfo ui;
+	private UserInfo userInfo;
 	private static Session session;
 	private static Channel channel;
 	private InputStream inStream;
-	private OutputStream outStream;
+	//private OutputStream outStream;
 	
 	/**
 	 * Handles the SSH connection of the application
@@ -56,26 +55,6 @@ public class ConnectionSSH implements Runnable {
 	}
 	
 	/**
-	 * Initializes the user info (gets permission to use it)
-	 */
-	private void setUserInfo() {
-		ui = new MyUserInfo() {
-			
-			public void showMessage(final String message) { 
-				JOptionPane.showMessageDialog(null, message);
-			}
-			
-			public boolean promptYesNo(final String message) {
-				final Object[] options = { "yes", "no" };
-		 
-				final int foo = JOptionPane.showOptionDialog(null, message, "Warning", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
-				 
-				return foo == 0;
-			}
-		};
-	}
-	
-	/**
 	 * Sets up the session with SSH
 	 */
 	private void setupSession() {
@@ -84,9 +63,9 @@ public class ConnectionSSH implements Runnable {
 		try {
 			session = jsch.getSession(serverUsername, serverIP, serverPort);
 			session.setPassword(serverPassword);
-			jsch.setKnownHosts("~/.ssh/known_hosts");
+			//jsch.setKnownHosts("~/.ssh/known_hosts");
 		    //jsch.addIdentity("~/.ssh/id_rsa");
-		    session.setUserInfo(ui);
+		    session.setUserInfo(userInfo);
 			session.connect(30000);
 			LoginSSH.connectedGUIstate(true);
 		} catch (final JSchException e) {
@@ -103,12 +82,36 @@ public class ConnectionSSH implements Runnable {
 			channel = session.openChannel("shell");
 			//channel.setInputStream(ConsoleSSH.UserInputStream, false);
 	 		//channel.setOutputStream(ConsoleSSH.SystemOutputStream, false);
-			channel.setInputStream(inStream);
-			channel.setOutputStream(outStream);
+			try {
+				channel.setInputStream(channel.getInputStream());
+				channel.setOutputStream(channel.getOutputStream());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 	 		channel.connect(3*1000);
 		} catch (final JSchException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Initializes the user info (gets permission to use it)
+	 */
+	private void setUserInfo() {
+		userInfo = new MyUserInfo() {
+			
+			public void showMessage(final String message) { 
+				JOptionPane.showMessageDialog(null, message);
+			}
+			
+			public boolean promptYesNo(final String message) {
+				final Object[] options = { "yes", "no" };
+				
+				final int foo = JOptionPane.showOptionDialog(null, message, "Warning", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+				 
+				return foo == 0;
+			}
+		};
 	}
 	
 	/**

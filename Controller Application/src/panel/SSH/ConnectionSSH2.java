@@ -2,13 +2,12 @@ package panel.SSH;
 
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.concurrent.TimeUnit;
 
 import net.schmizz.sshj.SSHClient;
 import net.schmizz.sshj.common.IOUtils;
-import net.schmizz.sshj.connection.ConnectionException;
 import net.schmizz.sshj.connection.channel.direct.Session;
 import net.schmizz.sshj.connection.channel.direct.Session.Command;
-import net.schmizz.sshj.transport.TransportException;
 
 /**
  * Handles the SSH connection of the application
@@ -20,6 +19,7 @@ public class ConnectionSSH2 implements Runnable {
 	private final InetAddress serverIP;
 	private final String serverUsername;
 	private final String serverPassword;
+	private static SSHClient sshClient = null;
 	private static Session session;
 	private static Command cmd;
 	
@@ -42,8 +42,6 @@ public class ConnectionSSH2 implements Runnable {
 	 */
 	public void run() {
 		setupSession();
-		whileConnected();
-		closeConnection();
 	}
 	
 	/**
@@ -51,14 +49,12 @@ public class ConnectionSSH2 implements Runnable {
 	 */
 	private void setupSession() {
 		try {
-			@SuppressWarnings("resource")
-			final SSHClient ssh = new SSHClient();
-			ssh.loadKnownHosts();
-			ssh.connect(serverIP, serverPort);
+			sshClient = new SSHClient();
+			//ssh.loadKnownHosts();
+			sshClient.connect(serverIP, serverPort);
 			try {
-				ssh.authPassword(serverUsername, serverPassword);
-				session = ssh.startSession();
-				cmd.join();
+				sshClient.authPassword(serverUsername, serverPassword);
+				session = sshClient.startSession();
 				LoginSSH.connectedGUIstate(true);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -73,7 +69,7 @@ public class ConnectionSSH2 implements Runnable {
 	/**
 	 * Handles the communication over SSH
 	 */
-	private void whileConnected() {
+	/*private void whileConnected() {
 		while (true) {
 			try {
 				System.out.println(IOUtils.readFully(cmd.getInputStream()).toString());
@@ -82,11 +78,11 @@ public class ConnectionSSH2 implements Runnable {
 			}
 			
 			if (cmd.isOpen() == false) {
-				System.out.println("exit-status: "+cmd.getExitStatus());
+				System.out.println("exit-status: " + cmd.getExitStatus());
 				break;
 			}
 		}
-	}
+	}*/
 	
 	/**
 	 * Sends a message through SSH.
@@ -95,7 +91,10 @@ public class ConnectionSSH2 implements Runnable {
 	public static void sendMessage(String message) {
 		try {
 			cmd = session.exec(message);
-		} catch (ConnectionException | TransportException e) {
+			System.out.println(IOUtils.readFully(cmd.getInputStream()).toString());
+			cmd.join(5, TimeUnit.SECONDS);
+			//cmd.close();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -114,8 +113,62 @@ public class ConnectionSSH2 implements Runnable {
 			cmd.close();
 			session.sendEOF();
 			session.close();
-		} catch (TransportException | ConnectionException e) {
+			sshClient.disconnect();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 }
+
+/*public static void main(final String[] arg) {
+
+try {
+	final JSch jsch = new JSch();
+	jsch.setKnownHosts("~/.ssh/known_hosts");
+	String host = null;
+	
+	if (arg.length > 0) {
+		host = arg[0];
+	} else {
+		host = JOptionPane.showInputDialog("Enter username@hostname", System.getProperty("user.name") + "@localhost");
+	}
+	
+	final String user = host.substring(0, host.indexOf('@'));
+	host = host.substring(host.indexOf('@') + 1);
+	final Session session = jsch.getSession(user, host, 22);
+	final String passwd = JOptionPane.showInputDialog("Enter password");
+	session.setPassword(passwd);
+	
+	final UserInfo ui = new MyUserInfo() {
+		public void showMessage(final String message) {
+			JOptionPane.showMessageDialog(null, message);
+		}
+		
+		public boolean promptYesNo(final String message) {
+			final Object[] options = { "yes", "no" };
+			final int foo=JOptionPane.showOptionDialog(null, message, "Warning", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+			return foo == 0;
+		}
+	};
+	session.setUserInfo(ui);
+	session.connect(30000);   // making a connection with timeout.
+	final Channel channel=session.openChannel("shell");
+	channel.setInputStream(System.in);
+	channel.setOutputStream(System.out);
+	channel.connect(3*1000);
+} catch(final Exception e) {
+	System.out.println(e);
+}
+}
+
+public static abstract class MyUserInfo implements UserInfo, UIKeyboardInteractive {
+	public String getPassword() { return null; }
+	public boolean promptYesNo(final String str){ return false; }
+	public String getPassphrase(){ return null; }
+	public boolean promptPassphrase(final String message){ return false; }
+	public boolean promptPassword(final String message){ return false; }
+	public void showMessage(final String message){ }
+	public String[] promptKeyboardInteractive(final String destination, final String name, final String instruction, final String[] prompt, final boolean[] echo) {
+		return null;
+	}
+}*/

@@ -8,6 +8,5 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/Controller%20Application/lib/sshj/sshj-0.9.1-20130812.023717-1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/slf4j/slf4j-api-1.7.6.jar" sourcepath="lib/slf4j/slf4j-api-1.7.6-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

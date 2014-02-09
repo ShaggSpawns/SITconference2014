@@ -30,7 +30,7 @@ public class InfoConsole extends JPanel {
 		final GridBagConstraints gc = new GridBagConstraints();
 		
 		consoleArea = new JTextArea(11, 38);
-		consoleArea.setEditable(true);
+		consoleArea.setEditable(false);
 		DefaultCaret caret = (DefaultCaret)consoleArea.getCaret();
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 	    gc.anchor = GridBagConstraints.CENTER;

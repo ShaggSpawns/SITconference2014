@@ -135,7 +135,8 @@ public class LoginSSH extends JPanel {
 				address = username + "@" + ip + ":" + inPort;
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					connectBtn.setText("Disconnect");
-					
+					connectedGUIstate(true);
+					saveBtn.setEnabled(false);
 					if (!(ip.equals(""))) {
 						try {
 							if (!(inPort.equals(""))) {
@@ -143,7 +144,7 @@ public class LoginSSH extends JPanel {
 								port = intport;
 									if (!(username.equals(""))) {
 										if (!(password.equals(""))){
-											(new Thread(new ConnectionSSH(ip, port, username, password))).start();
+											new Thread(new ConnectionSSH3(ip, port, username, password)).start();
 										} else {
 											System.out.println("Password can not be empty!");
 											System.out.println("Entered address ( " + address + " )\n");
@@ -177,7 +178,7 @@ public class LoginSSH extends JPanel {
 				} else {
 					connectedGUIstate(false);
 					LoadLogins.addLogins(false);
-					ConnectionSSH.closeConnection();
+					ConnectionSSH3.closeSSH();
 				}
 			}
 		});
@@ -278,6 +279,7 @@ public class LoginSSH extends JPanel {
 			passwordF.setFocusable(false);
 			saveBtn.setEnabled(true);
 			loadComboBox.setEnabled(false);
+			ConsoleSSH.consoleInput.setEnabled(true);
 			connectBtn.setText("Disconnect");
 		} else {
 			hostIPF.setEditable(true);
@@ -290,6 +292,7 @@ public class LoginSSH extends JPanel {
 			passwordF.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
+			ConsoleSSH.consoleArea.setEnabled(false);
 			connectBtn.setText("Connect");
 		}
 	}
