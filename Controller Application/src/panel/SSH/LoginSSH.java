@@ -135,8 +135,7 @@ public class LoginSSH extends JPanel {
 				address = username + "@" + ip + ":" + inPort;
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					connectBtn.setText("Disconnect");
-					connectedGUIstate(true);
-					saveBtn.setEnabled(false);
+					connectedGUIstate("Pending");
 					if (!(ip.equals(""))) {
 						try {
 							if (!(inPort.equals(""))) {
@@ -176,7 +175,7 @@ public class LoginSSH extends JPanel {
 						connectBtn.doClick();
 					}
 				} else {
-					connectedGUIstate(false);
+					connectedGUIstate("Disconnected");
 					LoadLogins.addLogins(false);
 					ConnectionSSH.closeSSH();
 				}
@@ -197,7 +196,6 @@ public class LoginSSH extends JPanel {
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				fillLine = loadComboBox.getSelectedIndex();
-				
 				if (fillLine == 0) {
 					emptyFields();
 				} else {
@@ -240,7 +238,6 @@ public class LoginSSH extends JPanel {
 			hostIPF.setText(host);;
 			hostPortF.setText(port);
 			usernameF.setText(user);
-			passwordF.setText("");
 		} catch (final ArrayIndexOutOfBoundsException e) {
 			System.out.println("ArrayIndexOutOfBoundsException 'fillFields'");
 		} catch (final FileNotFoundException e) {
@@ -267,21 +264,9 @@ public class LoginSSH extends JPanel {
 	 * Changes the availability of the components on the SSH tab, defined by the state parameter
 	 * @param state
 	 */
-	public static void connectedGUIstate(final boolean state) {
-		if (state == true) {
-			hostIPF.setEditable(false);
-			hostIPF.setFocusable(false);
-			hostPortF.setEditable(false);
-			hostPortF.setFocusable(false);
-			usernameF.setEditable(false);
-			usernameF.setFocusable(false);
-			passwordF.setEditable(false);
-			passwordF.setFocusable(false);
-			saveBtn.setEnabled(true);
-			loadComboBox.setEnabled(false);
-			ConsoleSSH.consoleInput.setEnabled(true);
-			connectBtn.setText("Disconnect");
-		} else {
+	public static void connectedGUIstate(final String state) {
+		switch(state) {
+		case "Disconnected":
 			hostIPF.setEditable(true);
 			hostIPF.setFocusable(true);
 			hostPortF.setEditable(true);
@@ -292,8 +277,34 @@ public class LoginSSH extends JPanel {
 			passwordF.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
-			ConsoleSSH.consoleArea.setEnabled(false);
 			connectBtn.setText("Connect");
+			break;
+		case "Pending":
+			hostIPF.setEditable(false);
+			hostIPF.setFocusable(false);
+			hostPortF.setEditable(false);
+			hostPortF.setFocusable(false);
+			usernameF.setEditable(false);
+			usernameF.setFocusable(false);
+			passwordF.setEditable(false);
+			passwordF.setFocusable(false);
+			saveBtn.setEnabled(false);
+			loadComboBox.setEnabled(false);
+			connectBtn.setText("Connecting");
+			break;
+		case "Connected":
+			hostIPF.setEditable(false);
+			hostIPF.setFocusable(false);
+			hostPortF.setEditable(false);
+			hostPortF.setFocusable(false);
+			usernameF.setEditable(false);
+			usernameF.setFocusable(false);
+			passwordF.setEditable(false);
+			passwordF.setFocusable(false);
+			saveBtn.setEnabled(true);
+			loadComboBox.setEnabled(false);
+			connectBtn.setText("Disconnect");
+			break;
 		}
 	}
 }

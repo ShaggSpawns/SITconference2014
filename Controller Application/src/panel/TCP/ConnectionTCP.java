@@ -119,13 +119,13 @@ public class ConnectionTCP implements Runnable {
 		try {
 			new MessageLog("Info", "Closing sockets and streams...");
 			new MessageStatusUpdate("Pending", "Closing sockets and streams...");
-			new MessageStatusUpdate("Info", "in");
 			input.close();
-			new MessageStatusUpdate("Info", "out");
+			new MessageStatusUpdate("Info", "TCP input stream closed");
 			output.flush();
 			output.close();
-			new MessageStatusUpdate("Info", "connect");
+			new MessageStatusUpdate("Info", "TCP output stream closed");
 			connection.close();
+			new MessageStatusUpdate("Info", "TCP connecton closed");
 			new MessageLog("Info", "Successfully closed sockets and streams");
 			new MessageStatusUpdate("Disconnected", "Successfully closed sockets and streams");
 		} catch (final IOException ioException) {

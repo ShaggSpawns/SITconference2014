@@ -6,16 +6,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-
-import ssh.SSH.MyUserInfo;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
-import com.jcraft.jsch.UserInfo;
  
 public class ConnectionSSH implements Runnable {
 	private static Session session;
@@ -46,22 +42,6 @@ public class ConnectionSSH implements Runnable {
 		try {
 			session = jsch.getSession(USERNAME, HOST, PORT);
 			session.setPassword(PASSWORD);
-			final UserInfo userInfo = new MyUserInfo() {
-				public void showMessage(final String message) {
-					JOptionPane.showMessageDialog(null, message);
-				}
-				
-				public boolean promptYesNo(final String message) {
-					final Object[] options = { "yes", "no" };
-					final int foo=JOptionPane.showOptionDialog(null,
-							message, "Warning",
-							JOptionPane.DEFAULT_OPTION,
-							JOptionPane.WARNING_MESSAGE,
-							null, options, options[0]);
-					return foo == 0;
-				}
-			};
-			session.setUserInfo(userInfo);
 			session.connect();
 			channel = session.openChannel("shell");
 			channel.setInputStream(input);
@@ -81,8 +61,9 @@ public class ConnectionSSH implements Runnable {
 			};
 			channel.setOutputStream(output);
 			channel.connect();
-			LoginSSH.saveBtn.setEnabled(true);
+			LoginSSH.connectedGUIstate("Connected");
 		} catch (final JSchException e) {
+			LoginSSH.connectedGUIstate("Disconnected");
 			e.printStackTrace();
 		}
 	}
@@ -114,8 +95,19 @@ public class ConnectionSSH implements Runnable {
 	}
 	
 	public static void closeSSH() {
-		LoginSSH.connectedGUIstate(false);
-		channel.disconnect();
-		session.disconnect();
+		LoginSSH.connectedGUIstate("Disconnected");
+		if (channel.isConnected()) {
+			try {
+				channel.getOutputStream().close();
+				channel.getInputStream().close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			channel.disconnect();
+		}
+		if (session.isConnected()) {
+			session.disconnect();
+		}
+		
 	}
 }
