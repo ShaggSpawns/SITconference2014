@@ -4,6 +4,7 @@ import jssc.SerialPort;
 import jssc.SerialPortEvent;
 import jssc.SerialPortEventListener;
 import jssc.SerialPortException;
+import jssc.SerialPortTimeoutException;
 /**
  * Initializes a connection with a serial device and manages the connection.
  * @author Jackson Wilson (c) 2014
@@ -25,7 +26,8 @@ public class JsscComm implements SerialPortEventListener {
 	 * @param DATA_RATE
 	 */
 	public void startSerialComm(final int DATA_RATE) {
-		serialPort = new SerialPort("/dev/ttyUSB0");
+		//serialPort = new SerialPort("/dev/ttyUSB0");
+		serialPort = new SerialPort("/dev/tty.usbmodemfd121");
 		
 		try {
 			serialPort.openPort();
@@ -34,6 +36,7 @@ public class JsscComm implements SerialPortEventListener {
 					SerialPort.STOPBITS_1,
 					SerialPort.PARITY_NONE);
 			if (serialPort.isOpened() == true) {
+				//displayMessage("Serial port is opened on: " + serialPort.getPortName());
 				serialPort.addEventListener(this);
 			} else {
 				displayMessage("Port could not be opened.");
@@ -63,8 +66,10 @@ public class JsscComm implements SerialPortEventListener {
 	 * @param data
 	 */
 	public synchronized static void writeData(final String data) {
+		displayMessage("Sending: " + data);
 		try {
-			serialPort.writeBytes(data.getBytes());
+			//serialPort.writeBytes(data.getBytes());
+			serialPort.writeString(data);
 		} catch (final SerialPortException e) {
 			displayMessage(e.toString());
 		}
@@ -75,14 +80,22 @@ public class JsscComm implements SerialPortEventListener {
 	 */
 	@Override
 	public void serialEvent(final SerialPortEvent event) {
-		if (event.isRXCHAR()) {
+		try {
+			displayMessage("R1: " + serialPort.readString(20, 20));
+			//displayMessage("R2: " + serialPort.readBytes());
+			//displayMessage("R3: " + serialPort.readHexString());
+			//displayMessage("R4: Motors: " + serialPort.readString());
+		} catch (SerialPortException | SerialPortTimeoutException e) {
+			e.printStackTrace();
+		}
+		/*if (event.isRXCHAR()) {
 			try {
 				final byte[] inputMessage = serialPort.readBytes();
 				displayMessage(inputMessage.toString());
 			} catch (final SerialPortException e) {
 				displayMessage(e.toString());
 			}
-		}
+		//}*/
 	}
 	
 	/**

@@ -87,7 +87,7 @@ public class TCPComm extends JFrame {
 	 * @throws IOException
 	 */
 	private static void setupStreams() throws IOException {
-		new JsscComm(9600);
+		new JsscComm(57600);
 		output = new ObjectOutputStream(connection.getOutputStream());
 		output.flush();
 		input = new ObjectInputStream(connection.getInputStream());
@@ -106,20 +106,20 @@ public class TCPComm extends JFrame {
 				displayMessage(message);
 				if (JsscComm.serialPort.isOpened() == true) {
 					switch (message) {
+						case "STOP":
+							JsscComm.writeData("0");
+							break;
 						case "FORWARD":
-							JsscComm.writeData("F");
+							JsscComm.writeData("1");
 							break;
 						case "REVERSE":
-							JsscComm.writeData("B");
+							JsscComm.writeData("2");
 							break;
 						case "RIGHT":
-							JsscComm.writeData("R");
+							JsscComm.writeData("3");
 							break;
 						case "LEFT":
-							JsscComm.writeData("L");
-							break;
-						case "STOP":
-							JsscComm.writeData("S");
+							JsscComm.writeData("4");
 							break;
 						default:
 							break;
@@ -144,11 +144,8 @@ public class TCPComm extends JFrame {
 			output.close();
 			input.close();
 			connection.close();
-			Thread.sleep(200);
 		}catch(final IOException ioException){
 			ioException.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 	}
 	

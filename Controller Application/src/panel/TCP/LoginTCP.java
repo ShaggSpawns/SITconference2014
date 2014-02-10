@@ -169,7 +169,6 @@ public class LoginTCP extends JPanel {
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				fillLine = loadComboBox.getSelectedIndex();
-				
 				if (fillLine == 0) {
 					emptyFields();
 				} else {
