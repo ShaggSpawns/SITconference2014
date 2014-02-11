@@ -2310,3 +2310,24 @@ Entered address ( : )
 [19:57:02 Status]: TCP connecton closed
 [19:57:02 Info]: Successfully closed sockets and streams
 [19:57:02 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/10/14 08:14:24 PM] +++++++++++++++
+[20:14:31 Info]: SSH: loaded known_hosts
+[20:14:32 Info]: SSH: session connected
+[20:14:32 Info]: SSH: channel connected
+[20:15:04 Info]: SSH: channel streams were successfully closed
+[20:15:04 Info]: SSH: channel successfully closed
+[20:15:04 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/10/14 08:27:52 PM] +++++++++++++++
+[20:28:00 Info]: SSH: loaded known_hosts
+[20:28:01 Info]: SSH: session connected
+[20:28:01 Info]: SSH: channel connected
+[20:28:13 Info]: SSH: channel streams were successfully closed
+[20:28:13 Info]: SSH: channel successfully closed
+[20:28:13 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/10/14 08:31:15 PM] +++++++++++++++
+[20:31:20 Info]: SSH: loaded known_hosts
+[20:31:21 Info]: SSH: session connected
+[20:31:21 Info]: SSH: channel connected
+[20:31:26 Info]: SSH: channel streams were successfully closed
+[20:31:26 Info]: SSH: channel successfully closed
+[20:31:26 Info]: SSH: session successfully closed

@@ -2,6 +2,7 @@ package panel.SSH;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.InputStream;
 
 import javax.swing.JTextField;
@@ -27,11 +28,12 @@ public class TextFieldInputStream extends InputStream implements ActionListener 
     }
 
     @Override
-    public int read() {
+    public int read() throws IOException {
     	if (input.equals("exit")) {
     		ConnectionSSH.closeSSH();
+    		return 0;
     	}
-    	if(input != null && position == input.length()){
+    	if (input != null && position == input.length()) {
         	input = null;
             return java.io.StreamTokenizer.TT_EOF;
         }

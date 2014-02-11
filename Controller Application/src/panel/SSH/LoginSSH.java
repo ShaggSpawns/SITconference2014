@@ -135,7 +135,7 @@ public class LoginSSH extends JPanel {
 				address = username + "@" + ip + ":" + inPort;
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					connectBtn.setText("Disconnect");
-					connectedGUIstate("Pending");
+					changeTCPguiState("Pending");
 					if (!(ip.equals(""))) {
 						try {
 							if (!(inPort.equals(""))) {
@@ -175,9 +175,9 @@ public class LoginSSH extends JPanel {
 						connectBtn.doClick();
 					}
 				} else {
-					connectedGUIstate("Disconnected");
-					LoadLogins.addLogins(false);
+					changeTCPguiState("Disconnected");
 					ConnectionSSH.closeSSH();
+					LoadLogins.addLogins(false);
 				}
 			}
 		});
@@ -264,7 +264,7 @@ public class LoginSSH extends JPanel {
 	 * Changes the availability of the components on the SSH tab, defined by the state parameter
 	 * @param state
 	 */
-	public static void connectedGUIstate(final String state) {
+	public static void changeTCPguiState(final String state) {
 		switch(state) {
 		case "Disconnected":
 			hostIPF.setEditable(true);
@@ -277,6 +277,8 @@ public class LoginSSH extends JPanel {
 			passwordF.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
+			ConsoleSSH.consoleArea.setText(null);
+			ConsoleSSH.consoleArea.setEnabled(false);
 			connectBtn.setText("Connect");
 			break;
 		case "Pending":
@@ -290,6 +292,8 @@ public class LoginSSH extends JPanel {
 			passwordF.setFocusable(false);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(false);
+			ConsoleSSH.consoleArea.setText(null);
+			ConsoleSSH.consoleArea.setEnabled(false);
 			connectBtn.setText("Connecting");
 			break;
 		case "Connected":
@@ -303,6 +307,7 @@ public class LoginSSH extends JPanel {
 			passwordF.setFocusable(false);
 			saveBtn.setEnabled(true);
 			loadComboBox.setEnabled(false);
+			ConsoleSSH.consoleArea.setEnabled(true);
 			connectBtn.setText("Disconnect");
 			break;
 		}

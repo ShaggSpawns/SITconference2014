@@ -46,7 +46,8 @@ public class ConnectionSSH implements Runnable {
 			session.connect();
 			new MessageLog("Info", "SSH: session connected");
 			channel = session.openChannel("shell");
-			channel.setInputStream(System.in);
+			channel.setInputStream(ConsoleSSH.streamer);
+			//channel.setInputStream(System.in);
 			final OutputStream output = new OutputStream() {
 				@Override
 				public void write(final int b) throws IOException {
@@ -64,9 +65,9 @@ public class ConnectionSSH implements Runnable {
 			channel.setOutputStream(output);
 			channel.connect();
 			new MessageLog("Info", "SSH: channel connected");
-			LoginSSH.connectedGUIstate("Connected");
+			LoginSSH.changeTCPguiState("Connected");
 		} catch (final JSchException e) {
-			LoginSSH.connectedGUIstate("Disconnected");
+			LoginSSH.changeTCPguiState("Disconnected");
 			e.printStackTrace();
 			new MessageLog("Error", "SSH: failed to set up SSH connection");
 		}
@@ -94,15 +95,18 @@ public class ConnectionSSH implements Runnable {
 	}
 	
 	public static void closeSSH() {
-		LoginSSH.connectedGUIstate("Disconnected");
+		LoginSSH.changeTCPguiState("Disconnected");
 		if (channel.isConnected()) {
 			try {
+				channel.sendSignal("exit");
 				channel.getOutputStream().close();
 				channel.getInputStream().close();
 				new MessageLog("Info", "SSH: channel streams were successfully closed");
 			} catch (final IOException e) {
 				e.printStackTrace();
 				new MessageLog("Error", "SSH: failed to close channel streams");
+			} catch (final Exception e) {
+				e.printStackTrace();
 			}
 			channel.disconnect();
 			new MessageLog("Info", "SSH: channel successfully closed");

@@ -3,8 +3,6 @@ package panel.SSH;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -21,8 +19,7 @@ public class ConsoleSSH extends JPanel {
 	
 	public static JTextArea consoleArea;
 	public static JTextField consoleInput;
-	public static ByteArrayInputStream UserInputStream;
-	public static ByteArrayOutputStream SystemOutputStream;
+	public static TextFieldInputStream streamer;
 	
 	/**
 	 * Initializes the SSH console area for the SSH tab
@@ -45,15 +42,8 @@ public class ConsoleSSH extends JPanel {
 	    
 		consoleInput = new JTextField(38);
 		consoleInput.setEnabled(true);
-		final TextFieldInputStream streamer = new TextFieldInputStream(consoleInput);
+		streamer = new TextFieldInputStream(consoleInput);
 		consoleInput.addActionListener(streamer);
-		System.setIn(streamer);
-		/*consoleInput.addActionListener(new ActionListener() {
-			public void actionPerformed(final ActionEvent e) {
-				ConnectionSSH.sendMessage(consoleInput.getText());
-				consoleInput.setText("");
-			}
-		});*/
 		gc.anchor = GridBagConstraints.SOUTH;
 	    gc.ipady = 0;
 	    gc.gridx = 0;
