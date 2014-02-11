@@ -16,9 +16,8 @@ import javax.swing.JFrame;
 public class TCPComm extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	private static int firstPort;
-	private static int lastPort;
-	private static int backlog;
+	private static int PORT;
+	private static int BACKLOG;
 	private static ObjectOutputStream output;
 	private static ObjectInputStream input;
 	private static ServerSocket server;
@@ -30,10 +29,9 @@ public class TCPComm extends JFrame {
 	 * @param portRangeEnd
 	 * @param serverBacklog
 	 */
-	public TCPComm(final int portRangeStart, final int portRangeEnd, final int serverBacklog) {
-		firstPort = portRangeStart;
-		lastPort = portRangeEnd;
-		backlog = serverBacklog;
+	public TCPComm(final int serverPort, final int serverBacklog) {
+		PORT = serverPort;
+		BACKLOG = serverBacklog;
 		startRunning();
 	}
 	
@@ -61,14 +59,11 @@ public class TCPComm extends JFrame {
 	 * Initializes the TCP server.
 	 */
 	private static void initializeServer() {
-		for (int currentPort = firstPort; currentPort <= lastPort; currentPort++) {
-			try {
-				server = new ServerSocket(currentPort, backlog);
-				displayMessage("Initialized server on port: " + currentPort);
-				break;
-			} catch (final IOException ioE) {
-				displayMessage(currentPort + " is not an opened port.");
-			}
+		try {
+			server = new ServerSocket(PORT, BACKLOG);
+			displayMessage("Initialized server on port: " + PORT);
+		} catch (final IOException ioE) {
+			displayMessage(PORT + " is not an opened port.");
 		}
 	}
 	
@@ -144,6 +139,8 @@ public class TCPComm extends JFrame {
 			output.close();
 			input.close();
 			connection.close();
+			server.close();
+			displayMessage("\n\n\n");
 		}catch(final IOException ioException){
 			ioException.printStackTrace();
 		}

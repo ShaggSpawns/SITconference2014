@@ -36,10 +36,10 @@ public class LoginSSH extends JPanel {
 	private final JLabel hostCOLON;
 	private final JLabel usernameL;
 	private final JLabel passwordL;
-	private static JTextField hostIPF;
-	private static JTextField hostPortF;
-	private static JTextField usernameF;
-	private static JPasswordField passwordF;
+	public static JTextField hostIPF;
+	public static JTextField hostPortF;
+	public static JTextField usernameF;
+	public static JPasswordField passwordF;
 	private static JToggleButton connectBtn;
 	public static JButton saveBtn;
 	public static JComboBox<String> loadComboBox;

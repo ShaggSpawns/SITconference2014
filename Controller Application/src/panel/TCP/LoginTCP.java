@@ -35,13 +35,12 @@ public class LoginTCP extends JPanel {
 	
 	private final JLabel hostIP;
 	private final JLabel port;
-	private static JTextField hostField;
-	private static JTextField portField;
+	public static JTextField hostField;
+	public static JTextField portField;
 	public static JToggleButton connectBtn;
 	public static JButton saveBtn;
 	public static JComboBox<String> loadComboBox;
 	private String address;
-	private int fillLine = 0;
 	
 	/**
 	 * Creates the TCP Login area on the MotorControls tab
@@ -95,9 +94,8 @@ public class LoginTCP extends JPanel {
 				address = ip + ":" + inPort;
 				int port = 0;
 				int intport;
-				
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
-					connectBtn.setText("Disconnect");
+					changeTCPguiState("Pending");
 					if (!(ip.equals(""))) {
 						try {
 							if (!(inPort.equals(""))) {
@@ -126,16 +124,11 @@ public class LoginTCP extends JPanel {
 						connectBtn.doClick();
 					}
 				} else {
-					try {
-						connectedGUIstate(false);
+					changeTCPguiState("Disconnected");
+					if (ConnectionTCP.connection.isConnected()) {
 						ConnectionTCP.sendMessage("END");
-						new MessageStatusUpdate("Disconnected", "Server Disconnected");
-						LoadLogins.addLogins(true);
-						fillFields(fillLine);
-					} catch (final NullPointerException nullPointerException) {
-						new MessageLog("ERROR", "NullPointerException panel.TCP.LoginTCP.connectBtn");
-						connectedGUIstate(false);
 					}
+					LoadLogins.addLogins(true);
 				}
 			}
 		});
@@ -168,11 +161,11 @@ public class LoginTCP extends JPanel {
 		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				fillLine = loadComboBox.getSelectedIndex();
-				if (fillLine == 0) {
+				int selectedEntry = loadComboBox.getSelectedIndex();
+				if (selectedEntry == 0) {
 					emptyFields();
 				} else {
-					fillFields(fillLine);
+					fillLoginFields(selectedEntry);
 				}
 			}
 		});
@@ -188,7 +181,7 @@ public class LoginTCP extends JPanel {
 	 * Auto-fills the login fields with saved entries
 	 * @param line
 	 */
-	private void fillFields(final int line) {
+	private void fillLoginFields(final int line) {
 		try {
 			final FileInputStream fs = new FileInputStream(FileLogins.loginTCP.getAbsoluteFile());
 			@SuppressWarnings("resource")
@@ -230,23 +223,64 @@ public class LoginTCP extends JPanel {
 	 * Changes the availability of the different components on the Motor Control tab, defined by the state parameter
 	 * @param state
 	 */
-	public static void connectedGUIstate(final boolean state) {
-		if (state == true) {
+	public static void changeTCPguiState(final String state) {
+		switch(state) {
+		case "Connected":
 			hostField.setEditable(false);
 			hostField.setFocusable(false);
 			portField.setEditable(false);
 			portField.setFocusable(false);
 			saveBtn.setEnabled(true);
 			loadComboBox.setEnabled(false);
+			MotorControls.forwardBtn.setEnabled(true);
+			MotorControls.forwardBtn.setFocusable(true);
+			MotorControls.reverseBtn.setEnabled(true);
+			MotorControls.reverseBtn.setFocusable(true);
+			MotorControls.rightBtn.setEnabled(true);
+			MotorControls.rightBtn.setFocusable(true);
+			MotorControls.leftBtn.setEnabled(true);
+			MotorControls.leftBtn.setFocusable(true);
+			MotorControls.stopBtn.setEnabled(true);
+			MotorControls.stopBtn.setFocusable(true);
 			connectBtn.setText("Disconnect");
-		} else {
+			break;
+		case "Pending":
+			hostField.setEditable(false);
+			hostField.setFocusable(false);
+			portField.setEditable(false);
+			portField.setFocusable(false);
+			saveBtn.setEnabled(false);
+			loadComboBox.setEnabled(false);
+			MotorControls.forwardBtn.setEnabled(false);
+			MotorControls.forwardBtn.setFocusable(false);
+			MotorControls.reverseBtn.setEnabled(false);
+			MotorControls.reverseBtn.setFocusable(false);
+			MotorControls.rightBtn.setEnabled(false);
+			MotorControls.rightBtn.setFocusable(false);
+			MotorControls.leftBtn.setEnabled(false);
+			MotorControls.leftBtn.setFocusable(false);
+			MotorControls.stopBtn.setEnabled(false);
+			MotorControls.stopBtn.setFocusable(false);
+			connectBtn.setText("Connecting");
+			break;
+		case "Disconnected":
 			hostField.setEditable(true);
 			hostField.setFocusable(true);
 			portField.setEditable(true);
 			portField.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
+			MotorControls.forwardBtn.setEnabled(false);
+			MotorControls.forwardBtn.setFocusable(false);
+			MotorControls.reverseBtn.setEnabled(false);
+			MotorControls.reverseBtn.setFocusable(false);
+			MotorControls.rightBtn.setEnabled(false);
+			MotorControls.rightBtn.setFocusable(false);
+			MotorControls.leftBtn.setEnabled(false);
+			MotorControls.leftBtn.setFocusable(false);
+			MotorControls.stopBtn.setEnabled(false);
+			MotorControls.stopBtn.setFocusable(false);
 			connectBtn.setText("Connect");
+			break;
 		}
-	}
-}
+	}}

@@ -21,11 +21,11 @@ import javax.swing.JToggleButton;
 public class MotorControls extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	private static JToggleButton forwardBtn;
-	private static JToggleButton reverseBtn;
-	private static JToggleButton rightBtn;
-	private static JToggleButton leftBtn;
-	private static JButton stopBtn;
+	public static JToggleButton forwardBtn;
+	public static JToggleButton reverseBtn;
+	public static JToggleButton rightBtn;
+	public static JToggleButton leftBtn;
+	public static JButton stopBtn;
 	public static JTextField sBar;
 	public static boolean otherBtnToggled = false;
 	private static String currentBtnPressed;
@@ -169,7 +169,11 @@ public class MotorControls extends JPanel {
 	 * the message 'STOP' to the TCP output stream
 	 * @param button
 	 */
-	private void buttonToggled(final String button) {
+	public static void buttonToggled(final String button) {
+		if (button.equals("Disable")) {
+			stopBtn.doClick();
+			return;
+		}
 		if (otherBtnToggled == true) {
 			disableCurrentBtnToggled();
 			setCurrentBtnToggled(true, button);
