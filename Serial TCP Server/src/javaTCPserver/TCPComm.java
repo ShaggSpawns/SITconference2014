@@ -102,19 +102,24 @@ public class TCPComm extends JFrame {
 				if (JsscComm.serialPort.isOpened() == true) {
 					switch (message) {
 						case "STOP":
-							JsscComm.writeData("0");
+							JsscComm.writeData(0);
+							displayMessage("Arduino: STOP");
 							break;
 						case "FORWARD":
-							JsscComm.writeData("1");
+							JsscComm.writeData(1);
+							displayMessage("Arduino: FORWARD");
 							break;
 						case "REVERSE":
-							JsscComm.writeData("2");
+							JsscComm.writeData(2);
+							displayMessage("Arduino: REVERSE");
 							break;
 						case "RIGHT":
-							JsscComm.writeData("3");
+							JsscComm.writeData(3);
+							displayMessage("Arduino: RIGHT");
 							break;
 						case "LEFT":
-							JsscComm.writeData("4");
+							JsscComm.writeData(4);
+							displayMessage("Arduino: LEFT");
 							break;
 						default:
 							break;
