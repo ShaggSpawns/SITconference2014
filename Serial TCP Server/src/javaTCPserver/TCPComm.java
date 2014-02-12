@@ -97,27 +97,21 @@ public class TCPComm extends JFrame {
 		do {
 			try {
 				message = (String) input.readObject();
-				//displayMessage(message);
 				if (JsscComm.serialPort.isOpened() == true) {
 					switch (message) {
 						case "STOP":
-							//JsscComm.writeData("STOP");
 							JsscComm.writeData("0");
 							break;
 						case "FORWARD":
-							//JsscComm.writeData("FORWARD");
 							JsscComm.writeData("1");
 							break;
 						case "REVERSE":
-							//JsscComm.writeData("REVERSE");
 							JsscComm.writeData("2");
 							break;
 						case "RIGHT":
-							//JsscComm.writeData("RIGHT");
 							JsscComm.writeData("3");
 							break;
 						case "LEFT":
-							//JsscComm.writeData("LEFT");
 							JsscComm.writeData("4");
 							break;
 						default:
@@ -134,19 +128,19 @@ public class TCPComm extends JFrame {
 	 * Closes the streams and the socket.
 	 */
 	private static void cleanUp() {
-		displayMessage("Closing connection...");
-		sendMessage("END");
 		try {
-			if (JsscComm.serialPort.isOpened() == true) {
-				sendMessage("0");
+			output.writeObject("SERVER: END");
+			displayMessage("Closing connection...");
+			if (JsscComm.serialPort.isOpened()) {
 				JsscComm.close();
 			}
 			output.close();
 			input.close();
 			connection.close();
 			server.close();
-			displayMessage("\n\n\n");
-		}catch(final IOException ioException){
+			displayMessage("\n# # # # # # # # # #\n");
+			Thread.sleep(100);
+		}catch(final IOException | InterruptedException ioException){
 			ioException.printStackTrace();
 		}
 	}

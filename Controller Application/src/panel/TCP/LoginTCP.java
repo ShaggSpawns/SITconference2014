@@ -124,10 +124,11 @@ public class LoginTCP extends JPanel {
 						connectBtn.doClick();
 					}
 				} else if (ev.getStateChange() == ItemEvent.DESELECTED) {
-					changeTCPguiState("Disconnected");
 					if (ConnectionTCP.connection.isConnected()) {
+						MotorControls.stopBtn.doClick();
 						ConnectionTCP.sendMessage("END");
 					}
+					changeTCPguiState("Disconnected");
 					LoadLogins.addLogins("TCP");
 				}
 			}

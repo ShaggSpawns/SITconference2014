@@ -62,16 +62,16 @@ public class JsscComm implements SerialPortEventListener {
 	 * @param data
 	 */
 	public synchronized static void writeData(final String data) {
-		//char byteData[] = data.toCharArray();
-		try {
-			//if (serialPort.writeByte((byte)byteData[0])) {
-			if (serialPort.writeBytes(data.getBytes())) {
-				displayMessage("Sent: " + data);
-			} else {
-				displayMessage("Failed to send: " + data);
+		if (serialPort.isOpened()) {
+			try {
+				if (serialPort.writeBytes(data.getBytes())) {
+					displayMessage("Sent: " + data);
+				} else {
+					displayMessage("Failed to send: " + data);
+				}
+			} catch (SerialPortException e) {
+				e.printStackTrace();
 			}
-		} catch (SerialPortException e) {
-			e.printStackTrace();
 		}
 	}
 	
@@ -80,13 +80,13 @@ public class JsscComm implements SerialPortEventListener {
 	 */
 	@Override
 	public void serialEvent(final SerialPortEvent event) {
-        try {
-            //final byte[] buffer = serialPort.readBytes();
-            //displayMessage("Received: " + buffer.toString());
-            displayMessage("Received: " + serialPort.readBytes().toString());
-        } catch (final SerialPortException ex) {
-            System.out.println(ex);
-        }
+		if (serialPort.isOpened()) {
+	        //try {
+	            //displayMessage("Received: " + serialPort.readString());
+	        //} catch (final SerialPortException e) {
+	            //System.out.println(e);
+	        //}
+		}
 	}
 	
 	/**

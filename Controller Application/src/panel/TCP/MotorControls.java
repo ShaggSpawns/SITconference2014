@@ -45,7 +45,6 @@ public class MotorControls extends JPanel {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Forward");
 				} else {
-					otherBtnToggled = false;
 					ConnectionTCP.sendMessage("STOP");
 				}
 			}
@@ -67,7 +66,6 @@ public class MotorControls extends JPanel {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Reverse");
 				} else {
-					otherBtnToggled = false;
 					ConnectionTCP.sendMessage("STOP");
 				}
 			}
@@ -84,7 +82,6 @@ public class MotorControls extends JPanel {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Right");
 				} else {
-					otherBtnToggled = false;
 					ConnectionTCP.sendMessage("STOP");
 				}
 			}
@@ -102,7 +99,6 @@ public class MotorControls extends JPanel {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Left");
 				} else {
-					otherBtnToggled = false;
 					ConnectionTCP.sendMessage("STOP");
 				}
 			}
@@ -117,7 +113,6 @@ public class MotorControls extends JPanel {
 			public void actionPerformed(final ActionEvent e) {
 				if (otherBtnToggled == true) {
 					disableCurrentBtnToggled();
-					otherBtnToggled = false;
 				} else {
 					ConnectionTCP.sendMessage("STOP");
 				}
@@ -170,12 +165,13 @@ public class MotorControls extends JPanel {
 	 * @param button
 	 */
 	public static void buttonToggled(final String button) {
-		if (button.equals("Disable")) {
-			stopBtn.doClick();
-			return;
-		}
 		if (otherBtnToggled == true) {
 			disableCurrentBtnToggled();
+			try {
+				Thread.sleep(400);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			setCurrentBtnToggled(true, button);
 		} else if (otherBtnToggled == false) {
 			setCurrentBtnToggled(true, button);
@@ -201,10 +197,6 @@ public class MotorControls extends JPanel {
 				leftBtn.doClick();
 				break;
 		}
-		try {
-			Thread.sleep(450);
-		} catch (final InterruptedException e) {
-			e.printStackTrace();
-		}
+		otherBtnToggled = false;
 	}
 }

@@ -108,8 +108,6 @@ public class ConnectionTCP implements Runnable {
 	 */
 	private final static void cleanUp() {
 		if (connection.isConnected()) {
-			MotorControls.buttonToggled("Disable");
-			LoginTCP.connectBtn.doClick();
 			try {
 				new MessageLog("Info", "Closing sockets and streams...");
 				new MessageStatusUpdate("Pending", "Closing sockets and streams...");
