@@ -25,8 +25,8 @@ public class JsscComm implements SerialPortEventListener {
 	 * @param DATA_RATE
 	 */
 	public void startSerialComm() {
-		//serialPort = new SerialPort("/dev/ttyUSB0");
-		serialPort = new SerialPort("/dev/tty.usbmodemfd1231");
+		serialPort = new SerialPort("/dev/ttyUSB0");
+		//serialPort = new SerialPort("/dev/tty.usbmodemfd1231");
 		
 		try {
 			serialPort.openPort();
