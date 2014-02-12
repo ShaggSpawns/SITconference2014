@@ -57,6 +57,7 @@ public class ConnectionTCP implements Runnable {
 		} catch (final IOException ioException) {
 			new MessageLog("Error", "Server not found!");
 			new MessageStatusUpdate("Error", "Server not found!");
+			LoginTCP.changeTCPguiState("Disconnected");
 		}
 	}
 	
