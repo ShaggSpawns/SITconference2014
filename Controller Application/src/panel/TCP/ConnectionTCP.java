@@ -94,7 +94,6 @@ public class ConnectionTCP implements Runnable {
 			} catch (final EOFException eofException) {
 				new MessageLog("Error", "EOFException in panel.TCP.ConnectionTCP.whileChatting()");
 				new MessageStatusUpdate("Disconnected", "Disconnected from: " + connection.getInetAddress().getHostName());
-				cleanUp();
 				break;
 			} catch (final IOException ioExection) {
 				new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.whileChatting()");
@@ -109,9 +108,8 @@ public class ConnectionTCP implements Runnable {
 	 */
 	private final static void cleanUp() {
 		if (connection.isConnected()) {
-			LoginTCP.changeTCPguiState("Disconnected");
-			LoginTCP.connectBtn.doClick();
 			MotorControls.buttonToggled("Disable");
+			LoginTCP.connectBtn.doClick();
 			try {
 				new MessageLog("Info", "Closing sockets and streams...");
 				new MessageStatusUpdate("Pending", "Closing sockets and streams...");
@@ -127,6 +125,7 @@ public class ConnectionTCP implements Runnable {
 			} catch (final IOException ioException) {
 				new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.cleanUp()");
 				new MessageStatusUpdate("Error", "Failed to close sockets and streams");
+				return;
 			} catch (final NullPointerException nullPointerException) {
 				new MessageLog("Error", "NullPointerException in panel.TCP.ConnectionTCP:2");
 				new MessageStatusUpdate("Error", "No sockets and streams to disconnect from");

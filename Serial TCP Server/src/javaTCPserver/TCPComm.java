@@ -138,6 +138,7 @@ public class TCPComm extends JFrame {
 		sendMessage("END");
 		try {
 			if (JsscComm.serialPort.isOpened() == true) {
+				sendMessage("0");
 				JsscComm.close();
 			}
 			output.close();

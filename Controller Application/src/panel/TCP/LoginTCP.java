@@ -123,12 +123,12 @@ public class LoginTCP extends JPanel {
 						connectBtn.setSelected(true);
 						connectBtn.doClick();
 					}
-				} else {
+				} else if (ev.getStateChange() == ItemEvent.DESELECTED) {
 					changeTCPguiState("Disconnected");
 					if (ConnectionTCP.connection.isConnected()) {
 						ConnectionTCP.sendMessage("END");
 					}
-					LoadLogins.addLogins(true);
+					LoadLogins.addLogins("TCP");
 				}
 			}
 		});
@@ -157,7 +157,7 @@ public class LoginTCP extends JPanel {
 		
 		final String[] hostSaves = {"----------- Load Save ----------"};
 		loadComboBox = new JComboBox<String>(hostSaves);
-		LoadLogins.addLogins(true);
+		LoadLogins.addLogins("TCP");
 		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {

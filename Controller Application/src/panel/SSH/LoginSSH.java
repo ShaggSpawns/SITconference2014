@@ -177,7 +177,7 @@ public class LoginSSH extends JPanel {
 				} else {
 					changeTCPguiState("Disconnected");
 					ConnectionSSH.closeSSH();
-					LoadLogins.addLogins(false);
+					LoadLogins.addLogins("SSH");
 				}
 			}
 		});
@@ -192,7 +192,7 @@ public class LoginSSH extends JPanel {
 		
 		final String[] hostSaves = {"---------- Load Save ----------"};
 		loadComboBox = new JComboBox<String>(hostSaves);
-		LoadLogins.addLogins(false);
+		LoadLogins.addLogins("SSH");
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				fillLine = loadComboBox.getSelectedIndex();
