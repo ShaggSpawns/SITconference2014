@@ -202,7 +202,7 @@ public class MotorControls extends JPanel {
 				break;
 		}
 		try {
-			Thread.sleep(400);
+			Thread.sleep(450);
 		} catch (final InterruptedException e) {
 			e.printStackTrace();
 		}

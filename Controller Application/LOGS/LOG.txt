@@ -2331,3 +2331,610 @@ Entered address ( : )
 [20:31:26 Info]: SSH: channel streams were successfully closed
 [20:31:26 Info]: SSH: channel successfully closed
 [20:31:26 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/11/14 05:06:11 PM] +++++++++++++++
+[17:06:24 Info]: Attempting to connect...
+[17:06:24 Status]: Attempting to connect...
+[17:06:24 Info]: Connected to: localhost
+[17:06:24 Status]: [Connected] Connected to: localhost
+[17:06:25 Info]: Streams successfully setup
+[17:06:30 Info]: Sent message: FORWARD
+[17:06:30 Status]: [Connected] Sent message: FORWARD
+[17:06:35 Info]: Sent message: STOP
+[17:06:35 Status]: [Connected] Sent message: STOP
+[17:06:35 Info]: Sent message: LEFT
+[17:06:35 Status]: [Connected] Sent message: LEFT
+[17:06:38 Info]: Sent message: STOP
+[17:06:38 Status]: [Connected] Sent message: STOP
+[17:06:38 Info]: Sent message: REVERSE
+[17:06:38 Status]: [Connected] Sent message: REVERSE
+[17:06:40 Info]: Sent message: STOP
+[17:06:40 Status]: [Connected] Sent message: STOP
+[17:06:40 Info]: Sent message: RIGHT
+[17:06:40 Status]: [Connected] Sent message: RIGHT
+[17:06:42 Info]: Sent message: STOP
+[17:06:42 Status]: [Connected] Sent message: STOP
+[17:06:44 Info]: Sent message: END
+[17:06:44 Status]: [Connected] Sent message: END
+[17:06:44 Info]: SERVER: END
+[17:06:44 Status]: [Connected] SERVER: END
+[17:06:44 Info]: Closing sockets and streams...
+[17:06:44 Status]: [Pending] Closing sockets and streams...
+[17:06:44 Status]: TCP input stream closed
+[17:06:44 Status]: TCP output stream closed
+[17:06:44 Status]: TCP connecton closed
+[17:06:44 Info]: Successfully closed sockets and streams
+[17:06:44 Status]: [Disconnected] Successfully closed sockets and streams
+[17:07:26 Info]: Attempting to connect...
+[17:07:26 Status]: Attempting to connect...
+[17:07:26 Info]: Connected to: localhost
+[17:07:26 Status]: [Connected] Connected to: localhost
+[17:07:26 Info]: Streams successfully setup
+[17:07:29 Info]: Sent message: FORWARD
+[17:07:29 Status]: [Connected] Sent message: FORWARD
+[17:07:31 Info]: Sent message: STOP
+[17:07:31 Status]: [Connected] Sent message: STOP
+[17:07:31 Info]: Sent message: LEFT
+[17:07:31 Status]: [Connected] Sent message: LEFT
+[17:07:32 Info]: Sent message: STOP
+[17:07:32 Status]: [Connected] Sent message: STOP
+[17:07:32 Info]: Sent message: REVERSE
+[17:07:32 Status]: [Connected] Sent message: REVERSE
+[17:07:33 Info]: Sent message: STOP
+[17:07:33 Status]: [Connected] Sent message: STOP
+[17:07:34 Info]: Sent message: END
+[17:07:34 Info]: SERVER: END
+[17:07:34 Status]: [Connected] Sent message: END
+[17:07:34 Status]: [Connected] SERVER: END
+[17:07:34 Info]: Closing sockets and streams...
+[17:07:34 Status]: [Pending] Closing sockets and streams...
+[17:07:34 Status]: TCP input stream closed
+[17:07:34 Status]: TCP output stream closed
+[17:07:34 Status]: TCP connecton closed
+[17:07:34 Info]: Successfully closed sockets and streams
+[17:07:34 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/11/14 05:09:34 PM] +++++++++++++++
+[17:09:42 Info]: Attempting to connect...
+[17:09:42 Status]: Attempting to connect...
+[17:09:42 Info]: Connected to: localhost
+[17:09:42 Status]: [Connected] Connected to: localhost
+[17:09:42 Info]: Streams successfully setup
+[17:09:45 Info]: Sent message: FORWARD
+[17:09:45 Status]: [Connected] Sent message: FORWARD
+[17:09:47 Info]: Sent message: STOP
+[17:09:47 Status]: [Connected] Sent message: STOP
+[17:09:47 Info]: Sent message: LEFT
+[17:09:47 Status]: [Connected] Sent message: LEFT
+[17:09:48 Info]: Sent message: STOP
+[17:09:48 Status]: [Connected] Sent message: STOP
+[17:09:48 Info]: Sent message: REVERSE
+[17:09:48 Status]: [Connected] Sent message: REVERSE
+[17:11:59 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:11:59 Status]: [Disconnected] Disconnected from: localhost
+[17:11:59 Info]: Sent message: END
+[17:11:59 Status]: [Connected] Sent message: END
+[17:11:59 Info]: Closing sockets and streams...
+[17:11:59 Status]: [Pending] Closing sockets and streams...
+[17:11:59 Status]: TCP input stream closed
+[17:11:59 Status]: TCP output stream closed
+[17:11:59 Status]: TCP connecton closed
+[17:11:59 Info]: Successfully closed sockets and streams
+[17:11:59 Status]: [Disconnected] Successfully closed sockets and streams
+[17:11:59 Info]: Attempting to connect...
+[17:11:59 Status]: Attempting to connect...
+[17:11:59 Error]: Server not found!
+[17:11:59 Status]: [Error] Server not found!
+[17:11:59 Error]: Failed to setup TCP streams!
+[17:11:59 Status]: [Error] Failed to setup TCP streams!
+[17:11:59 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:11:59 Status]: [Disconnected] Disconnected from: localhost
+[17:11:59 Info]: Closing sockets and streams...
+[17:11:59 Status]: [Pending] Closing sockets and streams...
+[17:11:59 Status]: TCP input stream closed
+[17:11:59 Status]: TCP output stream closed
+[17:11:59 Status]: TCP connecton closed
+[17:11:59 Info]: Successfully closed sockets and streams
+[17:11:59 Status]: [Disconnected] Successfully closed sockets and streams
+[17:11:59 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:11:59 Status]: [Error] Failed to send message
+[17:11:59 Info]: Closing sockets and streams...
+[17:11:59 Status]: [Pending] Closing sockets and streams...
+[17:11:59 Status]: TCP input stream closed
+[17:11:59 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:11:59 Status]: [Error] Failed to close sockets and streams
+[17:11:59 Info]: Attempting to connect...
+[17:11:59 Status]: Attempting to connect...
+[17:11:59 Error]: Server not found!
+[17:11:59 Status]: [Error] Server not found!
+[17:11:59 Error]: Failed to setup TCP streams!
+[17:11:59 Status]: [Error] Failed to setup TCP streams!
+[17:11:59 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:11:59 Status]: [Disconnected] Disconnected from: localhost
+[17:11:59 Info]: Closing sockets and streams...
+[17:11:59 Status]: [Pending] Closing sockets and streams...
+[17:11:59 Status]: TCP input stream closed
+[17:11:59 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:11:59 Status]: [Error] Failed to close sockets and streams
+[17:11:59 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:11:59 Status]: [Error] Failed to send message
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Info]: Attempting to connect...
+[17:12:00 Status]: Attempting to connect...
+[17:12:00 Error]: Server not found!
+[17:12:00 Status]: [Error] Server not found!
+[17:12:00 Error]: Failed to setup TCP streams!
+[17:12:00 Status]: [Error] Failed to setup TCP streams!
+[17:12:00 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:00 Status]: [Disconnected] Disconnected from: localhost
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:00 Status]: [Error] Failed to send message
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Info]: Attempting to connect...
+[17:12:00 Status]: Attempting to connect...
+[17:12:00 Error]: Server not found!
+[17:12:00 Status]: [Error] Server not found!
+[17:12:00 Error]: Failed to setup TCP streams!
+[17:12:00 Status]: [Error] Failed to setup TCP streams!
+[17:12:00 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:00 Status]: [Disconnected] Disconnected from: localhost
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:00 Status]: [Error] Failed to send message
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Info]: Attempting to connect...
+[17:12:00 Status]: Attempting to connect...
+[17:12:00 Error]: Server not found!
+[17:12:00 Status]: [Error] Server not found!
+[17:12:00 Error]: Failed to setup TCP streams!
+[17:12:00 Status]: [Error] Failed to setup TCP streams!
+[17:12:00 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:00 Status]: [Disconnected] Disconnected from: localhost
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:00 Status]: [Error] Failed to send message
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Info]: Attempting to connect...
+[17:12:00 Status]: Attempting to connect...
+[17:12:00 Error]: Server not found!
+[17:12:00 Status]: [Error] Server not found!
+[17:12:00 Error]: Failed to setup TCP streams!
+[17:12:00 Status]: [Error] Failed to setup TCP streams!
+[17:12:00 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:00 Status]: [Disconnected] Disconnected from: localhost
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:00 Status]: [Error] Failed to send message
+[17:12:00 Info]: Closing sockets and streams...
+[17:12:00 Status]: [Pending] Closing sockets and streams...
+[17:12:00 Status]: TCP input stream closed
+[17:12:00 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:00 Status]: [Error] Failed to close sockets and streams
+[17:12:00 Info]: Attempting to connect...
+[17:12:00 Status]: Attempting to connect...
+[17:12:00 Error]: Server not found!
+[17:12:00 Status]: [Error] Server not found!
+[17:12:00 Error]: Failed to setup TCP streams!
+[17:12:00 Status]: [Error] Failed to setup TCP streams!
+[17:12:00 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:00 Status]: [Disconnected] Disconnected from: localhost
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:01 Status]: [Error] Failed to send message
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Info]: Attempting to connect...
+[17:12:01 Status]: Attempting to connect...
+[17:12:01 Error]: Server not found!
+[17:12:01 Status]: [Error] Server not found!
+[17:12:01 Error]: Failed to setup TCP streams!
+[17:12:01 Status]: [Error] Failed to setup TCP streams!
+[17:12:01 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:01 Status]: [Disconnected] Disconnected from: localhost
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:01 Status]: [Error] Failed to send message
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Info]: Attempting to connect...
+[17:12:01 Status]: Attempting to connect...
+[17:12:01 Error]: Server not found!
+[17:12:01 Status]: [Error] Server not found!
+[17:12:01 Error]: Failed to setup TCP streams!
+[17:12:01 Status]: [Error] Failed to setup TCP streams!
+[17:12:01 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:01 Status]: [Disconnected] Disconnected from: localhost
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:01 Status]: [Error] Failed to send message
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Info]: Attempting to connect...
+[17:12:01 Status]: Attempting to connect...
+[17:12:01 Error]: Server not found!
+[17:12:01 Status]: [Error] Server not found!
+[17:12:01 Error]: Failed to setup TCP streams!
+[17:12:01 Status]: [Error] Failed to setup TCP streams!
+[17:12:01 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:01 Status]: [Disconnected] Disconnected from: localhost
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:01 Status]: [Error] Failed to send message
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Info]: Attempting to connect...
+[17:12:01 Status]: Attempting to connect...
+[17:12:01 Error]: Server not found!
+[17:12:01 Status]: [Error] Server not found!
+[17:12:01 Error]: Failed to setup TCP streams!
+[17:12:01 Status]: [Error] Failed to setup TCP streams!
+[17:12:01 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:01 Status]: [Disconnected] Disconnected from: localhost
+[17:12:01 Info]: Closing sockets and streams...
+[17:12:01 Status]: [Pending] Closing sockets and streams...
+[17:12:01 Status]: TCP input stream closed
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:01 Status]: [Error] Failed to close sockets and streams
+[17:12:01 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:01 Status]: [Error] Failed to send message
+[17:12:02 Info]: Closing sockets and streams...
+[17:12:02 Status]: [Pending] Closing sockets and streams...
+[17:12:02 Status]: TCP input stream closed
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:02 Status]: [Error] Failed to close sockets and streams
+[17:12:02 Info]: Attempting to connect...
+[17:12:02 Status]: Attempting to connect...
+[17:12:02 Error]: Server not found!
+[17:12:02 Status]: [Error] Server not found!
+[17:12:02 Error]: Failed to setup TCP streams!
+[17:12:02 Status]: [Error] Failed to setup TCP streams!
+[17:12:02 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:02 Status]: [Disconnected] Disconnected from: localhost
+[17:12:02 Info]: Closing sockets and streams...
+[17:12:02 Status]: [Pending] Closing sockets and streams...
+[17:12:02 Status]: TCP input stream closed
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:02 Status]: [Error] Failed to close sockets and streams
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:02 Status]: [Error] Failed to send message
+[17:12:02 Info]: Closing sockets and streams...
+[17:12:02 Status]: [Pending] Closing sockets and streams...
+[17:12:02 Status]: TCP input stream closed
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:02 Status]: [Error] Failed to close sockets and streams
+[17:12:02 Info]: Attempting to connect...
+[17:12:02 Status]: Attempting to connect...
+[17:12:02 Error]: Server not found!
+[17:12:02 Status]: [Error] Server not found!
+[17:12:02 Error]: Failed to setup TCP streams!
+[17:12:02 Status]: [Error] Failed to setup TCP streams!
+[17:12:02 Error]: EOFException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:02 Status]: [Disconnected] Disconnected from: localhost
+[17:12:02 Info]: Closing sockets and streams...
+[17:12:02 Status]: [Pending] Closing sockets and streams...
+[17:12:02 Status]: TCP input stream closed
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:02 Status]: [Error] Failed to close sockets and streams
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:02 Status]: [Error] Failed to send message
+[17:12:02 Info]: Closing sockets and streams...
+[17:12:02 Status]: [Pending] Closing sockets and streams...
+[17:12:02 Status]: TCP input stream closed
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.cleanUp()
+[17:12:02 Status]: [Error] Failed to close sockets and streams
+[17:12:02 Info]: Attempting to connect...
+[17:12:02 Status]: Attempting to connect...
+[17:12:02 Info]: Connected to: localhost
+[17:12:02 Status]: [Connected] Connected to: localhost
+[17:12:02 Info]: Streams successfully setup
+[17:12:02 Info]: Closing sockets and streams...
+[17:12:02 Status]: [Pending] Closing sockets and streams...
+[17:12:02 Error]: IOException in panel.TCP.ConnectionTCP.whileChatting()
+[17:12:02 Status]: TCP input stream closed
+[17:12:02 Status]: TCP output stream closed
+[17:12:02 Status]: TCP connecton closed
+[17:12:02 Info]: Successfully closed sockets and streams
+[17:12:02 Status]: [Disconnected] Successfully closed sockets and streams
+[17:12:09 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:12:09 Status]: [Error] Failed to send message
+[17:12:10 Info]: Attempting to connect...
+[17:12:10 Status]: Attempting to connect...
+[17:12:10 Info]: Connected to: localhost
+[17:12:10 Status]: [Connected] Connected to: localhost
+[17:12:10 Info]: Streams successfully setup
+[17:12:14 Info]: Sent message: STOP
+[17:12:14 Status]: [Connected] Sent message: STOP
+[17:12:15 Info]: Sent message: FORWARD
+[17:12:15 Status]: [Connected] Sent message: FORWARD
+[17:12:15 Info]: Sent message: STOP
+[17:12:15 Status]: [Connected] Sent message: STOP
+[17:12:16 Info]: Sent message: LEFT
+[17:12:16 Status]: [Connected] Sent message: LEFT
+[17:12:17 Info]: Sent message: STOP
+[17:12:17 Status]: [Connected] Sent message: STOP
+[17:12:17 Info]: Sent message: REVERSE
+[17:12:17 Status]: [Connected] Sent message: REVERSE
+[17:12:24 Info]: Sent message: END
+[17:12:24 Info]: SERVER: END
+[17:12:24 Status]: [Connected] Sent message: END
+[17:12:24 Status]: [Connected] SERVER: END
+[17:12:24 Info]: Closing sockets and streams...
+[17:12:24 Status]: [Pending] Closing sockets and streams...
+[17:12:24 Status]: TCP input stream closed
+[17:12:24 Status]: TCP output stream closed
+[17:12:24 Status]: TCP connecton closed
+[17:12:24 Info]: Successfully closed sockets and streams
+[17:12:24 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/11/14 05:19:33 PM] +++++++++++++++
+[17:19:43 Info]: Attempting to connect...
+[17:19:43 Status]: Attempting to connect...
+[17:19:43 Info]: Connected to: localhost
+[17:19:43 Status]: [Connected] Connected to: localhost
+[17:19:43 Info]: Streams successfully setup
+[17:19:45 Info]: Sent message: FORWARD
+[17:19:45 Status]: [Connected] Sent message: FORWARD
+[17:19:57 Info]: Sent message: STOP
+[17:19:57 Status]: [Connected] Sent message: STOP
+[17:19:58 Info]: Sent message: RIGHT
+[17:19:58 Status]: [Connected] Sent message: RIGHT
+[17:20:09 Info]: Sent message: END
+[17:20:09 Status]: [Connected] Sent message: END
+[17:20:09 Info]: SERVER: END
+[17:20:09 Status]: [Connected] SERVER: END
+[17:20:09 Info]: Closing sockets and streams...
+[17:20:09 Status]: [Pending] Closing sockets and streams...
+[17:20:09 Status]: TCP input stream closed
+[17:20:09 Status]: TCP output stream closed
+[17:20:09 Status]: TCP connecton closed
+[17:20:09 Info]: Successfully closed sockets and streams
+[17:20:09 Status]: [Disconnected] Successfully closed sockets and streams
+[17:20:30 Info]: Attempting to connect...
+[17:20:30 Status]: Attempting to connect...
+[17:20:30 Info]: Connected to: localhost
+[17:20:30 Status]: [Connected] Connected to: localhost
+[17:20:30 Info]: Streams successfully setup
+[17:20:32 Info]: Sent message: STOP
+[17:20:32 Status]: [Connected] Sent message: STOP
+[17:20:33 Info]: Sent message: FORWARD
+[17:20:33 Status]: [Connected] Sent message: FORWARD
+[17:20:35 Info]: Sent message: STOP
+[17:20:35 Status]: [Connected] Sent message: STOP
+[17:20:35 Info]: Sent message: REVERSE
+[17:20:35 Status]: [Connected] Sent message: REVERSE
+[17:20:37 Info]: Sent message: STOP
+[17:20:37 Status]: [Connected] Sent message: STOP
+[17:20:38 Info]: Sent message: RIGHT
+[17:20:38 Status]: [Connected] Sent message: RIGHT
+[17:20:56 Info]: Sent message: STOP
+[17:20:56 Status]: [Connected] Sent message: STOP
+[17:20:56 Info]: Sent message: FORWARD
+[17:20:56 Status]: [Connected] Sent message: FORWARD
+[17:21:09 Info]: Sent message: STOP
+[17:21:09 Status]: [Connected] Sent message: STOP
+[17:21:09 Info]: Sent message: REVERSE
+[17:21:09 Status]: [Connected] Sent message: REVERSE
+[17:21:13 Info]: Sent message: STOP
+[17:21:13 Status]: [Connected] Sent message: STOP
+[17:21:13 Info]: Sent message: LEFT
+[17:21:13 Status]: [Connected] Sent message: LEFT
+[17:21:17 Info]: Sent message: END
+[17:21:17 Status]: [Connected] Sent message: END
+[17:21:17 Info]: SERVER: END
+[17:21:17 Status]: [Connected] SERVER: END
+[17:21:17 Info]: Attempting to connect...
+[17:21:17 Status]: Attempting to connect...
+[17:21:17 Info]: Connected to: localhost
+[17:21:17 Status]: [Connected] Connected to: localhost
+[17:21:17 Info]: Streams successfully setup
+[17:21:17 Info]: Closing sockets and streams...
+[17:21:17 Status]: [Pending] Closing sockets and streams...
+[17:21:17 Error]: IOException in panel.TCP.ConnectionTCP.whileChatting()
+[17:21:17 Status]: TCP input stream closed
+[17:21:17 Status]: TCP output stream closed
+[17:21:17 Status]: TCP connecton closed
+[17:21:17 Info]: Successfully closed sockets and streams
+[17:21:17 Status]: [Disconnected] Successfully closed sockets and streams
+[17:21:20 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:21:20 Status]: [Error] Failed to send message
+[17:21:22 Info]: Attempting to connect...
+[17:21:22 Status]: Attempting to connect...
+[17:21:22 Info]: Connected to: localhost
+[17:21:22 Status]: [Connected] Connected to: localhost
+[17:21:22 Info]: Streams successfully setup
+[17:21:32 Info]: Sent message: END
+[17:21:32 Info]: SERVER: END
+[17:21:32 Status]: [Connected] Sent message: END
+[17:21:32 Status]: [Connected] SERVER: END
+[17:21:32 Info]: Closing sockets and streams...
+[17:21:32 Status]: [Pending] Closing sockets and streams...
+[17:21:32 Status]: TCP input stream closed
+[17:21:32 Status]: TCP output stream closed
+[17:21:32 Status]: TCP connecton closed
+[17:21:32 Info]: Successfully closed sockets and streams
+[17:21:32 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/11/14 05:49:00 PM] +++++++++++++++
+[17:49:09 Info]: Attempting to connect...
+[17:49:09 Status]: Attempting to connect...
+[17:49:09 Info]: Connected to: localhost
+[17:49:09 Status]: [Connected] Connected to: localhost
+[17:49:09 Info]: Streams successfully setup
+[17:49:10 Info]: Sent message: FORWARD
+[17:49:10 Status]: [Connected] Sent message: FORWARD
+[17:49:15 Info]: Sent message: STOP
+[17:49:15 Status]: [Connected] Sent message: STOP
+[17:49:16 Info]: Sent message: REVERSE
+[17:49:16 Status]: [Connected] Sent message: REVERSE
+[17:49:18 Info]: Sent message: STOP
+[17:49:18 Status]: [Connected] Sent message: STOP
+[17:49:18 Info]: Sent message: FORWARD
+[17:49:18 Status]: [Connected] Sent message: FORWARD
+[17:49:20 Info]: Sent message: STOP
+[17:49:20 Status]: [Connected] Sent message: STOP
+[17:49:20 Info]: Sent message: LEFT
+[17:49:20 Status]: [Connected] Sent message: LEFT
+[17:49:22 Info]: Sent message: STOP
+[17:49:22 Status]: [Connected] Sent message: STOP
+[17:49:22 Info]: Sent message: RIGHT
+[17:49:22 Status]: [Connected] Sent message: RIGHT
+[17:49:26 Info]: Sent message: STOP
+[17:49:26 Status]: [Connected] Sent message: STOP
+[17:49:27 Info]: Sent message: RIGHT
+[17:49:27 Status]: [Connected] Sent message: RIGHT
+[17:49:28 Info]: Sent message: STOP
+[17:49:28 Status]: [Connected] Sent message: STOP
+[17:49:32 Info]: Sent message: FORWARD
+[17:49:32 Status]: [Connected] Sent message: FORWARD
+[17:49:34 Info]: Sent message: STOP
+[17:49:34 Status]: [Connected] Sent message: STOP
+[17:49:34 Info]: Sent message: RIGHT
+[17:49:34 Status]: [Connected] Sent message: RIGHT
+[17:49:35 Info]: Sent message: STOP
+[17:49:35 Status]: [Connected] Sent message: STOP
+[17:49:36 Info]: Sent message: LEFT
+[17:49:36 Status]: [Connected] Sent message: LEFT
+[17:49:37 Info]: Sent message: STOP
+[17:49:37 Status]: [Connected] Sent message: STOP
+[17:49:38 Info]: Sent message: REVERSE
+[17:49:38 Status]: [Connected] Sent message: REVERSE
+[17:49:39 Info]: Sent message: STOP
+[17:49:39 Status]: [Connected] Sent message: STOP
+[17:49:49 Info]: Sent message: END
+[17:49:49 Status]: [Connected] Sent message: END
+[17:49:49 Info]: SERVER: END
+[17:49:49 Status]: [Connected] SERVER: END
+[17:49:49 Info]: Attempting to connect...
+[17:49:49 Status]: Attempting to connect...
+[17:49:49 Info]: Connected to: localhost
+[17:49:49 Status]: [Connected] Connected to: localhost
+[17:49:49 Info]: Streams successfully setup
+[17:49:49 Info]: Closing sockets and streams...
+[17:49:49 Status]: [Pending] Closing sockets and streams...
+[17:49:49 Error]: IOException in panel.TCP.ConnectionTCP.whileChatting()
+[17:49:49 Status]: TCP input stream closed
+[17:49:49 Status]: TCP output stream closed
+[17:49:49 Status]: TCP connecton closed
+[17:49:49 Info]: Successfully closed sockets and streams
+[17:49:49 Status]: [Disconnected] Successfully closed sockets and streams
++++++++++++++++ Program opened at [Feb/11/14 05:52:22 PM] +++++++++++++++
+[17:52:30 Info]: Attempting to connect...
+[17:52:30 Status]: Attempting to connect...
+[17:52:30 Info]: Connected to: localhost
+[17:52:30 Status]: [Connected] Connected to: localhost
+[17:52:30 Info]: Streams successfully setup
+[17:52:38 Info]: Sent message: FORWARD
+[17:52:38 Status]: [Connected] Sent message: FORWARD
+[17:52:40 Info]: Sent message: STOP
+[17:52:40 Status]: [Connected] Sent message: STOP
+[17:52:40 Info]: Sent message: REVERSE
+[17:52:40 Status]: [Connected] Sent message: REVERSE
+[17:52:42 Info]: Sent message: STOP
+[17:52:42 Status]: [Connected] Sent message: STOP
+[17:52:42 Info]: Sent message: LEFT
+[17:52:42 Status]: [Connected] Sent message: LEFT
+[17:52:43 Info]: Sent message: STOP
+[17:52:43 Status]: [Connected] Sent message: STOP
+[17:52:44 Info]: Sent message: RIGHT
+[17:52:44 Status]: [Connected] Sent message: RIGHT
+[17:52:45 Info]: Sent message: STOP
+[17:52:45 Status]: [Connected] Sent message: STOP
+[17:52:48 Info]: Sent message: REVERSE
+[17:52:48 Status]: [Connected] Sent message: REVERSE
+[17:52:49 Info]: Sent message: STOP
+[17:52:49 Status]: [Connected] Sent message: STOP
+[17:52:50 Info]: Sent message: FORWARD
+[17:52:50 Status]: [Connected] Sent message: FORWARD
+[17:52:51 Info]: Sent message: STOP
+[17:52:51 Status]: [Connected] Sent message: STOP
+[17:52:54 Info]: Sent message: END
+[17:52:54 Status]: [Connected] Sent message: END
+[17:52:54 Info]: SERVER: END
+[17:52:54 Status]: [Connected] SERVER: END
+[17:52:54 Info]: Attempting to connect...
+[17:52:54 Status]: Attempting to connect...
+[17:52:54 Info]: Connected to: localhost
+[17:52:54 Status]: [Connected] Connected to: localhost
+[17:52:54 Info]: Streams successfully setup
+[17:52:54 Info]: Closing sockets and streams...
+[17:52:54 Status]: [Pending] Closing sockets and streams...
+[17:52:54 Error]: IOException in panel.TCP.ConnectionTCP.whileChatting()
+[17:52:54 Status]: TCP input stream closed
+[17:52:54 Status]: TCP output stream closed
+[17:52:54 Status]: TCP connecton closed
+[17:52:54 Info]: Successfully closed sockets and streams
+[17:52:54 Status]: [Disconnected] Successfully closed sockets and streams
+[17:52:59 Error]: IOException in panel.TCP.ConnectionTCP.sendMessage()
+[17:52:59 Status]: [Error] Failed to send message
++++++++++++++++ Program opened at [Feb/11/14 05:55:35 PM] +++++++++++++++
+[17:55:42 Info]: Attempting to connect...
+[17:55:42 Status]: Attempting to connect...
+[17:55:42 Info]: Connected to: localhost
+[17:55:42 Status]: [Connected] Connected to: localhost
+[17:55:42 Info]: Streams successfully setup
++++++++++++++++ Program opened at [Feb/11/14 05:57:41 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/11/14 05:58:03 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/11/14 05:58:39 PM] +++++++++++++++
+[17:58:53 Info]: SSH: loaded known_hosts
+[17:58:54 Info]: SSH: session connected
+[17:58:54 Info]: SSH: channel connected
+[17:59:01 Info]: SSH: channel streams were successfully closed
+[17:59:01 Info]: SSH: channel successfully closed
+[17:59:01 Info]: SSH: session successfully closed

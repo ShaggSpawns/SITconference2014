@@ -82,9 +82,8 @@ public class TCPComm extends JFrame {
 	 * @throws IOException
 	 */
 	private static void setupStreams() throws IOException {
-		new JsscComm(57600);
+		new JsscComm();
 		output = new ObjectOutputStream(connection.getOutputStream());
-		output.flush();
 		input = new ObjectInputStream(connection.getInputStream());
 		displayMessage("Streams are now setup!");
 	}
@@ -98,28 +97,28 @@ public class TCPComm extends JFrame {
 		do {
 			try {
 				message = (String) input.readObject();
-				displayMessage(message);
+				//displayMessage(message);
 				if (JsscComm.serialPort.isOpened() == true) {
 					switch (message) {
 						case "STOP":
-							JsscComm.writeData(0);
-							displayMessage("Arduino: STOP");
+							//JsscComm.writeData("STOP");
+							JsscComm.writeData("0");
 							break;
 						case "FORWARD":
-							JsscComm.writeData(1);
-							displayMessage("Arduino: FORWARD");
+							//JsscComm.writeData("FORWARD");
+							JsscComm.writeData("1");
 							break;
 						case "REVERSE":
-							JsscComm.writeData(2);
-							displayMessage("Arduino: REVERSE");
+							//JsscComm.writeData("REVERSE");
+							JsscComm.writeData("2");
 							break;
 						case "RIGHT":
-							JsscComm.writeData(3);
-							displayMessage("Arduino: RIGHT");
+							//JsscComm.writeData("RIGHT");
+							JsscComm.writeData("3");
 							break;
 						case "LEFT":
-							JsscComm.writeData(4);
-							displayMessage("Arduino: LEFT");
+							//JsscComm.writeData("LEFT");
+							JsscComm.writeData("4");
 							break;
 						default:
 							break;

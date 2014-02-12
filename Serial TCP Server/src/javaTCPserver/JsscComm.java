@@ -16,26 +16,21 @@ public class JsscComm implements SerialPortEventListener {
 	 * Starts the serial communication with the connected device with a given baud rate.
 	 * @param dataRate
 	 */
-	public JsscComm(final int dataRate) {
-		startSerialComm(dataRate);
+	public JsscComm() {
+		startSerialComm();
 	}
 	
 	/**
 	 * Starts the serial communication with the connected device with a given baud rate.
 	 * @param DATA_RATE
 	 */
-	public void startSerialComm(final int DATA_RATE) {
+	public void startSerialComm() {
 		//serialPort = new SerialPort("/dev/ttyUSB0");
-		serialPort = new SerialPort("/dev/tty.usbmodemfd121");
+		serialPort = new SerialPort("/dev/tty.usbmodemfd1231");
 		
 		try {
 			serialPort.openPort();
-			serialPort.setParams(DATA_RATE,
-					SerialPort.DATABITS_8,
-					SerialPort.STOPBITS_1,
-					SerialPort.PARITY_NONE);
-			int mask = SerialPort.MASK_RXCHAR + SerialPort.MASK_CTS + SerialPort.MASK_DSR;
-            serialPort.setEventsMask(mask);
+			serialPort.setParams(9600, 8, 1, 0);
 			if (serialPort.isOpened() == true) {
 				displayMessage("Serial port is opened on: " + serialPort.getPortName());
 				serialPort.addEventListener(this);
@@ -66,12 +61,17 @@ public class JsscComm implements SerialPortEventListener {
 	 * Manages the writing of data to the serial port.
 	 * @param data
 	 */
-	public synchronized static void writeData(final int data) {
-		displayMessage("Sending: " + data);
+	public synchronized static void writeData(final String data) {
+		//char byteData[] = data.toCharArray();
 		try {
-			serialPort.writeInt(data);
-		} catch (final SerialPortException e) {
-			displayMessage(e.toString());
+			//if (serialPort.writeByte((byte)byteData[0])) {
+			if (serialPort.writeBytes(data.getBytes())) {
+				displayMessage("Sent: " + data);
+			} else {
+				displayMessage("Failed to send: " + data);
+			}
+		} catch (SerialPortException e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -80,25 +80,12 @@ public class JsscComm implements SerialPortEventListener {
 	 */
 	@Override
 	public void serialEvent(final SerialPortEvent event) {
-		if (event.isRXCHAR()) {
-            try {
-                final byte buffer[] = serialPort.readBytes();
-                displayMessage("Arduino: " + buffer);
-            } catch (final SerialPortException ex) {
-                System.out.println(ex);
-            }
-        } else if (event.isCTS()) { //If CTS line has changed state
-            if (event.getEventValue() == 1) {//If line is ON
-                System.out.println("CTS - ON");
-            } else {
-                System.out.println("CTS - OFF");
-            }
-        } else if (event.isDSR()) { ///If DSR line has changed state
-            if (event.getEventValue() == 1) { //If line is ON
-                System.out.println("DSR - ON");
-            } else {
-                System.out.println("DSR - OFF");
-            }
+        try {
+            //final byte[] buffer = serialPort.readBytes();
+            //displayMessage("Received: " + buffer.toString());
+            displayMessage("Received: " + serialPort.readBytes().toString());
+        } catch (final SerialPortException ex) {
+            System.out.println(ex);
         }
 	}
 	

@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 /**
  * Creates the SSH console panel for the SSH tab
@@ -29,7 +30,7 @@ public class ConsoleSSH extends JPanel {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 
-		consoleArea = new JTextArea(30, 38);
+		consoleArea = new JTextArea(29, 37);
 		consoleArea.setEditable(false);
 		consoleArea.setAutoscrolls(isEnabled());
 		consoleArea.setSize(getPreferredSize());
@@ -38,7 +39,10 @@ public class ConsoleSSH extends JPanel {
 	    gc.gridx = 0;
 	    gc.gridy = 1;
 	    gc.weighty = 0.0;
-	    add(new JScrollPane(consoleArea), gc);
+	    JScrollPane scrollPane = new JScrollPane(consoleArea);
+	    scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+	    add(scrollPane, gc);
 	    
 		consoleInput = new JTextField(38);
 		consoleInput.setEnabled(true);

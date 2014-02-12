@@ -83,7 +83,7 @@ public class Controller extends JApplet implements Runnable {
 	public void run() {
 		final JFrame frame = new MainFrame("Arduino Motor Program");
 		frame.setMinimumSize(new Dimension(520, 750));
-		frame.setResizable(false);
+		frame.setResizable(true);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);

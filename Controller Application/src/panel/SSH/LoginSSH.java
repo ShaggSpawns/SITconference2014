@@ -277,8 +277,6 @@ public class LoginSSH extends JPanel {
 			passwordF.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
-			ConsoleSSH.consoleArea.setText(null);
-			ConsoleSSH.consoleArea.setEnabled(false);
 			connectBtn.setText("Connect");
 			break;
 		case "Pending":
