@@ -81,7 +81,7 @@ public class Controller extends JApplet implements Runnable {
 	 * Calls to create a new MainFrame and sets the properties of the new frame
 	 */
 	public void run() {
-		final JFrame frame = new MainFrame("Arduino Motor Program");
+		final JFrame frame = new MainFrame("Jerry Controller");
 		frame.setMinimumSize(new Dimension(520, 750));
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
