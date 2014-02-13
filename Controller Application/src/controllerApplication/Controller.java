@@ -34,7 +34,7 @@ public class Controller extends JApplet implements Runnable {
         tabbedPane.setFocusable(false);
         
         final PanelTCP controlTab = new PanelTCP();
-        tabbedPane.addTab("Controller", controlTab);
+        tabbedPane.addTab("Jerry Controller", controlTab);
          
         final PanelSSH consoleTab = new PanelSSH();
         tabbedPane.addTab("SSH / Console", consoleTab);

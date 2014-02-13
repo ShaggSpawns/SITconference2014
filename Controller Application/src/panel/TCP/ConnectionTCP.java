@@ -48,11 +48,11 @@ public class ConnectionTCP implements Runnable {
 	 */
 	private void connectToServer() {
 		try {
-			new MessageLog("Info", "Attempting to connect...");
+			new MessageLog("Info", "Attempting to connect to Jerry...");
 			new MessageStatusUpdate("pending", "Attempting to connect...");
 			connection = new Socket(InetAddress.getByName(serverIP), serverPort);
 			new MessageLog("Info", "Connected to: " + connection.getInetAddress().getHostName());
-			new MessageStatusUpdate("Connected", "Connected to: " + connection.getInetAddress().getHostName());
+			new MessageStatusUpdate("Connected", "Connected to Jerry at: " + connection.getInetAddress().getHostName());
 			MotorControls.controlsEnabled(true);
 		} catch (final IOException ioException) {
 			new MessageLog("Error", "Server not found!");
@@ -101,7 +101,7 @@ public class ConnectionTCP implements Runnable {
 			} catch (final NullPointerException npE) {
 				new MessageLog("Error", "NullPointerException in panel.TCP.ConnctionTCP.whileChatting()");
 			}
-		} while(!message.equals("SERVER: END"));
+		} while(!message.equals("Jerry: END"));
 	}
 	
 	/**
@@ -111,7 +111,7 @@ public class ConnectionTCP implements Runnable {
 		if (connection.isConnected()) {
 			try {
 				new MessageLog("Info", "Closing sockets and streams...");
-				new MessageStatusUpdate("Pending", "Closing sockets and streams...");
+				new MessageStatusUpdate("Pending", "Disconnecting from Jerry...");
 				input.close();
 				new MessageStatusUpdate("Info", "TCP input stream closed");
 				output.flush();
@@ -120,10 +120,10 @@ public class ConnectionTCP implements Runnable {
 				connection.close();
 				new MessageStatusUpdate("Info", "TCP connecton closed");
 				new MessageLog("Info", "Successfully closed sockets and streams");
-				new MessageStatusUpdate("Disconnected", "Successfully closed sockets and streams");
+				new MessageStatusUpdate("Disconnected", "Successfully disconnected from Jerry");
 			} catch (final IOException ioException) {
 				new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.cleanUp()");
-				new MessageStatusUpdate("Error", "Failed to close sockets and streams");
+				new MessageStatusUpdate("Error", "Failed to disconnect to Jerry");
 				return;
 			} catch (final NullPointerException nullPointerException) {
 				new MessageLog("Error", "NullPointerException in panel.TCP.ConnectionTCP:2");

@@ -29,7 +29,7 @@ public class MainFrame extends JFrame {
 	        tabbedPane.setFocusable(false);
 	        
 	        final PanelTCP controlTab = new PanelTCP();
-	        tabbedPane.addTab("Controller", controlTab);
+	        tabbedPane.addTab("Jerry Controller", controlTab);
 	         
 	        final PanelSSH consoleTab = new PanelSSH();
 	        tabbedPane.addTab("SSH", consoleTab);

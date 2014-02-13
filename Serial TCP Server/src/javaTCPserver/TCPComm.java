@@ -129,7 +129,7 @@ public class TCPComm extends JFrame {
 	 */
 	private static void cleanUp() {
 		try {
-			output.writeObject("SERVER: END");
+			output.writeObject("Jerry: END");
 			displayMessage("Closing connection...");
 			if (JsscComm.serialPort.isOpened()) {
 				JsscComm.close();
@@ -151,9 +151,9 @@ public class TCPComm extends JFrame {
 	 */
 	public static void sendMessage(final String message) {
 		try {
-			output.writeObject("SERVER: " + message);
+			output.writeObject("Jerry: " + message);
 			output.flush();
-			displayMessage("SERVER: " + message);
+			displayMessage("Sent: " + message);
 		} catch (final IOException ioException) {
 			displayMessage("CAN'T SEND");
 			startRunning();
