@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Python TCP/srcs&apos;" deleteContents="false" description="Delete resource &apos;Python TCP/srcs&apos;" element1="/Python TCP/srcs" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1391734870277"/>&#x0A;<refactoring comment="Delete resource &apos;SIT conference 2014/Python TCP Server&apos;" deleteContents="false" description="Delete resource &apos;SIT conference 2014/Python TCP Server&apos;" element1="/SIT conference 2014/Python TCP Server" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1391734888712"/>
-</session>
