@@ -16,8 +16,6 @@ import javax.swing.JFrame;
 public class TCPComm extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	private static int PORT;
-	private static int BACKLOG;
 	private static ObjectOutputStream output;
 	private static ObjectInputStream input;
 	private static ServerSocket server;
@@ -29,9 +27,7 @@ public class TCPComm extends JFrame {
 	 * @param portRangeEnd
 	 * @param serverBacklog
 	 */
-	public TCPComm(final int serverPort, final int serverBacklog) {
-		PORT = serverPort;
-		BACKLOG = serverBacklog;
+	public TCPComm() {
 		startRunning();
 	}
 	
@@ -60,10 +56,10 @@ public class TCPComm extends JFrame {
 	 */
 	private static void initializeServer() {
 		try {
-			server = new ServerSocket(PORT, BACKLOG);
-			displayMessage("Initialized server on port: " + PORT);
+			server = new ServerSocket(6789, 5);
+			displayMessage("Initialized server on port: " + 6789);
 		} catch (final IOException ioE) {
-			displayMessage(PORT + " is not an opened port.");
+			displayMessage(6789 + " is not an opened port.");
 		}
 	}
 	
