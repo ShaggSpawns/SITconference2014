@@ -1,6 +1,5 @@
 package javaTCPserver;
 
-import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -41,10 +40,6 @@ public class TCPComm extends JFrame {
 				waitForConnection();
 				setupStreams();
 				whileChatting();
-			} catch (final EOFException eofException) {
-				displayMessage("Server ended the connection!");
-			} catch (final IOException ioException) {
-				ioException.printStackTrace();
 			} finally {
 				cleanUp();
 			}
@@ -67,28 +62,36 @@ public class TCPComm extends JFrame {
 	 * Waits for a connection with a TCP client.
 	 * @throws IOException
 	 */
-	private static void waitForConnection() throws IOException {
-		displayMessage("Waiting for someone to connect...");
-		connection = server.accept();
-		displayMessage("Now connected to " + connection.getInetAddress().getHostName());
+	private static void waitForConnection() {
+		try {
+			displayMessage("Waiting for someone to connect...");
+			connection = server.accept();
+			displayMessage("Now connected to " + connection.getInetAddress().getHostName());
+		} catch (IOException ioE) {
+			displayMessage("Could not accept incoming connection");
+		}
 	}
 	
 	/**
 	 * After finding a connection, the input and output stream is created.
 	 * @throws IOException
 	 */
-	private static void setupStreams() throws IOException {
-		new JsscComm();
-		output = new ObjectOutputStream(connection.getOutputStream());
-		input = new ObjectInputStream(connection.getInputStream());
-		displayMessage("Streams are now setup!");
+	private static void setupStreams() {
+		try {
+			new JsscComm();
+			output = new ObjectOutputStream(connection.getOutputStream());
+			input = new ObjectInputStream(connection.getInputStream());
+			displayMessage("Streams are now setup!");
+		} catch (IOException ioE) {
+			displayMessage("Failed to setup streams");
+		}
 	}
 	
 	/**
 	 * Manages the chatting between the server and the client.
 	 * @throws IOException
 	 */
-	private static void whileChatting() throws IOException {
+	private static void whileChatting() {
 		String message = null;
 		do {
 			try {
@@ -114,7 +117,7 @@ public class TCPComm extends JFrame {
 							break;
 					}
 				}
-			} catch (final ClassNotFoundException classNotFoundException) {
+			} catch (final ClassNotFoundException | IOException e) {
 				displayMessage("Unable to read input.");
 			}
 		} while (!message.equals("END"));
