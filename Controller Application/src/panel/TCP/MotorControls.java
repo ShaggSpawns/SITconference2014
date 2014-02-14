@@ -33,7 +33,7 @@ public class MotorControls extends JPanel {
 	/**
 	 * Initializes the controls for the Controller tab
 	 */
-	public MotorControls() {
+	public MotorControls(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("Motor Controls"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();

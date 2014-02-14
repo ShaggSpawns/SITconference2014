@@ -15,18 +15,18 @@ public class PanelSSH extends JPanel {
 	/**
 	 * Initializes the SSH Panel onto the SSH tab
 	 */
-	public PanelSSH() {
+	public PanelSSH(final String OS) {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 
-		final LoginSSH sshLogin = new LoginSSH();
+		final LoginSSH sshLogin = new LoginSSH(OS);
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		gc.gridy = 0;
 		gc.weighty = 1.0;
 		add(sshLogin, gc);
 		
-		final ConsoleSSH sshConsole = new ConsoleSSH();
+		final ConsoleSSH sshConsole = new ConsoleSSH(OS);
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.fill = GridBagConstraints.BOTH;
 		gc.gridy = 1;

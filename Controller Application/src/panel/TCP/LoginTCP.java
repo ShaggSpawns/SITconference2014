@@ -45,7 +45,7 @@ public class LoginTCP extends JPanel {
 	/**
 	 * Creates the TCP Login area on the MotorControls tab
 	 */
-	public LoginTCP() {
+	public LoginTCP(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("Jerry Login"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();

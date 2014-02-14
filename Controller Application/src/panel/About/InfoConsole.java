@@ -24,7 +24,7 @@ public class InfoConsole extends JPanel {
 	/**
 	 * Creates an Information Console on the About tab
 	 */
-	public InfoConsole() {
+	public InfoConsole(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("Information Console"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();

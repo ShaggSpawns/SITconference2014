@@ -20,7 +20,7 @@ public class StatusBar extends JPanel{
 	 * The constructor of SatusBar that initializes the status bar.
 	 * Uses a GridBagLayout and a JTextField as the bar.
 	 */
-	public StatusBar() {
+	public StatusBar(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("Status"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();

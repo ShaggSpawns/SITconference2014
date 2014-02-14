@@ -49,7 +49,7 @@ public class LoginSSH extends JPanel {
 	/**
 	 * Creates the Login SSH panel for the SSH tab
 	 */
-	public LoginSSH() {
+	public LoginSSH(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("SSH Login"));
 		setLayout(new GridBagLayout());
 		

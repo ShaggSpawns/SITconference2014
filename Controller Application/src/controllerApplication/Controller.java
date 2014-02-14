@@ -20,6 +20,7 @@ import panel.TCP.PanelTCP;
 public class Controller extends JApplet implements Runnable {
 	private static final long serialVersionUID = 1L;
 	private static boolean firstLogMessage = true;
+	private final String OS = IdentifyOS.getOperatingSystem();
 	
 	/**
 	 * Initialize JApplet
@@ -33,13 +34,13 @@ public class Controller extends JApplet implements Runnable {
 		final JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setFocusable(false);
         
-        final PanelTCP controlTab = new PanelTCP();
+        final PanelTCP controlTab = new PanelTCP(OS);
         tabbedPane.addTab("Jerry Controller", controlTab);
          
-        final PanelSSH consoleTab = new PanelSSH();
+        final PanelSSH consoleTab = new PanelSSH(OS);
         tabbedPane.addTab("SSH / Console", consoleTab);
         
-        final PanelAbout aboutTab = new PanelAbout();
+        final PanelAbout aboutTab = new PanelAbout(OS);
         tabbedPane.addTab("About", aboutTab);
         
         add(tabbedPane);
@@ -81,7 +82,8 @@ public class Controller extends JApplet implements Runnable {
 	 * Calls to create a new MainFrame and sets the properties of the new frame
 	 */
 	public void run() {
-		final JFrame frame = new MainFrame("Jerry Controller");
+		
+		final JFrame frame = new MainFrame("Jerry Controller", OS);
 		frame.setMinimumSize(new Dimension(520, 750));
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);

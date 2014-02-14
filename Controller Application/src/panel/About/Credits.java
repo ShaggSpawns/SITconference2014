@@ -20,7 +20,7 @@ public class Credits extends JPanel {
 	/**
 	 * Builds a JPanel to display the credits to the creation of this application
 	 */
-	public Credits() {
+	public Credits(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("Credits"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();

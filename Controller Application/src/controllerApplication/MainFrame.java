@@ -1,7 +1,5 @@
 package controllerApplication;
 
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
@@ -22,43 +20,23 @@ public class MainFrame extends JFrame {
 	 * A constructor that builds a frame with a title.
 	 * @param title
 	 */
-	public MainFrame(final String title) {
+	public MainFrame(final String title, final String OS) {
 		super(title);
 		
 	        final JTabbedPane tabbedPane = new JTabbedPane();
 	        tabbedPane.setFocusable(false);
 	        
-	        final PanelTCP controlTab = new PanelTCP();
+	        final PanelTCP controlTab = new PanelTCP(OS);
 	        tabbedPane.addTab("Jerry Controller", controlTab);
 	         
-	        final PanelSSH consoleTab = new PanelSSH();
+	        final PanelSSH consoleTab = new PanelSSH(OS);
 	        tabbedPane.addTab("SSH", consoleTab);
 	        
-	        final PanelAbout aboutTab = new PanelAbout();
+	        final PanelAbout aboutTab = new PanelAbout(OS);
 	        tabbedPane.addTab("About / Info", aboutTab);
 	        
 	        add(tabbedPane);
 	        
 	        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-	}
-	
-	/**
-	 * Runs the application by calling run() in a new thread
-	 * @param args
-	 */
-	public static void main(final String[] args) {
-		(new Thread(new Controller())).start();
-	}
-	
-	/**
-	 * Calls to create a new JFrame from MainFrame and sets the attributes of the new frame
-	 */
-	public void run() {
-		final JFrame frame = new MainFrame("Arduino Motor Program");
-		frame.setMinimumSize(new Dimension(400, 525));
-		frame.setResizable(false);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
 	}
 }

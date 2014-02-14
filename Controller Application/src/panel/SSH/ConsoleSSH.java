@@ -25,7 +25,7 @@ public class ConsoleSSH extends JPanel {
 	/**
 	 * Initializes the SSH console area for the SSH tab
 	 */
-	public ConsoleSSH() {
+	public ConsoleSSH(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("SSH Console"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
