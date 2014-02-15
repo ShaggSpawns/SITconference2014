@@ -1,5 +1,7 @@
 package controllerApplication;
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
@@ -21,22 +23,45 @@ public class MainFrame extends JFrame {
 	 * @param title
 	 */
 	public MainFrame(final String title, final String OS) {
-		super(title);
+		super.setTitle(title);
+		super.setResizable(true);
+		//super.setLocationRelativeTo(null);
+		super.setLocation(960, 200);
+		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-	        final JTabbedPane tabbedPane = new JTabbedPane();
-	        tabbedPane.setFocusable(false);
-	        
-	        final PanelTCP controlTab = new PanelTCP(OS);
-	        tabbedPane.addTab("Jerry Controller", controlTab);
-	         
-	        final PanelSSH consoleTab = new PanelSSH(OS);
-	        tabbedPane.addTab("SSH", consoleTab);
-	        
-	        final PanelAbout aboutTab = new PanelAbout(OS);
-	        tabbedPane.addTab("About / Info", aboutTab);
-	        
-	        add(tabbedPane);
-	        
-	        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+		switch(OS) {
+		case "Windows":
+			super.setMinimumSize(new Dimension(480, 731));
+			break;
+		case "Mac":
+			super.setMinimumSize(new Dimension(520, 750));
+			break;
+		case "Unix":
+			super.setMinimumSize(new Dimension(520, 750));
+			break;
+		case "Solaris":
+			super.setMinimumSize(new Dimension(520, 750));
+			break;
+		case "Unknown":
+			super.setMinimumSize(new Dimension(520, 750));
+			break;
+		}
+		
+		final JTabbedPane tabbedPane = new JTabbedPane();
+        tabbedPane.setFocusable(false);
+        
+        final PanelTCP controlTab = new PanelTCP(OS);
+        tabbedPane.addTab("Jerry Controller", controlTab);
+         
+        final PanelSSH consoleTab = new PanelSSH(OS);
+        tabbedPane.addTab("SSH", consoleTab);
+        
+        final PanelAbout aboutTab = new PanelAbout();
+        tabbedPane.addTab("About / Info", aboutTab);
+        
+        add(tabbedPane);
+        
+        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+		super.setVisible(true);
 	}
 }

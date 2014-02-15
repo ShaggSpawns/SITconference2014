@@ -30,29 +30,118 @@ public class ConsoleSSH extends JPanel {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 
-		consoleArea = new JTextArea(29, 37);
-		consoleArea.setEditable(false);
-		consoleArea.setAutoscrolls(isEnabled());
-		consoleArea.setSize(getPreferredSize());
-	    gc.anchor = GridBagConstraints.CENTER;
-	    gc.insets = new Insets(2,0,0,0);
-	    gc.gridx = 0;
-	    gc.gridy = 1;
-	    gc.weighty = 0.0;
+		switch(OS) {
+		case "Windows":
+			consoleArea = new JTextArea(29, 37);
+			consoleArea.setEditable(false);
+			consoleArea.setAutoscrolls(isEnabled());
+			consoleArea.setSize(getPreferredSize());
+		    gc.anchor = GridBagConstraints.CENTER;
+		    gc.insets = new Insets(1,2,0,2);
+		    gc.gridx = 0;
+		    gc.gridy = 1;
+		    gc.weighty = 0.0;
+		    
+			consoleInput = new JTextField(38);
+			consoleInput.setEnabled(true);
+			streamer = new TextFieldInputStream(consoleInput);
+			consoleInput.addActionListener(streamer);
+			gc.anchor = GridBagConstraints.SOUTH;
+		    gc.ipady = 0;
+		    gc.gridx = 0;
+		    gc.gridy = 3;
+		    gc.weighty = 1.0;
+			break;
+		case "Mac":
+			consoleArea = new JTextArea(29, 37);
+			consoleArea.setEditable(false);
+			consoleArea.setAutoscrolls(isEnabled());
+			consoleArea.setSize(getPreferredSize());
+		    gc.anchor = GridBagConstraints.CENTER;
+		    gc.insets = new Insets(2,0,0,0);
+		    gc.gridx = 0;
+		    gc.gridy = 1;
+		    gc.weighty = 0.0;
+		    
+			consoleInput = new JTextField(38);
+			consoleInput.setEnabled(true);
+			streamer = new TextFieldInputStream(consoleInput);
+			consoleInput.addActionListener(streamer);
+			gc.anchor = GridBagConstraints.SOUTH;
+		    gc.ipady = 0;
+		    gc.gridx = 0;
+		    gc.gridy = 2;
+		    gc.weighty = 1.0;
+			break;
+		case "Unix":
+			consoleArea = new JTextArea(29, 37);
+			consoleArea.setEditable(false);
+			consoleArea.setAutoscrolls(isEnabled());
+			consoleArea.setSize(getPreferredSize());
+		    gc.anchor = GridBagConstraints.CENTER;
+		    gc.insets = new Insets(2,0,0,0);
+		    gc.gridx = 0;
+		    gc.gridy = 1;
+		    gc.weighty = 0.0;
+		    
+			consoleInput = new JTextField(38);
+			consoleInput.setEnabled(true);
+			streamer = new TextFieldInputStream(consoleInput);
+			consoleInput.addActionListener(streamer);
+			gc.anchor = GridBagConstraints.SOUTH;
+		    gc.ipady = 0;
+		    gc.gridx = 0;
+		    gc.gridy = 2;
+		    gc.weighty = 1.0;
+			break;
+		case "Solaris":
+			consoleArea = new JTextArea(29, 37);
+			consoleArea.setEditable(false);
+			consoleArea.setAutoscrolls(isEnabled());
+			consoleArea.setSize(getPreferredSize());
+		    gc.anchor = GridBagConstraints.CENTER;
+		    gc.insets = new Insets(2,0,0,0);
+		    gc.gridx = 0;
+		    gc.gridy = 1;
+		    gc.weighty = 0.0;
+		    
+			consoleInput = new JTextField(38);
+			consoleInput.setEnabled(true);
+			streamer = new TextFieldInputStream(consoleInput);
+			consoleInput.addActionListener(streamer);
+			gc.anchor = GridBagConstraints.SOUTH;
+		    gc.ipady = 0;
+		    gc.gridx = 0;
+		    gc.gridy = 2;
+		    gc.weighty = 1.0;
+			break;
+		case "Unknown":
+			consoleArea = new JTextArea(29, 37);
+			consoleArea.setEditable(false);
+			consoleArea.setAutoscrolls(isEnabled());
+			consoleArea.setSize(getPreferredSize());
+		    gc.anchor = GridBagConstraints.CENTER;
+		    gc.insets = new Insets(2,0,0,0);
+		    gc.gridx = 0;
+		    gc.gridy = 1;
+		    gc.weighty = 0.0;
+		    
+			consoleInput = new JTextField(38);
+			consoleInput.setEnabled(true);
+			streamer = new TextFieldInputStream(consoleInput);
+			consoleInput.addActionListener(streamer);
+			gc.anchor = GridBagConstraints.SOUTH;
+		    gc.ipady = 0;
+		    gc.gridx = 0;
+		    gc.gridy = 2;
+		    gc.weighty = 1.0;
+			break;
+		}
+
 	    JScrollPane scrollPane = new JScrollPane(consoleArea);
 	    scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 	    add(scrollPane, gc);
-	    
-		consoleInput = new JTextField(38);
-		consoleInput.setEnabled(true);
-		streamer = new TextFieldInputStream(consoleInput);
-		consoleInput.addActionListener(streamer);
-		gc.anchor = GridBagConstraints.SOUTH;
-	    gc.ipady = 0;
-	    gc.gridx = 0;
-	    gc.gridy = 2;
-	    gc.weighty = 1.0;
-		add(consoleInput, gc);
+	    add(consoleInput, gc);
 	}
 }

@@ -20,7 +20,7 @@ public class About extends JPanel {
 	 * The constructor that initializes the About panel.
 	 * Uses a GridBagLayout with a JTextArea to display the text.
 	 */
-	public About(final String OS) {
+	public About() {
 		setBorder(BorderFactory.createTitledBorder("About / Help"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();

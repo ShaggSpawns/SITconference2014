@@ -12,21 +12,21 @@ import javax.swing.JPanel;
 public class PanelAbout extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	public PanelAbout(final String OS) {
+	public PanelAbout() {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 
-		final Credits credit = new Credits(OS);
+		final Credits credit = new Credits();
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.gridy = 0;
 		add(credit, gc);
 		
-		final About about = new About(OS);
+		final About about = new About();
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.gridy = 1;
 		add(about, gc);
 		
-		final InfoConsole console = new InfoConsole(OS);
+		final InfoConsole console = new InfoConsole();
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.gridy = 2;
 		add(console, gc);
