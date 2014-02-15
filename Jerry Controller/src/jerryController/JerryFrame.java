@@ -19,7 +19,7 @@ public class JerryFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * A constructor that builds a frame with a title.
+	 * A constructor that builds a Jerry frame with a title.
 	 * @param title
 	 */
 	public JerryFrame(final String title, final String OS) {
@@ -36,13 +36,7 @@ public class JerryFrame extends JFrame {
 		case "Mac":
 			super.setMinimumSize(new Dimension(520, 750));
 			break;
-		case "Unix":
-			super.setMinimumSize(new Dimension(520, 750));
-			break;
-		case "Solaris":
-			super.setMinimumSize(new Dimension(520, 750));
-			break;
-		case "Unknown":
+		case "Default":
 			super.setMinimumSize(new Dimension(520, 750));
 			break;
 		}

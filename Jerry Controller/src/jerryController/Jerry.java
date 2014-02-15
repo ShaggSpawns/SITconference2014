@@ -5,7 +5,7 @@ import java.util.Date;
 
 import javax.swing.JApplet;
 
-import messageManager.Log;
+import messageManager.LogFileManager;
 
 /**
  * Main class that calls to create a frame and runs it on a new thread.
@@ -41,7 +41,7 @@ public class Jerry extends JApplet implements Runnable {
 
 		final String time = DATE_FORMAT.format(today);
 		
-		new Log("+++++++++++++++ Program opened at [" + time + "] +++++++++++++++");
+		new LogFileManager("+++++++++++++++ Program opened at [" + time + "] +++++++++++++++");
 	}
 	
 	/**
@@ -60,6 +60,10 @@ public class Jerry extends JApplet implements Runnable {
 		Jerry.firstLogMessage = firstLogMessage;
 	}
 	
+	/**
+	 * Returns the operating system of the system running the program
+	 * @return String of operating system
+	 */
 	public static String getOperatingSystem() {
 		final String system = System.getProperty("os.name").toLowerCase();
 		if (system.indexOf("win") >= 0) {

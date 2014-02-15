@@ -162,3 +162,285 @@
 [12:23:29 Status]: [Error] Host IP field cannot be empty!
 [12:23:29 Info]: Not connected to Jerry, skipping close method
 +++++++++++++++ Program opened at [Feb/15/14 12:24:41 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:39:00 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:39:15 PM] +++++++++++++++
+[12:39:18 Status]: [Error] Host field can not be empty!
+[12:39:18 Error]: Could not connect with (:)
+[12:39:18 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:39:25 PM] +++++++++++++++
+[12:39:29 Status]: [Error] Host field can not be empty!
+[12:39:29 Error]: Could not connect with (:)
+[12:39:29 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:40:11 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:41:55 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:42:06 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:43:45 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:43:52 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:44:00 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:44:04 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:44:08 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:44:22 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:44:28 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:44:36 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:45:12 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:45:42 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:46:19 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:46:29 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:46:40 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:46:56 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:47:12 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:47:29 PM] +++++++++++++++
+[12:47:35 Info]: Attempting to connect to Jerry...
+[12:47:35 Status]: Attempting to connect...
+[12:47:36 Error]: Server not found!
+[12:47:36 Status]: [Error] Server not found!
+[12:47:36 Error]: NullPointerException in panel.TCP.ConnectionTCP.setupStreams()
+[12:47:36 Error]: NullPointerException in panel.TCP.ConnctionTCP.whileChatting()
+[12:48:07 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 01:27:32 PM] +++++++++++++++
+[13:27:35 Info]: Attempting to connect to Jerry...
+[13:27:35 Status]: Attempting to connect...
+[13:27:35 Info]: Connected to: localhost
+[13:27:35 Status]: [Connected] Connected to Jerry at: localhost
+[13:27:35 Info]: Streams successfully setup
+[13:28:08 Info]: Sent message: STOP
+[13:28:08 Status]: [Connected] Sent message: STOP
+[13:28:08 Info]: Sent message: END
+[13:28:08 Status]: [Connected] Sent message: END
+[13:28:08 Info]: Jerry: END
+[13:28:08 Status]: [Connected] Jerry: END
+[13:28:08 Info]: Closing sockets and streams...
+[13:28:08 Status]: [Pending] Disconnecting from Jerry...
+[13:28:08 Status]: TCP input stream closed
+[13:28:08 Status]: TCP output stream closed
+[13:28:08 Status]: TCP connecton closed
+[13:28:08 Info]: Successfully closed sockets and streams
+[13:28:08 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/15/14 01:28:18 PM] +++++++++++++++
+[13:28:25 Info]: Attempting to connect to Jerry...
+[13:28:25 Status]: Attempting to connect...
+[13:28:25 Info]: Connected to: localhost
+[13:28:25 Status]: [Connected] Connected to Jerry at: localhost
+[13:28:25 Info]: Streams successfully setup
+[13:28:37 Info]: Sent message: STOP
+[13:28:37 Status]: [Connected] Sent message: STOP
+[13:28:37 Info]: Sent message: END
+[13:28:37 Info]: Jerry: END
+[13:28:37 Status]: [Connected] Sent message: END
+[13:28:37 Status]: [Connected] Jerry: END
+[13:28:37 Info]: Closing sockets and streams...
+[13:28:37 Status]: [Pending] Disconnecting from Jerry...
+[13:28:37 Status]: TCP input stream closed
+[13:28:37 Status]: TCP output stream closed
+[13:28:37 Status]: TCP connecton closed
+[13:28:37 Info]: Successfully closed sockets and streams
+[13:28:37 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/15/14 01:29:54 PM] +++++++++++++++
+[13:30:00 Info]: Attempting to connect to Jerry...
+[13:30:00 Status]: Attempting to connect...
+[13:30:00 Info]: Connected to: localhost
+[13:30:00 Status]: [Connected] Connected to Jerry at: localhost
+[13:30:00 Info]: Streams successfully setup
+[13:30:03 Info]: Sent message: STOP
+[13:30:03 Status]: [Connected] Sent message: STOP
+[13:30:03 Info]: Sent message: END
+[13:30:03 Info]: Jerry: END
+[13:30:03 Status]: [Connected] Sent message: END
+[13:30:03 Status]: [Connected] Jerry: END
+[13:30:03 Info]: Closing sockets and streams...
+[13:30:03 Status]: [Pending] Disconnecting from Jerry...
+[13:30:03 Status]: TCP input stream closed
+[13:30:03 Status]: TCP output stream closed
+[13:30:03 Status]: TCP connecton closed
+[13:30:03 Info]: Successfully closed sockets and streams
+[13:30:03 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:30:04 Info]: Attempting to connect to Jerry...
+[13:30:04 Status]: Attempting to connect...
+[13:30:04 Info]: Connected to: localhost
+[13:30:04 Status]: [Connected] Connected to Jerry at: localhost
+[13:30:04 Info]: Streams successfully setup
+[13:30:08 Info]: Sent message: FORWARD
+[13:30:08 Status]: [Connected] Sent message: FORWARD
+[13:30:09 Info]: Sent message: STOP
+[13:30:09 Status]: [Connected] Sent message: STOP
+[13:30:09 Info]: Sent message: REVERSE
+[13:30:09 Status]: [Connected] Sent message: REVERSE
+[13:30:10 Info]: Sent message: STOP
+[13:30:10 Status]: [Connected] Sent message: STOP
+[13:30:10 Info]: Sent message: LEFT
+[13:30:10 Status]: [Connected] Sent message: LEFT
+[13:30:12 Info]: Sent message: STOP
+[13:30:12 Status]: [Connected] Sent message: STOP
+[13:30:12 Info]: Sent message: RIGHT
+[13:30:12 Status]: [Connected] Sent message: RIGHT
+[13:30:13 Info]: Sent message: STOP
+[13:30:13 Status]: [Connected] Sent message: STOP
+[13:30:13 Info]: Sent message: REVERSE
+[13:30:13 Status]: [Connected] Sent message: REVERSE
+[13:30:14 Info]: Sent message: STOP
+[13:30:14 Status]: [Connected] Sent message: STOP
+[13:30:14 Info]: Sent message: FORWARD
+[13:30:14 Status]: [Connected] Sent message: FORWARD
+[13:30:15 Info]: Sent message: STOP
+[13:30:15 Status]: [Connected] Sent message: STOP
+[13:30:15 Info]: Sent message: LEFT
+[13:30:15 Status]: [Connected] Sent message: LEFT
+[13:30:15 Info]: Sent message: STOP
+[13:30:15 Status]: [Connected] Sent message: STOP
+[13:30:16 Info]: Sent message: RIGHT
+[13:30:16 Status]: [Connected] Sent message: RIGHT
+[13:30:16 Info]: Sent message: STOP
+[13:30:16 Status]: [Connected] Sent message: STOP
+[13:30:17 Info]: Sent message: REVERSE
+[13:30:17 Status]: [Connected] Sent message: REVERSE
+[13:30:32 Info]: Sent message: STOP
+[13:30:32 Status]: [Connected] Sent message: STOP
+[13:30:32 Info]: Sent message: END
+[13:30:32 Info]: Jerry: END
+[13:30:32 Status]: [Connected] Sent message: END
+[13:30:32 Status]: [Connected] Jerry: END
+[13:30:32 Info]: Closing sockets and streams...
+[13:30:32 Status]: [Pending] Disconnecting from Jerry...
+[13:30:32 Status]: TCP input stream closed
+[13:30:32 Status]: TCP output stream closed
+[13:30:32 Status]: TCP connecton closed
+[13:30:32 Info]: Successfully closed sockets and streams
+[13:30:32 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/15/14 01:41:22 PM] +++++++++++++++
+[13:41:25 Info]: Attempting to connect to Jerry...
+[13:41:25 Status]: Attempting to connect...
+[13:41:25 Info]: Connected to: localhost
+[13:41:25 Status]: [Connected] Connected to Jerry at: localhost
+[13:41:25 Info]: Streams successfully setup
+[13:41:27 Info]: Sent message: FORWARD
+[13:41:27 Status]: [Connected] Sent message: FORWARD
+[13:41:28 Info]: Sent message: STOP
+[13:41:28 Status]: [Connected] Sent message: STOP
+[13:41:28 Info]: Sent message: REVERSE
+[13:41:28 Status]: [Connected] Sent message: REVERSE
+[13:41:28 Info]: Sent message: STOP
+[13:41:28 Status]: [Connected] Sent message: STOP
+[13:41:28 Info]: Sent message: LEFT
+[13:41:28 Status]: [Connected] Sent message: LEFT
+[13:41:29 Info]: Sent message: STOP
+[13:41:29 Status]: [Connected] Sent message: STOP
+[13:41:29 Info]: Sent message: RIGHT
+[13:41:29 Status]: [Connected] Sent message: RIGHT
+[13:41:29 Info]: Sent message: STOP
+[13:41:29 Status]: [Connected] Sent message: STOP
+[13:41:29 Info]: Sent message: FORWARD
+[13:41:29 Status]: [Connected] Sent message: FORWARD
+[13:41:30 Info]: Sent message: STOP
+[13:41:30 Status]: [Connected] Sent message: STOP
+[13:41:30 Info]: Sent message: REVERSE
+[13:41:30 Status]: [Connected] Sent message: REVERSE
+[13:41:31 Info]: Sent message: STOP
+[13:41:31 Status]: [Connected] Sent message: STOP
+[13:41:32 Info]: Sent message: LEFT
+[13:41:32 Status]: [Connected] Sent message: LEFT
+[13:41:32 Info]: Sent message: STOP
+[13:41:32 Status]: [Connected] Sent message: STOP
+[13:41:33 Info]: Sent message: FORWARD
+[13:41:33 Status]: [Connected] Sent message: FORWARD
+[13:41:33 Info]: Sent message: STOP
+[13:41:33 Status]: [Connected] Sent message: STOP
+[13:41:34 Info]: Sent message: RIGHT
+[13:41:34 Status]: [Connected] Sent message: RIGHT
+[13:41:35 Info]: Sent message: STOP
+[13:41:35 Status]: [Connected] Sent message: STOP
+[13:41:35 Info]: Sent message: END
+[13:41:35 Status]: [Connected] Sent message: END
+[13:41:35 Info]: Jerry: END
+[13:41:35 Status]: [Connected] Jerry: END
+[13:41:35 Info]: Closing sockets and streams...
+[13:41:35 Status]: [Pending] Disconnecting from Jerry...
+[13:41:35 Status]: TCP input stream closed
+[13:41:35 Status]: TCP output stream closed
+[13:41:35 Status]: TCP connecton closed
+[13:41:35 Info]: Successfully closed sockets and streams
+[13:41:35 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/15/14 01:42:09 PM] +++++++++++++++
+[13:42:16 Info]: Attempting to connect to Jerry...
+[13:42:16 Status]: Attempting to connect...
+[13:42:16 Info]: Connected to: localhost
+[13:42:16 Status]: [Connected] Connected to Jerry at: localhost
+[13:42:16 Info]: Streams successfully setup
+[13:42:16 Info]: Sent message: FORWARD
+[13:42:16 Status]: [Connected] Sent message: FORWARD
+[13:42:17 Info]: Sent message: STOP
+[13:42:17 Status]: [Connected] Sent message: STOP
+[13:42:18 Info]: Sent message: LEFT
+[13:42:18 Status]: [Connected] Sent message: LEFT
+[13:42:18 Info]: Sent message: STOP
+[13:42:18 Status]: [Connected] Sent message: STOP
+[13:42:18 Info]: Sent message: REVERSE
+[13:42:18 Status]: [Connected] Sent message: REVERSE
+[13:42:18 Info]: Sent message: STOP
+[13:42:18 Status]: [Connected] Sent message: STOP
+[13:42:18 Info]: Sent message: END
+[13:42:18 Status]: [Connected] Sent message: END
+[13:42:18 Info]: Jerry: END
+[13:42:18 Status]: [Connected] Jerry: END
+[13:42:18 Info]: Closing sockets and streams...
+[13:42:18 Status]: [Pending] Disconnecting from Jerry...
+[13:42:18 Status]: TCP input stream closed
+[13:42:18 Status]: TCP output stream closed
+[13:42:18 Status]: TCP connecton closed
+[13:42:18 Info]: Successfully closed sockets and streams
+[13:42:18 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/15/14 01:42:55 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 01:48:59 PM] +++++++++++++++
+[13:49:00 Status]: [Error] Host field can not be empty!
+[13:49:00 Error]: Could not connect with (:)
+[13:49:00 Info]: Not connected to Jerry, skipping close method
+[13:49:06 Info]: Attempting to connect to Jerry...
+[13:49:06 Status]: Attempting to connect...
+[13:49:07 Error]: Server not found!
+[13:49:07 Status]: [Error] Server not found!
+[13:49:07 Error]: NullPointerException in ConnectionTCP.setupStreams()
+[13:49:07 Error]: NullPointerException in panel.TCP.ConnctionTCP.whileChatting()
++++++++++++++++ Program opened at [Feb/15/14 01:49:32 PM] +++++++++++++++
+[13:49:39 Info]: Attempting to connect to Jerry...
+[13:49:39 Status]: Attempting to connect...
+[13:49:40 Error]: Server not found!
+[13:49:40 Status]: [Error] Server not found!
+[13:49:40 Error]: NullPointerException in ConnectionTCP.setupStreams()
+[13:49:40 Error]: NullPointerException in panel.TCP.ConnctionTCP.whileChatting()
++++++++++++++++ Program opened at [Feb/15/14 01:55:37 PM] +++++++++++++++
+[13:55:39 Info]: Attempting to connect to Jerry...
+[13:55:39 Status]: Attempting to connect...
+[13:55:40 Error]: Server not found!
+[13:55:40 Status]: [Error] Server not found!
++++++++++++++++ Program opened at [Feb/15/14 01:56:15 PM] +++++++++++++++
+[13:56:17 Info]: Attempting to connect to Jerry...
+[13:56:17 Status]: Attempting to connect...
+[13:56:18 Error]: Server not found!
+[13:56:18 Status]: [Error] Server not found!
+[13:56:18 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 01:57:18 PM] +++++++++++++++
+[13:57:24 Info]: Attempting to connect to Jerry...
+[13:57:24 Status]: Attempting to connect...
+[13:57:24 Info]: Connected to: localhost
+[13:57:24 Status]: [Connected] Connected to Jerry at (localhost:6789)
+[13:57:24 Info]: Streams successfully setup
+[13:57:27 Info]: Sent message: REVERSE
+[13:57:27 Status]: [Connected] Sent message: REVERSE
+[13:57:28 Info]: Sent message: STOP
+[13:57:28 Status]: [Connected] Sent message: STOP
+[13:57:28 Info]: Sent message: LEFT
+[13:57:28 Status]: [Connected] Sent message: LEFT
+[13:57:29 Info]: Sent message: STOP
+[13:57:29 Status]: [Connected] Sent message: STOP
+[13:57:29 Info]: Sent message: FORWARD
+[13:57:29 Status]: [Connected] Sent message: FORWARD
+[13:57:30 Info]: Sent message: STOP
+[13:57:30 Status]: [Connected] Sent message: STOP
+[13:57:30 Info]: Sent message: END
+[13:57:30 Status]: [Connected] Sent message: END
+[13:57:30 Info]: Jerry: END
+[13:57:30 Status]: [Connected] Jerry: END
+[13:57:30 Info]: Closing sockets and streams...
+[13:57:30 Status]: [Pending] Disconnecting from Jerry...
+[13:57:30 Info]: Successfully closed sockets and streams
+[13:57:30 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/15/14 02:38:33 PM] +++++++++++++++

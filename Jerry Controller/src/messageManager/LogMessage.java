@@ -10,13 +10,13 @@ import panel.About.InfoConsole;
  * Manages the messages by sending them to the appropriate areas (Status Bar, Console Area, and/or the Log)
  * @author Jackson Wilson (c) 2014
  */
-public class MessageLog {
+public class LogMessage {
 	/**
 	 * Formats a message that will be logged to the log file and displayed to the Info Console
 	 * @param entryType
 	 * @param message
 	 */
-	public MessageLog(final String entryType, final String message) {
+	public LogMessage(final String entryType, final String message) {
 		logMessage(entryType, message);
 	}
 	
@@ -29,7 +29,7 @@ public class MessageLog {
 		final String time = currentTime();
 		final String entry = "[" + time + " " + entryType + "]: " + rawEntry;
 				
-		new Log(entry);
+		new LogFileManager(entry);
 		if (Jerry.isFirstLogMessage() == true) {
 			InfoConsole.consoleArea.append(entry);
 			Jerry.setFirstLogMessage(false);
@@ -47,7 +47,6 @@ public class MessageLog {
 	public static void displayLogError(final String entryType, final String rawEntry) {
 		final String time = currentTime();
 		final String entry = "[" + time + " " + entryType + "]: " + rawEntry;
-		
 		InfoConsole.consoleArea.append(entry);
 	}
 	
@@ -59,7 +58,6 @@ public class MessageLog {
 		final Date today = new Date();
 		final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("HH:mm:ss");
 		final String time = DATE_FORMAT.format(today);
-		
 		return time;
 	}
 }

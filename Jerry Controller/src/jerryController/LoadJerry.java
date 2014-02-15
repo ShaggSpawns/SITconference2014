@@ -2,9 +2,13 @@ package jerryController;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import messageManager.LogMessage;
+import messageManager.StatusUpdateMessage;
 import panel.Jerry.JerryLogin;
 import panel.SSH.SshLogin;
 
@@ -27,7 +31,7 @@ public class LoadJerry {
 		lines = readFile();
 		switch(Jerry.getOperatingSystem()) {
 		case "Windows":
-			defaultTcpMessage = "----------------------- Load Save -----------------------";
+			defaultTcpMessage = "---------------------- Load Save ----------------------";
 			defaultSshMessage = "----------------------- Load Save -----------------------";
 			break;
 		case "Mac":
@@ -82,10 +86,10 @@ public class LoadJerry {
 	/**
 	 * Reads the file and returns the contents of the file into a String.
 	 * @return
+	 * @throws FileNotFoundException 
 	 */
 	private static String[] readFile() {
 		final ArrayList<String> arr = new ArrayList<String>();
-		
 		try {
 			if (from.equals("TCP")) {
 				final FileInputStream fstream = new FileInputStream(SaveJerry.loginTCP.getAbsoluteFile());
@@ -110,8 +114,12 @@ public class LoadJerry {
 				
 				fstream.close();
 			}
-		} catch (final Exception e) {
-			
+		} catch (final FileNotFoundException e) {
+			new LogMessage("Error", "FileNotFoundException in LoadJerry.readFile()");
+			new StatusUpdateMessage("Error", "Could not load Jerrys");
+		} catch (final IOException e) {
+			new LogMessage("Error", "IOExcpetion in LeadJerry.readFile()");
+			new StatusUpdateMessage("Error", "Could not load Jerrys");
 		}
 		return arr.toArray(new String[arr.size()]);
 	}

@@ -29,6 +29,17 @@ public class JerryStatus extends JPanel{
 		sBar.setFocusable(false);
 		sBar.setText("[Disconnected]");
 		sBar.setEditable(false);
+		switch(OS) {
+		case "Windows":
+			gc.ipadx = 27;
+			break;
+		case "Mac":
+			gc.ipadx = 0;
+			break;
+		case "Default":
+			gc.ipadx = 0;
+			break;
+		}
 		gc.gridx = 0;
 		gc.gridy = 3;
 		gc.gridwidth = 3;

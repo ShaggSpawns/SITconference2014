@@ -7,8 +7,8 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import messageManager.MessageLog;
-import messageManager.MessageStatusUpdate;
+import messageManager.LogMessage;
+import messageManager.StatusUpdateMessage;
 
 /**
  * Handles the connection and communication with a TCP server.
@@ -16,7 +16,6 @@ import messageManager.MessageStatusUpdate;
  */
 public class JerryConnection implements Runnable {
 
-	private String message = "";
 	private final String serverIP;
 	private final int serverPort;
 	public static Socket connection;
@@ -37,28 +36,29 @@ public class JerryConnection implements Runnable {
 	 * Connects to the server, sets up the streams / sockets, handles chatting with server, and closes sockets / streams when finished
 	 */
 	public void run() {
-		connectToServer();
-		setupStreams();
-		whileChatting();
-		cleanUp();
+		try {
+			connectToServer();
+			setupStreams();
+			whileChatting();
+			cleanUp();
+		} catch (final IOException ioException) {
+			new LogMessage("Error", "Server not found!");
+			new StatusUpdateMessage("Error", "Server not found!");
+			JerryLogin.connectBtn.doClick();
+			JerryLogin.changeTCPguiState("Disconnected");
+		}
 	}
 	
 	/**
 	 * Connects to a TCP server and displays a confirmation message once connected
 	 */
-	private void connectToServer() {
-		try {
-			new MessageLog("Info", "Attempting to connect to Jerry...");
-			new MessageStatusUpdate("pending", "Attempting to connect...");
-			connection = new Socket(InetAddress.getByName(serverIP), serverPort);
-			new MessageLog("Info", "Connected to: " + connection.getInetAddress().getHostName());
-			new MessageStatusUpdate("Connected", "Connected to Jerry at: " + connection.getInetAddress().getHostName());
-			JerryControls.controlsEnabled(true);
-		} catch (final IOException ioException) {
-			new MessageLog("Error", "Server not found!");
-			new MessageStatusUpdate("Error", "Server not found!");
-			JerryLogin.changeTCPguiState("Disconnected");
-		}
+	private void connectToServer() throws IOException {
+		new LogMessage("Info", "Attempting to connect to Jerry...");
+		new StatusUpdateMessage("pending", "Attempting to connect...");
+		connection = new Socket(InetAddress.getByName(serverIP), serverPort);
+		new LogMessage("Info", "Connected to: " + connection.getInetAddress().getHostName());
+		new StatusUpdateMessage("Connected", "Connected to Jerry at " + serverIP + ":" + serverPort);
+		JerryControls.controlsEnabled(true);
 	}
 	
 	/**
@@ -70,12 +70,12 @@ public class JerryConnection implements Runnable {
 			output.flush();
 			input = new ObjectInputStream(connection.getInputStream());
 			JerryLogin.changeTCPguiState("Connected");
-			new MessageLog("Info", "Streams successfully setup");
+			new LogMessage("Info", "Streams successfully setup");
 		} catch (final IOException ioException) {
-			new MessageLog("Error", "Failed to setup TCP streams!");
-			new MessageStatusUpdate("Error", "Failed to setup Jerry streams!");
+			new LogMessage("Error", "Failed to setup TCP streams!");
+			new StatusUpdateMessage("Error", "Failed to setup Jerry streams!");
 		} catch (final NullPointerException npException) {
-			new MessageLog("Error", "NullPointerException in panel.TCP.ConnectionTCP.setupStreams()");
+			new LogMessage("Error", "NullPointerException in ConnectionTCP.setupStreams()");
 		}
 	}
 	
@@ -83,23 +83,23 @@ public class JerryConnection implements Runnable {
 	 * Handles the communication with the TCP server
 	 */
 	private void whileChatting() {
-		message = null;
+		String message = null;
 		do {
 			try {
 				message = (String) input.readObject();
-				new MessageLog("Info", message);
-				new MessageStatusUpdate("Connected", message);
+				new LogMessage("Info", message);
+				new StatusUpdateMessage("Connected", message);
 			} catch (final ClassNotFoundException classNotFoundException) {
-				new MessageLog("Error", "Unable to read incoming message!");
-				new MessageStatusUpdate("Error", "Unable to read incoming message!");
+				new LogMessage("Error", "Unable to read incoming message!");
+				new StatusUpdateMessage("Error", "Unable to read incoming message!");
 			} catch (final EOFException eofException) {
-				new MessageLog("Error", "EOFException in panel.TCP.ConnectionTCP.whileChatting()");
-				new MessageStatusUpdate("Disconnected", "Disconnected from Jerry: " + connection.getInetAddress().getHostName());
+				new LogMessage("Error", "EOFException in ConnectionTCP.whileChatting()");
+				new StatusUpdateMessage("Disconnected", "Disconnected from Jerry at " + serverIP + ":" + serverPort);
 				break;
 			} catch (final IOException ioExection) {
-				new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.whileChatting()");
+				new LogMessage("Error", "IOException in ConnectionTCP.whileChatting()");
 			} catch (final NullPointerException npE) {
-				new MessageLog("Error", "NullPointerException in panel.TCP.ConnctionTCP.whileChatting()");
+				new LogMessage("Error", "NullPointerException in ConnctionTCP.whileChatting()");
 			}
 		} while(!message.equals("Jerry: END"));
 	}
@@ -110,24 +110,20 @@ public class JerryConnection implements Runnable {
 	private final static void cleanUp() {
 		if (connection.isConnected()) {
 			try {
-				new MessageLog("Info", "Closing sockets and streams...");
-				new MessageStatusUpdate("Pending", "Disconnecting from Jerry...");
+				new LogMessage("Info", "Closing sockets and streams...");
+				new StatusUpdateMessage("Pending", "Disconnecting from Jerry...");
 				input.close();
-				new MessageStatusUpdate("Info", "TCP input stream closed");
 				output.flush();
 				output.close();
-				new MessageStatusUpdate("Info", "TCP output stream closed");
 				connection.close();
-				new MessageStatusUpdate("Info", "TCP connecton closed");
-				new MessageLog("Info", "Successfully closed sockets and streams");
-				new MessageStatusUpdate("Disconnected", "Successfully disconnected from Jerry");
+				new LogMessage("Info", "Successfully closed sockets and streams");
+				new StatusUpdateMessage("Disconnected", "Successfully disconnected from Jerry");
 			} catch (final IOException ioException) {
-				new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.cleanUp()");
-				new MessageStatusUpdate("Error", "Failed to disconnect to Jerry");
-				return;
+				new LogMessage("Error", "IOException in panel.TCP.ConnectionTCP.cleanUp()");
+				new StatusUpdateMessage("Error", "Failed to disconnect to Jerry");
 			} catch (final NullPointerException nullPointerException) {
-				new MessageLog("Error", "NullPointerException in panel.TCP.ConnectionTCP:2");
-				new MessageStatusUpdate("Error", "No sockets and streams to disconnect from");
+				new LogMessage("Error", "NullPointerException in ConnectionTCP.cleanUp()");
+				new StatusUpdateMessage("Error", "No sockets and streams to disconnect from");
 			}
 		}
 	}
@@ -140,11 +136,11 @@ public class JerryConnection implements Runnable {
 		try {
 			output.writeObject(message);
 			output.flush();
-			new MessageLog("Info", "Sent message: " + message);
-			new MessageStatusUpdate("Connected",  "Sent message: " + message);
+			new LogMessage("Info", "Sent message: " + message);
+			new StatusUpdateMessage("Connected",  "Sent message: " + message);
 		} catch (final IOException ioException) {
-			new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.sendMessage()");
-			new MessageStatusUpdate("Error", "Failed to send message");
+			new LogMessage("Error", "IOException in ConnectionTCP.sendMessage()");
+			new StatusUpdateMessage("Error", "Failed to send message");
 		}
 	}
 }

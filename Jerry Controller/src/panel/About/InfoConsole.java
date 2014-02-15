@@ -31,12 +31,12 @@ public class InfoConsole extends JPanel {
 		
 		consoleArea = new JTextArea(11, 38);
 		consoleArea.setEditable(false);
-		DefaultCaret caret = (DefaultCaret)consoleArea.getCaret();
+		final DefaultCaret caret = (DefaultCaret)consoleArea.getCaret();
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 	    gc.anchor = GridBagConstraints.CENTER;
 		gc.insets = new Insets(2,1,2,2);
 		gc.ipadx = 9;
-		JScrollPane scrollPane = new JScrollPane(consoleArea);
+		final JScrollPane scrollPane = new JScrollPane(consoleArea);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 	    add(scrollPane, gc);

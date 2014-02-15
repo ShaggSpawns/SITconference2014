@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import messageManager.LogMessage;
+import messageManager.StatusUpdateMessage;
 import panel.Jerry.JerryLogin;
 import panel.SSH.SshLogin;
 
@@ -28,7 +30,6 @@ public class SaveJerry {
 	 */
 	public SaveJerry(final String address, final boolean callFromTCP) {
 		this.callFromTCP = callFromTCP;
-		
 		openFile();
 		addRecords(address);
 		closeFile();
@@ -59,7 +60,8 @@ public class SaveJerry {
 				bufferedWriter = new BufferedWriter(fileWriter);
 			}
 		} catch (final IOException e) {
-			System.out.println("Failed to create login file!");
+			new LogMessage("Error", "IOException in SaveJerry.openFile()");
+			new StatusUpdateMessage("Error", "Could not create save file");
 			
 			if (callFromTCP == true) {
 				JerryLogin.saveBtn.setEnabled(true);
@@ -78,7 +80,8 @@ public class SaveJerry {
 			bufferedWriter.write(address);
 			bufferedWriter.newLine();
 		} catch (final IOException e) {
-			System.out.println("Failed to write to login file!");
+			new LogMessage("Error", "IOException in SaveJerry.addRecords()");
+			new StatusUpdateMessage("Error", "Failed to write to save file");
 			
 			if (callFromTCP == true) {
 				JerryLogin.saveBtn.setEnabled(true);
@@ -95,7 +98,8 @@ public class SaveJerry {
 		try {
 			bufferedWriter.close();
 		} catch (final IOException e) {
-			System.out.println("Failed to close login file!");
+			new LogMessage("Error", "IOException in SaveJerry.closeFile()");
+			new StatusUpdateMessage("Error", "Failed to close save file");
 			
 			if (callFromTCP == true) {
 				JerryLogin.saveBtn.setEnabled(true);

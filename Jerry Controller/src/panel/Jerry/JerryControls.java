@@ -52,8 +52,18 @@ public class JerryControls extends JPanel {
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.insets = new Insets(2,0,0,2);
+		switch(OS) {
+		case "Windows":
+			gc.ipady = 140;
+			break;
+		case "Mac":
+			gc.ipady = 125;
+			break;
+		case "Default":
+			gc.ipady = 125;
+			break;
+		}
 		gc.ipadx = 55;
-		gc.ipady = 125;
 		gc.gridwidth = 3;
 		gc.gridx = 0;
 		gc.gridy = 0;
@@ -199,6 +209,4 @@ public class JerryControls extends JPanel {
 		}
 		otherBtnToggled = false;
 	}
-	
-	
 }

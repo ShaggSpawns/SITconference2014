@@ -22,8 +22,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
-import messageManager.MessageLog;
-import messageManager.MessageStatusUpdate;
+import messageManager.LogMessage;
+import messageManager.StatusUpdateMessage;
 import jerryController.LoadJerry;
 import jerryController.SaveJerry;
 
@@ -247,17 +247,17 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 			portF.setText(port);
 			usernameF.setText(user);
 		} catch (final ArrayIndexOutOfBoundsException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "ArrayIndexOutOfBoundsException in LoginSSH.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "ArrayIndexOutOfBoundsException in LoginSSH.fillFields()");
 		} catch (final FileNotFoundException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "FileNotFoundException in LoginSSH.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "FileNotFoundException in LoginSSH.fillFields()");
 		} catch (final IOException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "IOException in LoginSSH.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "IOException in LoginSSH.fillFields()");
 		} catch (final NullPointerException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "NullPointerException in LoginSSH.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "NullPointerException in LoginSSH.fillFields()");
 			e.printStackTrace();
 		}
 	}
@@ -359,32 +359,32 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 								if (!(password.equals(""))){
 									new Thread(new SshConnection(ip, port, username, password)).start();
 								} else {
-									new MessageStatusUpdate("Error", "Password field can not be empty!");
-									new MessageLog("Error", "Could not connect with (" + address + ")");
+									new StatusUpdateMessage("Error", "Password field can not be empty!");
+									new LogMessage("Error", "Could not connect with (" + address + ")");
 									connectBtn.setSelected(true);
 									connectBtn.doClick();
 								}
 							} else {
-								new MessageStatusUpdate("Error", "Username field can not be empty!");
-								new MessageLog("Error", "Could not connect with (" + address + ")");
+								new StatusUpdateMessage("Error", "Username field can not be empty!");
+								new LogMessage("Error", "Could not connect with (" + address + ")");
 								connectBtn.setSelected(true);
 								connectBtn.doClick();
 							}
 						} else { 
-							new MessageStatusUpdate("Error", "Port field can not be empty!");
-							new MessageLog("Error", "Could not connect with (" + address + ")");
+							new StatusUpdateMessage("Error", "Port field can not be empty!");
+							new LogMessage("Error", "Could not connect with (" + address + ")");
 							connectBtn.setSelected(true);
 							connectBtn.doClick();	
 						}
 				} catch (final NumberFormatException nFE) {
-					new MessageStatusUpdate("Error", "Port is not a number!");
-					new MessageLog("Error", "Could not connect with (" + address + ")");
+					new StatusUpdateMessage("Error", "Port is not a number!");
+					new LogMessage("Error", "Could not connect with (" + address + ")");
 						connectBtn.setSelected(true);
 						connectBtn.doClick();
 				}
 			} else {
-				new MessageStatusUpdate("Error", "Host field can not be empty!");
-				new MessageLog("Error", "Could not connect with (" + address + ")");
+				new StatusUpdateMessage("Error", "Host field can not be empty!");
+				new LogMessage("Error", "Could not connect with (" + address + ")");
 				connectBtn.setSelected(true);
 				connectBtn.doClick();
 			}
@@ -393,7 +393,7 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 			try {
 				SshConnection.closeSSH();
 			} catch (final NullPointerException npE) {
-				new MessageLog("Info", "Not connected, skipping close method");
+				new LogMessage("Info", "Not connected, skipping close method");
 			}
 			LoadJerry.addLogins("SSH");
 		}

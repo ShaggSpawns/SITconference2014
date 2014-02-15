@@ -23,8 +23,8 @@ import javax.swing.JToggleButton;
 
 import jerryController.LoadJerry;
 import jerryController.SaveJerry;
-import messageManager.MessageLog;
-import messageManager.MessageStatusUpdate;
+import messageManager.LogMessage;
+import messageManager.StatusUpdateMessage;
 
 /**
  * Creates the TCP Login area on the MotorControls tab
@@ -88,16 +88,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		
 		hostF = new JTextField();
 		hostF.setToolTipText("Enter Jerry's IP Address");
-		switch(OS) {
-		case "Windows":
-			gc.ipadx = 275;
-			break;
-		case "Mac":
-			gc.fill = GridBagConstraints.HORIZONTAL;
-			break;
-		case "Default":
-			break;
-		}
+		gc.fill = GridBagConstraints.HORIZONTAL;
 		gc.weightx = 0.0;
 		gc.anchor = GridBagConstraints.WEST;
 		gc.gridx = 1;
@@ -111,7 +102,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		gc.gridy = 1;
 		add(portF, gc);
 		
-		connectBtn = new JToggleButton("Disconnect");
+		connectBtn = new JToggleButton("Connect");
 		connectBtn.setToolTipText("Connect / Disconnect to Vehical");
 		connectBtn.setFocusable(false);
 		connectBtn.addItemListener(this);
@@ -199,17 +190,17 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 			hostF.setText(host);
 			portF.setText(port);
 		} catch (final ArrayIndexOutOfBoundsException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "ArrayIndexOutOfBoundsException in JerryLogin.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "ArrayIndexOutOfBoundsException in JerryLogin.fillFields()");
 		} catch (final FileNotFoundException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "FileNotFoundException in JerryLogin.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "FileNotFoundException in JerryLogin.fillFields()");
 		} catch (final IOException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "IOException in JerryLogin.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "IOException in JerryLogin.fillFields()");
 		} catch (final NullPointerException e) {
-			new MessageStatusUpdate("Error", "Failed to fill fields");
-			new MessageLog("Error", "NullPointerException in JerryLogin.fillFields()");
+			new StatusUpdateMessage("Error", "Failed to fill fields");
+			new LogMessage("Error", "NullPointerException in JerryLogin.fillFields()");
 			e.printStackTrace();
 		}
 	}
@@ -319,20 +310,20 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 						changeTCPguiState("Pending");
 						(new Thread(new JerryConnection(ip, port))).start();
 					} else {
-						new MessageStatusUpdate("Error", "Port field can not be empty!");
-						new MessageLog("Error", "Could not connect with (" + address + ")");
+						new StatusUpdateMessage("Error", "Port field can not be empty!");
+						new LogMessage("Error", "Could not connect with (" + address + ")");
 						connectBtn.setSelected(true);
 						connectBtn.doClick();
 					}
 				} catch (final NumberFormatException nFE) {
-					new MessageStatusUpdate("Error", "Port is not a number!");
-					new MessageLog("Error", "Could not connect with (" + address + ")");
+					new StatusUpdateMessage("Error", "Port is not a number!");
+					new LogMessage("Error", "Could not connect with (" + address + ")");
 					connectBtn.setSelected(true);
 					connectBtn.doClick();
 				}
 			} else {
-				new MessageStatusUpdate("Error", "Host field can not be empty!");
-				new MessageLog("Error", "Could not connect with (" + address + ")");
+				new StatusUpdateMessage("Error", "Host field can not be empty!");
+				new LogMessage("Error", "Could not connect with (" + address + ")");
 				connectBtn.setSelected(true);
 				connectBtn.doClick();
 			}
@@ -343,7 +334,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 					JerryConnection.sendMessage("END");
 				}
 			} catch (final NullPointerException npE) {
-				new MessageLog("Info", "Not connected to Jerry, skipping close method");
+				new LogMessage("Info", "Not connected to Jerry, skipping close method");
 			}
 			changeTCPguiState("Disconnected");
 			LoadJerry.addLogins("TCP");

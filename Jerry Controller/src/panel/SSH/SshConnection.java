@@ -5,7 +5,7 @@ import java.io.OutputStream;
 
 import javax.swing.SwingUtilities;
 
-import messageManager.MessageLog;
+import messageManager.LogMessage;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
@@ -34,17 +34,17 @@ public class SshConnection implements Runnable {
 		final JSch jsch = new JSch();
 		try {
 			jsch.setKnownHosts("~/.ssh/known_hosts");
-			new MessageLog("Info", "SSH: loaded known_hosts");
+			new LogMessage("Info", "SSH: loaded known_hosts");
 		} catch (final JSchException e) {
 			e.printStackTrace();
-			new MessageLog("Error", "SSH: failed to load known_hosts");
+			new LogMessage("Error", "SSH: failed to load known_hosts");
 		}
 		
 		try {
 			session = jsch.getSession(USERNAME, HOST, PORT);
 			session.setPassword(PASSWORD);
 			session.connect();
-			new MessageLog("Info", "SSH: session connected");
+			new LogMessage("Info", "SSH: session connected");
 			channel = session.openChannel("shell");
 			channel.setInputStream(SshConsole.streamer);
 			//channel.setInputStream(System.in);
@@ -64,12 +64,12 @@ public class SshConnection implements Runnable {
 			};
 			channel.setOutputStream(output);
 			channel.connect();
-			new MessageLog("Info", "SSH: channel connected");
+			new LogMessage("Info", "SSH: channel connected");
 			SshLogin.changeTCPguiState("Connected");
 		} catch (final JSchException e) {
 			SshLogin.changeTCPguiState("Disconnected");
 			e.printStackTrace();
-			new MessageLog("Error", "SSH: failed to set up SSH connection");
+			new LogMessage("Error", "SSH: failed to set up SSH connection");
 		}
 	}
 	
@@ -101,19 +101,19 @@ public class SshConnection implements Runnable {
 				channel.sendSignal("exit");
 				channel.getOutputStream().close();
 				channel.getInputStream().close();
-				new MessageLog("Info", "SSH: channel streams were successfully closed");
+				new LogMessage("Info", "SSH: channel streams were successfully closed");
 			} catch (final IOException e) {
 				e.printStackTrace();
-				new MessageLog("Error", "SSH: failed to close channel streams");
+				new LogMessage("Error", "SSH: failed to close channel streams");
 			} catch (final Exception e) {
 				e.printStackTrace();
 			}
 			channel.disconnect();
-			new MessageLog("Info", "SSH: channel successfully closed");
+			new LogMessage("Info", "SSH: channel successfully closed");
 		}
 		if (session.isConnected()) {
 			session.disconnect();
-			new MessageLog("Info", "SSH: session successfully closed");
+			new LogMessage("Info", "SSH: session successfully closed");
 		}
 	}
 }

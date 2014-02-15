@@ -2,13 +2,13 @@ package messageManager;
 
 import panel.Jerry.JerryStatus;
 
-public class MessageStatusUpdate {
+public class StatusUpdateMessage {
 	/**
 	 * Updates the Status Bar with a message that uses a prefix defined by the messageType.
 	 * @param messageType (Error, Warning, Important, Connected, Disconnected, Pending)
 	 * @param message
 	 */
-	public MessageStatusUpdate(final String messageType, final String message) {
+	public StatusUpdateMessage(final String messageType, final String message) {
 		statusBarUpdate(messageType, message);
 	}
 	
@@ -40,6 +40,6 @@ public class MessageStatusUpdate {
 		JerryStatus.sBar.setText(sBarMessage);
 		
 		final String logType = "Status";
-		new MessageLog(logType, sBarMessage);
+		new LogMessage(logType, sBarMessage);
 	}
 }

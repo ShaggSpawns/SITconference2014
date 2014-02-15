@@ -14,7 +14,6 @@ import javax.swing.JFrame;
  */
 public class JerryComm extends JFrame {
 	private static final long serialVersionUID = 1L;
-	
 	private static ObjectOutputStream output;
 	private static ObjectInputStream input;
 	private static ServerSocket server;
@@ -52,9 +51,9 @@ public class JerryComm extends JFrame {
 	private static void initializeServer() {
 		try {
 			server = new ServerSocket(6789, 5);
-			displayMessage("Initialized server on port: " + 6789);
+			System.out.println("Initialized server on port: " + 6789);
 		} catch (final IOException ioE) {
-			displayMessage(6789 + " is not an opened port.");
+			System.out.println("6789 is not an opened port.");
 		}
 	}
 	
@@ -64,11 +63,11 @@ public class JerryComm extends JFrame {
 	 */
 	private static void waitForConnection() {
 		try {
-			displayMessage("Waiting for someone to connect...");
+			System.out.println("Waiting for someone to connect...");
 			connection = server.accept();
-			displayMessage("Now connected to " + connection.getInetAddress().getHostName());
+			System.out.println("Now connected to " + connection.getInetAddress().getHostName());
 		} catch (final IOException ioE) {
-			displayMessage("Could not accept incoming connection");
+			System.out.println("Could not accept incoming connection");
 		}
 	}
 	
@@ -81,9 +80,9 @@ public class JerryComm extends JFrame {
 			new JsscComm();
 			output = new ObjectOutputStream(connection.getOutputStream());
 			input = new ObjectInputStream(connection.getInputStream());
-			displayMessage("Streams are now setup!");
+			System.out.println("Streams are now setup!");
 		} catch (final IOException ioE) {
-			displayMessage("Failed to setup streams");
+			System.out.println("Failed to setup streams");
 		}
 	}
 	
@@ -116,9 +115,11 @@ public class JerryComm extends JFrame {
 						default:
 							break;
 					}
+				} else {
+					System.out.println(message);
 				}
 			} catch (final ClassNotFoundException | IOException e) {
-				displayMessage("Unable to read input.");
+				System.out.println("Unable to read input.");
 			}
 		} while (!message.equals("END"));
 	}
@@ -129,7 +130,7 @@ public class JerryComm extends JFrame {
 	private static void cleanUp() {
 		try {
 			output.writeObject("Jerry: END");
-			displayMessage("Closing connection...");
+			System.out.println("Closing connection...");
 			if (JsscComm.serialPort.isOpened()) {
 				JsscComm.close();
 			}
@@ -137,10 +138,12 @@ public class JerryComm extends JFrame {
 			input.close();
 			connection.close();
 			server.close();
-			displayMessage("\n# # # # # # # # # #\n");
+			System.out.println("\n# # # # # # # # # #\n");
 			Thread.sleep(100);
-		}catch(final IOException | InterruptedException ioException){
-			ioException.printStackTrace();
+		} catch (final IOException e) {
+			System.out.println("Unable to close Jerry server");
+		} catch (final InterruptedException e) {
+			System.out.println("Clean up was interrupted");
 		}
 	}
 	
@@ -152,18 +155,10 @@ public class JerryComm extends JFrame {
 		try {
 			output.writeObject("Jerry: " + message);
 			output.flush();
-			displayMessage("Sent: " + message);
+			System.out.println("Sent: " + message);
 		} catch (final IOException ioException) {
-			displayMessage("CAN'T SEND");
+			System.out.println("Could not send message to Jerry controller");
 			startRunning();
 		}
-	}
-	
-	/**
-	 * Displays message to the user.
-	 * @param message
-	 */
-	public static void displayMessage(final String message) {
-		System.out.println(message);
 	}
 }

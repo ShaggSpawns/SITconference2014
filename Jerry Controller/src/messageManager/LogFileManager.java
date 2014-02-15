@@ -9,7 +9,7 @@ import java.io.IOException;
  * Manages the log file for the program
  * @author Jackson Wilson (c) 2014
  */
-public class Log {
+public class LogFileManager {
 	private final File logFolder = new File("LOGS");
 	private final File log = new File(logFolder, "LOG.txt");
 	
@@ -19,7 +19,7 @@ public class Log {
 	 * Opens / creates a log file, appends an entry, and closes the file
 	 * @param entry
 	 */
-	public Log(final String entry) {
+	public LogFileManager(final String entry) {
 		openLog();
 		appendLog(entry);
 		closeLog();
@@ -32,17 +32,17 @@ public class Log {
 		try {
 			if (!logFolder.exists()) {
 				logFolder.mkdir();
-				new MessageLog("Info", "Created log folder");
+				new LogMessage("Info", "Created log folder");
 			}
 			if (!log.exists()) {
 				log.createNewFile();
-				new MessageLog("Info", "Created log file");
+				new LogMessage("Info", "Created log file");
 			}
 				
 			final FileWriter fileWriter = new FileWriter(log.getAbsoluteFile(), true);
 			bufferedWriter = new BufferedWriter(fileWriter);
 		} catch (final IOException e) {
-			MessageLog.displayLogError("ERROR", "Failed to create log file!");
+			LogMessage.displayLogError("ERROR", "Failed to create log file!");
 		}
 	}
 	
@@ -55,7 +55,7 @@ public class Log {
 			bufferedWriter.write(entry);
 			bufferedWriter.newLine();
 		} catch (final IOException e) {
-			MessageLog.displayLogError("ERROR", "Failed to write to log file!");
+			LogMessage.displayLogError("ERROR", "Failed to write to log file!");
 			
 		}
 	}
@@ -67,7 +67,7 @@ public class Log {
 		try {
 			bufferedWriter.close();
 		} catch (final IOException e) {
-			MessageLog.displayLogError("ERROR", "Failed to close log file!");
+			LogMessage.displayLogError("ERROR", "Failed to close log file!");
 		}
 	}
 }
