@@ -32,8 +32,8 @@ public class Credits extends JPanel {
 		gc.insets = new Insets(2,1,2,2);
 		credits.setText("~ 2014 SIT Confrense - For allowing us to share this experience with others" + "\n"
 				+ "~ 2013 SIT Confrense Audinece - For giving us the insperation for this year" + "\n"
-				+ "~ Google! - Without, we would have never finished/started this project" + "\n"
-				+ "~ Jackson Wilson - Lead Developer, Layout Manager, Circut Engineer" + "\n"
+				+ "~ Google! - Without, we would have never completed this project" + "\n"
+				+ "~ Jackson Wilson - Software Developer, Product Manager" + "\n"
 				+ "~ Cole Bahan - Hardware Engineer, Software Design Contributer");
 	    add(new JScrollPane(credits), gc);
 	}

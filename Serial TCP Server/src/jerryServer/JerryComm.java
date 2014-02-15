@@ -120,7 +120,7 @@ public class JerryComm extends JFrame {
 			} catch (final ClassNotFoundException | IOException e) {
 				displayMessage("Unable to read input.");
 			}
-		} while (!message.equals("END"));
+		} while (!message.equals("END") || !System.in.equals("close"));
 	}
 	
 	/**
