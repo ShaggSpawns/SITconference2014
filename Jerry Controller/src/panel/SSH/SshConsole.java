@@ -22,7 +22,6 @@ public class SshConsole extends JPanel {
 	
 	public static JTextArea consoleArea;
 	public static JTextField consoleInput;
-	public static SshInputStream consoleInputStream;
 	private JScrollPane scrollPane;
 	
 	/**
@@ -51,6 +50,11 @@ public class SshConsole extends JPanel {
 		    
 			consoleInput = new JTextField(39);
 			consoleInput.setEnabled(true);
+			consoleInput.addActionListener(new ActionListener() {
+				public void actionPerformed(final ActionEvent e) {
+			    	SshConnection.input.notify();
+			    }
+			});
 			gc.anchor = GridBagConstraints.NORTH;
 			gc.ipadx = 3;
 		    gc.ipady = 0;
@@ -103,8 +107,11 @@ public class SshConsole extends JPanel {
 		    
 			consoleInput = new JTextField(38);
 			consoleInput.setEnabled(true);
-			consoleInputStream = new SshInputStream(consoleInput);
-			//consoleInput.addActionListener(consoleInputStream);
+			consoleInput.addActionListener(new ActionListener() {
+				public void actionPerformed(final ActionEvent e) {
+			    	SshConnection.input.notify();
+			    }
+			});
 			gc.anchor = GridBagConstraints.SOUTH;
 		    gc.ipady = 0;
 		    gc.gridx = 0;

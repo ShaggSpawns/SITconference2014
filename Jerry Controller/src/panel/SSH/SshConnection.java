@@ -74,7 +74,6 @@ public class SshConnection implements Runnable {
 				}
 			};
 			channel.setInputStream(input);
-			channel.setInputStream(new SshInputStream(SshConsole.consoleInput));
 			final OutputStream output = new OutputStream() {
 				@Override
 				public void write(final int b) throws IOException {
