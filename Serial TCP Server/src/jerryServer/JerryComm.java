@@ -67,7 +67,7 @@ public class JerryComm extends JFrame {
 			displayMessage("Waiting for someone to connect...");
 			connection = server.accept();
 			displayMessage("Now connected to " + connection.getInetAddress().getHostName());
-		} catch (IOException ioE) {
+		} catch (final IOException ioE) {
 			displayMessage("Could not accept incoming connection");
 		}
 	}
@@ -82,7 +82,7 @@ public class JerryComm extends JFrame {
 			output = new ObjectOutputStream(connection.getOutputStream());
 			input = new ObjectInputStream(connection.getInputStream());
 			displayMessage("Streams are now setup!");
-		} catch (IOException ioE) {
+		} catch (final IOException ioE) {
 			displayMessage("Failed to setup streams");
 		}
 	}
@@ -120,7 +120,7 @@ public class JerryComm extends JFrame {
 			} catch (final ClassNotFoundException | IOException e) {
 				displayMessage("Unable to read input.");
 			}
-		} while (!message.equals("END") || !System.in.equals("close"));
+		} while (!message.equals("END"));
 	}
 	
 	/**

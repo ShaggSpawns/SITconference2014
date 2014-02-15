@@ -162,7 +162,7 @@ public class JerryLogin extends JPanel {
 		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				int selectedEntry = loadComboBox.getSelectedIndex();
+				final int selectedEntry = loadComboBox.getSelectedIndex();
 				if (selectedEntry == 0) {
 					emptyFields();
 				} else {

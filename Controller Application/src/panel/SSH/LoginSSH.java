@@ -304,7 +304,7 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 		}
 	}
 	
-	public void itemStateChanged(ItemEvent ev) {
+	public void itemStateChanged(final ItemEvent ev) {
 		final String ip = hostIPF.getText();
 		final String inPort = hostPortF.getText();
 		final String username = usernameF.getText();

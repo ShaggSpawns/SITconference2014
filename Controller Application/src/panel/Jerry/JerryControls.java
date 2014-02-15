@@ -169,7 +169,7 @@ public class JerryControls extends JPanel {
 			disableCurrentBtnToggled();
 			try {
 				Thread.sleep(400);
-			} catch (InterruptedException e) {
+			} catch (final InterruptedException e) {
 				e.printStackTrace();
 			}
 			setCurrentBtnToggled(true, button);

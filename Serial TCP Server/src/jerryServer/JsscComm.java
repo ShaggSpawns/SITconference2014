@@ -69,7 +69,7 @@ public class JsscComm implements SerialPortEventListener {
 				} else {
 					displayMessage("Failed to send: " + data);
 				}
-			} catch (SerialPortException e) {
+			} catch (final SerialPortException e) {
 				e.printStackTrace();
 			}
 		}
