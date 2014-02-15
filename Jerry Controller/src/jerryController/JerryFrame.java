@@ -57,5 +57,7 @@ public class JerryFrame extends JFrame {
         
         tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		super.setVisible(true);
+		
+		Jerry.createOpenLog();
 	}
 }

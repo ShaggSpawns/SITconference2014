@@ -29,13 +29,12 @@ public class Jerry extends JApplet implements Runnable {
 	 */
 	public void run() {
 		new JerryFrame("Jerry Controller", OS);
-		createOpenLog();
 	}
 	
 	/**
 	 * Creates a new log to mark the launch of the program 
 	 */
-	private static void createOpenLog() {
+	public static void createOpenLog() {
 		final Date today = new Date();
 		final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMM/dd/yy hh:mm:ss a");
 
