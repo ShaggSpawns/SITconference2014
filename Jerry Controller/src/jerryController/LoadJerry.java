@@ -25,7 +25,7 @@ public class LoadJerry {
 		from = calledFor;
 		String[] lines;
 		lines = readFile();
-		switch(IdentifyOS.getOperatingSystem()) {
+		switch(Jerry.getOperatingSystem()) {
 		case "Windows":
 			defaultTcpMessage = "----------- Load Jerry ----------";
 			defaultSshMessage = "----------------------- Load Save -----------------------";

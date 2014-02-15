@@ -14,7 +14,7 @@ import messageManager.Log;
 public class Jerry extends JApplet implements Runnable {
 	private static final long serialVersionUID = 1L;
 	private static boolean firstLogMessage = true;
-	public String OS = IdentifyOS.getOperatingSystem();
+	public String OS = getOperatingSystem();
 	
 	/**
 	 * Runs the application by calling run() in a new thread
@@ -58,5 +58,16 @@ public class Jerry extends JApplet implements Runnable {
 	 */
 	public static void setFirstLogMessage(final boolean firstLogMessage) {
 		Jerry.firstLogMessage = firstLogMessage;
+	}
+	
+	public static String getOperatingSystem() {
+		final String system = System.getProperty("os.name").toLowerCase();
+		if (system.indexOf("win") >= 0) {
+			return("Windows");
+		} else if (system.indexOf("mac") >= 0) {
+			return("Mac");
+		} else {
+			return("Default");
+		}
 	}
 }
