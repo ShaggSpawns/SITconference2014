@@ -56,20 +56,53 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 		final GridBagConstraints gc = new GridBagConstraints();
 		
 		
-		
-		sshHostL = new JLabel("SSH Host : ");
+
+		sshHostL = new JLabel();
+		switch(OS) {
+		case "Windows":
+			sshHostL.setText("SSH Host : ");
+			break;
+		case "Mac":
+			sshHostL.setText("SSH Host:");
+			break;
+		case "Default":
+			sshHostL.setText("SSH Host:");
+			break;
+		}
 		sshHostL.setToolTipText("Enter the IP and port of SSH host");
 		gc.anchor = GridBagConstraints.EAST;
 		gc.gridx = 0;
 		gc.gridy = 0;
 		add(sshHostL, gc);
 		
-		usernameL = new JLabel("Username : ");
+		usernameL = new JLabel();
+		switch(OS) {
+		case "Windows":
+			usernameL.setText("Username : ");
+			break;
+		case "Mac":
+			usernameL.setText("Username:");
+			break;
+		case "Default":
+			usernameL.setText("Username:");
+			break;
+		}
 		usernameL.setToolTipText("Enter the username of the SSH host");
 		gc.gridy = 1;
 		add(usernameL, gc);
 		
-		passwordL = new JLabel("Password : ");
+		passwordL = new JLabel();
+		switch(OS) {
+		case "Windows":
+			passwordL.setText("Password : ");
+			break;
+		case "Mac":
+			passwordL.setText("Password:");
+			break;
+		case "Default":
+			passwordL.setText("Password:");
+			break;
+		}
 		passwordL.setToolTipText("Enter the password of the SSH host");
 		gc.gridy = 2;
 		add(passwordL, gc);

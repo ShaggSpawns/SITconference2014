@@ -199,4 +199,6 @@ public class JerryControls extends JPanel {
 		}
 		otherBtnToggled = false;
 	}
+	
+	
 }
