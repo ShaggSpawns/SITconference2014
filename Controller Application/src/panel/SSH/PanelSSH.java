@@ -30,7 +30,7 @@ public class PanelSSH extends JPanel {
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.fill = GridBagConstraints.BOTH;
 		gc.gridy = 1;
-		gc.weighty = 0.0;
+		gc.weighty = 1.0;
 		add(sshConsole, gc);
 	}
 }

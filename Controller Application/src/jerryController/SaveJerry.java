@@ -1,19 +1,19 @@
-package controllerApplication;
+package jerryController;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import panel.Jerry.JerryLogin;
 import panel.SSH.LoginSSH;
-import panel.TCP.LoginTCP;
 
 /**
  * Manages the files involved in storing login information for TCP and SSH.
  * @author Jackson Wilson
  * @since 2014
  */
-public class FileLogins {
+public class SaveJerry {
 	private final boolean callFromTCP;
 	private BufferedWriter bufferedWriter;
 	
@@ -26,7 +26,7 @@ public class FileLogins {
 	 * @param address
 	 * @param callFromTCP
 	 */
-	public FileLogins(final String address, final boolean callFromTCP) {
+	public SaveJerry(final String address, final boolean callFromTCP) {
 		this.callFromTCP = callFromTCP;
 		
 		openFile();
@@ -62,7 +62,7 @@ public class FileLogins {
 			System.out.println("Failed to create login file!");
 			
 			if (callFromTCP == true) {
-				LoginTCP.saveBtn.setEnabled(true);
+				JerryLogin.saveBtn.setEnabled(true);
 			} else if (callFromTCP == false) {
 				LoginSSH.saveBtn.setEnabled(true);
 			}
@@ -81,7 +81,7 @@ public class FileLogins {
 			System.out.println("Failed to write to login file!");
 			
 			if (callFromTCP == true) {
-				LoginTCP.saveBtn.setEnabled(true);
+				JerryLogin.saveBtn.setEnabled(true);
 			} else if (callFromTCP == false) {
 				LoginSSH.saveBtn.setEnabled(true);
 			}
@@ -98,7 +98,7 @@ public class FileLogins {
 			System.out.println("Failed to close login file!");
 			
 			if (callFromTCP == true) {
-				LoginTCP.saveBtn.setEnabled(true);
+				JerryLogin.saveBtn.setEnabled(true);
 			} else if (callFromTCP == false) {
 				LoginSSH.saveBtn.setEnabled(true);
 			}

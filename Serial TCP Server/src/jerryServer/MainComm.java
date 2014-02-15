@@ -1,4 +1,4 @@
-package javaTCPserver;
+package jerryServer;
 
 /**
  * Runs the TCP server.
@@ -6,6 +6,6 @@ package javaTCPserver;
  */
 public class MainComm {
 	public static void main(final String[] args) {
-		new TCPComm();
+		new JerryComm();
 	}
 }

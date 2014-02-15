@@ -1,4 +1,4 @@
-package panel.TCP;
+package panel.Jerry;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -11,7 +11,7 @@ import javax.swing.JTextField;
  * Initializes the status bar on the Control tab
  * @author Jackson Wilson (c) 2014
  */
-public class StatusBar extends JPanel{
+public class JerryStatus extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
 	public static JTextField sBar;
@@ -20,8 +20,8 @@ public class StatusBar extends JPanel{
 	 * The constructor of SatusBar that initializes the status bar.
 	 * Uses a GridBagLayout and a JTextField as the bar.
 	 */
-	public StatusBar(final String OS) {
-		setBorder(BorderFactory.createTitledBorder("Status"));
+	public JerryStatus(final String OS) {
+		setBorder(BorderFactory.createTitledBorder("Jerry Status"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 		

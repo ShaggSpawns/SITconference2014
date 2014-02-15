@@ -1,4 +1,4 @@
-package javaTCPserver;
+package jerryServer;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  * Initializes the TCP server that will receive commands, then pass them on to the Arduino.
  * @author Jackson Wilson (c) 2014
  */
-public class TCPComm extends JFrame {
+public class JerryComm extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private static ObjectOutputStream output;
@@ -26,7 +26,7 @@ public class TCPComm extends JFrame {
 	 * @param portRangeEnd
 	 * @param serverBacklog
 	 */
-	public TCPComm() {
+	public JerryComm() {
 		startRunning();
 	}
 	

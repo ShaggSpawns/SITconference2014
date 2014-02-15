@@ -1,4 +1,4 @@
-package controllerApplication;
+package jerryController;
 
 import java.awt.Dimension;
 
@@ -6,15 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import panel.About.PanelAbout;
+import panel.Jerry.JerryPanel;
 import panel.SSH.PanelSSH;
-import panel.TCP.PanelTCP;
 
 /**
  * Main Frame: A frame with 3 tabs in a scroll tab layout
  * @author Jackson Wilson
  * @since 2014
  */
-public class MainFrame extends JFrame {
+public class JerryFrame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -22,7 +22,7 @@ public class MainFrame extends JFrame {
 	 * A constructor that builds a frame with a title.
 	 * @param title
 	 */
-	public MainFrame(final String title, final String OS) {
+	public JerryFrame(final String title, final String OS) {
 		super.setTitle(title);
 		super.setResizable(true);
 		//super.setLocationRelativeTo(null);
@@ -50,7 +50,7 @@ public class MainFrame extends JFrame {
 		final JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setFocusable(false);
         
-        final PanelTCP controlTab = new PanelTCP(OS);
+        final JerryPanel controlTab = new JerryPanel(OS);
         tabbedPane.addTab("Jerry Controller", controlTab);
          
         final PanelSSH consoleTab = new PanelSSH(OS);

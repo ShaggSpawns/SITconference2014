@@ -21,6 +21,7 @@ public class ConsoleSSH extends JPanel {
 	public static JTextArea consoleArea;
 	public static JTextField consoleInput;
 	public static TextFieldInputStream streamer;
+	private JScrollPane scrollPane;
 	
 	/**
 	 * Initializes the SSH console area for the SSH tab
@@ -32,25 +33,30 @@ public class ConsoleSSH extends JPanel {
 
 		switch(OS) {
 		case "Windows":
-			consoleArea = new JTextArea(29, 37);
+			consoleArea = new JTextArea(30, 38);
 			consoleArea.setEditable(false);
 			consoleArea.setAutoscrolls(isEnabled());
 			consoleArea.setSize(getPreferredSize());
 		    gc.anchor = GridBagConstraints.CENTER;
 		    gc.insets = new Insets(1,2,0,2);
-		    gc.gridx = 0;
-		    gc.gridy = 1;
+		    gc.ipady = 13;
+		    gc.gridy = 0;
 		    gc.weighty = 0.0;
+		    scrollPane = new JScrollPane(consoleArea);
+		    scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+			scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		    add(scrollPane, gc);
 		    
-			consoleInput = new JTextField(38);
+			consoleInput = new JTextField(39);
 			consoleInput.setEnabled(true);
 			streamer = new TextFieldInputStream(consoleInput);
 			consoleInput.addActionListener(streamer);
-			gc.anchor = GridBagConstraints.SOUTH;
+			gc.anchor = GridBagConstraints.NORTH;
+			gc.ipadx = 3;
 		    gc.ipady = 0;
-		    gc.gridx = 0;
-		    gc.gridy = 3;
+		    gc.gridy = 1;
 		    gc.weighty = 1.0;
+		    add(consoleInput, gc);
 			break;
 		case "Mac":
 			consoleArea = new JTextArea(29, 37);
@@ -62,18 +68,22 @@ public class ConsoleSSH extends JPanel {
 		    gc.gridx = 0;
 		    gc.gridy = 1;
 		    gc.weighty = 0.0;
+		    scrollPane = new JScrollPane(consoleArea);
+		    scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+			scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		    add(scrollPane, gc);
 		    
 			consoleInput = new JTextField(38);
 			consoleInput.setEnabled(true);
 			streamer = new TextFieldInputStream(consoleInput);
 			consoleInput.addActionListener(streamer);
 			gc.anchor = GridBagConstraints.SOUTH;
-		    gc.ipady = 0;
 		    gc.gridx = 0;
 		    gc.gridy = 2;
 		    gc.weighty = 1.0;
+		    add(consoleInput, gc);
 			break;
-		case "Unix":
+		case "Default":
 			consoleArea = new JTextArea(29, 37);
 			consoleArea.setEditable(false);
 			consoleArea.setAutoscrolls(isEnabled());
@@ -83,6 +93,10 @@ public class ConsoleSSH extends JPanel {
 		    gc.gridx = 0;
 		    gc.gridy = 1;
 		    gc.weighty = 0.0;
+		    scrollPane = new JScrollPane(consoleArea);
+		    scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+			scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		    add(scrollPane, gc);
 		    
 			consoleInput = new JTextField(38);
 			consoleInput.setEnabled(true);
@@ -93,55 +107,8 @@ public class ConsoleSSH extends JPanel {
 		    gc.gridx = 0;
 		    gc.gridy = 2;
 		    gc.weighty = 1.0;
-			break;
-		case "Solaris":
-			consoleArea = new JTextArea(29, 37);
-			consoleArea.setEditable(false);
-			consoleArea.setAutoscrolls(isEnabled());
-			consoleArea.setSize(getPreferredSize());
-		    gc.anchor = GridBagConstraints.CENTER;
-		    gc.insets = new Insets(2,0,0,0);
-		    gc.gridx = 0;
-		    gc.gridy = 1;
-		    gc.weighty = 0.0;
-		    
-			consoleInput = new JTextField(38);
-			consoleInput.setEnabled(true);
-			streamer = new TextFieldInputStream(consoleInput);
-			consoleInput.addActionListener(streamer);
-			gc.anchor = GridBagConstraints.SOUTH;
-		    gc.ipady = 0;
-		    gc.gridx = 0;
-		    gc.gridy = 2;
-		    gc.weighty = 1.0;
-			break;
-		case "Unknown":
-			consoleArea = new JTextArea(29, 37);
-			consoleArea.setEditable(false);
-			consoleArea.setAutoscrolls(isEnabled());
-			consoleArea.setSize(getPreferredSize());
-		    gc.anchor = GridBagConstraints.CENTER;
-		    gc.insets = new Insets(2,0,0,0);
-		    gc.gridx = 0;
-		    gc.gridy = 1;
-		    gc.weighty = 0.0;
-		    
-			consoleInput = new JTextField(38);
-			consoleInput.setEnabled(true);
-			streamer = new TextFieldInputStream(consoleInput);
-			consoleInput.addActionListener(streamer);
-			gc.anchor = GridBagConstraints.SOUTH;
-		    gc.ipady = 0;
-		    gc.gridx = 0;
-		    gc.gridy = 2;
-		    gc.weighty = 1.0;
+		    add(consoleInput, gc);
 			break;
 		}
-
-	    JScrollPane scrollPane = new JScrollPane(consoleArea);
-	    scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-	    add(scrollPane, gc);
-	    add(consoleInput, gc);
 	}
 }

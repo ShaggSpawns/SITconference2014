@@ -1,4 +1,4 @@
-package javaTCPserver;
+package jerryServer;
 
 import jssc.SerialPort;
 import jssc.SerialPortEvent;
@@ -94,6 +94,6 @@ public class JsscComm implements SerialPortEventListener {
 	 * @param message
 	 */
 	private static void displayMessage(final String message) {
-		TCPComm.displayMessage(message);
+		JerryComm.displayMessage(message);
 	}
 }

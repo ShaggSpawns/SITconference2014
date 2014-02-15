@@ -1,6 +1,6 @@
 package messageManager;
 
-import panel.TCP.StatusBar;
+import panel.Jerry.JerryStatus;
 
 public class MessageStatusUpdate {
 	/**
@@ -36,8 +36,8 @@ public class MessageStatusUpdate {
 			sBarMessage = message;
 		}
 		
-		StatusBar.sBar.setText("");
-		StatusBar.sBar.setText(sBarMessage);
+		JerryStatus.sBar.setText("");
+		JerryStatus.sBar.setText(sBarMessage);
 		
 		final String logType = "Status";
 		new MessageLog(logType, sBarMessage);

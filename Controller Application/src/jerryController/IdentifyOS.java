@@ -1,4 +1,4 @@
-package controllerApplication;
+package jerryController;
 
 public class IdentifyOS {
 	private static String OS = System.getProperty("os.name").toLowerCase();
@@ -8,12 +8,8 @@ public class IdentifyOS {
 			return("Windows");
 		} else if (isMac()) {
 			return("Mac");
-		} else if (isUnix()) {
-			return("Unix");
-		} else if (isSolaris()) {
-			return("Solaris");
 		} else {
-			return("Unknown");
+			return("Default");
 		}
 	}
  
@@ -23,13 +19,5 @@ public class IdentifyOS {
  
 	private static boolean isMac() {
 		return (OS.indexOf("mac") >= 0);
-	}
- 
-	private static boolean isUnix() {
-		return (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") > 0 );
-	}
-
-	private static boolean isSolaris() {
-		return (OS.indexOf("sunos") >= 0);
 	}
 }

@@ -1,4 +1,4 @@
-package panel.TCP;
+package panel.Jerry;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -21,16 +21,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
+import jerryController.SaveJerry;
+import jerryController.LoadJerry;
 import messageManager.MessageLog;
 import messageManager.MessageStatusUpdate;
-import controllerApplication.FileLogins;
-import controllerApplication.LoadLogins;
 
 /**
  * Creates the TCP Login area on the MotorControls tab
  * @author Jackson Wilson (c) 2014
  */
-public class LoginTCP extends JPanel {
+public class JerryLogin extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private final JLabel hostIP;
@@ -45,7 +45,7 @@ public class LoginTCP extends JPanel {
 	/**
 	 * Creates the TCP Login area on the MotorControls tab
 	 */
-	public LoginTCP(final String OS) {
+	public JerryLogin(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("Jerry Login"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
@@ -101,7 +101,7 @@ public class LoginTCP extends JPanel {
 							if (!(inPort.equals(""))) {
 								intport = Integer.parseInt(inPort);
 								port = intport;
-								(new Thread(new ConnectionTCP(ip, port))).start();
+								(new Thread(new JerryConnection(ip, port))).start();
 							} else {
 								new MessageLog("Error", "Port field can not be empty!");
 								new MessageLog("Info", "Entered address ( " + address + " )");
@@ -124,12 +124,12 @@ public class LoginTCP extends JPanel {
 						connectBtn.doClick();
 					}
 				} else if (ev.getStateChange() == ItemEvent.DESELECTED) {
-					if (ConnectionTCP.connection.isConnected()) {
-						MotorControls.stopBtn.doClick();
-						ConnectionTCP.sendMessage("END");
+					if (JerryConnection.connection.isConnected()) {
+						JerryControls.stopBtn.doClick();
+						JerryConnection.sendMessage("END");
 					}
 					changeTCPguiState("Disconnected");
-					LoadLogins.addLogins("TCP");
+					LoadJerry.addLogins("TCP");
 				}
 			}
 		});
@@ -148,7 +148,7 @@ public class LoginTCP extends JPanel {
 		saveBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				saveBtn.setEnabled(false);
-				new FileLogins(address, true);
+				new SaveJerry(address, true);
 			}
 		});
 		gc.gridheight = 1;
@@ -158,7 +158,7 @@ public class LoginTCP extends JPanel {
 		
 		final String[] hostSaves = {"----------- Load Save ----------"};
 		loadComboBox = new JComboBox<String>(hostSaves);
-		LoadLogins.addLogins("TCP");
+		LoadJerry.addLogins("TCP");
 		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
 		loadComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -184,7 +184,7 @@ public class LoginTCP extends JPanel {
 	 */
 	private void fillLoginFields(final int line) {
 		try {
-			final FileInputStream fs = new FileInputStream(FileLogins.loginTCP.getAbsoluteFile());
+			final FileInputStream fs = new FileInputStream(SaveJerry.loginTCP.getAbsoluteFile());
 			@SuppressWarnings("resource")
 			final BufferedReader br = new BufferedReader(new InputStreamReader(fs));
 			
@@ -233,16 +233,16 @@ public class LoginTCP extends JPanel {
 			portField.setFocusable(false);
 			saveBtn.setEnabled(true);
 			loadComboBox.setEnabled(false);
-			MotorControls.forwardBtn.setEnabled(true);
-			MotorControls.forwardBtn.setFocusable(true);
-			MotorControls.reverseBtn.setEnabled(true);
-			MotorControls.reverseBtn.setFocusable(true);
-			MotorControls.rightBtn.setEnabled(true);
-			MotorControls.rightBtn.setFocusable(true);
-			MotorControls.leftBtn.setEnabled(true);
-			MotorControls.leftBtn.setFocusable(true);
-			MotorControls.stopBtn.setEnabled(true);
-			MotorControls.stopBtn.setFocusable(true);
+			JerryControls.forwardBtn.setEnabled(true);
+			JerryControls.forwardBtn.setFocusable(true);
+			JerryControls.reverseBtn.setEnabled(true);
+			JerryControls.reverseBtn.setFocusable(true);
+			JerryControls.rightBtn.setEnabled(true);
+			JerryControls.rightBtn.setFocusable(true);
+			JerryControls.leftBtn.setEnabled(true);
+			JerryControls.leftBtn.setFocusable(true);
+			JerryControls.stopBtn.setEnabled(true);
+			JerryControls.stopBtn.setFocusable(true);
 			connectBtn.setText("Disconnect");
 			break;
 		case "Pending":
@@ -252,16 +252,16 @@ public class LoginTCP extends JPanel {
 			portField.setFocusable(false);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(false);
-			MotorControls.forwardBtn.setEnabled(false);
-			MotorControls.forwardBtn.setFocusable(false);
-			MotorControls.reverseBtn.setEnabled(false);
-			MotorControls.reverseBtn.setFocusable(false);
-			MotorControls.rightBtn.setEnabled(false);
-			MotorControls.rightBtn.setFocusable(false);
-			MotorControls.leftBtn.setEnabled(false);
-			MotorControls.leftBtn.setFocusable(false);
-			MotorControls.stopBtn.setEnabled(false);
-			MotorControls.stopBtn.setFocusable(false);
+			JerryControls.forwardBtn.setEnabled(false);
+			JerryControls.forwardBtn.setFocusable(false);
+			JerryControls.reverseBtn.setEnabled(false);
+			JerryControls.reverseBtn.setFocusable(false);
+			JerryControls.rightBtn.setEnabled(false);
+			JerryControls.rightBtn.setFocusable(false);
+			JerryControls.leftBtn.setEnabled(false);
+			JerryControls.leftBtn.setFocusable(false);
+			JerryControls.stopBtn.setEnabled(false);
+			JerryControls.stopBtn.setFocusable(false);
 			connectBtn.setText("Connecting");
 			break;
 		case "Disconnected":
@@ -271,16 +271,16 @@ public class LoginTCP extends JPanel {
 			portField.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
-			MotorControls.forwardBtn.setEnabled(false);
-			MotorControls.forwardBtn.setFocusable(false);
-			MotorControls.reverseBtn.setEnabled(false);
-			MotorControls.reverseBtn.setFocusable(false);
-			MotorControls.rightBtn.setEnabled(false);
-			MotorControls.rightBtn.setFocusable(false);
-			MotorControls.leftBtn.setEnabled(false);
-			MotorControls.leftBtn.setFocusable(false);
-			MotorControls.stopBtn.setEnabled(false);
-			MotorControls.stopBtn.setFocusable(false);
+			JerryControls.forwardBtn.setEnabled(false);
+			JerryControls.forwardBtn.setFocusable(false);
+			JerryControls.reverseBtn.setEnabled(false);
+			JerryControls.reverseBtn.setFocusable(false);
+			JerryControls.rightBtn.setEnabled(false);
+			JerryControls.rightBtn.setFocusable(false);
+			JerryControls.leftBtn.setEnabled(false);
+			JerryControls.leftBtn.setFocusable(false);
+			JerryControls.stopBtn.setEnabled(false);
+			JerryControls.stopBtn.setFocusable(false);
 			connectBtn.setText("Connect");
 			break;
 		}

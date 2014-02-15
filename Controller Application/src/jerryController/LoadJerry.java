@@ -1,19 +1,21 @@
-package controllerApplication;
+package jerryController;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import panel.Jerry.JerryLogin;
 import panel.SSH.LoginSSH;
-import panel.TCP.LoginTCP;
 
 /**
  * Manages the saving and loading of logins of TCP and SSH.
  * @author Jackson Wilson (c) 2014
  */
-public class LoadLogins {
+public class LoadJerry {
 	private static String from;
+	private static String defaultTcpMessage;
+	private static String defaultSshMessage;
 	
 	/**
 	 * Reloads the appropriate JComboBox with an updated list of the logins for that JComboBox by removing all existing entries and replaces them with the ones in the login.txt file.
@@ -23,8 +25,20 @@ public class LoadLogins {
 		from = calledFor;
 		String[] lines;
 		lines = readFile();
-		final String defaultTcpMessage = "----------- Load Save ----------";
-		final String defaultSshMessage = "---------- Load Save ----------";
+		switch(IdentifyOS.getOperatingSystem()) {
+		case "Windows":
+			defaultTcpMessage = "----------- Load Jerry ----------";
+			defaultSshMessage = "----------------------- Load Save -----------------------";
+			break;
+		case "Mac":
+			defaultTcpMessage = "----------- Load Save ----------";
+			defaultSshMessage = "---------- Load Save ----------";
+			break;
+		case "Default":
+			defaultTcpMessage = "----------- Load Save ----------";
+			defaultSshMessage = "---------- Load Save ----------";
+			break;
+		}
 		String currentTcpHost = null;
 		String currentTcpPort = null;
 		String currentSshHost = null;
@@ -33,10 +47,10 @@ public class LoadLogins {
 		char[] currentSshPass = null;
 		
 		if (from.equals("TCP")) {
-			currentTcpHost = LoginTCP.hostField.getText();
-			currentTcpPort = LoginTCP.portField.getText();
-			LoginTCP.loadComboBox.removeAllItems();
-			LoginTCP.loadComboBox.addItem(defaultTcpMessage);
+			currentTcpHost = JerryLogin.hostField.getText();
+			currentTcpPort = JerryLogin.portField.getText();
+			JerryLogin.loadComboBox.removeAllItems();
+			JerryLogin.loadComboBox.addItem(defaultTcpMessage);
 		} else if (from.equals("SSH")) {
 			currentSshHost = LoginSSH.hostIPF.getText();
 			currentSshPort = LoginSSH.hostPortF.getText();
@@ -48,15 +62,15 @@ public class LoadLogins {
 		
 		for (final String str: lines) {
 			if (from.equals("TCP")) {
-				LoginTCP.loadComboBox.addItem(str);
+				JerryLogin.loadComboBox.addItem(str);
 			} else if (from.equals("SSH")) {
 				LoginSSH.loadComboBox.addItem(str);
 			}
 		}
 		
 		if (from.equals("TCP")) {
-			LoginTCP.hostField.setText(currentTcpHost);
-			LoginTCP.portField.setText(currentTcpPort);
+			JerryLogin.hostField.setText(currentTcpHost);
+			JerryLogin.portField.setText(currentTcpPort);
 		} else if (from.equals("SSH")) {
 			 LoginSSH.hostIPF.setText(currentSshHost);
 			 LoginSSH.hostPortF.setText(currentSshPort);
@@ -74,7 +88,7 @@ public class LoadLogins {
 		
 		try {
 			if (from.equals("TCP")) {
-				final FileInputStream fstream = new FileInputStream(FileLogins.loginTCP.getAbsoluteFile());
+				final FileInputStream fstream = new FileInputStream(SaveJerry.loginTCP.getAbsoluteFile());
 				final BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				
 				String strLine;
@@ -85,7 +99,7 @@ public class LoadLogins {
 				
 				fstream.close();
 			} else if (from.equals("SSH")) {
-				final FileInputStream fstream = new FileInputStream(FileLogins.loginSSH.getAbsoluteFile());
+				final FileInputStream fstream = new FileInputStream(SaveJerry.loginSSH.getAbsoluteFile());
 				final BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				
 				String strLine;

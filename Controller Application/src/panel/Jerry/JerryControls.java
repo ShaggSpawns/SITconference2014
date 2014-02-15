@@ -1,4 +1,4 @@
-package panel.TCP;
+package panel.Jerry;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,7 +18,7 @@ import javax.swing.JToggleButton;
  * Create the MotorContorls panel for the Controller tab
  * @author Jackson Wilson (c) 2014
  */
-public class MotorControls extends JPanel {
+public class JerryControls extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public static JToggleButton forwardBtn;
@@ -33,19 +33,19 @@ public class MotorControls extends JPanel {
 	/**
 	 * Initializes the controls for the Controller tab
 	 */
-	public MotorControls(final String OS) {
-		setBorder(BorderFactory.createTitledBorder("Motor Controls"));
+	public JerryControls(final String OS) {
+		setBorder(BorderFactory.createTitledBorder("Jerry Controls"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 		
-		forwardBtn = new JToggleButton("Forward");
+		forwardBtn = new JToggleButton("Jerry Forward");
 		forwardBtn.setFocusable(false);
 		forwardBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Forward");
 				} else {
-					ConnectionTCP.sendMessage("STOP");
+					JerryConnection.sendMessage("STOP");
 				}
 			}
 		});
@@ -59,14 +59,14 @@ public class MotorControls extends JPanel {
 		gc.gridy = 0;
 		add(forwardBtn, gc);
 		
-		reverseBtn = new JToggleButton("Reverse");
+		reverseBtn = new JToggleButton("Jerry Reverse");
 		reverseBtn.setFocusable(false);
 		reverseBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Reverse");
 				} else {
-					ConnectionTCP.sendMessage("STOP");
+					JerryConnection.sendMessage("STOP");
 				}
 			}
 		});
@@ -75,14 +75,14 @@ public class MotorControls extends JPanel {
 		gc.gridy = 2;
 		add(reverseBtn, gc);
 		
-		rightBtn = new JToggleButton("Curve Right");
+		rightBtn = new JToggleButton("Jerry Right");
 		rightBtn.setFocusable(false);
 		rightBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Right");
 				} else {
-					ConnectionTCP.sendMessage("STOP");
+					JerryConnection.sendMessage("STOP");
 				}
 			}
 		});
@@ -92,14 +92,14 @@ public class MotorControls extends JPanel {
 		gc.gridy = 1;
 		add(rightBtn, gc);
 		
-		leftBtn = new JToggleButton("Curve Left");
+		leftBtn = new JToggleButton("Jerry Left");
 		leftBtn.setFocusable(false);
 		leftBtn.addItemListener(new ItemListener() {
 			public void itemStateChanged(final ItemEvent ev) {
 				if (ev.getStateChange() == ItemEvent.SELECTED) {
 					buttonToggled("Left");
 				} else {
-					ConnectionTCP.sendMessage("STOP");
+					JerryConnection.sendMessage("STOP");
 				}
 			}
 		});
@@ -107,14 +107,14 @@ public class MotorControls extends JPanel {
 		gc.gridy = 1;
 		add(leftBtn, gc);
 		
-		stopBtn = new JButton("Stop");
+		stopBtn = new JButton("Jerry Stop");
 		stopBtn.setFocusable(false);
 		stopBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				if (otherBtnToggled == true) {
 					disableCurrentBtnToggled();
 				} else {
-					ConnectionTCP.sendMessage("STOP");
+					JerryConnection.sendMessage("STOP");
 				}
 			}
 		});
@@ -176,7 +176,7 @@ public class MotorControls extends JPanel {
 		} else if (otherBtnToggled == false) {
 			setCurrentBtnToggled(true, button);
 		}
-		ConnectionTCP.sendMessage(button.toUpperCase());
+		JerryConnection.sendMessage(button.toUpperCase());
 	}
 	
 	/**

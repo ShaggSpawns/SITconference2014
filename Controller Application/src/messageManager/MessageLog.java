@@ -3,7 +3,7 @@ package messageManager;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import controllerApplication.Controller;
+import jerryController.Jerry;
 import panel.About.InfoConsole;
 
 /**
@@ -30,9 +30,9 @@ public class MessageLog {
 		final String entry = "[" + time + " " + entryType + "]: " + rawEntry;
 				
 		new Log(entry);
-		if (Controller.isFirstLogMessage() == true) {
+		if (Jerry.isFirstLogMessage() == true) {
 			InfoConsole.consoleArea.append(entry);
-			Controller.setFirstLogMessage(false);
+			Jerry.setFirstLogMessage(false);
 		} else {
 			InfoConsole.consoleArea.append("\n" + entry);
 		}

@@ -1,4 +1,4 @@
-package panel.TCP;
+package panel.Jerry;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import messageManager.MessageStatusUpdate;
  * Handles the connection and communication with a TCP server.
  * @author Jackson Wilson (c) 2014
  */
-public class ConnectionTCP implements Runnable {
+public class JerryConnection implements Runnable {
 
 	private String message = "";
 	private final String serverIP;
@@ -28,7 +28,7 @@ public class ConnectionTCP implements Runnable {
 	 * @param hostIP
 	 * @param port
 	 */
-	public ConnectionTCP(final String hostIP, final int port) {
+	public JerryConnection(final String hostIP, final int port) {
 		serverIP = hostIP;
 		serverPort = port;
 	}
@@ -53,11 +53,11 @@ public class ConnectionTCP implements Runnable {
 			connection = new Socket(InetAddress.getByName(serverIP), serverPort);
 			new MessageLog("Info", "Connected to: " + connection.getInetAddress().getHostName());
 			new MessageStatusUpdate("Connected", "Connected to Jerry at: " + connection.getInetAddress().getHostName());
-			MotorControls.controlsEnabled(true);
+			JerryControls.controlsEnabled(true);
 		} catch (final IOException ioException) {
 			new MessageLog("Error", "Server not found!");
 			new MessageStatusUpdate("Error", "Server not found!");
-			LoginTCP.changeTCPguiState("Disconnected");
+			JerryLogin.changeTCPguiState("Disconnected");
 		}
 	}
 	
@@ -69,11 +69,11 @@ public class ConnectionTCP implements Runnable {
 			output = new ObjectOutputStream(connection.getOutputStream());
 			output.flush();
 			input = new ObjectInputStream(connection.getInputStream());
-			LoginTCP.changeTCPguiState("Connected");
+			JerryLogin.changeTCPguiState("Connected");
 			new MessageLog("Info", "Streams successfully setup");
 		} catch (final IOException ioException) {
 			new MessageLog("Error", "Failed to setup TCP streams!");
-			new MessageStatusUpdate("Error", "Failed to setup TCP streams!");
+			new MessageStatusUpdate("Error", "Failed to setup Jerry streams!");
 		} catch (final NullPointerException npException) {
 			new MessageLog("Error", "NullPointerException in panel.TCP.ConnectionTCP.setupStreams()");
 		}
@@ -94,7 +94,7 @@ public class ConnectionTCP implements Runnable {
 				new MessageStatusUpdate("Error", "Unable to read incoming message!");
 			} catch (final EOFException eofException) {
 				new MessageLog("Error", "EOFException in panel.TCP.ConnectionTCP.whileChatting()");
-				new MessageStatusUpdate("Disconnected", "Disconnected from: " + connection.getInetAddress().getHostName());
+				new MessageStatusUpdate("Disconnected", "Disconnected from Jerry: " + connection.getInetAddress().getHostName());
 				break;
 			} catch (final IOException ioExection) {
 				new MessageLog("Error", "IOException in panel.TCP.ConnectionTCP.whileChatting()");

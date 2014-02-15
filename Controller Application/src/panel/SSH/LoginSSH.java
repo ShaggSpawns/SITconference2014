@@ -22,14 +22,14 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
-import controllerApplication.FileLogins;
-import controllerApplication.LoadLogins;
+import jerryController.SaveJerry;
+import jerryController.LoadJerry;
 
 /**
  * Creates the Login SSH panel for the SSH tab
  * @author Jackson Wilson (c) 2014
  */
-public class LoginSSH extends JPanel {
+public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private final JLabel sshHostL;
@@ -55,19 +55,21 @@ public class LoginSSH extends JPanel {
 		
 		final GridBagConstraints gc = new GridBagConstraints();
 		
-		sshHostL = new JLabel("SSH Host:");
+		
+		
+		sshHostL = new JLabel("SSH Host : ");
 		sshHostL.setToolTipText("Enter the IP and port of SSH host");
 		gc.anchor = GridBagConstraints.EAST;
 		gc.gridx = 0;
 		gc.gridy = 0;
 		add(sshHostL, gc);
 		
-		usernameL = new JLabel("Username:");
+		usernameL = new JLabel("Username : ");
 		usernameL.setToolTipText("Enter the username of the SSH host");
 		gc.gridy = 1;
 		add(usernameL, gc);
 		
-		passwordL = new JLabel("Password:");
+		passwordL = new JLabel("Password : ");
 		passwordL.setToolTipText("Enter the password of the SSH host");
 		gc.gridy = 2;
 		add(passwordL, gc);
@@ -75,12 +77,16 @@ public class LoginSSH extends JPanel {
 		saveBtn = new JButton("Save");
 		saveBtn.setToolTipText("Save current SSH host");
 		saveBtn.setEnabled(false);
-		saveBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(final ActionEvent e) {
-				saveBtn.setEnabled(false);
-				new FileLogins(address, false);
-			}
-		});
+		saveBtn.addActionListener(this);
+		switch(OS) {
+		case "Windows":
+			gc.anchor = GridBagConstraints.CENTER;
+			break;
+		case "Mac":
+			break;
+		case "Default":
+			break;
+		}
 		gc.gridy = 3;
 		add(saveBtn, gc);
 		
@@ -88,12 +94,26 @@ public class LoginSSH extends JPanel {
 		hostIPF.setToolTipText("Host IP");
 		gc.anchor = GridBagConstraints.WEST;
 		gc.fill = GridBagConstraints.HORIZONTAL;
-		gc.ipadx = 170;
-		gc.gridx = 1;
-		gc.gridy = 0;
+		switch(OS) {
+		case "Windows":
+			gc.ipadx = 275;
+			gc.gridx = 1;
+			gc.gridy = 0;
+			break;
+		case "Mac":
+			gc.ipadx = 170;
+			gc.gridx = 1;
+			gc.gridy = 0;
+			break;
+		case "Default":
+			gc.ipadx = 170;
+			gc.gridx = 1;
+			gc.gridy = 0;
+			break;
+		}
 		add(hostIPF, gc);
 		
-		hostCOLON = new JLabel(":");
+		hostCOLON = new JLabel(": ");
 		gc.fill = GridBagConstraints.NONE;
 		gc.ipadx = 0;
 		gc.gridx = 2;
@@ -102,7 +122,16 @@ public class LoginSSH extends JPanel {
 		hostPortF = new JTextField("22");
 		hostPortF.setToolTipText("Host Port");
 		gc.fill = GridBagConstraints.HORIZONTAL;
-		gc.insets = new Insets(0,0,0,3);
+		switch(OS) {
+		case "Windows":
+			gc.insets = new Insets(0,0,0,2);
+			break;
+		case "Mac":
+			gc.insets = new Insets(0,0,0,3);
+			break;
+		case "Default":
+			break;
+		}
 		gc.ipadx = 50;
 		gc.gridx = 3;
 		add(hostPortF, gc);
@@ -115,74 +144,23 @@ public class LoginSSH extends JPanel {
 		add(usernameF, gc);
 		
 		passwordF = new JPasswordField("");
-		passwordF.addActionListener(new ActionListener() {
-			public void actionPerformed(final ActionEvent e) {
-				connectBtn.doClick();
-			}
-		});
+		passwordF.addActionListener(this);
 		gc.gridy = 2;
 		add(passwordF, gc);
 		
 		connectBtn = new JToggleButton("Connect");
-		connectBtn.addItemListener(new ItemListener() {
-			public void itemStateChanged(final ItemEvent ev) {
-				final String ip = hostIPF.getText();
-				final String inPort = hostPortF.getText();
-				final String username = usernameF.getText();
-				final char[] password = passwordF.getPassword();
-				int port = 0;
-				int intport;
-				address = username + "@" + ip + ":" + inPort;
-				if (ev.getStateChange() == ItemEvent.SELECTED) {
-					connectBtn.setText("Disconnect");
-					changeTCPguiState("Pending");
-					if (!(ip.equals(""))) {
-						try {
-							if (!(inPort.equals(""))) {
-								intport = Integer.parseInt(inPort);
-								port = intport;
-									if (!(username.equals(""))) {
-										if (!(password.equals(""))){
-											new Thread(new ConnectionSSH(ip, port, username, password)).start();
-										} else {
-											System.out.println("Password can not be empty!");
-											System.out.println("Entered address ( " + address + " )\n");
-											connectBtn.setSelected(true);
-											connectBtn.doClick();
-										}
-									} else {
-										System.out.println("Username can not be empty!");
-										System.out.println("Entered address ( " + address + " )\n");
-										connectBtn.setSelected(true);
-										connectBtn.doClick();
-									}
-								} else { 
-									System.out.println("Port number can not be empty!");
-									System.out.println("Entered address ( " + address + " )\n");
-									connectBtn.setSelected(true);
-									connectBtn.doClick();	
-								}
-						} catch (final NumberFormatException nFE) {
-								System.out.println("Port is not an Integer!");
-								System.out.println("Entered address ( " + address + " )\n");
-								connectBtn.setSelected(true);
-								connectBtn.doClick();
-						}
-					} else {
-						System.out.println("SSH Host can not be empty!");
-						System.out.println("Entered address ( " + address + " )\n");
-						connectBtn.setSelected(true);
-						connectBtn.doClick();
-					}
-				} else {
-					changeTCPguiState("Disconnected");
-					ConnectionSSH.closeSSH();
-					LoadLogins.addLogins("SSH");
-				}
-			}
-		});
+		connectBtn.addItemListener(this);
 		gc.fill = GridBagConstraints.BOTH;
-		gc.insets = new Insets(0,3,0,3);
+		switch(OS) {
+		case "Windows":
+			gc.insets = new Insets(2,3,1,3);
+			break;
+		case "Mac":
+			gc.insets = new Insets(0,3,0,3);
+			break;
+		case "Default":
+			break;
+		}
 		gc.ipadx = 0;
 		gc.gridwidth = 2;
 		gc.gridheight = 3;
@@ -190,21 +168,20 @@ public class LoginSSH extends JPanel {
 		gc.gridy = 1;
 		add(connectBtn, gc);
 		
-		final String[] hostSaves = {"---------- Load Save ----------"};
-		loadComboBox = new JComboBox<String>(hostSaves);
-		LoadLogins.addLogins("SSH");
-		loadComboBox.addActionListener(new ActionListener() {
-			public void actionPerformed(final ActionEvent e) {
-				fillLine = loadComboBox.getSelectedIndex();
-				if (fillLine == 0) {
-					emptyFields();
-				} else {
-					fillFields(fillLine);
-				}
-			}
-		});
+		loadComboBox = new JComboBox<String>();
+		LoadJerry.addLogins("SSH");
+		loadComboBox.addActionListener(this);
 		gc.fill = GridBagConstraints.HORIZONTAL;
-		gc.insets = new Insets(0,0,0,0);
+		switch(OS) {
+		case "Windows":
+			gc.insets = new Insets(0,0,0,1);
+			break;
+		case "Mac":
+			gc.insets = new Insets(0,0,0,0);
+			break;
+		case "Default":
+			break;
+		}
 		gc.gridwidth = 1;
 		gc.gridheight = 1;
 		gc.gridx = 1;
@@ -218,7 +195,7 @@ public class LoginSSH extends JPanel {
 	 */
 	private void fillFields(final int line) {
 		try {
-			final FileInputStream fs = new FileInputStream(FileLogins.loginSSH.getAbsoluteFile());
+			final FileInputStream fs = new FileInputStream(SaveJerry.loginSSH.getAbsoluteFile());
 			@SuppressWarnings("resource")
 			final
 			BufferedReader br = new BufferedReader(new InputStreamReader(fs));
@@ -308,6 +285,78 @@ public class LoginSSH extends JPanel {
 			ConsoleSSH.consoleArea.setEnabled(true);
 			connectBtn.setText("Disconnect");
 			break;
+		}
+	}
+	
+	public void actionPerformed(final ActionEvent e) {
+		if (e.getSource() == loadComboBox) {
+			fillLine = loadComboBox.getSelectedIndex();
+			if (fillLine == 0) {
+				emptyFields();
+			} else {
+				fillFields(fillLine);
+			}
+		} else if (e.getSource() == passwordF) {
+			connectBtn.doClick();
+		} else if (e.getSource() == saveBtn) {
+			saveBtn.setEnabled(false);
+			new SaveJerry(address, false);
+		}
+	}
+	
+	public void itemStateChanged(ItemEvent ev) {
+		final String ip = hostIPF.getText();
+		final String inPort = hostPortF.getText();
+		final String username = usernameF.getText();
+		final char[] password = passwordF.getPassword();
+		int port = 0;
+		int intport;
+		address = username + "@" + ip + ":" + inPort;
+		if (ev.getStateChange() == ItemEvent.SELECTED) {
+			connectBtn.setText("Disconnect");
+			changeTCPguiState("Pending");
+			if (!(ip.equals(""))) {
+				try {
+					if (!(inPort.equals(""))) {
+						intport = Integer.parseInt(inPort);
+						port = intport;
+							if (!(username.equals(""))) {
+								if (!(password.equals(""))){
+									new Thread(new ConnectionSSH(ip, port, username, password)).start();
+								} else {
+									System.out.println("Password can not be empty!");
+									System.out.println("Entered address ( " + address + " )\n");
+									connectBtn.setSelected(true);
+									connectBtn.doClick();
+								}
+							} else {
+								System.out.println("Username can not be empty!");
+								System.out.println("Entered address ( " + address + " )\n");
+								connectBtn.setSelected(true);
+								connectBtn.doClick();
+							}
+						} else { 
+							System.out.println("Port number can not be empty!");
+							System.out.println("Entered address ( " + address + " )\n");
+							connectBtn.setSelected(true);
+							connectBtn.doClick();	
+						}
+				} catch (final NumberFormatException nFE) {
+						System.out.println("Port is not an Integer!");
+						System.out.println("Entered address ( " + address + " )\n");
+						connectBtn.setSelected(true);
+						connectBtn.doClick();
+				}
+			} else {
+				System.out.println("SSH Host can not be empty!");
+				System.out.println("Entered address ( " + address + " )\n");
+				connectBtn.setSelected(true);
+				connectBtn.doClick();
+			}
+		} else {
+			changeTCPguiState("Disconnected");
+			ConnectionSSH.closeSSH();
+			LoadJerry.addLogins("SSH");
 		}
 	}
 }

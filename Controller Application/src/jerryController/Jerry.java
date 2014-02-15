@@ -1,4 +1,4 @@
-package controllerApplication;
+package jerryController;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,17 +11,17 @@ import messageManager.Log;
  * Main class that calls to create a frame and runs it on a new thread.
  * @author Jackson Wilson (c) 2014
  */
-public class Controller extends JApplet implements Runnable {
+public class Jerry extends JApplet implements Runnable {
 	private static final long serialVersionUID = 1L;
 	private static boolean firstLogMessage = true;
-	private final String OS = IdentifyOS.getOperatingSystem();
+	public String OS = IdentifyOS.getOperatingSystem();
 	
 	/**
 	 * Runs the application by calling run() in a new thread
 	 * @param args
 	 */
 	public static void main(final String[] args) {
-		(new Thread(new Controller())).start();
+		(new Thread(new Jerry())).start();
 		createOpenLog();
 	}
 	
@@ -29,7 +29,7 @@ public class Controller extends JApplet implements Runnable {
 	 * Calls to create a new MainFrame and sets the properties of the new frame
 	 */
 	public void run() {
-		new MainFrame("Jerry Controller", OS);
+		new JerryFrame("Jerry Controller", OS);
 	}
 	
 	/**
@@ -57,6 +57,6 @@ public class Controller extends JApplet implements Runnable {
 	 * @param firstLogMessage
 	 */
 	public static void setFirstLogMessage(final boolean firstLogMessage) {
-		Controller.firstLogMessage = firstLogMessage;
+		Jerry.firstLogMessage = firstLogMessage;
 	}
 }
