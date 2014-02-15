@@ -16,8 +16,8 @@ import panel.SSH.SshLogin;
  * @since 2014
  */
 public class SaveJerry {
-	private final boolean callFromTCP;
-	private BufferedWriter bufferedWriter;
+	private static boolean callFromTCP;
+	private static BufferedWriter bufferedWriter;
 	
 	private static File loginFolder = new File("LOGINS");
 	public static File loginTCP = new File(loginFolder, "TCP.txt");
@@ -29,16 +29,21 @@ public class SaveJerry {
 	 * @param callFromTCP
 	 */
 	public SaveJerry(final String address, final boolean callFromTCP) {
-		this.callFromTCP = callFromTCP;
+		SaveJerry.callFromTCP = callFromTCP;
 		openFile();
 		addRecords(address);
+		closeFile();
+	}
+	
+	public static void createLoginFile() {
+		openFile();
 		closeFile();
 	}
 	
 	/**
 	 * Opens/Creates the appropriate file, then initializes the BufferedWriter with FileWriter as the parameter.
 	 */
-	private void openFile() {
+	private static void openFile() {
 		try {
 			if (!loginFolder.exists()) {
 				loginFolder.mkdir();
@@ -94,7 +99,7 @@ public class SaveJerry {
 	/**
 	 * Closes the appropriate opened file
 	 */
-	private void closeFile() {
+	private static void closeFile() {
 		try {
 			bufferedWriter.close();
 		} catch (final IOException e) {

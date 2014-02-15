@@ -30,7 +30,7 @@ public class LogMessage {
 		final String entry = "[" + time + " " + entryType + "]: " + rawEntry;
 				
 		new LogFileManager(entry);
-		if (Jerry.isFirstLogMessage() == true) {
+		if (Jerry.isFirstLogMessage() == true && !entry.equals(null)) {
 			InfoConsole.consoleArea.append(entry);
 			Jerry.setFirstLogMessage(false);
 		} else {

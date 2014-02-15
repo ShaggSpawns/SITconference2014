@@ -29,6 +29,7 @@ public class Jerry extends JApplet implements Runnable {
 	 */
 	public void run() {
 		new JerryFrame("Jerry Controller", OS);
+		createOpenLog();
 	}
 	
 	/**

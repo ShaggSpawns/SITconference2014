@@ -115,8 +115,7 @@ public class LoadJerry {
 				fstream.close();
 			}
 		} catch (final FileNotFoundException e) {
-			new LogMessage("Error", "FileNotFoundException in LoadJerry.readFile()");
-			new StatusUpdateMessage("Error", "Could not load Jerrys");
+			SaveJerry.createLoginFile();
 		} catch (final IOException e) {
 			new LogMessage("Error", "IOExcpetion in LeadJerry.readFile()");
 			new StatusUpdateMessage("Error", "Could not load Jerrys");
