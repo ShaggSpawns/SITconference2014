@@ -25,18 +25,19 @@ public class JerryFrame extends JFrame {
 	public JerryFrame(final String title, final String OS) {
 		super.setTitle(title);
 		super.setResizable(true);
-		//super.setLocationRelativeTo(null);
-		super.setLocation(960, 200);
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		switch(OS) {
 		case "Windows":
+			super.setLocation(960, 200);
 			super.setMinimumSize(new Dimension(480, 731));
 			break;
 		case "Mac":
+			super.setLocationRelativeTo(null);
 			super.setMinimumSize(new Dimension(520, 750));
 			break;
 		case "Default":
+			super.setLocationRelativeTo(null);
 			super.setMinimumSize(new Dimension(520, 750));
 			break;
 		}
