@@ -5,9 +5,9 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
-import panel.About.PanelAbout;
+import panel.About.AboutPanel;
 import panel.Jerry.JerryPanel;
-import panel.SSH.PanelSSH;
+import panel.SSH.SshPanel;
 
 /**
  * Main Frame: A frame with 3 tabs in a scroll tab layout
@@ -53,10 +53,10 @@ public class JerryFrame extends JFrame {
         final JerryPanel controlTab = new JerryPanel(OS);
         tabbedPane.addTab("Jerry Controller", controlTab);
          
-        final PanelSSH consoleTab = new PanelSSH(OS);
+        final SshPanel consoleTab = new SshPanel(OS);
         tabbedPane.addTab("SSH", consoleTab);
         
-        final PanelAbout aboutTab = new PanelAbout();
+        final AboutPanel aboutTab = new AboutPanel();
         tabbedPane.addTab("About / Info", aboutTab);
         
         add(tabbedPane);

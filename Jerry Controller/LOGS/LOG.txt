@@ -4,3 +4,161 @@
 +++++++++++++++ Program opened at [Feb/14/14 11:02:23 PM] +++++++++++++++
 +++++++++++++++ Program opened at [Feb/15/14 11:25:49 AM] +++++++++++++++
 +++++++++++++++ Program opened at [Feb/15/14 11:36:35 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:42:57 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:43:26 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:51:14 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:51:23 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:51:29 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:51:35 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:51:43 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:51:49 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:52:01 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:52:25 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:53:27 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:54:19 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:54:38 AM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:54:45 AM] +++++++++++++++
+[11:55:11 Error]: Host IP field can not be empty!
+[11:55:11 Info]: Entered address ( : )
+[11:55:11 Status]: [Error] Host IP field cannot be empty!
++++++++++++++++ Program opened at [Feb/15/14 11:56:28 AM] +++++++++++++++
+[11:56:29 Error]: Host IP field can not be empty!
+[11:56:29 Info]: Entered address ( : )
+[11:56:29 Status]: [Error] Host IP field cannot be empty!
++++++++++++++++ Program opened at [Feb/15/14 11:56:55 AM] +++++++++++++++
+[11:56:56 Error]: Port is not an Integer!
+[11:56:56 Info]: Entered address ( : )
+[11:56:56 Status]: [Error] Port is not an Integer!
++++++++++++++++ Program opened at [Feb/15/14 11:57:48 AM] +++++++++++++++
+[11:57:49 Error]: Port is not an Integer!
+[11:57:49 Info]: Entered address ( : )
+[11:57:49 Status]: [Error] Port is not an Integer!
+[11:57:51 Error]: Port is not an Integer!
+[11:57:51 Info]: Entered address ( : )
+[11:57:51 Status]: [Error] Port is not an Integer!
+[11:57:52 Error]: Port is not an Integer!
+[11:57:52 Info]: Entered address ( : )
+[11:57:52 Status]: [Error] Port is not an Integer!
++++++++++++++++ Program opened at [Feb/15/14 11:58:19 AM] +++++++++++++++
+[11:58:20 Error]: Port is not an Integer!
+[11:58:20 Info]: Entered address ( : )
+[11:58:20 Status]: [Error] Port is not an Integer!
+[11:58:22 Error]: Port is not an Integer!
+[11:58:22 Info]: Entered address ( : )
+[11:58:22 Status]: [Error] Port is not an Integer!
+[11:58:23 Error]: Port is not an Integer!
+[11:58:23 Info]: Entered address ( : )
+[11:58:23 Status]: [Error] Port is not an Integer!
+[11:58:24 Error]: Port is not an Integer!
+[11:58:24 Info]: Entered address ( : )
+[11:58:24 Status]: [Error] Port is not an Integer!
++++++++++++++++ Program opened at [Feb/15/14 11:58:52 AM] +++++++++++++++
+[11:58:53 Error]: Port is not an Integer!
+[11:58:53 Info]: Entered address ( : )
+[11:58:53 Status]: [Error] Port is not an Integer!
++++++++++++++++ Program opened at [Feb/15/14 12:00:26 PM] +++++++++++++++
+[12:00:27 Error]: Port is not an Integer!
+[12:00:27 Info]: Entered address ( : )
+[12:00:27 Status]: [Error] Port is not an Integer!
+[12:00:27 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:00:59 PM] +++++++++++++++
+[12:01:00 Error]: Host IP field can not be empty!
+[12:01:00 Info]: Entered address ( : )
+[12:01:00 Status]: [Error] Host IP field cannot be empty!
+[12:01:00 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:01:56 PM] +++++++++++++++
+[12:02:00 Error]: Host IP field can not be empty!
+[12:02:00 Info]: Entered address ( : )
+[12:02:00 Status]: [Error] Host IP field cannot be empty!
+[12:02:00 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:02:20 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:02:28 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:02:38 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:02:47 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:02:58 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:03:10 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:04:31 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:04:42 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:05:42 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:05:53 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:06:03 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:08:10 PM] +++++++++++++++
+[12:08:14 Error]: Host IP field can not be empty!
+[12:08:14 Info]: Entered address ( : )
+[12:08:14 Status]: [Error] Host IP field cannot be empty!
+[12:08:14 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:08:34 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:08:46 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:08:54 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:09:12 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:09:24 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:09:38 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:10:24 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:10:39 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:10:58 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:11:12 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:11:37 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:11:44 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:12:23 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:12:36 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:12:49 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:13:11 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:13:15 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:13:44 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:14:34 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:14:54 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:15:03 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:15:13 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:15:42 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:15:57 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:16:20 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:16:49 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:17:00 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:17:07 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:17:52 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:18:10 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:18:16 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:18:28 PM] +++++++++++++++
+[12:18:37 Error]: Host IP field can not be empty!
+[12:18:37 Info]: Entered address ( : )
+[12:18:37 Status]: [Error] Host IP field cannot be empty!
+[12:18:37 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:18:53 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:19:18 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:19:37 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:19:43 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:19:48 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:19:54 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:20:02 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:20:10 PM] +++++++++++++++
+[12:20:13 Error]: Host IP field can not be empty!
+[12:20:13 Info]: Entered address ( : )
+[12:20:13 Status]: [Error] Host IP field cannot be empty!
+[12:20:13 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:20:28 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:20:38 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:20:48 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:20:57 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:21:06 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:21:19 PM] +++++++++++++++
+[12:21:27 Error]: Host IP field can not be empty!
+[12:21:27 Info]: Entered address ( : )
+[12:21:27 Status]: [Error] Host IP field cannot be empty!
+[12:21:27 Info]: Not connected to Jerry, skipping close method
+[12:21:37 Error]: Host IP field can not be empty!
+[12:21:37 Info]: Entered address ( : )
+[12:21:37 Status]: [Error] Host IP field cannot be empty!
+[12:21:37 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:22:28 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:22:37 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 12:22:51 PM] +++++++++++++++
+[12:22:55 Error]: Host IP field can not be empty!
+[12:22:55 Info]: Entered address ( : )
+[12:22:55 Status]: [Error] Host IP field cannot be empty!
+[12:22:55 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:23:22 PM] +++++++++++++++
+[12:23:29 Error]: Host IP field can not be empty!
+[12:23:29 Info]: Entered address ( : )
+[12:23:29 Status]: [Error] Host IP field cannot be empty!
+[12:23:29 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 12:24:41 PM] +++++++++++++++

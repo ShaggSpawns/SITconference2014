@@ -19,21 +19,21 @@ public class JerryPanel extends JPanel {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 		
-		final JerryLogin tcpLogin = new JerryLogin(OS);
+		final JerryLogin jLogin = new JerryLogin(OS);
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.gridy = 0;
 		gc.weighty = 1.0;
-		add(tcpLogin, gc);
+		add(jLogin, gc);
 		
-		final JerryControls controls = new JerryControls(OS);
+		final JerryControls jControls = new JerryControls(OS);
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.gridy = 1;
-		add(controls, gc);
+		add(jControls, gc);
 		
-		final JerryStatus sBar = new JerryStatus(OS);
+		final JerryStatus jBar = new JerryStatus(OS);
 		gc.anchor = GridBagConstraints.SOUTH;
 		gc.gridy = 2;
 		gc.weighty = 0.0;
-		add(sBar, gc);
+		add(jBar, gc);
 	}
 }

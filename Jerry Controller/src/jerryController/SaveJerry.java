@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import panel.Jerry.JerryLogin;
-import panel.SSH.LoginSSH;
+import panel.SSH.SshLogin;
 
 /**
  * Manages the files involved in storing login information for TCP and SSH.
@@ -64,7 +64,7 @@ public class SaveJerry {
 			if (callFromTCP == true) {
 				JerryLogin.saveBtn.setEnabled(true);
 			} else if (callFromTCP == false) {
-				LoginSSH.saveBtn.setEnabled(true);
+				SshLogin.saveBtn.setEnabled(true);
 			}
 		}
 	}
@@ -83,7 +83,7 @@ public class SaveJerry {
 			if (callFromTCP == true) {
 				JerryLogin.saveBtn.setEnabled(true);
 			} else if (callFromTCP == false) {
-				LoginSSH.saveBtn.setEnabled(true);
+				SshLogin.saveBtn.setEnabled(true);
 			}
 		}
 	}
@@ -100,7 +100,7 @@ public class SaveJerry {
 			if (callFromTCP == true) {
 				JerryLogin.saveBtn.setEnabled(true);
 			} else if (callFromTCP == false) {
-				LoginSSH.saveBtn.setEnabled(true);
+				SshLogin.saveBtn.setEnabled(true);
 			}
 		}
 	}

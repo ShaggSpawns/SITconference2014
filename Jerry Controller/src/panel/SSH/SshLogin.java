@@ -22,22 +22,24 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
-import jerryController.SaveJerry;
+import messageManager.MessageLog;
+import messageManager.MessageStatusUpdate;
 import jerryController.LoadJerry;
+import jerryController.SaveJerry;
 
 /**
  * Creates the Login SSH panel for the SSH tab
  * @author Jackson Wilson (c) 2014
  */
-public class LoginSSH extends JPanel implements ItemListener, ActionListener {
+public class SshLogin extends JPanel implements ItemListener, ActionListener {
 	private static final long serialVersionUID = 1L;
 	
-	private final JLabel sshHostL;
+	private final JLabel hostL;
 	private final JLabel hostCOLON;
 	private final JLabel usernameL;
 	private final JLabel passwordL;
-	public static JTextField hostIPF;
-	public static JTextField hostPortF;
+	public static JTextField hostF;
+	public static JTextField portF;
 	public static JTextField usernameF;
 	public static JPasswordField passwordF;
 	private static JToggleButton connectBtn;
@@ -49,31 +51,29 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 	/**
 	 * Creates the Login SSH panel for the SSH tab
 	 */
-	public LoginSSH(final String OS) {
+	public SshLogin(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("SSH Login"));
 		setLayout(new GridBagLayout());
 		
 		final GridBagConstraints gc = new GridBagConstraints();
 		
-		
-
-		sshHostL = new JLabel();
+		hostL = new JLabel();
 		switch(OS) {
 		case "Windows":
-			sshHostL.setText("SSH Host : ");
+			hostL.setText("SSH Host : ");
 			break;
 		case "Mac":
-			sshHostL.setText("SSH Host:");
+			hostL.setText("SSH Host:");
 			break;
 		case "Default":
-			sshHostL.setText("SSH Host:");
+			hostL.setText("SSH Host:");
 			break;
 		}
-		sshHostL.setToolTipText("Enter the IP and port of SSH host");
+		hostL.setToolTipText("Enter the IP and port of SSH host");
 		gc.anchor = GridBagConstraints.EAST;
 		gc.gridx = 0;
 		gc.gridy = 0;
-		add(sshHostL, gc);
+		add(hostL, gc);
 		
 		usernameL = new JLabel();
 		switch(OS) {
@@ -123,8 +123,8 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 		gc.gridy = 3;
 		add(saveBtn, gc);
 		
-		hostIPF = new JTextField("");
-		hostIPF.setToolTipText("Host IP");
+		hostF = new JTextField("");
+		hostF.setToolTipText("Host IP");
 		gc.anchor = GridBagConstraints.WEST;
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		switch(OS) {
@@ -144,7 +144,7 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 			gc.gridy = 0;
 			break;
 		}
-		add(hostIPF, gc);
+		add(hostF, gc);
 		
 		hostCOLON = new JLabel(": ");
 		gc.fill = GridBagConstraints.NONE;
@@ -152,8 +152,8 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 		gc.gridx = 2;
 		add(hostCOLON, gc);
 		
-		hostPortF = new JTextField("22");
-		hostPortF.setToolTipText("Host Port");
+		portF = new JTextField("22");
+		portF.setToolTipText("Host Port");
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		switch(OS) {
 		case "Windows":
@@ -167,7 +167,7 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 		}
 		gc.ipadx = 50;
 		gc.gridx = 3;
-		add(hostPortF, gc);
+		add(portF, gc);
 		
 		usernameF = new JTextField("");
 		gc.insets = new Insets(0,0,0,0);
@@ -230,9 +230,7 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 		try {
 			final FileInputStream fs = new FileInputStream(SaveJerry.loginSSH.getAbsoluteFile());
 			@SuppressWarnings("resource")
-			final
-			BufferedReader br = new BufferedReader(new InputStreamReader(fs));
-			
+			final BufferedReader br = new BufferedReader(new InputStreamReader(fs));
 			for (int i = 1; i < line; ++i) {
 				br.readLine();
 			}
@@ -245,17 +243,21 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 			final String port = ar2[1];
 			final String user = ar1[0];
 			
-			hostIPF.setText(host);;
-			hostPortF.setText(port);
+			hostF.setText(host);;
+			portF.setText(port);
 			usernameF.setText(user);
 		} catch (final ArrayIndexOutOfBoundsException e) {
-			System.out.println("ArrayIndexOutOfBoundsException 'fillFields'");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "ArrayIndexOutOfBoundsException in LoginSSH.fillFields()");
 		} catch (final FileNotFoundException e) {
-			System.out.println("FileNotFoundException 'fillFields'");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "FileNotFoundException in LoginSSH.fillFields()");
 		} catch (final IOException e) {
-			System.out.println("IOException 'fillFields'");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "IOException in LoginSSH.fillFields()");
 		} catch (final NullPointerException e) {
-			System.out.println("NullPointerException 'fillFields'");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "NullPointerException in LoginSSH.fillFields()");
 			e.printStackTrace();
 		}
 	}
@@ -264,8 +266,8 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 	 * Empties the SSH login fields
 	 */
 	private void emptyFields() {
-		hostIPF.setText("");;
-		hostPortF.setText("");
+		hostF.setText("");;
+		portF.setText("");
 		usernameF.setText("");
 		passwordF.setText("");
 	}
@@ -277,10 +279,10 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 	public static void changeTCPguiState(final String state) {
 		switch(state) {
 		case "Disconnected":
-			hostIPF.setEditable(true);
-			hostIPF.setFocusable(true);
-			hostPortF.setEditable(true);
-			hostPortF.setFocusable(true);
+			hostF.setEditable(true);
+			hostF.setFocusable(true);
+			portF.setEditable(true);
+			portF.setFocusable(true);
 			usernameF.setEditable(true);
 			usernameF.setFocusable(true);
 			passwordF.setEditable(true);
@@ -290,32 +292,32 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 			connectBtn.setText("Connect");
 			break;
 		case "Pending":
-			hostIPF.setEditable(false);
-			hostIPF.setFocusable(false);
-			hostPortF.setEditable(false);
-			hostPortF.setFocusable(false);
+			hostF.setEditable(false);
+			hostF.setFocusable(false);
+			portF.setEditable(false);
+			portF.setFocusable(false);
 			usernameF.setEditable(false);
 			usernameF.setFocusable(false);
 			passwordF.setEditable(false);
 			passwordF.setFocusable(false);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(false);
-			ConsoleSSH.consoleArea.setText(null);
-			ConsoleSSH.consoleArea.setEnabled(false);
+			SshConsole.consoleArea.setText(null);
+			SshConsole.consoleArea.setEnabled(false);
 			connectBtn.setText("Connecting");
 			break;
 		case "Connected":
-			hostIPF.setEditable(false);
-			hostIPF.setFocusable(false);
-			hostPortF.setEditable(false);
-			hostPortF.setFocusable(false);
+			hostF.setEditable(false);
+			hostF.setFocusable(false);
+			portF.setEditable(false);
+			portF.setFocusable(false);
 			usernameF.setEditable(false);
 			usernameF.setFocusable(false);
 			passwordF.setEditable(false);
 			passwordF.setFocusable(false);
 			saveBtn.setEnabled(true);
 			loadComboBox.setEnabled(false);
-			ConsoleSSH.consoleArea.setEnabled(true);
+			SshConsole.consoleArea.setEnabled(true);
 			connectBtn.setText("Disconnect");
 			break;
 		}
@@ -338,8 +340,8 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 	}
 	
 	public void itemStateChanged(final ItemEvent ev) {
-		final String ip = hostIPF.getText();
-		final String inPort = hostPortF.getText();
+		final String ip = hostF.getText();
+		final String inPort = portF.getText();
 		final String username = usernameF.getText();
 		final char[] password = passwordF.getPassword();
 		int port = 0;
@@ -355,40 +357,44 @@ public class LoginSSH extends JPanel implements ItemListener, ActionListener {
 						port = intport;
 							if (!(username.equals(""))) {
 								if (!(password.equals(""))){
-									new Thread(new ConnectionSSH(ip, port, username, password)).start();
+									new Thread(new SshConnection(ip, port, username, password)).start();
 								} else {
-									System.out.println("Password can not be empty!");
-									System.out.println("Entered address ( " + address + " )\n");
+									new MessageStatusUpdate("Error", "Password field can not be empty!");
+									new MessageLog("Error", "Could not connect with (" + address + ")");
 									connectBtn.setSelected(true);
 									connectBtn.doClick();
 								}
 							} else {
-								System.out.println("Username can not be empty!");
-								System.out.println("Entered address ( " + address + " )\n");
+								new MessageStatusUpdate("Error", "Username field can not be empty!");
+								new MessageLog("Error", "Could not connect with (" + address + ")");
 								connectBtn.setSelected(true);
 								connectBtn.doClick();
 							}
 						} else { 
-							System.out.println("Port number can not be empty!");
-							System.out.println("Entered address ( " + address + " )\n");
+							new MessageStatusUpdate("Error", "Port field can not be empty!");
+							new MessageLog("Error", "Could not connect with (" + address + ")");
 							connectBtn.setSelected(true);
 							connectBtn.doClick();	
 						}
 				} catch (final NumberFormatException nFE) {
-						System.out.println("Port is not an Integer!");
-						System.out.println("Entered address ( " + address + " )\n");
+					new MessageStatusUpdate("Error", "Port is not a number!");
+					new MessageLog("Error", "Could not connect with (" + address + ")");
 						connectBtn.setSelected(true);
 						connectBtn.doClick();
 				}
 			} else {
-				System.out.println("SSH Host can not be empty!");
-				System.out.println("Entered address ( " + address + " )\n");
+				new MessageStatusUpdate("Error", "Host field can not be empty!");
+				new MessageLog("Error", "Could not connect with (" + address + ")");
 				connectBtn.setSelected(true);
 				connectBtn.doClick();
 			}
 		} else {
 			changeTCPguiState("Disconnected");
-			ConnectionSSH.closeSSH();
+			try {
+				SshConnection.closeSSH();
+			} catch (final NullPointerException npE) {
+				new MessageLog("Info", "Not connected, skipping close method");
+			}
 			LoadJerry.addLogins("SSH");
 		}
 	}

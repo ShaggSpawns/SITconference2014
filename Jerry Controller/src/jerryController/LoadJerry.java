@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import panel.Jerry.JerryLogin;
-import panel.SSH.LoginSSH;
+import panel.SSH.SshLogin;
 
 /**
  * Manages the saving and loading of logins of TCP and SSH.
@@ -27,7 +27,7 @@ public class LoadJerry {
 		lines = readFile();
 		switch(Jerry.getOperatingSystem()) {
 		case "Windows":
-			defaultTcpMessage = "----------- Load Jerry ----------";
+			defaultTcpMessage = "----------------------- Load Save -----------------------";
 			defaultSshMessage = "----------------------- Load Save -----------------------";
 			break;
 		case "Mac":
@@ -47,35 +47,35 @@ public class LoadJerry {
 		char[] currentSshPass = null;
 		
 		if (from.equals("TCP")) {
-			currentTcpHost = JerryLogin.hostField.getText();
-			currentTcpPort = JerryLogin.portField.getText();
+			currentTcpHost = JerryLogin.hostF.getText();
+			currentTcpPort = JerryLogin.portF.getText();
 			JerryLogin.loadComboBox.removeAllItems();
 			JerryLogin.loadComboBox.addItem(defaultTcpMessage);
 		} else if (from.equals("SSH")) {
-			currentSshHost = LoginSSH.hostIPF.getText();
-			currentSshPort = LoginSSH.hostPortF.getText();
-			currentSshUser = LoginSSH.usernameF.getText();
-			currentSshPass = LoginSSH.passwordF.getPassword();
-			LoginSSH.loadComboBox.removeAllItems();
-			LoginSSH.loadComboBox.addItem(defaultSshMessage);
+			currentSshHost = SshLogin.hostF.getText();
+			currentSshPort = SshLogin.portF.getText();
+			currentSshUser = SshLogin.usernameF.getText();
+			currentSshPass = SshLogin.passwordF.getPassword();
+			SshLogin.loadComboBox.removeAllItems();
+			SshLogin.loadComboBox.addItem(defaultSshMessage);
 		}
 		
 		for (final String str: lines) {
 			if (from.equals("TCP")) {
 				JerryLogin.loadComboBox.addItem(str);
 			} else if (from.equals("SSH")) {
-				LoginSSH.loadComboBox.addItem(str);
+				SshLogin.loadComboBox.addItem(str);
 			}
 		}
 		
 		if (from.equals("TCP")) {
-			JerryLogin.hostField.setText(currentTcpHost);
-			JerryLogin.portField.setText(currentTcpPort);
+			JerryLogin.hostF.setText(currentTcpHost);
+			JerryLogin.portF.setText(currentTcpPort);
 		} else if (from.equals("SSH")) {
-			 LoginSSH.hostIPF.setText(currentSshHost);
-			 LoginSSH.hostPortF.setText(currentSshPort);
-			 LoginSSH.usernameF.setText(currentSshUser);
-			 LoginSSH.passwordF.setText(new String(currentSshPass));
+			 SshLogin.hostF.setText(currentSshHost);
+			 SshLogin.portF.setText(currentSshPort);
+			 SshLogin.usernameF.setText(currentSshUser);
+			 SshLogin.passwordF.setText(new String(currentSshPass));
 		}
 	}
 	

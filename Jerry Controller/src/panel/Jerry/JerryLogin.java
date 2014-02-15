@@ -33,10 +33,10 @@ import messageManager.MessageStatusUpdate;
 public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 	private static final long serialVersionUID = 1L;
 	
-	private final JLabel hostIP;
-	private final JLabel port;
-	public static JTextField hostField;
-	public static JTextField portField;
+	private final JLabel hostL;
+	private final JLabel portL;
+	public static JTextField hostF;
+	public static JTextField portF;
 	public static JToggleButton connectBtn;
 	public static JButton saveBtn;
 	public static JComboBox<String> loadComboBox;
@@ -50,42 +50,84 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 
-		hostIP = new JLabel("Host IP: ");
-		hostIP.setToolTipText("Enter Jerry's IP Address");
+		hostL = new JLabel();
+		hostL.setToolTipText("Enter Jerry's IP Address");
+		switch(OS) {
+		case "Windows":
+			hostL.setText("Host IP : ");
+			break;
+		case "Mac":
+			hostL.setText("Host IP: ");
+			break;
+		case "Default":
+			hostL.setText("Host IP: ");
+			break;
+		}
 		gc.anchor = GridBagConstraints.EAST;
 		gc.gridx = 0;
 		gc.gridy = 0;
-		add(hostIP, gc);
+		add(hostL, gc);
 		
-		port = new JLabel("Port: ");
-		port.setToolTipText("Enter Jerry's Port Number");
+		portL = new JLabel("Port: ");
+		portL.setToolTipText("Enter Jerry's Port Number");
+		switch(OS) {
+		case "Windows":
+			portL.setText("Port : ");
+			break;
+		case "Mac":
+			portL.setText("Port: ");
+			break;
+		case "Default":
+			portL.setText("Port: ");
+			break;
+		}
 		gc.anchor = GridBagConstraints.EAST;
 		gc.gridx = 0;
 		gc.gridy = 1;
-		add(port, gc);
+		add(portL, gc);
 		
-		hostField = new JTextField();
-		hostField.setToolTipText("Enter Jerry's IP Address");
+		hostF = new JTextField();
+		hostF.setToolTipText("Enter Jerry's IP Address");
+		switch(OS) {
+		case "Windows":
+			gc.ipadx = 275;
+			break;
+		case "Mac":
+			gc.fill = GridBagConstraints.HORIZONTAL;
+			break;
+		case "Default":
+			break;
+		}
 		gc.weightx = 0.0;
-		gc.fill = GridBagConstraints.HORIZONTAL;
 		gc.anchor = GridBagConstraints.WEST;
 		gc.gridx = 1;
 		gc.gridy = 0;
-		add(hostField, gc);
+		add(hostF, gc);
 		
-		portField = new JTextField();
-		portField.setToolTipText("Enter Jerry's Port Number");
-		portField.addActionListener(this);
+		portF = new JTextField();
+		portF.setToolTipText("Enter Jerry's Port Number");
+		portF.addActionListener(this);
 		gc.gridx = 1;
 		gc.gridy = 1;
-		add(portField, gc);
+		add(portF, gc);
 		
-		connectBtn = new JToggleButton("Connect");
+		connectBtn = new JToggleButton("Disconnect");
 		connectBtn.setToolTipText("Connect / Disconnect to Vehical");
 		connectBtn.setFocusable(false);
 		connectBtn.addItemListener(this);
 		gc.fill = GridBagConstraints.BOTH;
 		gc.anchor = GridBagConstraints.NORTH;
+		switch(OS) {
+		case "Windows":
+			gc.insets = new Insets(0,2,0,2);
+			break;
+		case "Mac":
+			gc.insets = new Insets(0,0,0,0);
+			break;
+		case "Default":
+			gc.insets = new Insets(0,0,0,0);
+			break;
+		}
 		gc.gridheight = 3;
 		gc.ipadx = 0;
 		gc.gridx = 2;
@@ -97,18 +139,37 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		saveBtn.setToolTipText("Save Current Vehical Address");
 		saveBtn.setEnabled(false);
 		saveBtn.addActionListener(this);
+		switch(OS) {
+		case "Windows":
+			gc.insets = new Insets(0,3,0,3);
+			break;
+		case "Mac":
+			gc.insets = new Insets(0,0,0,0);
+			break;
+		case "Default":
+			gc.insets = new Insets(0,0,0,0);
+			break;
+		}
 		gc.gridheight = 1;
 		gc.gridx = 0;
 		gc.gridy = 2;
 		add(saveBtn, gc);
 		
-		final String[] hostSaves = {"----------- Load Save ----------"};
-		loadComboBox = new JComboBox<String>(hostSaves);
+		loadComboBox = new JComboBox<String>();
 		LoadJerry.addLogins("TCP");
 		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
 		loadComboBox.addActionListener(this);
-		gc.fill = GridBagConstraints.HORIZONTAL;
-		gc.insets = new Insets(0, 0, 0, 0);
+		switch(OS) {
+		case "Windows":
+			gc.insets = new Insets(0,0,0,1);
+			break;
+		case "Mac":
+			gc.fill = GridBagConstraints.HORIZONTAL;
+			gc.insets = new Insets(0,0,0,0);
+			break;
+		case "Default":
+			break;
+		}
 		gc.gridwidth = 1;
 		gc.gridx = 1;
 		gc.gridy = 2;
@@ -135,16 +196,20 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 			final String host = ar[0];
 			final String port = ar[1];
 			
-			hostField.setText(host);
-			portField.setText(port);
+			hostF.setText(host);
+			portF.setText(port);
 		} catch (final ArrayIndexOutOfBoundsException e) {
-			new MessageLog("ERROR", "ArrayIndexOutOfBoundsException panel.TCP.LoginTCP.fillFields()");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "ArrayIndexOutOfBoundsException in JerryLogin.fillFields()");
 		} catch (final FileNotFoundException e) {
-			new MessageLog("ERROR", "FileNotFoundException panel.TCP.LoginTCP.fillFields()");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "FileNotFoundException in JerryLogin.fillFields()");
 		} catch (final IOException e) {
-			new MessageLog("ERROR", "IOException panel.TCP.LoginTCP.fillFields()");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "IOException in JerryLogin.fillFields()");
 		} catch (final NullPointerException e) {
-			new MessageLog("ERROR", "NullPointerException panel.TCP.LoginTCP.fillFields()");
+			new MessageStatusUpdate("Error", "Failed to fill fields");
+			new MessageLog("Error", "NullPointerException in JerryLogin.fillFields()");
 			e.printStackTrace();
 		}
 	}
@@ -153,8 +218,8 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 	 * Empties the TCP login fields
 	 */
 	private void emptyFields() {
-		hostField.setText("");
-		portField.setText("");
+		hostF.setText("");
+		portF.setText("");
 	}
 	
 	/**
@@ -164,10 +229,10 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 	public static void changeTCPguiState(final String state) {
 		switch(state) {
 		case "Connected":
-			hostField.setEditable(false);
-			hostField.setFocusable(false);
-			portField.setEditable(false);
-			portField.setFocusable(false);
+			hostF.setEditable(false);
+			hostF.setFocusable(false);
+			portF.setEditable(false);
+			portF.setFocusable(false);
 			saveBtn.setEnabled(true);
 			loadComboBox.setEnabled(false);
 			JerryControls.forwardBtn.setEnabled(true);
@@ -183,10 +248,10 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 			connectBtn.setText("Disconnect");
 			break;
 		case "Pending":
-			hostField.setEditable(false);
-			hostField.setFocusable(false);
-			portField.setEditable(false);
-			portField.setFocusable(false);
+			hostF.setEditable(false);
+			hostF.setFocusable(false);
+			portF.setEditable(false);
+			portF.setFocusable(false);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(false);
 			JerryControls.forwardBtn.setEnabled(false);
@@ -202,10 +267,10 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 			connectBtn.setText("Connecting");
 			break;
 		case "Disconnected":
-			hostField.setEditable(true);
-			hostField.setFocusable(true);
-			portField.setEditable(true);
-			portField.setFocusable(true);
+			hostF.setEditable(true);
+			hostF.setFocusable(true);
+			portF.setEditable(true);
+			portF.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
 			JerryControls.forwardBtn.setEnabled(false);
@@ -231,7 +296,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 			} else {
 				fillLoginFields(selectedEntry);
 			}
-		} else if (e.getSource() == portField) {
+		} else if (e.getSource() == portF) {
 			connectBtn.doClick();
 		} else if (e.getSource() == saveBtn) {
 			saveBtn.setEnabled(false);
@@ -240,44 +305,45 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 	}
 	
 	public void itemStateChanged(final ItemEvent ev) {
-		final String ip = hostField.getText();
-		final String inPort = portField.getText();
+		final String ip = hostF.getText();
+		final String inPort = portF.getText();
 		address = ip + ":" + inPort;
 		int port = 0;
 		int intport;
 		if (ev.getStateChange() == ItemEvent.SELECTED) {
-			changeTCPguiState("Pending");
-			if (!(ip.equals(""))) {
+			if (!ip.equals("")) {
 				try {
-					if (!(inPort.equals(""))) {
+					if (!inPort.equals("")) {
 						intport = Integer.parseInt(inPort);
 						port = intport;
+						changeTCPguiState("Pending");
 						(new Thread(new JerryConnection(ip, port))).start();
 					} else {
-						new MessageLog("Error", "Port field can not be empty!");
-						new MessageLog("Info", "Entered address ( " + address + " )");
-						new MessageStatusUpdate("Error", "Port field cannot be empty!");
+						new MessageStatusUpdate("Error", "Port field can not be empty!");
+						new MessageLog("Error", "Could not connect with (" + address + ")");
 						connectBtn.setSelected(true);
 						connectBtn.doClick();
 					}
 				} catch (final NumberFormatException nFE) {
-					new MessageLog("Error", "Port is not an Integer!");
-					new MessageLog("Info", "Entered address ( " + address + " )");
-					new MessageStatusUpdate("Error", "Port is not an Integer!");
+					new MessageStatusUpdate("Error", "Port is not a number!");
+					new MessageLog("Error", "Could not connect with (" + address + ")");
 					connectBtn.setSelected(true);
 					connectBtn.doClick();
 				}
 			} else {
-				new MessageLog("Error", "Host IP field can not be empty!");
-				new MessageLog("Info", "Entered address ( " + address + " )");
-				new MessageStatusUpdate("Error", "Host IP field cannot be empty!");
+				new MessageStatusUpdate("Error", "Host field can not be empty!");
+				new MessageLog("Error", "Could not connect with (" + address + ")");
 				connectBtn.setSelected(true);
 				connectBtn.doClick();
 			}
 		} else if (ev.getStateChange() == ItemEvent.DESELECTED) {
-			if (JerryConnection.connection.isConnected()) {
-				JerryControls.stopBtn.doClick();
-				JerryConnection.sendMessage("END");
+			try {
+				if (JerryConnection.connection.isConnected()) {
+					JerryControls.stopBtn.doClick();
+					JerryConnection.sendMessage("END");
+				}
+			} catch (final NullPointerException npE) {
+				new MessageLog("Info", "Not connected to Jerry, skipping close method");
 			}
 			changeTCPguiState("Disconnected");
 			LoadJerry.addLogins("TCP");

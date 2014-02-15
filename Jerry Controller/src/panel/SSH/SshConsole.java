@@ -15,18 +15,18 @@ import javax.swing.ScrollPaneConstants;
  * Creates the SSH console panel for the SSH tab
  * @author Jackson Wilson (c) 2014
  */
-public class ConsoleSSH extends JPanel {
+public class SshConsole extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	public static JTextArea consoleArea;
 	public static JTextField consoleInput;
-	public static TextFieldInputStream streamer;
+	public static SshInputStream streamer;
 	private JScrollPane scrollPane;
 	
 	/**
 	 * Initializes the SSH console area for the SSH tab
 	 */
-	public ConsoleSSH(final String OS) {
+	public SshConsole(final String OS) {
 		setBorder(BorderFactory.createTitledBorder("SSH Console"));
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
@@ -49,7 +49,7 @@ public class ConsoleSSH extends JPanel {
 		    
 			consoleInput = new JTextField(39);
 			consoleInput.setEnabled(true);
-			streamer = new TextFieldInputStream(consoleInput);
+			streamer = new SshInputStream(consoleInput);
 			consoleInput.addActionListener(streamer);
 			gc.anchor = GridBagConstraints.NORTH;
 			gc.ipadx = 3;
@@ -75,7 +75,7 @@ public class ConsoleSSH extends JPanel {
 		    
 			consoleInput = new JTextField(38);
 			consoleInput.setEnabled(true);
-			streamer = new TextFieldInputStream(consoleInput);
+			streamer = new SshInputStream(consoleInput);
 			consoleInput.addActionListener(streamer);
 			gc.anchor = GridBagConstraints.SOUTH;
 		    gc.gridx = 0;
@@ -100,7 +100,7 @@ public class ConsoleSSH extends JPanel {
 		    
 			consoleInput = new JTextField(38);
 			consoleInput.setEnabled(true);
-			streamer = new TextFieldInputStream(consoleInput);
+			streamer = new SshInputStream(consoleInput);
 			consoleInput.addActionListener(streamer);
 			gc.anchor = GridBagConstraints.SOUTH;
 		    gc.ipady = 0;

@@ -9,24 +9,24 @@ import javax.swing.JPanel;
  * Initializes the SSH Panel onto the SSH tab
  * @author Jackson Wilson (c) 2014
  */
-public class PanelSSH extends JPanel {
+public class SshPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Initializes the SSH Panel onto the SSH tab
 	 */
-	public PanelSSH(final String OS) {
+	public SshPanel(final String OS) {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 
-		final LoginSSH sshLogin = new LoginSSH(OS);
+		final SshLogin sshLogin = new SshLogin(OS);
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		gc.gridy = 0;
 		gc.weighty = 0.0;
 		add(sshLogin, gc);
 		
-		final ConsoleSSH sshConsole = new ConsoleSSH(OS);
+		final SshConsole sshConsole = new SshConsole(OS);
 		gc.anchor = GridBagConstraints.NORTH;
 		gc.fill = GridBagConstraints.BOTH;
 		gc.gridy = 1;

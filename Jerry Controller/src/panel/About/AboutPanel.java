@@ -9,10 +9,10 @@ import javax.swing.JPanel;
  * Builds a JPanel to combine the About and Help panels.
  * @author Jackson Wilson (c) 2014
  */
-public class PanelAbout extends JPanel {
+public class AboutPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	public PanelAbout() {
+	public AboutPanel() {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 

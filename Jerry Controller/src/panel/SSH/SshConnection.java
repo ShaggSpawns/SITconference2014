@@ -12,7 +12,7 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
  
-public class ConnectionSSH implements Runnable {
+public class SshConnection implements Runnable {
 	private static Session session;
 	private static Channel channel;
 	private final String HOST;
@@ -20,7 +20,7 @@ public class ConnectionSSH implements Runnable {
 	private final String USERNAME;
 	private final String PASSWORD;
 	
-	public ConnectionSSH(final String host, final int port, final String username, final char[] password) {
+	public SshConnection(final String host, final int port, final String username, final char[] password) {
 		HOST = host;
 		PORT = port;
 		USERNAME = username;
@@ -30,7 +30,7 @@ public class ConnectionSSH implements Runnable {
 
 	@Override
 	public void run() {
-		ConsoleSSH.consoleArea.setText("");
+		SshConsole.consoleArea.setText("");
 		final JSch jsch = new JSch();
 		try {
 			jsch.setKnownHosts("~/.ssh/known_hosts");
@@ -46,7 +46,7 @@ public class ConnectionSSH implements Runnable {
 			session.connect();
 			new MessageLog("Info", "SSH: session connected");
 			channel = session.openChannel("shell");
-			channel.setInputStream(ConsoleSSH.streamer);
+			channel.setInputStream(SshConsole.streamer);
 			//channel.setInputStream(System.in);
 			final OutputStream output = new OutputStream() {
 				@Override
@@ -65,9 +65,9 @@ public class ConnectionSSH implements Runnable {
 			channel.setOutputStream(output);
 			channel.connect();
 			new MessageLog("Info", "SSH: channel connected");
-			LoginSSH.changeTCPguiState("Connected");
+			SshLogin.changeTCPguiState("Connected");
 		} catch (final JSchException e) {
-			LoginSSH.changeTCPguiState("Disconnected");
+			SshLogin.changeTCPguiState("Disconnected");
 			e.printStackTrace();
 			new MessageLog("Error", "SSH: failed to set up SSH connection");
 		}
@@ -76,7 +76,7 @@ public class ConnectionSSH implements Runnable {
 	private void updateTextArea(final String text) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				ConsoleSSH.consoleArea.append(text);
+				SshConsole.consoleArea.append(text);
 			}
 		});
 	}
@@ -95,7 +95,7 @@ public class ConnectionSSH implements Runnable {
 	}
 	
 	public static void closeSSH() {
-		LoginSSH.changeTCPguiState("Disconnected");
+		SshLogin.changeTCPguiState("Disconnected");
 		if (channel.isConnected()) {
 			try {
 				channel.sendSignal("exit");

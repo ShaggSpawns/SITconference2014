@@ -7,13 +7,13 @@ import java.io.InputStream;
 
 import javax.swing.JTextField;
 
-public class TextFieldInputStream extends InputStream implements ActionListener {
+public class SshInputStream extends InputStream implements ActionListener {
 
     private final JTextField textField;
     private String input = null;
     private int position = 0;
 
-    public TextFieldInputStream(final JTextField JTextField) {
+    public SshInputStream(final JTextField JTextField) {
         textField = JTextField;
     }
     
@@ -30,7 +30,7 @@ public class TextFieldInputStream extends InputStream implements ActionListener 
     @Override
     public int read() throws IOException {
     	if (input.equals("exit")) {
-    		ConnectionSSH.closeSSH();
+    		SshConnection.closeSSH();
     		return 0;
     	}
     	if (input != null && position == input.length()) {
