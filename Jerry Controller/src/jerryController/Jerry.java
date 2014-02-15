@@ -22,7 +22,6 @@ public class Jerry extends JApplet implements Runnable {
 	 */
 	public static void main(final String[] args) {
 		(new Thread(new Jerry())).start();
-		createOpenLog();
 	}
 	
 	/**
@@ -30,6 +29,7 @@ public class Jerry extends JApplet implements Runnable {
 	 */
 	public void run() {
 		new JerryFrame("Jerry Controller", OS);
+		createOpenLog();
 	}
 	
 	/**

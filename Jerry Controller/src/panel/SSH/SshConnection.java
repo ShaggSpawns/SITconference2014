@@ -73,7 +73,8 @@ public class SshConnection implements Runnable {
 			        return input.charAt(position++);
 				}
 			};
-			channel.setInputStream(input);
+			//channel.setInputStream(input);
+			channel.setInputStream(System.in);
 			final OutputStream output = new OutputStream() {
 				@Override
 				public void write(final int b) throws IOException {
