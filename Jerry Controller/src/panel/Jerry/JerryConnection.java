@@ -45,7 +45,6 @@ public class JerryConnection implements Runnable {
 			new LogMessage("Error", "Server not found!");
 			new StatusUpdateMessage("Error", "Server not found!");
 			JerryLogin.connectBtn.doClick();
-			JerryLogin.changeTCPguiState("Disconnected");
 		}
 	}
 	

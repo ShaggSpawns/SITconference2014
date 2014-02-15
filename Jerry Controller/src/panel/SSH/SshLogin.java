@@ -42,7 +42,7 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 	public static JTextField portF;
 	public static JTextField usernameF;
 	public static JPasswordField passwordF;
-	private static JToggleButton connectBtn;
+	public static JToggleButton connectBtn;
 	public static JButton saveBtn;
 	public static JComboBox<String> loadComboBox;
 	private String address;
@@ -176,7 +176,7 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 		gc.gridy = 1;
 		add(usernameF, gc);
 		
-		passwordF = new JPasswordField("");
+		passwordF = new JPasswordField("peace1");
 		passwordF.addActionListener(this);
 		gc.gridy = 2;
 		add(passwordF, gc);
@@ -289,6 +289,8 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 			passwordF.setFocusable(true);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(true);
+			SshConsole.consoleArea.setEnabled(false);
+			SshConsole.consoleInput.setEnabled(false);
 			connectBtn.setText("Connect");
 			break;
 		case "Pending":
@@ -302,9 +304,10 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 			passwordF.setFocusable(false);
 			saveBtn.setEnabled(false);
 			loadComboBox.setEnabled(false);
-			SshConsole.consoleArea.setText(null);
+			SshConsole.consoleArea.setText("");
 			SshConsole.consoleArea.setEnabled(false);
-			connectBtn.setText("Connecting");
+			SshConsole.consoleInput.setEnabled(false);
+			connectBtn.setText("Pending");
 			break;
 		case "Connected":
 			hostF.setEditable(false);
@@ -318,6 +321,7 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 			saveBtn.setEnabled(true);
 			loadComboBox.setEnabled(false);
 			SshConsole.consoleArea.setEnabled(true);
+			SshConsole.consoleInput.setEnabled(true);
 			connectBtn.setText("Disconnect");
 			break;
 		}
@@ -389,12 +393,12 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 				connectBtn.doClick();
 			}
 		} else {
-			changeTCPguiState("Disconnected");
 			try {
 				SshConnection.closeSSH();
 			} catch (final NullPointerException npE) {
 				new LogMessage("Info", "Not connected, skipping close method");
 			}
+			SshLogin.changeTCPguiState("Disconnected");
 			LoadJerry.addLogins("SSH");
 		}
 	}

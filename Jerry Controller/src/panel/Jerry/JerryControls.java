@@ -57,7 +57,7 @@ public class JerryControls extends JPanel {
 			gc.ipady = 140;
 			break;
 		case "Mac":
-			gc.ipady = 125;
+			gc.ipady = 132;
 			break;
 		case "Default":
 			gc.ipady = 125;

@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 public class JerryStatus extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
-	public static JTextField sBar;
+	public static JTextField jBar;
 	
 	/**
 	 * The constructor of SatusBar that initializes the status bar.
@@ -25,25 +25,25 @@ public class JerryStatus extends JPanel{
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 		
-		sBar = new JTextField(38);
-		sBar.setFocusable(false);
-		sBar.setText("[Disconnected]");
-		sBar.setEditable(false);
+		jBar = new JTextField(38);
+		jBar.setFocusable(false);
+		jBar.setText("[Disconnected]");
+		jBar.setEditable(false);
 		switch(OS) {
 		case "Windows":
 			gc.ipadx = 27;
 			break;
 		case "Mac":
-			gc.ipadx = 0;
+			gc.ipadx = 14;
 			break;
 		case "Default":
-			gc.ipadx = 0;
+			gc.ipadx = 14;
 			break;
 		}
 		gc.gridx = 0;
 		gc.gridy = 3;
 		gc.gridwidth = 3;
 		gc.ipady = 0;
-		add(sBar, gc);
+		add(jBar, gc);
 	}
 }

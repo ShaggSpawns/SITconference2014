@@ -20,17 +20,14 @@ public class JerryComm extends JFrame {
 	private static Socket connection;
 	
 	/**
-	 * Initializes the TCP server that will receive commands, then pass them on to the Arduino.
-	 * @param portRangeStart
-	 * @param portRangeEnd
-	 * @param serverBacklog
+	 * Initializes the Jerry server that will receive commands, then pass them on to the Arduino.
 	 */
 	public JerryComm() {
 		startRunning();
 	}
 	
 	/**
-	 * Manages the running processes for the TCP server.
+	 * Manages the running processes for the Jerry server.
 	 */
 	private static void startRunning() {
 		while(true) {

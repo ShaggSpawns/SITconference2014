@@ -10,8 +10,8 @@ import javax.swing.JTextField;
 public class SshInputStream extends InputStream implements ActionListener {
 
     private final JTextField textField;
-    private String input = null;
-    private int position = 0;
+    public static String input = null;
+    public static int position = 0;
 
     public SshInputStream(final JTextField JTextField) {
         textField = JTextField;
@@ -19,7 +19,7 @@ public class SshInputStream extends InputStream implements ActionListener {
     
     @Override
     public void actionPerformed(final ActionEvent e) {
-    	input = textField.getText() + "\n";
+    	input = textField.getText();
     	position = 0;
         textField.setText("");
         synchronized (this) {

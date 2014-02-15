@@ -444,3 +444,160 @@
 [13:57:30 Info]: Successfully closed sockets and streams
 [13:57:30 Status]: [Disconnected] Successfully disconnected from Jerry
 +++++++++++++++ Program opened at [Feb/15/14 02:38:33 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 09:26:40 AM] +++++++++++++++
+[09:26:57 Info]: Attempting to connect to Jerry...
+[09:26:57 Status]: Attempting to connect...
+[09:26:57 Error]: Server not found!
+[09:26:57 Status]: [Error] Server not found!
+[09:27:06 Info]: Not connected to Jerry, skipping close method
+[09:27:07 Status]: [Error] Host field can not be empty!
+[09:27:07 Error]: Could not connect with (:)
+[09:27:07 Info]: Not connected to Jerry, skipping close method
+[09:27:11 Info]: Attempting to connect to Jerry...
+[09:27:11 Status]: Attempting to connect...
+[09:27:11 Error]: Server not found!
+[09:27:11 Status]: [Error] Server not found!
+[09:27:12 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 03:28:02 PM] +++++++++++++++
+[15:28:04 Status]: [Error] Host field can not be empty!
+[15:28:04 Error]: Could not connect with (:)
+[15:28:04 Info]: Not connected to Jerry, skipping close method
+[15:28:09 Info]: Attempting to connect to Jerry...
+[15:28:09 Status]: Attempting to connect...
+[15:28:09 Error]: Server not found!
+[15:28:09 Status]: [Error] Server not found!
+[15:28:09 Info]: Not connected to Jerry, skipping close method
+[15:28:11 Info]: Attempting to connect to Jerry...
+[15:28:11 Status]: Attempting to connect...
+[15:28:11 Error]: Server not found!
+[15:28:11 Status]: [Error] Server not found!
+[15:28:11 Info]: Not connected to Jerry, skipping close method
++++++++++++++++ Program opened at [Feb/15/14 03:28:37 PM] +++++++++++++++
+[15:28:42 Info]: Attempting to connect to Jerry...
+[15:28:42 Status]: Attempting to connect...
+[15:28:42 Info]: Connected to: localhost
+[15:28:42 Status]: [Connected] Connected to Jerry at localhost:6789
+[15:28:42 Info]: Streams successfully setup
+[15:28:43 Info]: Sent message: FORWARD
+[15:28:43 Status]: [Connected] Sent message: FORWARD
+[15:28:44 Info]: Sent message: STOP
+[15:28:44 Status]: [Connected] Sent message: STOP
+[15:28:44 Info]: Sent message: REVERSE
+[15:28:44 Status]: [Connected] Sent message: REVERSE
+[15:28:45 Info]: Sent message: STOP
+[15:28:45 Status]: [Connected] Sent message: STOP
+[15:28:45 Info]: Sent message: END
+[15:28:45 Status]: [Connected] Sent message: END
+[15:28:45 Info]: Jerry: END
+[15:28:45 Status]: [Connected] Jerry: END
+[15:28:45 Info]: Closing sockets and streams...
+[15:28:45 Status]: [Pending] Disconnecting from Jerry...
+[15:28:45 Info]: Successfully closed sockets and streams
+[15:28:45 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/15/14 03:40:56 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:41:29 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:41:37 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:41:46 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:41:57 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:42:07 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:42:12 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:42:42 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:42:55 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:43:06 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:43:12 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:43:25 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 03:45:01 PM] +++++++++++++++
+[15:45:14 Info]: SSH: loaded known_hosts
+[15:45:25 Info]: Not connected, skipping close method
+[15:45:28 Info]: SSH: loaded known_hosts
+[15:45:29 Info]: SSH: session connected
+[15:45:29 Info]: SSH: channel connected
+[15:45:44 Info]: SSH: channel streams were successfully closed
+[15:45:44 Info]: SSH: channel successfully closed
+[15:45:44 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/15/14 03:47:50 PM] +++++++++++++++
+[15:47:56 Info]: SSH: loaded known_hosts
+[15:47:56 Info]: SSH: session connected
+[15:47:56 Info]: SSH: channel connected
+[15:48:22 Info]: SSH: session successfully closed
+[15:48:34 Info]: SSH: loaded known_hosts
+[15:49:49 Error]: SSH: failed to set up SSH connection
++++++++++++++++ Program opened at [Feb/15/14 04:24:34 PM] +++++++++++++++
+[16:24:46 Info]: SSH: loaded known_hosts
+[16:24:49 Info]: SSH: session connected
+[16:24:49 Info]: SSH: channel connected
+[16:25:25 Info]: SSH: channel streams were successfully closed
+[16:25:25 Info]: SSH: channel successfully closed
+[16:25:25 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/15/14 04:25:49 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 04:27:18 PM] +++++++++++++++
+[16:27:26 Info]: SSH: loaded known_hosts
+[16:27:27 Info]: SSH: session connected
+[16:27:27 Info]: SSH: channel connected
+[16:28:15 Info]: SSH: channel streams were successfully closed
+[16:28:15 Info]: SSH: channel successfully closed
+[16:28:15 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/15/14 04:29:38 PM] +++++++++++++++
+[16:29:49 Info]: SSH: loaded known_hosts
+[16:29:50 Info]: SSH: session connected
+[16:29:50 Info]: SSH: channel connected
+[16:30:10 Info]: SSH: channel streams were successfully closed
+[16:30:10 Info]: SSH: channel successfully closed
+[16:30:10 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/15/14 04:34:34 PM] +++++++++++++++
+[16:34:41 Info]: SSH: loaded known_hosts
+[16:34:42 Info]: SSH: session connected
+[16:34:42 Info]: SSH: channel connected
+[16:34:51 Info]: SSH: channel streams were successfully closed
+[16:34:51 Info]: SSH: channel successfully closed
+[16:34:51 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/15/14 04:37:54 PM] +++++++++++++++
+[16:38:00 Info]: SSH: loaded known_hosts
+[16:38:01 Info]: SSH: session connected
+[16:38:01 Info]: SSH: channel connected
++++++++++++++++ Program opened at [Feb/15/14 04:48:00 PM] +++++++++++++++
+[16:48:06 Info]: SSH: loaded known_hosts
+[16:48:07 Info]: SSH: session connected
+[16:48:07 Info]: SSH: channel connected
+[16:48:30 Info]: SSH: channel streams were successfully closed
+[16:48:30 Info]: SSH: channel successfully closed
+[16:48:30 Info]: SSH: loaded known_hosts
+[16:48:30 Info]: SSH: session successfully closed
+[16:48:30 Info]: SSH: session connected
+[16:48:30 Info]: SSH: channel connected
+[16:48:31 Info]: SSH: channel streams were successfully closed
+[16:48:31 Info]: SSH: channel successfully closed
+[16:48:31 Info]: SSH: session successfully closed
+[16:48:31 Info]: SSH: loaded known_hosts
+[16:48:32 Info]: SSH: session connected
+[16:48:32 Info]: SSH: channel connected
++++++++++++++++ Program opened at [Feb/15/14 04:57:21 PM] +++++++++++++++
+[16:57:27 Info]: SSH: loaded known_hosts
+[16:57:27 Info]: SSH: session connected
+[16:57:27 Info]: SSH: channel connected
+[16:57:52 Info]: SSH: channel streams were successfully closed
+[16:57:52 Info]: SSH: channel successfully closed
+[16:57:52 Info]: SSH: session successfully closed
+[16:57:52 Info]: SSH: loaded known_hosts
+[16:57:52 Info]: SSH: session connected
+[16:57:52 Info]: SSH: channel connected
+[16:58:00 Info]: SSH: channel streams were successfully closed
+[16:58:00 Info]: SSH: channel successfully closed
+[16:58:00 Info]: SSH: session successfully closed
+[16:58:00 Info]: SSH: loaded known_hosts
+[16:58:00 Info]: SSH: session connected
+[16:58:00 Info]: SSH: channel connected
++++++++++++++++ Program opened at [Feb/15/14 05:00:16 PM] +++++++++++++++
+[17:00:21 Info]: SSH: loaded known_hosts
+[17:00:21 Info]: SSH: session connected
+[17:00:21 Info]: SSH: channel connected
+[17:00:23 Info]: SSH: channel streams were successfully closed
+[17:00:23 Info]: SSH: channel successfully closed
+[17:00:23 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/15/14 05:01:29 PM] +++++++++++++++
+[17:01:32 Info]: SSH: loaded known_hosts
+[17:01:33 Info]: SSH: session connected
+[17:01:33 Info]: SSH: channel connected
+[17:01:34 Info]: SSH: channel streams were successfully closed
+[17:01:34 Info]: SSH: channel successfully closed
+[17:01:34 Info]: SSH: session successfully closed

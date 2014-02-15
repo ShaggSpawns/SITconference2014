@@ -36,8 +36,8 @@ public class StatusUpdateMessage {
 			sBarMessage = message;
 		}
 		
-		JerryStatus.sBar.setText("");
-		JerryStatus.sBar.setText(sBarMessage);
+		JerryStatus.jBar.setText("");
+		JerryStatus.jBar.setText(sBarMessage);
 		
 		final String logType = "Status";
 		new LogMessage(logType, sBarMessage);

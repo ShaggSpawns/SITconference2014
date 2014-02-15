@@ -1,6 +1,7 @@
 package panel.SSH;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.swing.SwingUtilities;
@@ -14,7 +15,8 @@ import com.jcraft.jsch.Session;
  
 public class SshConnection implements Runnable {
 	private static Session session;
-	private static Channel channel;
+	public static Channel channel;
+	public static InputStream input;
 	private final String HOST;
 	private final int PORT;
 	private final String USERNAME;
@@ -46,8 +48,33 @@ public class SshConnection implements Runnable {
 			session.connect();
 			new LogMessage("Info", "SSH: session connected");
 			channel = session.openChannel("shell");
-			channel.setInputStream(SshConsole.streamer);
-			//channel.setInputStream(System.in);
+			input = new InputStream() {
+				String input = null;
+				int position = 0;
+				@Override
+				public int read() throws IOException {
+					if (input.equals("exit")) {
+			    		SshLogin.connectBtn.doClick();
+			    		return 0;
+			    	}
+			    	if (input != null && position == input.length()) {
+			        	input = null;
+			            return java.io.StreamTokenizer.TT_EOF;
+			        }
+			        while (input == null || position >= input.length()) {
+			            try {
+			                synchronized (this) {
+			                    this.wait();
+			                }
+			            } catch (final InterruptedException ex) {
+			                ex.printStackTrace();
+			            }
+			        }
+			        return input.charAt(position++);
+				}
+			};
+			channel.setInputStream(input);
+			channel.setInputStream(new SshInputStream(SshConsole.consoleInput));
 			final OutputStream output = new OutputStream() {
 				@Override
 				public void write(final int b) throws IOException {
@@ -68,7 +95,6 @@ public class SshConnection implements Runnable {
 			SshLogin.changeTCPguiState("Connected");
 		} catch (final JSchException e) {
 			SshLogin.changeTCPguiState("Disconnected");
-			e.printStackTrace();
 			new LogMessage("Error", "SSH: failed to set up SSH connection");
 		}
 	}
@@ -82,20 +108,21 @@ public class SshConnection implements Runnable {
 	}
 	
 	public static void sendMessage(final String message) {
-		/*try {
-			channel.sendSignal(message);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}*/
 		System.out.println(message);
-		
 		if (message.equals("exit")) {
-			closeSSH();
+			SshLogin.connectBtn.doClick();
+		} else {
+			try {
+				channel.getInputStream().read(message.getBytes());
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	public static void closeSSH() {
-		SshLogin.changeTCPguiState("Disconnected");
+		SshConsole.consoleInput.setEnabled(false);
 		if (channel.isConnected()) {
 			try {
 				channel.sendSignal("exit");
