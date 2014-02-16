@@ -17,8 +17,8 @@ import panel.SSH.SshLogin;
  * @author Jackson Wilson (c) 2014
  */
 public class LoadJerry {
-	private static String from;
-	private static String defaultTcpMessage;
+	private static String calledFrom;
+	private static String defaultJerryMessage;
 	private static String defaultSshMessage;
 	
 	/**
@@ -26,20 +26,20 @@ public class LoadJerry {
 	 * @param istcp
 	 */
 	public static void addLogins(final String calledFor) {
-		from = calledFor;
+		calledFrom = calledFor;
 		String[] lines;
 		lines = readFile();
 		switch(Jerry.getOperatingSystem()) {
 		case "Windows":
-			defaultTcpMessage = "---------------------- Load Save ----------------------";
+			defaultJerryMessage = "---------------------- Load Save ----------------------";
 			defaultSshMessage = "----------------------- Load Save -----------------------";
 			break;
 		case "Mac":
-			defaultTcpMessage = "----------- Load Save ----------";
+			defaultJerryMessage = "----------- Load Save ----------";
 			defaultSshMessage = "---------- Load Save ----------";
 			break;
 		case "Default":
-			defaultTcpMessage = "----------- Load Save ----------";
+			defaultJerryMessage = "----------- Load Save ----------";
 			defaultSshMessage = "---------- Load Save ----------";
 			break;
 		}
@@ -50,36 +50,45 @@ public class LoadJerry {
 		String currentSshUser = null;
 		char[] currentSshPass = null;
 		
-		if (from.equals("TCP")) {
+		switch(calledFrom) {
+		case "JERRY":
 			currentTcpHost = JerryLogin.hostF.getText();
 			currentTcpPort = JerryLogin.portF.getText();
 			JerryLogin.loadComboBox.removeAllItems();
-			JerryLogin.loadComboBox.addItem(defaultTcpMessage);
-		} else if (from.equals("SSH")) {
+			JerryLogin.loadComboBox.addItem(defaultJerryMessage);
+			break;
+		case "SSH":
 			currentSshHost = SshLogin.hostF.getText();
 			currentSshPort = SshLogin.portF.getText();
 			currentSshUser = SshLogin.usernameF.getText();
 			currentSshPass = SshLogin.passwordF.getPassword();
 			SshLogin.loadComboBox.removeAllItems();
 			SshLogin.loadComboBox.addItem(defaultSshMessage);
+			break;
 		}
 		
 		for (final String str: lines) {
-			if (from.equals("TCP")) {
+			switch(calledFrom) {
+			case "JERRY":
 				JerryLogin.loadComboBox.addItem(str);
-			} else if (from.equals("SSH")) {
+				break;
+			case "SSH":
 				SshLogin.loadComboBox.addItem(str);
+				break;
 			}
 		}
 		
-		if (from.equals("TCP")) {
+		switch(calledFrom) {
+		case "JERRY":
 			JerryLogin.hostF.setText(currentTcpHost);
 			JerryLogin.portF.setText(currentTcpPort);
-		} else if (from.equals("SSH")) {
-			 SshLogin.hostF.setText(currentSshHost);
-			 SshLogin.portF.setText(currentSshPort);
-			 SshLogin.usernameF.setText(currentSshUser);
-			 SshLogin.passwordF.setText(new String(currentSshPass));
+			break;
+		case "SSH":
+			SshLogin.hostF.setText(currentSshHost);
+			SshLogin.portF.setText(currentSshPort);
+			SshLogin.usernameF.setText(currentSshUser);
+			SshLogin.passwordF.setText(new String(currentSshPass));
+			break;
 		}
 	}
 	
@@ -90,32 +99,30 @@ public class LoadJerry {
 	 */
 	private static String[] readFile() {
 		final ArrayList<String> arr = new ArrayList<String>();
+		FileInputStream fStream;
+		BufferedReader bReader;
+		String strLine;
 		try {
-			if (from.equals("TCP")) {
-				final FileInputStream fstream = new FileInputStream(SaveJerry.loginTCP.getAbsoluteFile());
-				final BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-				
-				String strLine;
-				
-				while ((strLine = br.readLine()) != null) {
+			switch(calledFrom) {
+			case "JERRY":
+				fStream = new FileInputStream(SaveJerry.loginJERRY.getAbsoluteFile());
+				bReader = new BufferedReader(new InputStreamReader(fStream));
+				while ((strLine = bReader.readLine()) != null) {
 					arr.add(strLine);
 				}
-				
-				fstream.close();
-			} else if (from.equals("SSH")) {
-				final FileInputStream fstream = new FileInputStream(SaveJerry.loginSSH.getAbsoluteFile());
-				final BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-				
-				String strLine;
-				
-				while ((strLine = br.readLine()) != null) {
+				fStream.close();
+				break;
+			case "SSH":
+				fStream = new FileInputStream(SaveJerry.loginSSH.getAbsoluteFile());
+				bReader = new BufferedReader(new InputStreamReader(fStream));
+				while ((strLine = bReader.readLine()) != null) {
 					arr.add(strLine);
 				}
-				
-				fstream.close();
+				fStream.close();
+				break;
 			}
 		} catch (final FileNotFoundException e) {
-			SaveJerry.createLoginFile();
+			SaveJerry.createLoginFile("JERRY");
 		} catch (final IOException e) {
 			new LogMessage("Error", "IOExcpetion in LeadJerry.readFile()");
 			new StatusUpdateMessage("Error", "Could not load Jerrys");

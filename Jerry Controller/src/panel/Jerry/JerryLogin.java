@@ -147,7 +147,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		add(saveBtn, gc);
 		
 		loadComboBox = new JComboBox<String>();
-		LoadJerry.addLogins("TCP");
+		LoadJerry.addLogins("JERRY");
 		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
 		loadComboBox.addActionListener(this);
 		switch(OS) {
@@ -173,7 +173,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 	 */
 	private void fillLoginFields(final int line) {
 		try {
-			final FileInputStream fs = new FileInputStream(SaveJerry.loginTCP.getAbsoluteFile());
+			final FileInputStream fs = new FileInputStream(SaveJerry.loginJERRY.getAbsoluteFile());
 			@SuppressWarnings("resource")
 			final BufferedReader br = new BufferedReader(new InputStreamReader(fs));
 			
@@ -291,7 +291,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 			connectBtn.doClick();
 		} else if (e.getSource() == saveBtn) {
 			saveBtn.setEnabled(false);
-			new SaveJerry(address, true);
+			new SaveJerry(address, "JERRY");
 		}
 	}
 	

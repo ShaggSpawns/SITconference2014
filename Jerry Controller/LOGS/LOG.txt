@@ -663,3 +663,11 @@
 [23:18:31 Status]: [Pending] Disconnecting from Jerry...
 [23:18:31 Info]: Successfully closed sockets and streams
 [23:18:31 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/16/14 01:10:42 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/16/14 01:12:07 PM] +++++++++++++++
+[13:12:36 Info]: SSH: loaded known_hosts
+[13:12:38 Info]: SSH: session connected
+[13:12:38 Info]: SSH: channel connected
+[13:12:41 Info]: SSH: channel streams were successfully closed
+[13:12:41 Info]: SSH: channel successfully closed
+[13:12:41 Info]: SSH: session successfully closed

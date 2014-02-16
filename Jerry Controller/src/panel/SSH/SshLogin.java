@@ -339,7 +339,7 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 			connectBtn.doClick();
 		} else if (e.getSource() == saveBtn) {
 			saveBtn.setEnabled(false);
-			new SaveJerry(address, false);
+			new SaveJerry(address, "SSH");
 		}
 	}
 	

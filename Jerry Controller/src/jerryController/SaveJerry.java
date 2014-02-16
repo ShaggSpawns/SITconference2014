@@ -16,26 +16,28 @@ import panel.SSH.SshLogin;
  * @since 2014
  */
 public class SaveJerry {
-	private static boolean callFromTCP;
+	private static String calledFrom;
+	private static FileWriter fileWriter;
 	private static BufferedWriter bufferedWriter;
 	
-	private static File loginFolder = new File("LOGINS");
-	public static File loginTCP = new File(loginFolder, "TCP.txt");
-	public static File loginSSH = new File(loginFolder, "SSH.txt");
+	private static File jerryFolder = new File("JERRYS");
+	public static File loginJERRY = new File(jerryFolder, "JERRY.txt");
+	public static File loginSSH = new File(jerryFolder, "SSH.txt");
 	
 	/**
 	 * Opens/Creates, stores a login information, and closes a file specified by the parameters.
 	 * @param address
 	 * @param callFromTCP
 	 */
-	public SaveJerry(final String address, final boolean callFromTCP) {
-		SaveJerry.callFromTCP = callFromTCP;
+	public SaveJerry(final String address, final String callFrom) {
+		calledFrom = callFrom;
 		openFile();
 		addRecords(address);
 		closeFile();
 	}
 	
-	public static void createLoginFile() {
+	public static void createLoginFile(final String callFrom) {
+		calledFrom = callFrom;
 		openFile();
 		closeFile();
 	}
@@ -45,33 +47,35 @@ public class SaveJerry {
 	 */
 	private static void openFile() {
 		try {
-			if (!loginFolder.exists()) {
-				loginFolder.mkdir();
+			if (!jerryFolder.exists()) {
+				jerryFolder.mkdir();
 			}
-			
-			if (callFromTCP == true) {
-				if (!loginTCP.exists()) {
-					loginTCP.createNewFile();
+			switch(calledFrom) {
+			case "JERRY":
+				if (!loginJERRY.exists()) {
+					loginJERRY.createNewFile();
 				}
-				
-				final FileWriter fileWriter = new FileWriter(loginTCP.getAbsoluteFile(), true);
+				fileWriter = new FileWriter(loginJERRY.getAbsoluteFile(), true);
 				bufferedWriter = new BufferedWriter(fileWriter);
-			} else if (callFromTCP == false) {
+				break;
+			case "SSH":
 				if (!loginSSH.exists()) {
 					loginSSH.createNewFile();
 				}
-				
-				final FileWriter fileWriter = new FileWriter(loginSSH.getAbsoluteFile(), true);
+				fileWriter = new FileWriter(loginSSH.getAbsoluteFile(), true);
 				bufferedWriter = new BufferedWriter(fileWriter);
+				break;
 			}
 		} catch (final IOException e) {
 			new LogMessage("Error", "IOException in SaveJerry.openFile()");
 			new StatusUpdateMessage("Error", "Could not create save file");
-			
-			if (callFromTCP == true) {
+			switch(calledFrom) {
+			case "JERRY":
 				JerryLogin.saveBtn.setEnabled(true);
-			} else if (callFromTCP == false) {
+				break;
+			case "SSH":
 				SshLogin.saveBtn.setEnabled(true);
+				break;
 			}
 		}
 	}
@@ -87,11 +91,13 @@ public class SaveJerry {
 		} catch (final IOException e) {
 			new LogMessage("Error", "IOException in SaveJerry.addRecords()");
 			new StatusUpdateMessage("Error", "Failed to write to save file");
-			
-			if (callFromTCP == true) {
+			switch(calledFrom) {
+			case "JERRY":
 				JerryLogin.saveBtn.setEnabled(true);
-			} else if (callFromTCP == false) {
+				break;
+			case "SSH":
 				SshLogin.saveBtn.setEnabled(true);
+				break;
 			}
 		}
 	}
@@ -105,11 +111,13 @@ public class SaveJerry {
 		} catch (final IOException e) {
 			new LogMessage("Error", "IOException in SaveJerry.closeFile()");
 			new StatusUpdateMessage("Error", "Failed to close save file");
-			
-			if (callFromTCP == true) {
+			switch(calledFrom) {
+			case "JERRY":
 				JerryLogin.saveBtn.setEnabled(true);
-			} else if (callFromTCP == false) {
+				break;
+			case "SSH":
 				SshLogin.saveBtn.setEnabled(true);
+				break;
 			}
 		}
 	}
