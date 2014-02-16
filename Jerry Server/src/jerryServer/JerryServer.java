@@ -10,42 +10,65 @@ import java.util.Scanner;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 
-public class OneJerry {
-	private static ObjectOutputStream output;
-	private static ObjectInputStream input;
-	private static ServerSocket server;
-	private static Socket connection;
-	private static SerialPort serialPort;
-	private static String message = null;
-	private static int port = 0;
+/**
+ * The server for Jerry that handles the communication between the controller and the hardware.
+ * @author Jackson Wilson (c) 2014
+ */
+public class JerryServer {
+	private ObjectOutputStream output;
+	private ObjectInputStream input;
+	private SerialPort serialPort;
+	private ServerSocket server;
+	private Socket connection;
+	private static int port = 6789;
 	
-	public static void main(String[] args) {
+	/**
+	 * Main method, asks for a port that the Jerry Server will be set up on.
+	 * Runs the Server on the given port.
+	 * @param args
+	 */
+	public static void main(final String[] args) {
 		while (true) {
 			try {
 				System.out.print("Enter a port: ");
 				port = Integer.parseInt(new Scanner(System.in).next());
 				break;
-			} catch (NumberFormatException e) {
+			} catch (final NumberFormatException e) {
 				System.out.println("\nPort was not an Integer");
 			}
 		}
-		do {
+		new JerryServer();
+	}
+	
+	/**
+	 * Loops the running of the Jerry Server
+	 */
+	private JerryServer() {
+		while(true) {
 			try {
-				runJerry(port);
+				runJerryServer();
 				whileChatting();
 			} finally {
 				cleanUp();
 			}
-		} while (!System.in.equals("exit"));
+		}
 	}
 	
-	private static void runJerry(int port) {
+	/**
+	 * Initializes the Jerry Server on the given port.
+	 * Waits for a connection to be accepted.
+	 * After accepting a connection, the streams are setup.
+	 */
+	private void runJerryServer() {
+		// Initialize the Jerry Server
 		try {
 			server = new ServerSocket(port, 5);
-			System.out.println("Initialized server on port: " + port);
+			System.out.println("Initialized Jerry on port: " + port);
 		} catch (final IOException ioE) {
 			System.out.println(port + " is not an opened port.");
 		}
+		
+		// Wait for connection
 		try {
 			System.out.println("Waiting for someone to connect...");
 			connection = server.accept();
@@ -53,37 +76,43 @@ public class OneJerry {
 		} catch (final IOException ioE) {
 			System.out.println("Could not accept incoming connection");
 		}
+		
+		// Setup streams
 		try {
 			startSerialComm();
 			output = new ObjectOutputStream(connection.getOutputStream());
 			input = new ObjectInputStream(connection.getInputStream());
 			System.out.println("Streams are now setup!");
-			whileChatting();
 		} catch (final IOException ioE) {
 			System.out.println("Failed to setup streams");
 		}
 	}
 	
-	private static void whileChatting() {
+	/**
+	 * Manages the incoming messages from the Jerry Controller.
+	 * Runs until the exit message is received "END".
+	 */
+	private void whileChatting() {
+		String message = null;
 		do {
 			try {
 				message = (String) input.readObject();
 				if (serialPort.isOpened() == true) {
 					switch (message) {
 						case "STOP":
-							writeData("0");
+							writeDataToSerial("0");
 							break;
 						case "FORWARD":
-							writeData("1");
+							writeDataToSerial("1");
 							break;
 						case "REVERSE":
-							writeData("2");
+							writeDataToSerial("2");
 							break;
 						case "RIGHT":
-							writeData("3");
+							writeDataToSerial("3");
 							break;
 						case "LEFT":
-							writeData("4");
+							writeDataToSerial("4");
 							break;
 						default:
 							break;
@@ -97,28 +126,22 @@ public class OneJerry {
 		} while (!message.equals("END"));
 	}
 	
-	private static void sendMessage(final String message) {
+	/**
+	 * Closes the Jerry Server
+	 */
+	private void cleanUp() {
 		try {
-			output.writeObject("Jerry: " + message);
-			output.flush();
-			System.out.println("Sent: " + message);
-		} catch (final IOException ioException) {
-			System.out.println("Could not send message to Jerry controller");
-		}
-	}
-	
-	private static void cleanUp() {
-		try {
-			output.writeObject("Jerry: END");
+			sendMessage("END");
 			System.out.println("Closing connection...");
 			if (serialPort.isOpened()) {
-				close();
+				closeSerialComm();
 			}
 			output.close();
 			input.close();
 			connection.close();
 			server.close();
-			System.out.println("\n# # # # # # # # # #\n");
+			System.out.println("Successfully closed Jerry Server, restarting...");
+			System.out.println("\n# # # # # # # # # # # #\n");
 			Thread.sleep(100);
 		} catch (final IOException e) {
 			System.out.println("Unable to close Jerry server");
@@ -127,13 +150,30 @@ public class OneJerry {
 		}
 	}
 	
-	private static void startSerialComm() {
+	/**
+	 * Manages the sending of messages to the Jerry Controller
+	 * @param message
+	 */
+	private void sendMessage(final String message) {
+		try {
+			output.writeObject("Jerry: " + message);
+			output.flush();
+			System.out.println("Sent: " + message);
+		} catch (final IOException ioException) {
+			System.out.println("Could not send message to Jerry controller");
+			new JerryServer();
+		}
+	}
+	
+	/**
+	 * Starts the connection over the serial port
+	 */
+	private void startSerialComm() {
 		serialPort = new SerialPort("/dev/ttyUSB0");
-		
 		try {
 			serialPort.openPort();
 			serialPort.setParams(9600, 8, 1, 0);
-			if (serialPort.isOpened() == true) {
+			if (serialPort.isOpened()) {
 				System.out.println("Serial port is opened on: " + serialPort.getPortName());
 			} else {
 				System.out.println("Port could not be opened.");
@@ -144,8 +184,11 @@ public class OneJerry {
 		}
 	}
 	
-	public synchronized static void close() {
-		if (serialPort.isOpened() == true) {
+	/**
+	 * Closes the serial port once finished
+	 */
+	private synchronized void closeSerialComm() {
+		if (serialPort.isOpened()) {
 			try {
 				serialPort.removeEventListener();
 				serialPort.closePort();
@@ -155,7 +198,11 @@ public class OneJerry {
 		}
 	}
 	
-	public synchronized static void writeData(final String data) {
+	/**
+	 * Manages the sending of messages to the serial port
+	 * @param data
+	 */
+	private synchronized void writeDataToSerial(final String data) {
 		if (serialPort.isOpened()) {
 			try {
 				if (serialPort.writeBytes(data.getBytes())) {

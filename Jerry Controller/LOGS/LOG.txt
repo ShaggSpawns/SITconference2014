@@ -671,3 +671,495 @@
 [13:12:41 Info]: SSH: channel streams were successfully closed
 [13:12:41 Info]: SSH: channel successfully closed
 [13:12:41 Info]: SSH: session successfully closed
++++++++++++++++ Program opened at [Feb/16/14 01:17:14 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/16/14 01:17:29 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/16/14 01:27:42 PM] +++++++++++++++
+[13:27:45 Info]: Attempting to connect to Jerry...
+[13:27:45 Status]: Attempting to connect...
+[13:27:45 Info]: Connected to: localhost
+[13:27:45 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:27:45 Info]: Streams successfully setup
+[13:27:46 Info]: Sent message: FORWARD
+[13:27:46 Status]: [Connected] Sent message: FORWARD
+[13:27:47 Info]: Sent message: STOP
+[13:27:47 Status]: [Connected] Sent message: STOP
+[13:27:47 Info]: Sent message: REVERSE
+[13:27:47 Status]: [Connected] Sent message: REVERSE
+[13:27:48 Info]: Sent message: STOP
+[13:27:48 Status]: [Connected] Sent message: STOP
+[13:27:49 Info]: Sent message: LEFT
+[13:27:49 Status]: [Connected] Sent message: LEFT
+[13:27:50 Info]: Sent message: STOP
+[13:27:50 Status]: [Connected] Sent message: STOP
+[13:27:50 Info]: Sent message: END
+[13:27:50 Status]: [Connected] Sent message: END
+[13:28:14 Error]: EOFException in ConnectionTCP.whileChatting()
+[13:28:14 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[13:28:14 Info]: Closing sockets and streams...
+[13:28:14 Status]: [Pending] Disconnecting from Jerry...
+[13:28:14 Info]: Successfully closed sockets and streams
+[13:28:14 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:31:15 Info]: Attempting to connect to Jerry...
+[13:31:15 Status]: Attempting to connect...
+[13:31:15 Info]: Connected to: localhost
+[13:31:15 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:31:15 Info]: Streams successfully setup
+[13:31:17 Info]: Sent message: FORWARD
+[13:31:17 Status]: [Connected] Sent message: FORWARD
+[13:31:18 Info]: Sent message: STOP
+[13:31:18 Status]: [Connected] Sent message: STOP
+[13:31:18 Info]: Sent message: REVERSE
+[13:31:18 Status]: [Connected] Sent message: REVERSE
+[13:31:18 Info]: Sent message: STOP
+[13:31:18 Status]: [Connected] Sent message: STOP
+[13:31:19 Info]: Sent message: LEFT
+[13:31:19 Status]: [Connected] Sent message: LEFT
+[13:31:20 Info]: Sent message: STOP
+[13:31:20 Status]: [Connected] Sent message: STOP
+[13:31:20 Info]: Sent message: END
+[13:31:20 Status]: [Connected] Sent message: END
+[13:32:47 Error]: EOFException in ConnectionTCP.whileChatting()
+[13:32:47 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[13:32:47 Info]: Closing sockets and streams...
+[13:32:47 Status]: [Pending] Disconnecting from Jerry...
+[13:32:47 Info]: Successfully closed sockets and streams
+[13:32:47 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:33:35 Info]: Attempting to connect to Jerry...
+[13:33:35 Status]: Attempting to connect...
+[13:33:35 Info]: Connected to: localhost
+[13:33:35 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:33:35 Info]: Streams successfully setup
+[13:33:36 Info]: Sent message: FORWARD
+[13:33:36 Status]: [Connected] Sent message: FORWARD
+[13:33:37 Info]: Sent message: STOP
+[13:33:37 Status]: [Connected] Sent message: STOP
+[13:33:38 Info]: Sent message: LEFT
+[13:33:38 Status]: [Connected] Sent message: LEFT
+[13:33:39 Info]: Sent message: STOP
+[13:33:39 Status]: [Connected] Sent message: STOP
+[13:33:42 Info]: Sent message: STOP
+[13:33:42 Status]: [Connected] Sent message: STOP
+[13:33:42 Info]: Sent message: END
+[13:33:42 Status]: [Connected] Sent message: END
+[13:34:22 Error]: EOFException in ConnectionTCP.whileChatting()
+[13:34:22 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[13:34:22 Info]: Closing sockets and streams...
+[13:34:22 Status]: [Pending] Disconnecting from Jerry...
+[13:34:22 Info]: Successfully closed sockets and streams
+[13:34:22 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:35:14 Info]: Attempting to connect to Jerry...
+[13:35:14 Status]: Attempting to connect...
+[13:35:14 Info]: Connected to: localhost
+[13:35:14 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:35:14 Info]: Streams successfully setup
+[13:35:16 Info]: Sent message: FORWARD
+[13:35:16 Status]: [Connected] Sent message: FORWARD
+[13:35:16 Error]: EOFException in ConnectionTCP.whileChatting()
+[13:35:16 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[13:35:16 Info]: Closing sockets and streams...
+[13:35:16 Status]: [Pending] Disconnecting from Jerry...
+[13:35:16 Info]: Successfully closed sockets and streams
+[13:35:16 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:36:17 Error]: IOException in ConnectionTCP.sendMessage()
+[13:36:17 Status]: [Error] Failed to send message
+[13:36:17 Error]: IOException in ConnectionTCP.sendMessage()
+[13:36:17 Status]: [Error] Failed to send message
+[13:36:18 Info]: Attempting to connect to Jerry...
+[13:36:18 Status]: Attempting to connect...
+[13:36:18 Info]: Connected to: localhost
+[13:36:18 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:36:18 Info]: Streams successfully setup
+[13:36:19 Info]: Sent message: FORWARD
+[13:36:19 Status]: [Connected] Sent message: FORWARD
+[13:36:20 Info]: Sent message: STOP
+[13:36:20 Status]: [Connected] Sent message: STOP
+[13:36:21 Info]: Sent message: REVERSE
+[13:36:21 Status]: [Connected] Sent message: REVERSE
+[13:36:21 Info]: Sent message: STOP
+[13:36:21 Status]: [Connected] Sent message: STOP
+[13:36:22 Info]: Sent message: LEFT
+[13:36:22 Status]: [Connected] Sent message: LEFT
+[13:36:23 Info]: Sent message: STOP
+[13:36:23 Status]: [Connected] Sent message: STOP
+[13:36:23 Info]: Sent message: END
+[13:36:23 Status]: [Connected] Sent message: END
+[13:36:33 Error]: EOFException in ConnectionTCP.whileChatting()
+[13:36:33 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[13:36:33 Info]: Closing sockets and streams...
+[13:36:33 Status]: [Pending] Disconnecting from Jerry...
+[13:36:33 Info]: Successfully closed sockets and streams
+[13:36:33 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:36:41 Info]: Attempting to connect to Jerry...
+[13:36:41 Status]: Attempting to connect...
+[13:36:41 Info]: Connected to: localhost
+[13:36:41 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:36:42 Info]: Streams successfully setup
+[13:36:42 Info]: Sent message: FORWARD
+[13:36:42 Status]: [Connected] Sent message: FORWARD
+[13:36:43 Info]: Sent message: STOP
+[13:36:43 Status]: [Connected] Sent message: STOP
+[13:36:43 Info]: Sent message: END
+[13:36:43 Status]: [Connected] Sent message: END
+[13:37:12 Error]: EOFException in ConnectionTCP.whileChatting()
+[13:37:12 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[13:37:12 Info]: Closing sockets and streams...
+[13:37:12 Status]: [Pending] Disconnecting from Jerry...
+[13:37:12 Info]: Successfully closed sockets and streams
+[13:37:12 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:39:35 Info]: Attempting to connect to Jerry...
+[13:39:35 Status]: Attempting to connect...
+[13:39:35 Info]: Connected to: localhost
+[13:39:35 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:39:35 Info]: Streams successfully setup
+[13:39:37 Info]: Sent message: FORWARD
+[13:39:37 Status]: [Connected] Sent message: FORWARD
+[13:39:38 Info]: Sent message: STOP
+[13:39:38 Status]: [Connected] Sent message: STOP
+[13:39:38 Info]: Sent message: END
+[13:39:38 Status]: [Connected] Sent message: END
+[13:42:09 Error]: EOFException in ConnectionTCP.whileChatting()
+[13:42:09 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[13:42:09 Info]: Closing sockets and streams...
+[13:42:09 Status]: [Pending] Disconnecting from Jerry...
+[13:42:09 Info]: Successfully closed sockets and streams
+[13:42:09 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:42:19 Info]: Attempting to connect to Jerry...
+[13:42:19 Status]: Attempting to connect...
+[13:42:19 Info]: Connected to: localhost
+[13:42:19 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:42:19 Info]: Streams successfully setup
+[13:42:19 Info]: Sent message: FORWARD
+[13:42:19 Status]: [Connected] Sent message: FORWARD
+[13:42:21 Info]: Sent message: STOP
+[13:42:21 Status]: [Connected] Sent message: STOP
+[13:42:21 Info]: Sent message: END
+[13:42:21 Status]: [Connected] Sent message: END
+[13:42:21 Info]: Jerry: END
+[13:42:21 Status]: [Connected] Jerry: END
+[13:42:21 Info]: Closing sockets and streams...
+[13:42:21 Status]: [Pending] Disconnecting from Jerry...
+[13:42:21 Info]: Successfully closed sockets and streams
+[13:42:21 Status]: [Disconnected] Successfully disconnected from Jerry
++++++++++++++++ Program opened at [Feb/16/14 01:43:32 PM] +++++++++++++++
+[13:43:34 Info]: Attempting to connect to Jerry...
+[13:43:34 Status]: Attempting to connect...
+[13:43:34 Info]: Connected to: localhost
+[13:43:34 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:43:34 Info]: Streams successfully setup
+[13:43:35 Info]: Sent message: FORWARD
+[13:43:35 Status]: [Connected] Sent message: FORWARD
+[13:43:36 Info]: Sent message: STOP
+[13:43:36 Status]: [Connected] Sent message: STOP
+[13:43:36 Info]: Sent message: END
+[13:43:36 Status]: [Connected] Sent message: END
+[13:43:36 Info]: Jerry: END
+[13:43:36 Status]: [Connected] Jerry: END
+[13:43:36 Info]: Closing sockets and streams...
+[13:43:36 Status]: [Pending] Disconnecting from Jerry...
+[13:43:36 Info]: Successfully closed sockets and streams
+[13:43:36 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:44:08 Info]: Attempting to connect to Jerry...
+[13:44:08 Status]: Attempting to connect...
+[13:44:08 Info]: Connected to: localhost
+[13:44:08 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:44:08 Info]: Streams successfully setup
+[13:44:08 Info]: Sent message: FORWARD
+[13:44:08 Status]: [Connected] Sent message: FORWARD
+[13:44:09 Info]: Sent message: STOP
+[13:44:09 Status]: [Connected] Sent message: STOP
+[13:44:10 Info]: Sent message: RIGHT
+[13:44:10 Status]: [Connected] Sent message: RIGHT
+[13:44:10 Info]: Sent message: STOP
+[13:44:10 Status]: [Connected] Sent message: STOP
+[13:44:10 Info]: Sent message: END
+[13:44:10 Status]: [Connected] Sent message: END
+[13:44:10 Info]: Jerry: END
+[13:44:10 Status]: [Connected] Jerry: END
+[13:44:10 Info]: Closing sockets and streams...
+[13:44:10 Status]: [Pending] Disconnecting from Jerry...
+[13:44:10 Info]: Successfully closed sockets and streams
+[13:44:10 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:45:38 Info]: Attempting to connect to Jerry...
+[13:45:38 Status]: Attempting to connect...
+[13:45:38 Info]: Connected to: localhost
+[13:45:38 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:45:38 Info]: Streams successfully setup
+[13:45:39 Info]: Sent message: FORWARD
+[13:45:39 Status]: [Connected] Sent message: FORWARD
+[13:45:40 Info]: Sent message: STOP
+[13:45:40 Status]: [Connected] Sent message: STOP
+[13:45:41 Info]: Sent message: STOP
+[13:45:41 Status]: [Connected] Sent message: STOP
+[13:45:41 Info]: Sent message: END
+[13:45:41 Status]: [Connected] Sent message: END
+[13:45:41 Info]: Jerry: END
+[13:45:41 Status]: [Connected] Jerry: END
+[13:45:41 Info]: Closing sockets and streams...
+[13:45:41 Status]: [Pending] Disconnecting from Jerry...
+[13:45:41 Info]: Successfully closed sockets and streams
+[13:45:41 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:47:13 Info]: Attempting to connect to Jerry...
+[13:47:13 Status]: Attempting to connect...
+[13:47:13 Info]: Connected to: localhost
+[13:47:13 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:47:13 Info]: Streams successfully setup
+[13:47:14 Info]: Sent message: FORWARD
+[13:47:14 Status]: [Connected] Sent message: FORWARD
+[13:47:15 Info]: Sent message: STOP
+[13:47:15 Status]: [Connected] Sent message: STOP
+[13:47:15 Info]: Sent message: RIGHT
+[13:47:15 Status]: [Connected] Sent message: RIGHT
+[13:47:16 Info]: Sent message: STOP
+[13:47:16 Status]: [Connected] Sent message: STOP
+[13:47:16 Info]: Sent message: END
+[13:47:16 Status]: [Connected] Sent message: END
+[13:47:16 Info]: Jerry: END
+[13:47:16 Status]: [Connected] Jerry: END
+[13:47:16 Info]: Closing sockets and streams...
+[13:47:16 Status]: [Pending] Disconnecting from Jerry...
+[13:47:16 Info]: Successfully closed sockets and streams
+[13:47:16 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:47:56 Info]: Attempting to connect to Jerry...
+[13:47:56 Status]: Attempting to connect...
+[13:47:56 Info]: Connected to: localhost
+[13:47:56 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:47:56 Info]: Streams successfully setup
+[13:47:57 Info]: Sent message: FORWARD
+[13:47:57 Status]: [Connected] Sent message: FORWARD
+[13:47:58 Info]: Sent message: STOP
+[13:47:58 Status]: [Connected] Sent message: STOP
+[13:47:58 Info]: Sent message: END
+[13:47:58 Status]: [Connected] Sent message: END
+[13:47:58 Info]: Jerry: END
+[13:47:58 Status]: [Connected] Jerry: END
+[13:47:58 Info]: Closing sockets and streams...
+[13:47:58 Status]: [Pending] Disconnecting from Jerry...
+[13:47:58 Info]: Successfully closed sockets and streams
+[13:47:58 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:48:52 Info]: Attempting to connect to Jerry...
+[13:48:52 Status]: Attempting to connect...
+[13:48:52 Info]: Connected to: localhost
+[13:48:52 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:48:52 Info]: Streams successfully setup
+[13:48:53 Info]: Sent message: FORWARD
+[13:48:53 Status]: [Connected] Sent message: FORWARD
+[13:48:54 Info]: Sent message: STOP
+[13:48:54 Status]: [Connected] Sent message: STOP
+[13:48:54 Info]: Sent message: END
+[13:48:54 Status]: [Connected] Sent message: END
+[13:48:54 Info]: Jerry: END
+[13:48:54 Status]: [Connected] Jerry: END
+[13:48:54 Info]: Closing sockets and streams...
+[13:48:54 Status]: [Pending] Disconnecting from Jerry...
+[13:48:54 Info]: Successfully closed sockets and streams
+[13:48:54 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:49:24 Info]: Attempting to connect to Jerry...
+[13:49:24 Status]: Attempting to connect...
+[13:49:24 Info]: Connected to: localhost
+[13:49:24 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:49:24 Info]: Streams successfully setup
+[13:49:24 Info]: Sent message: FORWARD
+[13:49:24 Status]: [Connected] Sent message: FORWARD
+[13:49:25 Info]: Sent message: STOP
+[13:49:25 Status]: [Connected] Sent message: STOP
+[13:49:25 Info]: Sent message: END
+[13:49:25 Status]: [Connected] Sent message: END
+[13:49:25 Info]: Jerry: END
+[13:49:25 Status]: [Connected] Jerry: END
+[13:49:25 Info]: Closing sockets and streams...
+[13:49:25 Status]: [Pending] Disconnecting from Jerry...
+[13:49:25 Info]: Successfully closed sockets and streams
+[13:49:25 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:52:44 Info]: Attempting to connect to Jerry...
+[13:52:44 Status]: Attempting to connect...
+[13:52:44 Info]: Connected to: localhost
+[13:52:44 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:52:44 Info]: Streams successfully setup
+[13:52:44 Info]: Sent message: FORWARD
+[13:52:44 Status]: [Connected] Sent message: FORWARD
+[13:52:45 Info]: Sent message: STOP
+[13:52:45 Status]: [Connected] Sent message: STOP
+[13:52:45 Info]: Sent message: RIGHT
+[13:52:45 Status]: [Connected] Sent message: RIGHT
+[13:52:46 Info]: Sent message: STOP
+[13:52:46 Status]: [Connected] Sent message: STOP
+[13:52:46 Info]: Sent message: END
+[13:52:46 Status]: [Connected] Sent message: END
+[13:52:46 Info]: Jerry: END
+[13:52:46 Status]: [Connected] Jerry: END
+[13:52:46 Info]: Closing sockets and streams...
+[13:52:46 Status]: [Pending] Disconnecting from Jerry...
+[13:52:46 Info]: Successfully closed sockets and streams
+[13:52:46 Status]: [Disconnected] Successfully disconnected from Jerry
+[13:56:34 Info]: Attempting to connect to Jerry...
+[13:56:34 Status]: Attempting to connect...
+[13:56:34 Info]: Connected to: localhost
+[13:56:34 Status]: [Connected] Connected to Jerry at localhost:6789
+[13:56:34 Info]: Streams successfully setup
+[13:56:34 Info]: Sent message: FORWARD
+[13:56:34 Status]: [Connected] Sent message: FORWARD
+[13:56:35 Info]: Sent message: STOP
+[13:56:35 Status]: [Connected] Sent message: STOP
+[13:56:36 Info]: Sent message: STOP
+[13:56:36 Status]: [Connected] Sent message: STOP
+[13:56:36 Info]: Sent message: END
+[13:56:36 Status]: [Connected] Sent message: END
+[13:56:36 Info]: Jerry: END
+[13:56:36 Status]: [Connected] Jerry: END
+[13:56:36 Info]: Closing sockets and streams...
+[13:56:36 Status]: [Pending] Disconnecting from Jerry...
+[13:56:36 Info]: Successfully closed sockets and streams
+[13:56:36 Status]: [Disconnected] Successfully disconnected from Jerry
+[14:02:14 Info]: Attempting to connect to Jerry...
+[14:02:14 Status]: Attempting to connect...
+[14:02:14 Info]: Connected to: localhost
+[14:02:14 Status]: [Connected] Connected to Jerry at localhost:6789
+[14:02:14 Info]: Streams successfully setup
+[14:02:15 Info]: Sent message: FORWARD
+[14:02:15 Status]: [Connected] Sent message: FORWARD
+[14:02:16 Info]: Sent message: STOP
+[14:02:16 Status]: [Connected] Sent message: STOP
+[14:02:16 Info]: Sent message: LEFT
+[14:02:16 Status]: [Connected] Sent message: LEFT
+[14:02:16 Info]: Sent message: STOP
+[14:02:16 Status]: [Connected] Sent message: STOP
+[14:02:17 Info]: Sent message: REVERSE
+[14:02:17 Status]: [Connected] Sent message: REVERSE
+[14:02:17 Info]: Sent message: STOP
+[14:02:17 Status]: [Connected] Sent message: STOP
+[14:02:17 Info]: Sent message: RIGHT
+[14:02:17 Status]: [Connected] Sent message: RIGHT
+[14:02:18 Info]: Sent message: STOP
+[14:02:18 Status]: [Connected] Sent message: STOP
+[14:02:18 Info]: Sent message: END
+[14:02:18 Status]: [Connected] Sent message: END
+[14:02:18 Info]: Jerry: END
+[14:02:18 Status]: [Connected] Jerry: END
+[14:02:18 Info]: Closing sockets and streams...
+[14:02:18 Status]: [Pending] Disconnecting from Jerry...
+[14:02:18 Info]: Successfully closed sockets and streams
+[14:02:18 Status]: [Disconnected] Successfully disconnected from Jerry
+[14:02:20 Info]: Attempting to connect to Jerry...
+[14:02:20 Status]: Attempting to connect...
+[14:02:20 Info]: Connected to: localhost
+[14:02:20 Status]: [Connected] Connected to Jerry at localhost:6789
+[14:02:20 Info]: Streams successfully setup
+[14:02:20 Info]: Sent message: FORWARD
+[14:02:20 Status]: [Connected] Sent message: FORWARD
+[14:02:21 Info]: Sent message: STOP
+[14:02:21 Status]: [Connected] Sent message: STOP
+[14:02:22 Info]: Sent message: REVERSE
+[14:02:22 Status]: [Connected] Sent message: REVERSE
+[14:02:22 Info]: Sent message: STOP
+[14:02:22 Status]: [Connected] Sent message: STOP
+[14:02:22 Info]: Sent message: LEFT
+[14:02:22 Status]: [Connected] Sent message: LEFT
+[14:02:23 Info]: Sent message: STOP
+[14:02:23 Status]: [Connected] Sent message: STOP
+[14:02:23 Info]: Sent message: END
+[14:02:23 Info]: Jerry: END
+[14:02:23 Status]: [Connected] Sent message: END
+[14:02:23 Status]: [Connected] Jerry: END
+[14:02:23 Info]: Closing sockets and streams...
+[14:02:23 Status]: [Pending] Disconnecting from Jerry...
+[14:02:23 Info]: Successfully closed sockets and streams
+[14:02:23 Status]: [Disconnected] Successfully disconnected from Jerry
+[14:10:44 Info]: Attempting to connect to Jerry...
+[14:10:44 Status]: Attempting to connect...
+[14:10:44 Info]: Connected to: localhost
+[14:10:44 Status]: [Connected] Connected to Jerry at localhost:6789
+[14:10:44 Info]: Streams successfully setup
+[14:10:46 Info]: Sent message: FORWARD
+[14:10:46 Status]: [Connected] Sent message: FORWARD
+[14:10:46 Info]: Sent message: STOP
+[14:10:46 Status]: [Connected] Sent message: STOP
+[14:10:47 Info]: Sent message: REVERSE
+[14:10:47 Status]: [Connected] Sent message: REVERSE
+[14:10:47 Info]: Sent message: STOP
+[14:10:47 Status]: [Connected] Sent message: STOP
+[14:10:47 Info]: Sent message: LEFT
+[14:10:47 Status]: [Connected] Sent message: LEFT
+[14:10:47 Info]: Sent message: STOP
+[14:10:47 Status]: [Connected] Sent message: STOP
+[14:10:48 Info]: Sent message: RIGHT
+[14:10:48 Status]: [Connected] Sent message: RIGHT
+[14:10:48 Info]: Sent message: STOP
+[14:10:48 Status]: [Connected] Sent message: STOP
+[14:10:48 Info]: Sent message: FORWARD
+[14:10:48 Status]: [Connected] Sent message: FORWARD
+[14:10:49 Info]: Sent message: STOP
+[14:10:49 Status]: [Connected] Sent message: STOP
+[14:10:49 Info]: Sent message: REVERSE
+[14:10:49 Status]: [Connected] Sent message: REVERSE
+[14:10:51 Info]: Sent message: STOP
+[14:10:51 Status]: [Connected] Sent message: STOP
+[14:10:51 Info]: Sent message: END
+[14:10:51 Status]: [Connected] Sent message: END
+[14:10:51 Info]: Jerry: END
+[14:10:51 Status]: [Connected] Jerry: END
+[14:10:51 Info]: Closing sockets and streams...
+[14:10:51 Status]: [Pending] Disconnecting from Jerry...
+[14:10:51 Info]: Successfully closed sockets and streams
+[14:10:51 Status]: [Disconnected] Successfully disconnected from Jerry
+[14:10:54 Info]: Attempting to connect to Jerry...
+[14:10:54 Status]: Attempting to connect...
+[14:10:54 Info]: Connected to: localhost
+[14:10:54 Status]: [Connected] Connected to Jerry at localhost:6789
+[14:10:54 Info]: Streams successfully setup
+[14:10:54 Info]: Sent message: FORWARD
+[14:10:54 Status]: [Connected] Sent message: FORWARD
+[14:10:55 Info]: Sent message: STOP
+[14:10:55 Status]: [Connected] Sent message: STOP
+[14:10:55 Info]: Sent message: REVERSE
+[14:10:55 Status]: [Connected] Sent message: REVERSE
+[14:10:55 Info]: Sent message: STOP
+[14:10:55 Status]: [Connected] Sent message: STOP
+[14:10:56 Info]: Sent message: LEFT
+[14:10:56 Status]: [Connected] Sent message: LEFT
+[14:10:57 Info]: Sent message: STOP
+[14:10:57 Status]: [Connected] Sent message: STOP
+[14:10:57 Info]: Sent message: FORWARD
+[14:10:57 Status]: [Connected] Sent message: FORWARD
+[14:10:57 Info]: Sent message: STOP
+[14:10:57 Status]: [Connected] Sent message: STOP
+[14:10:58 Info]: Sent message: REVERSE
+[14:10:58 Status]: [Connected] Sent message: REVERSE
+[14:10:59 Info]: Sent message: STOP
+[14:10:59 Status]: [Connected] Sent message: STOP
+[14:10:59 Info]: Sent message: LEFT
+[14:10:59 Status]: [Connected] Sent message: LEFT
+[14:11:00 Info]: Sent message: STOP
+[14:11:00 Status]: [Connected] Sent message: STOP
+[14:11:00 Info]: Sent message: END
+[14:11:00 Info]: Jerry: END
+[14:11:00 Status]: [Connected] Sent message: END
+[14:11:00 Status]: [Connected] Jerry: END
+[14:11:00 Info]: Closing sockets and streams...
+[14:11:00 Status]: [Pending] Disconnecting from Jerry...
+[14:11:00 Info]: Successfully closed sockets and streams
+[14:11:00 Status]: [Disconnected] Successfully disconnected from Jerry
+[14:12:02 Info]: Attempting to connect to Jerry...
+[14:12:02 Status]: Attempting to connect...
+[14:12:02 Info]: Connected to: localhost
+[14:12:02 Status]: [Connected] Connected to Jerry at localhost:6789
+[14:12:02 Info]: Streams successfully setup
+[14:12:03 Info]: Sent message: FORWARD
+[14:12:03 Status]: [Connected] Sent message: FORWARD
+[14:12:04 Info]: Sent message: STOP
+[14:12:04 Status]: [Connected] Sent message: STOP
+[14:12:04 Info]: Sent message: REVERSE
+[14:12:04 Status]: [Connected] Sent message: REVERSE
+[14:12:04 Info]: Sent message: STOP
+[14:12:04 Status]: [Connected] Sent message: STOP
+[14:12:04 Info]: Sent message: LEFT
+[14:12:04 Status]: [Connected] Sent message: LEFT
+[14:12:05 Info]: Sent message: STOP
+[14:12:05 Status]: [Connected] Sent message: STOP
+[14:12:05 Info]: Sent message: END
+[14:12:05 Status]: [Connected] Sent message: END
+[14:12:05 Info]: Jerry: END
+[14:12:05 Status]: [Connected] Jerry: END
+[14:12:05 Info]: Closing sockets and streams...
+[14:12:05 Status]: [Pending] Disconnecting from Jerry...
+[14:12:05 Info]: Successfully closed sockets and streams
+[14:12:05 Status]: [Disconnected] Successfully disconnected from Jerry
