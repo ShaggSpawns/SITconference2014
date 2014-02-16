@@ -20,7 +20,7 @@ public class JerryConnection implements Runnable {
 	private final int serverPort;
 	public static Socket connection;
 	private static ObjectOutputStream output;
-	private static ObjectInputStream input;
+	private ObjectInputStream input;
 	
 	/**
 	 * Handles the connection and communication with a TCP server
@@ -49,7 +49,8 @@ public class JerryConnection implements Runnable {
 	}
 	
 	/**
-	 * Connects to a TCP server and displays a confirmation message once connected
+	 * Connects to the Jerry Server and displays a confirmation message once connected
+	 * @throws IOException
 	 */
 	private void connectToServer() throws IOException {
 		new LogMessage("Info", "Attempting to connect to Jerry...");
@@ -79,7 +80,7 @@ public class JerryConnection implements Runnable {
 	}
 	
 	/**
-	 * Handles the communication with the TCP server
+	 * Handles the communication with the Jerry Server
 	 */
 	private void whileChatting() {
 		String message = null;
@@ -104,9 +105,9 @@ public class JerryConnection implements Runnable {
 	}
 	
 	/**
-	 * Closes the sockets and streams to disconnect with the TCP server
+	 * Closes the sockets and streams to disconnect with the Jerry Server
 	 */
-	private final static void cleanUp() {
+	private final void cleanUp() {
 		if (connection.isConnected()) {
 			try {
 				new LogMessage("Info", "Closing sockets and streams...");
@@ -128,7 +129,7 @@ public class JerryConnection implements Runnable {
 	}
 	
 	/**
-	 * Sends a message to the output stream
+	 * Sends a message to the Jerry Server
 	 * @param message
 	 */
 	public static void sendMessage(final String message) {

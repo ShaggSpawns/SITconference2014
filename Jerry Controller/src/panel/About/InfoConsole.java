@@ -14,7 +14,6 @@ import javax.swing.text.DefaultCaret;
 /**
  * Creates an Information Console on the About tab
  * @author Jackson Wilson (c) 2014
- *
  */
 public class InfoConsole extends JPanel {
 	private static final long serialVersionUID = 1L;

@@ -2,6 +2,10 @@ package messageManager;
 
 import panel.Jerry.JerryStatus;
 
+/**
+ * Manages the updating of the Jerry Status
+ * @author Jackson Wilson (c) 2014
+ */
 public class StatusUpdateMessage {
 	/**
 	 * Updates the Status Bar with a message that uses a prefix defined by the messageType.
@@ -33,7 +37,7 @@ public class StatusUpdateMessage {
 		} else if (messageType.equals("Pending")) {
 			sBarMessage = "[Pending] " + message;
 		} else {
-			sBarMessage = message;
+			sBarMessage = "[" + messageType + "]" + message;
 		}
 		
 		JerryStatus.jBar.setText("");

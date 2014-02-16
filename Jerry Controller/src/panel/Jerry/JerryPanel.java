@@ -6,7 +6,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JPanel;
 
 /**
- * Initializes the TCP panel for the MotorControls tab
+ * Initializes the Jerry panel for the Jerry Controller tab
  * @author Jackson Wilson (c) 2014
  */
 public class JerryPanel extends JPanel {

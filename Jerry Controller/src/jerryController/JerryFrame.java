@@ -11,11 +11,9 @@ import panel.SSH.SshPanel;
 
 /**
  * Main Frame: A frame with 3 tabs in a scroll tab layout
- * @author Jackson Wilson
- * @since 2014
+ * @author Jackson Wilson (c) 2014
  */
 public class JerryFrame extends JFrame {
-	
 	private static final long serialVersionUID = 1L;
 	
 	/**
@@ -58,7 +56,5 @@ public class JerryFrame extends JFrame {
         
         tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		super.setVisible(true);
-		
-		//Jerry.createOpenLog();
 	}
 }

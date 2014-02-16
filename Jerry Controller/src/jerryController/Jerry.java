@@ -35,12 +35,10 @@ public class Jerry extends JApplet implements Runnable {
 	/**
 	 * Creates a new log to mark the launch of the program 
 	 */
-	public static void createOpenLog() {
+	public void createOpenLog() {
 		final Date today = new Date();
 		final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMM/dd/yy hh:mm:ss a");
-
 		final String time = DATE_FORMAT.format(today);
-		
 		new LogFileManager("+++++++++++++++ Program opened at [" + time + "] +++++++++++++++");
 	}
 	

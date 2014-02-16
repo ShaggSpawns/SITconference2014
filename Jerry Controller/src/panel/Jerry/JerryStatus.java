@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * Initializes the status bar on the Control tab
+ * Initializes the Jerry status bar on the Jerry Controller tab
  * @author Jackson Wilson (c) 2014
  */
 public class JerryStatus extends JPanel{
@@ -17,7 +17,7 @@ public class JerryStatus extends JPanel{
 	public static JTextField jBar;
 	
 	/**
-	 * The constructor of SatusBar that initializes the status bar.
+	 * The constructor of JerryStatus that initializes the Jerry status bar.
 	 * Uses a GridBagLayout and a JTextField as the bar.
 	 */
 	public JerryStatus(final String OS) {

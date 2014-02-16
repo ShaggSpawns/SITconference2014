@@ -12,7 +12,11 @@ import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
- 
+
+/**
+ * Connects to a computer with SSH
+ * @author Jackson Wilson (c) 2014
+ */
 public class SshConnection implements Runnable {
 	private static Session session;
 	public static Channel channel;
@@ -22,6 +26,13 @@ public class SshConnection implements Runnable {
 	private final String USERNAME;
 	private final String PASSWORD;
 	
+	/**
+	 * Connects to a remote computer with the given information through SSH
+	 * @param host
+	 * @param port
+	 * @param username
+	 * @param password
+	 */
 	public SshConnection(final String host, final int port, final String username, final char[] password) {
 		HOST = host;
 		PORT = port;
@@ -29,7 +40,9 @@ public class SshConnection implements Runnable {
 		PASSWORD = new String(password);
 	}
 
-
+	/**
+	 * Connects to a remote computer with the given information through SSH
+	 */
 	@Override
 	public void run() {
 		SshConsole.consoleArea.setText("");
@@ -99,6 +112,10 @@ public class SshConnection implements Runnable {
 		}
 	}
 	
+	/**
+	 * Updates the SshConsole with incoming information from the remote computer
+	 * @param text
+	 */
 	private void updateTextArea(final String text) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
@@ -107,7 +124,11 @@ public class SshConnection implements Runnable {
 		});
 	}
 	
-	public static void sendMessage(final String message) {
+	/**
+	 * Sends messages to the remote computer over SSH
+	 * @param message
+	 */
+	public void sendMessage(final String message) {
 		System.out.println(message);
 		if (message.equals("exit")) {
 			SshLogin.connectBtn.doClick();
@@ -115,12 +136,15 @@ public class SshConnection implements Runnable {
 			try {
 				channel.getInputStream().read(message.getBytes());
 				
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 	
+	/**
+	 * Closes the connection with the remote computer over SSH
+	 */
 	public static void closeSSH() {
 		SshConsole.consoleInput.setEnabled(false);
 		if (channel.isConnected()) {

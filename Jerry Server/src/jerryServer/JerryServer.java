@@ -20,7 +20,7 @@ public class JerryServer {
 	private SerialPort serialPort;
 	private ServerSocket server;
 	private Socket connection;
-	private static int port = 6789;
+	private static int port = 0;
 	
 	/**
 	 * Main method, asks for a port that the Jerry Server will be set up on.

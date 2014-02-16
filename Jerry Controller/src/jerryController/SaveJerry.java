@@ -11,9 +11,8 @@ import panel.Jerry.JerryLogin;
 import panel.SSH.SshLogin;
 
 /**
- * Manages the files involved in storing login information for TCP and SSH.
- * @author Jackson Wilson
- * @since 2014
+ * Manages the files involved in storing login information for JERRY and SSH.
+ * @author Jackson Wilson (c) 2014
  */
 public class SaveJerry {
 	private static String calledFrom;
@@ -27,7 +26,7 @@ public class SaveJerry {
 	/**
 	 * Opens/Creates, stores a login information, and closes a file specified by the parameters.
 	 * @param address
-	 * @param callFromTCP
+	 * @param callFrom
 	 */
 	public SaveJerry(final String address, final String callFrom) {
 		calledFrom = callFrom;

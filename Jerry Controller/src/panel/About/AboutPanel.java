@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 public class AboutPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * Builds a JPanel to combine the About and Help panels.
+	 */
 	public AboutPanel() {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();

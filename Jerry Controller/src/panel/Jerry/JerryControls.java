@@ -26,9 +26,9 @@ public class JerryControls extends JPanel {
 	public static JToggleButton rightBtn;
 	public static JToggleButton leftBtn;
 	public static JButton stopBtn;
-	public static JTextField sBar;
-	public static boolean otherBtnToggled = false;
-	private static String currentBtnPressed;
+	public JTextField sBar;
+	public boolean otherBtnToggled = false;
+	private String currentBtnPressed;
 	
 	/**
 	 * Initializes the controls for the Controller tab
@@ -155,7 +155,11 @@ public class JerryControls extends JPanel {
 		}
 	}
 	
-	private static String getCurrentBtnPressed() {
+	/**
+	 * Gets the current button pressed
+	 * @return currentBtnPressed
+	 */
+	private String getCurrentBtnPressed() {
 		return currentBtnPressed;
 	}
 	
@@ -164,7 +168,7 @@ public class JerryControls extends JPanel {
 	 * @param isOtherBtnToggled
 	 * @param setCurrentBtnPressed
 	 */
-	public static void setCurrentBtnToggled(final boolean isOtherBtnToggled, final String setCurrentBtnPressed) {
+	public void setCurrentBtnToggled(final boolean isOtherBtnToggled, final String setCurrentBtnPressed) {
 		otherBtnToggled = isOtherBtnToggled;
 		currentBtnPressed = setCurrentBtnPressed;
 	}
@@ -174,7 +178,7 @@ public class JerryControls extends JPanel {
 	 * the message 'STOP' to the TCP output stream
 	 * @param button
 	 */
-	public static void buttonToggled(final String button) {
+	public void buttonToggled(final String button) {
 		if (otherBtnToggled == true) {
 			disableCurrentBtnToggled();
 			try {
@@ -192,7 +196,7 @@ public class JerryControls extends JPanel {
 	/**
 	 * Changes the currently selected toggled button to a new one
 	 */
-	public static void disableCurrentBtnToggled() {
+	public void disableCurrentBtnToggled() {
 		switch (getCurrentBtnPressed()) {
 			case "Forward":
 				forwardBtn.doClick();

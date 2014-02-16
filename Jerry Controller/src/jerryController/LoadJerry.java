@@ -13,7 +13,7 @@ import panel.Jerry.JerryLogin;
 import panel.SSH.SshLogin;
 
 /**
- * Manages the saving and loading of logins of TCP and SSH.
+ * Manages the saving and loading of logins of JERRY and SSH.
  * @author Jackson Wilson (c) 2014
  */
 public class LoadJerry {
@@ -23,7 +23,7 @@ public class LoadJerry {
 	
 	/**
 	 * Reloads the appropriate JComboBox with an updated list of the logins for that JComboBox by removing all existing entries and replaces them with the ones in the login.txt file.
-	 * @param istcp
+	 * @param calledFor
 	 */
 	public static void addLogins(final String calledFor) {
 		calledFrom = calledFor;
@@ -94,8 +94,7 @@ public class LoadJerry {
 	
 	/**
 	 * Reads the file and returns the contents of the file into a String.
-	 * @return
-	 * @throws FileNotFoundException 
+	 * @return File entry
 	 */
 	private static String[] readFile() {
 		final ArrayList<String> arr = new ArrayList<String>();
