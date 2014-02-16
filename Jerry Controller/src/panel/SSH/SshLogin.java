@@ -176,7 +176,7 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 		gc.gridy = 1;
 		add(usernameF, gc);
 		
-		passwordF = new JPasswordField("peace1");
+		passwordF = new JPasswordField("");
 		passwordF.addActionListener(this);
 		gc.gridy = 2;
 		add(passwordF, gc);
