@@ -604,3 +604,62 @@
 +++++++++++++++ Program opened at [Feb/15/14 05:24:16 PM] +++++++++++++++
 +++++++++++++++ Program opened at [Feb/15/14 05:28:03 PM] +++++++++++++++
 +++++++++++++++ Program opened at [Feb/15/14 05:32:31 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/15/14 11:13:54 PM] +++++++++++++++
+[23:14:04 Info]: Attempting to connect to Jerry...
+[23:14:04 Status]: Attempting to connect...
+[23:14:04 Info]: Connected to: localhost
+[23:14:04 Status]: [Connected] Connected to Jerry at localhost:6789
+[23:14:04 Info]: Streams successfully setup
+[23:14:06 Info]: Sent message: FORWARD
+[23:14:06 Status]: [Connected] Sent message: FORWARD
+[23:14:06 Error]: EOFException in ConnectionTCP.whileChatting()
+[23:14:06 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[23:14:06 Info]: Closing sockets and streams...
+[23:14:06 Status]: [Pending] Disconnecting from Jerry...
+[23:14:06 Info]: Successfully closed sockets and streams
+[23:14:06 Status]: [Disconnected] Successfully disconnected from Jerry
+[23:15:45 Error]: IOException in ConnectionTCP.sendMessage()
+[23:15:45 Status]: [Error] Failed to send message
+[23:15:45 Error]: IOException in ConnectionTCP.sendMessage()
+[23:15:45 Status]: [Error] Failed to send message
+[23:15:46 Info]: Attempting to connect to Jerry...
+[23:15:46 Status]: Attempting to connect...
+[23:15:46 Info]: Connected to: localhost
+[23:15:46 Status]: [Connected] Connected to Jerry at localhost:6789
+[23:15:46 Info]: Streams successfully setup
+[23:15:47 Info]: Sent message: FORWARD
+[23:15:47 Status]: [Connected] Sent message: FORWARD
+[23:15:48 Info]: Sent message: STOP
+[23:15:48 Status]: [Connected] Sent message: STOP
+[23:15:48 Info]: Sent message: REVERSE
+[23:15:48 Status]: [Connected] Sent message: REVERSE
+[23:15:48 Info]: Sent message: STOP
+[23:15:48 Status]: [Connected] Sent message: STOP
+[23:15:49 Info]: Sent message: LEFT
+[23:15:49 Status]: [Connected] Sent message: LEFT
+[23:15:49 Info]: Sent message: STOP
+[23:15:49 Status]: [Connected] Sent message: STOP
+[23:15:50 Info]: Sent message: RIGHT
+[23:15:50 Status]: [Connected] Sent message: RIGHT
+[23:15:51 Info]: Sent message: STOP
+[23:15:51 Status]: [Connected] Sent message: STOP
+[23:15:51 Info]: Sent message: END
+[23:15:51 Status]: [Connected] Sent message: END
++++++++++++++++ Program opened at [Feb/15/14 11:17:11 PM] +++++++++++++++
+[23:17:14 Info]: Attempting to connect to Jerry...
+[23:17:14 Status]: Attempting to connect...
+[23:17:14 Info]: Connected to: localhost
+[23:17:14 Status]: [Connected] Connected to Jerry at localhost:6789
+[23:17:14 Info]: Streams successfully setup
+[23:17:15 Info]: Sent message: FORWARD
+[23:17:15 Status]: [Connected] Sent message: FORWARD
+[23:17:16 Info]: Sent message: STOP
+[23:17:16 Status]: [Connected] Sent message: STOP
+[23:17:16 Info]: Sent message: END
+[23:17:16 Status]: [Connected] Sent message: END
+[23:18:31 Error]: EOFException in ConnectionTCP.whileChatting()
+[23:18:31 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[23:18:31 Info]: Closing sockets and streams...
+[23:18:31 Status]: [Pending] Disconnecting from Jerry...
+[23:18:31 Info]: Successfully closed sockets and streams
+[23:18:31 Status]: [Disconnected] Successfully disconnected from Jerry
