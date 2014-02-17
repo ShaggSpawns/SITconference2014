@@ -174,7 +174,7 @@ public class JerryServer {
 	 * Starts the connection over the serial port
 	 */
 	private void startSerialComm() {
-		serialPort = new SerialPort("/dev/ttyACM0");
+		serialPort = new SerialPort("/dev/ttyACM1");
 		try {
 			serialPort.openPort();
 			serialPort.setParams(9600, 8, 1, 0);
@@ -195,7 +195,6 @@ public class JerryServer {
 	private synchronized void closeSerialComm() {
 		if (serialPort.isOpened()) {
 			try {
-				serialPort.removeEventListener();
 				serialPort.closePort();
 			} catch (final SerialPortException e) {
 				e.printStackTrace();
