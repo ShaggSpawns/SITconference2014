@@ -1,1 +1,136 @@
 +++++++++++++++ Program opened at [Feb/16/14 02:47:29 PM] +++++++++++++++
++++++++++++++++ Program opened at [Feb/16/14 06:31:00 PM] +++++++++++++++
+[18:31:10 Info]: Attempting to connect to Jerry...
+[18:31:10 Status]: [pending]Attempting to connect...
+[18:31:10 Info]: Connected to: localhost
+[18:31:10 Status]: [Connected] Connected to Jerry at localhost:6789
+[18:31:11 Info]: Sent message: FORWARD
+[18:31:11 Status]: [Connected] Sent message: FORWARD
+[18:31:12 Info]: Sent message: STOP
+[18:31:12 Status]: [Connected] Sent message: STOP
+[18:31:13 Info]: Sent message: LEFT
+[18:31:13 Status]: [Connected] Sent message: LEFT
+[18:31:13 Info]: Sent message: STOP
+[18:31:13 Status]: [Connected] Sent message: STOP
+[18:31:13 Info]: Sent message: REVERSE
+[18:31:13 Status]: [Connected] Sent message: REVERSE
+[18:31:14 Info]: Sent message: STOP
+[18:31:14 Status]: [Connected] Sent message: STOP
+[18:31:14 Info]: Sent message: RIGHT
+[18:31:14 Status]: [Connected] Sent message: RIGHT
+[18:31:14 Info]: Sent message: STOP
+[18:31:14 Status]: [Connected] Sent message: STOP
+[18:31:15 Info]: Sent message: FORWARD
+[18:31:15 Status]: [Connected] Sent message: FORWARD
+[18:31:15 Info]: Sent message: STOP
+[18:31:15 Status]: [Connected] Sent message: STOP
+[18:31:16 Info]: Sent message: REVERSE
+[18:31:16 Status]: [Connected] Sent message: REVERSE
+[18:31:16 Info]: Sent message: STOP
+[18:31:16 Status]: [Connected] Sent message: STOP
+[18:31:16 Info]: Sent message: LEFT
+[18:31:16 Status]: [Connected] Sent message: LEFT
+[18:31:17 Info]: Sent message: STOP
+[18:31:17 Status]: [Connected] Sent message: STOP
+[18:31:17 Info]: Sent message: RIGHT
+[18:31:17 Status]: [Connected] Sent message: RIGHT
+[18:31:17 Info]: Sent message: STOP
+[18:31:17 Status]: [Connected] Sent message: STOP
+[18:31:18 Info]: Sent message: REVERSE
+[18:31:18 Status]: [Connected] Sent message: REVERSE
+[18:31:18 Info]: Sent message: STOP
+[18:31:18 Status]: [Connected] Sent message: STOP
+[18:31:19 Info]: Sent message: FORWARD
+[18:31:19 Status]: [Connected] Sent message: FORWARD
+[18:31:30 Info]: Sent message: STOP
+[18:31:30 Status]: [Connected] Sent message: STOP
+[18:31:30 Info]: Sent message: END
+[18:31:30 Status]: [Connected] Sent message: END
+[18:31:35 Error]: Failed to setup TCP streams!
+[18:31:35 Status]: [Error] Failed to setup Jerry streams!
+[18:31:35 Error]: NullPointerException in ConnctionTCP.whileChatting()
++++++++++++++++ Program opened at [Feb/16/14 06:33:35 PM] +++++++++++++++
+[18:33:37 Info]: Attempting to connect to Jerry...
+[18:33:37 Status]: [pending]Attempting to connect...
+[18:33:37 Info]: Connected to: localhost
+[18:33:37 Status]: [Connected] Connected to Jerry at localhost:6789
+[18:33:38 Info]: Sent message: FORWARD
+[18:33:38 Status]: [Connected] Sent message: FORWARD
+[18:33:39 Info]: Sent message: STOP
+[18:33:39 Status]: [Connected] Sent message: STOP
+[18:33:39 Info]: Sent message: REVERSE
+[18:33:39 Status]: [Connected] Sent message: REVERSE
+[18:33:44 Error]: Failed to setup TCP streams!
+[18:33:44 Status]: [Error] Failed to setup Jerry streams!
+[18:33:44 Error]: NullPointerException in ConnctionTCP.whileChatting()
+[18:33:51 Error]: IOException in ConnectionTCP.sendMessage()
+[18:33:51 Status]: [Error] Failed to send message
+[18:33:51 Error]: IOException in ConnectionTCP.sendMessage()
+[18:33:51 Status]: [Error] Failed to send message
++++++++++++++++ Program opened at [Feb/16/14 06:34:48 PM] +++++++++++++++
+[18:34:49 Info]: Attempting to connect to Jerry...
+[18:34:49 Status]: [pending]Attempting to connect...
+[18:34:49 Info]: Connected to: localhost
+[18:34:49 Status]: [Connected] Connected to Jerry at localhost:6789
+[18:34:50 Info]: Sent message: FORWARD
+[18:34:50 Status]: [Connected] Sent message: FORWARD
+[18:34:50 Info]: Sent message: STOP
+[18:34:50 Status]: [Connected] Sent message: STOP
+[18:34:50 Info]: Sent message: LEFT
+[18:34:50 Status]: [Connected] Sent message: LEFT
+[18:34:50 Info]: Sent message: STOP
+[18:34:50 Status]: [Connected] Sent message: STOP
+[18:34:51 Info]: Sent message: REVERSE
+[18:34:51 Status]: [Connected] Sent message: REVERSE
+[18:34:55 Info]: Sent message: STOP
+[18:34:55 Status]: [Connected] Sent message: STOP
+[18:34:55 Info]: Sent message: END
+[18:34:55 Status]: [Connected] Sent message: END
++++++++++++++++ Program opened at [Feb/16/14 06:35:23 PM] +++++++++++++++
+[18:35:32 Info]: Attempting to connect to Jerry...
+[18:35:32 Status]: [pending]Attempting to connect...
+[18:35:32 Info]: Connected to: localhost
+[18:35:32 Status]: [Connected] Connected to Jerry at localhost:6789
+[18:35:32 Info]: Streams successfully setup
+[18:35:33 Info]: Sent message: FORWARD
+[18:35:33 Status]: [Connected] Sent message: FORWARD
+[18:35:33 Info]: Sent message: STOP
+[18:35:33 Status]: [Connected] Sent message: STOP
+[18:35:34 Info]: Sent message: REVERSE
+[18:35:34 Status]: [Connected] Sent message: REVERSE
+[18:35:34 Info]: Sent message: STOP
+[18:35:34 Status]: [Connected] Sent message: STOP
+[18:35:34 Info]: Sent message: LEFT
+[18:35:34 Status]: [Connected] Sent message: LEFT
+[18:35:35 Info]: Sent message: STOP
+[18:35:35 Status]: [Connected] Sent message: STOP
+[18:35:35 Info]: Sent message: RIGHT
+[18:35:35 Status]: [Connected] Sent message: RIGHT
+[18:35:36 Info]: Sent message: STOP
+[18:35:36 Status]: [Connected] Sent message: STOP
+[18:35:36 Info]: Sent message: END
+[18:35:36 Status]: [Connected] Sent message: END
+[18:35:36 Info]: Jerry: END
+[18:35:36 Status]: [Connected] Jerry: END
+[18:35:36 Info]: Closing sockets and streams...
+[18:35:36 Status]: [Pending] Disconnecting from Jerry...
+[18:35:36 Info]: Successfully closed sockets and streams
+[18:35:36 Status]: [Disconnected] Successfully disconnected from Jerry
+[18:35:42 Info]: Attempting to connect to Jerry...
+[18:35:42 Status]: [pending]Attempting to connect...
+[18:35:42 Info]: Connected to: localhost
+[18:35:42 Status]: [Connected] Connected to Jerry at localhost:6789
+[18:35:42 Info]: Streams successfully setup
+[18:35:44 Info]: Sent message: RIGHT
+[18:35:44 Status]: [Connected] Sent message: RIGHT
+[18:35:45 Error]: EOFException in ConnectionTCP.whileChatting()
+[18:35:45 Status]: [Disconnected] Disconnected from Jerry at localhost:6789
+[18:35:45 Info]: Closing sockets and streams...
+[18:35:45 Status]: [Pending] Disconnecting from Jerry...
+[18:35:45 Info]: Successfully closed sockets and streams
+[18:35:45 Status]: [Disconnected] Successfully disconnected from Jerry
+[18:35:51 Error]: IOException in ConnectionTCP.sendMessage()
+[18:35:51 Status]: [Error] Failed to send message
+[18:35:51 Error]: IOException in ConnectionTCP.sendMessage()
+[18:35:51 Status]: [Error] Failed to send message
++++++++++++++++ Program opened at [Feb/16/14 06:46:11 PM] +++++++++++++++

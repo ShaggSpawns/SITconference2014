@@ -95,6 +95,7 @@ public class JerryConnection implements Runnable {
 			} catch (final EOFException eofException) {
 				new LogMessage("Error", "EOFException in ConnectionTCP.whileChatting()");
 				new StatusUpdateMessage("Disconnected", "Disconnected from Jerry at " + serverIP + ":" + serverPort);
+				JerryLogin.connectBtn.doClick();
 				break;
 			} catch (final IOException ioExection) {
 				new LogMessage("Error", "IOException in ConnectionTCP.whileChatting()");
@@ -108,23 +109,23 @@ public class JerryConnection implements Runnable {
 	 * Closes the sockets and streams to disconnect with the Jerry Server
 	 */
 	private final void cleanUp() {
-		if (connection.isConnected()) {
-			try {
-				new LogMessage("Info", "Closing sockets and streams...");
-				new StatusUpdateMessage("Pending", "Disconnecting from Jerry...");
-				input.close();
-				output.flush();
-				output.close();
-				connection.close();
-				new LogMessage("Info", "Successfully closed sockets and streams");
-				new StatusUpdateMessage("Disconnected", "Successfully disconnected from Jerry");
-			} catch (final IOException ioException) {
-				new LogMessage("Error", "IOException in panel.TCP.ConnectionTCP.cleanUp()");
-				new StatusUpdateMessage("Error", "Failed to disconnect to Jerry");
-			} catch (final NullPointerException nullPointerException) {
-				new LogMessage("Error", "NullPointerException in ConnectionTCP.cleanUp()");
-				new StatusUpdateMessage("Error", "No sockets and streams to disconnect from");
+		try {
+			new LogMessage("Info", "Closing sockets and streams...");
+			new StatusUpdateMessage("Pending", "Disconnecting from Jerry...");
+			input.close();
+			output.flush();
+			output.close();
+			if (connection.isConnected()) {
+			connection.close();
 			}
+			new LogMessage("Info", "Successfully closed sockets and streams");
+			new StatusUpdateMessage("Disconnected", "Successfully disconnected from Jerry");
+		} catch (final IOException ioException) {
+			new LogMessage("Error", "IOException in panel.TCP.ConnectionTCP.cleanUp()");
+			new StatusUpdateMessage("Error", "Failed to disconnect to Jerry");
+		} catch (final NullPointerException nullPointerException) {
+			new LogMessage("Error", "NullPointerException in ConnectionTCP.cleanUp()");
+			new StatusUpdateMessage("Error", "No sockets and streams to disconnect from");
 		}
 	}
 	

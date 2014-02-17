@@ -5,7 +5,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
 import jssc.SerialPort;
 import jssc.SerialPortException;
@@ -20,7 +19,7 @@ public class JerryServer {
 	private SerialPort serialPort;
 	private ServerSocket server;
 	private Socket connection;
-	private static int port = 0;
+	private static int port = 6789;
 	
 	/**
 	 * Main method, asks for a port that the Jerry Server will be set up on.
@@ -28,7 +27,7 @@ public class JerryServer {
 	 * @param args
 	 */
 	public static void main(final String[] args) {
-		while (true) {
+		/*while (true) {
 			try {
 				System.out.print("Enter a port: ");
 				port = Integer.parseInt(new Scanner(System.in).next());
@@ -36,7 +35,7 @@ public class JerryServer {
 			} catch (final NumberFormatException e) {
 				System.out.println("\nPort was not an Integer");
 			}
-		}
+		}*/
 		new JerryServer();
 	}
 	
@@ -72,6 +71,10 @@ public class JerryServer {
 		try {
 			System.out.println("Waiting for someone to connect...");
 			connection = server.accept();
+			//String input = new Scanner(System.in).next().toLowerCase();
+			//if (input.equals("exit")){
+				//System.exit(0);
+			//}
 			System.out.println("Now connected to " + connection.getInetAddress().getHostName());
 		} catch (final IOException ioE) {
 			System.out.println("Could not accept incoming connection");
@@ -87,6 +90,8 @@ public class JerryServer {
 			System.out.println("Failed to setup streams");
 		}
 	}
+	
+	
 	
 	/**
 	 * Manages the incoming messages from the Jerry Controller.
