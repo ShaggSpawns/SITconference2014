@@ -174,7 +174,7 @@ public class JerryServer {
 	 * Starts the connection over the serial port
 	 */
 	private void startSerialComm() {
-		serialPort = new SerialPort("/dev/ttyACM1");
+		serialPort = new SerialPort("/dev/ttyACM0");
 		try {
 			serialPort.openPort();
 			serialPort.setParams(9600, 8, 1, 0);
