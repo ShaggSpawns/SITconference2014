@@ -54,7 +54,7 @@ public class JerryControls extends JPanel {
 		gc.insets = new Insets(2,0,0,2);
 		switch(OS) {
 		case "Windows":
-			gc.ipady = 140;
+			gc.ipady = 90;
 			break;
 		case "Mac":
 			gc.ipady = 132;

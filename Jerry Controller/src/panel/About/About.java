@@ -25,12 +25,13 @@ public class About extends JPanel {
 		setLayout(new GridBagLayout());
 		final GridBagConstraints gc = new GridBagConstraints();
 		
-		final JTextArea about = new JTextArea(19, 38);
+		final JTextArea about = new JTextArea(10, 38);
 		about.setEditable(false);
 		about.setAutoscrolls(isEnabled());
 	    gc.anchor = GridBagConstraints.CENTER;
 	    gc.insets = new Insets(2,1,2,2);
 	    gc.ipadx = 8;
+	    gc.ipady = 12;
 	    about.setText("** Hovering over componets (buttons, text, textfields, ect.) **" + "\n"
 	    		+ "** gives more detailed information about it. **" + "\n"
 	    		+ "\n"

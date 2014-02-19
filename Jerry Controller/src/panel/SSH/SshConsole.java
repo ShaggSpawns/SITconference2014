@@ -34,7 +34,7 @@ public class SshConsole extends JPanel {
 
 		switch(OS) {
 		case "Windows":
-			consoleArea = new JTextArea(30, 38);
+			consoleArea = new JTextArea(20, 38);
 			consoleArea.setEditable(false);
 			consoleArea.setAutoscrolls(isEnabled());
 			consoleArea.setSize(getPreferredSize());

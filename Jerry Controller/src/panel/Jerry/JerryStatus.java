@@ -31,7 +31,7 @@ public class JerryStatus extends JPanel{
 		jBar.setEditable(false);
 		switch(OS) {
 		case "Windows":
-			gc.ipadx = 27;
+			gc.ipadx = 25;
 			break;
 		case "Mac":
 			gc.ipadx = 14;
