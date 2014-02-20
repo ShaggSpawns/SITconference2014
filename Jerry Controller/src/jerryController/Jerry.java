@@ -14,13 +14,16 @@ import messageManager.LogFileManager;
 public class Jerry extends JApplet implements Runnable {
 	private static final long serialVersionUID = 1L;
 	private static boolean firstLogMessage = true;
-	public String OS = getOperatingSystem();
+	public static String OS = getOperatingSystem();
 	
 	/**
 	 * Runs the application by calling run() in a new thread
 	 * @param args
 	 */
 	public static void main(final String[] args) {
+		if (OS.equals("Mac")) {
+			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Jerry Controller");
+		}
 		(new Thread(new Jerry())).start();
 	}
 	

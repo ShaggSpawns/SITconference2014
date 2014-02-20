@@ -103,7 +103,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		add(portF, gc);
 		
 		connectBtn = new JToggleButton("Connect");
-		connectBtn.setToolTipText("Connect / Disconnect to Vehical");
+		connectBtn.setToolTipText("Connect / Disconnect to Jerry");
 		connectBtn.setFocusable(false);
 		connectBtn.addItemListener(this);
 		gc.fill = GridBagConstraints.BOTH;
@@ -127,7 +127,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		
 		saveBtn = new JButton("Save");
 		saveBtn.setFocusable(false);
-		saveBtn.setToolTipText("Save Current Vehical Address");
+		saveBtn.setToolTipText("Save Jerry's Address");
 		saveBtn.setEnabled(false);
 		saveBtn.addActionListener(this);
 		switch(OS) {
@@ -148,7 +148,7 @@ public class JerryLogin extends JPanel implements ItemListener, ActionListener {
 		
 		loadComboBox = new JComboBox<String>();
 		LoadJerry.addLogins("JERRY");
-		loadComboBox.setToolTipText("Load Saved Vehical Addresses");
+		loadComboBox.setToolTipText("Load Saved Jerry");
 		loadComboBox.addActionListener(this);
 		switch(OS) {
 		case "Windows":
