@@ -129,7 +129,7 @@ public class SshLogin extends JPanel implements ItemListener, ActionListener {
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		switch(OS) {
 		case "Windows":
-			gc.ipadx = 275;
+			gc.ipadx = 200;
 			gc.gridx = 1;
 			gc.gridy = 0;
 			break;

@@ -27,8 +27,7 @@ public class JerryFrame extends JFrame {
 		
 		switch(OS) {
 		case "Windows":
-			//super.setLocation(960, 200);
-			super.setLocationRelativeTo(null);
+			super.setLocation(600, 200);
 			super.setMinimumSize(new Dimension(480, 600));
 			break;
 		case "Mac":

@@ -34,13 +34,13 @@ public class SshConsole extends JPanel {
 
 		switch(OS) {
 		case "Windows":
-			consoleArea = new JTextArea(20, 38);
+			consoleArea = new JTextArea(22, 38);
 			consoleArea.setEditable(false);
 			consoleArea.setAutoscrolls(isEnabled());
 			consoleArea.setSize(getPreferredSize());
 		    gc.anchor = GridBagConstraints.CENTER;
 		    gc.insets = new Insets(1,2,0,2);
-		    gc.ipady = 13;
+		    gc.ipady = 10;
 		    gc.gridy = 0;
 		    gc.weighty = 0.0;
 		    scrollPane = new JScrollPane(consoleArea);
