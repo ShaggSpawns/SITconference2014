@@ -11,7 +11,7 @@ import jssc.SerialPortException;
 
 /**
  * The server for Jerry that handles the communication between the controller and the hardware.
- * @author Jackson Wilson (c) 2014
+ * @author Jackson Wilson
  */
 public class JerryServer {
 	private ObjectOutputStream output;

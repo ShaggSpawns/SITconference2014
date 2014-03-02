@@ -9,7 +9,7 @@ import messageManager.LogFileManager;
 
 /**
  * Main class that calls to create a frame and runs it on a new thread.
- * @author Jackson Wilson (c) 2014
+ * @author Jackson Wilson
  */
 public class Jerry extends JApplet implements Runnable {
 	private static final long serialVersionUID = 1L;
